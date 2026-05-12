@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Nebula Lab">
-  <rect width="64" height="64" rx="14" fill="#101828"/>
-  <path d="M18 41c7.5-18 20.5-24 28-18 5.8 4.7 1.6 15-7.4 18.5-8.8 3.4-18.2 1-20.6-.5Z" fill="#7dd3fc"/>
-  <circle cx="25" cy="29" r="4" fill="#ffffff"/>
-  <circle cx="42" cy="34" r="3" fill="#facc15"/>
-</svg>

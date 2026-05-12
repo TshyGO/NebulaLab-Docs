@@ -7,7 +7,7 @@ export default defineConfig({
   cleanUrls: true,
   lastUpdated: true,
   themeConfig: {
-    logo: '/logo.svg',
+    logo: '/logo.png',
     nav: [
       { text: '用户手册', link: '/manual/' },
       { text: '教程', link: '/tutorials/' },
@@ -44,7 +44,7 @@ export default defineConfig({
       ]
     },
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/TshyGO/NebulaLab' }
+      { icon: 'github', link: 'https://github.com/TshyGO/NebulaLab-Releases' }
     ],
     search: {
       provider: 'local'
