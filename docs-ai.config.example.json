@@ -1,0 +1,7 @@
+{
+  "appRepoPath": "../NebulaLab",
+  "docsRepoPath": ".",
+  "modelProvider": "deepseek",
+  "draftModel": "deepseek-chat",
+  "rewriteModel": "deepseek-chat"
+}
