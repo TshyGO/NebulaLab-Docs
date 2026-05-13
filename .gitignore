@@ -3,3 +3,6 @@ docs/.vitepress/cache
 docs/.vitepress/dist
 .DS_Store
 docs-ai.config.local.json
+.superpowers/
+.claude/
+output/
