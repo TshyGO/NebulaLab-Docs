@@ -7,7 +7,7 @@ This map tracks planned manual pages and ownership.
 | `docs/manual/index.md` | Manual overview and navigation | existing | existing | TBD |
 | `docs/manual/quick-start.md` | First successful workflow in 10 minutes | needed | not started | TBD |
 | `docs/manual/workspace-overview.md` | Main shell, top navigation, save/open/settings | needed | not started | TBD |
-| `docs/manual/data-preparation.md` | Import, parse, preview, columns, sample tree | needed | not started | TBD |
+| `docs/manual/data-preparation.md` | Import, parse, preview, columns, sample tree | fact pack | drafted | TBD |
 | `docs/manual/plotting.md` | Sample selection, X/Y columns, chart, processing, styles | needed | not started | TBD |
 | `docs/manual/export.md` | CSV export and Origin export | needed | not started | TBD |
 | `docs/manual/projects.md` | Save, open, recent projects, unsaved changes | needed | not started | TBD |
