@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
-import { useData, withBase } from 'vitepress'
 import { useNebulaPreferences, type NebulaLanguage } from '../composables/preferences'
 
-const { isDark } = useData()
-const { language, setLanguage, initPreferences, labels, nav } = useNebulaPreferences()
+const { language, setLanguage, initPreferences, labels } = useNebulaPreferences()
 const languageOptions: Array<{ code: NebulaLanguage; short: string; label: string }> = [
   { code: 'en', short: 'EN', label: 'English' },
   { code: 'zh', short: '中文', label: '中文' }
@@ -12,61 +10,13 @@ const languageOptions: Array<{ code: NebulaLanguage; short: string; label: strin
 
 onMounted(initPreferences)
 
-function toggleTheme() {
-  isDark.value = !isDark.value
-}
-
 function chooseLanguage(nextLanguage: NebulaLanguage) {
   setLanguage(nextLanguage)
-}
-
-function resolveLink(link: string) {
-  return link.startsWith('http') ? link : withBase(link)
-}
-
-function isExternal(link: string) {
-  return link.startsWith('http')
 }
 </script>
 
 <template>
   <div class="NebulaNavScreenControls" aria-label="Display preferences">
-    <nav class="screen-menu" aria-label="Main navigation">
-      <a
-        v-for="item in nav"
-        :key="item.text"
-        :href="resolveLink(item.link)"
-        :target="isExternal(item.link) ? '_blank' : undefined"
-        :rel="isExternal(item.link) ? 'noreferrer' : undefined"
-      >
-        {{ item.text }}
-        <span v-if="isExternal(item.link)" aria-hidden="true">↗</span>
-      </a>
-    </nav>
-    <div class="row">
-      <span>{{ labels.theme }}</span>
-      <button
-        type="button"
-        class="icon-button"
-        :aria-label="isDark ? labels.light : labels.dark"
-        @click="toggleTheme"
-      >
-        <svg v-if="!isDark" viewBox="0 0 24 24" aria-hidden="true">
-          <circle cx="12" cy="12" r="4" />
-          <path d="M12 2v2" />
-          <path d="M12 20v2" />
-          <path d="m4.93 4.93 1.41 1.41" />
-          <path d="m17.66 17.66 1.41 1.41" />
-          <path d="M2 12h2" />
-          <path d="M20 12h2" />
-          <path d="m6.34 17.66-1.41 1.41" />
-          <path d="m19.07 4.93-1.41 1.41" />
-        </svg>
-        <svg v-else viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M20 14.7A8.5 8.5 0 0 1 9.3 4a7 7 0 1 0 10.7 10.7Z" />
-        </svg>
-      </button>
-    </div>
     <div class="row">
       <span>{{ labels.language }}</span>
       <details class="screen-language-menu">
@@ -100,30 +50,9 @@ function isExternal(link: string) {
 .NebulaNavScreenControls {
   display: grid;
   gap: 16px;
-  margin-top: 24px;
+  margin-top: 16px;
   border-top: 1px solid var(--vp-c-divider);
-  padding-top: 24px;
-}
-
-.screen-menu {
-  display: grid;
-  gap: 12px;
-  border-bottom: 1px solid var(--vp-c-divider);
-  padding-bottom: 20px;
-}
-
-.screen-menu a {
-  color: var(--vp-c-text-1);
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 24px;
-  text-decoration: none;
-}
-
-.screen-menu span {
-  color: var(--vp-c-text-3);
-  font-size: 11px;
-  margin-left: 4px;
+  padding-top: 16px;
 }
 
 .row {
@@ -139,7 +68,6 @@ function isExternal(link: string) {
   font-weight: 700;
 }
 
-.icon-button,
 .screen-language-menu summary {
   display: inline-flex;
   height: 36px;
@@ -153,12 +81,6 @@ function isExternal(link: string) {
   font-weight: 700;
 }
 
-.icon-button {
-  width: 36px;
-  border-radius: 999px;
-}
-
-.icon-button svg,
 .screen-language-menu svg {
   width: 17px;
   height: 17px;
@@ -211,7 +133,6 @@ function isExternal(link: string) {
   text-align: left;
 }
 
-.icon-button:hover,
 .screen-language-menu summary:hover,
 .screen-language-menu button:hover,
 .screen-language-menu button.active {

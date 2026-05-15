@@ -6,21 +6,6 @@ const STORAGE_KEY = 'nebulalab-home-language'
 const language = ref<NebulaLanguage>('en')
 let initialized = false
 
-const navItems = {
-  en: [
-    { text: 'Manual', link: '/manual/' },
-    { text: 'Tutorials', link: '/tutorials/' },
-    { text: 'Roadmap', link: '/roadmap/' },
-    { text: 'Download', link: 'https://github.com/TshyGO/NebulaLab-Releases/releases/latest' }
-  ],
-  zh: [
-    { text: '用户手册', link: '/manual/' },
-    { text: '教程', link: '/tutorials/' },
-    { text: '路线图', link: '/roadmap/' },
-    { text: '下载', link: 'https://github.com/TshyGO/NebulaLab-Releases/releases/latest' }
-  ]
-}
-
 const searchTranslations = {
   en: {
     button: {
@@ -107,7 +92,6 @@ export function useNebulaPreferences() {
     setLanguage,
     initPreferences,
     labels: computed(() => navLabels[language.value]),
-    nav: computed(() => navItems[language.value]),
     searchTranslations: computed(() => searchTranslations[language.value])
   }
 }
