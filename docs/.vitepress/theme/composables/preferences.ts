@@ -16,7 +16,7 @@ const navItems = {
   zh: [
     { text: '用户手册', link: '/manual/' },
     { text: '教程', link: '/tutorials/' },
-    { text: 'Roadmap', link: '/roadmap/' },
+    { text: '路线图', link: '/roadmap/' },
     { text: '下载', link: 'https://github.com/TshyGO/NebulaLab-Releases/releases/latest' }
   ]
 }
@@ -74,8 +74,8 @@ const navLabels = {
     theme: 'Theme'
   },
   zh: {
-    light: '亮色',
-    dark: '暗色',
+    light: '浅色',
+    dark: '深色',
     language: '语言',
     theme: '主题'
   }

@@ -184,29 +184,29 @@ const copy = {
     badge: 'Scientific workflow workspace',
     version: 'Latest release',
     heroTitle: 'Nebula Lab',
-    heroAccent: 'Connect samples, workflows, and results today; records come next.',
+    heroAccent: 'Link samples, workflows, and results today. Experiment records are planned next.',
     heroLead:
-      'Nebula Lab is a desktop workspace for experimental work. It starts with grouped instrument files today, and grows toward recipes, experiment records, searchable databases, plugins, and shared lab resources.',
+      'Nebula Lab is a desktop workspace for experimental work. Today it handles grouped instrument files, reusable workflows, Origin export, plugins, and community resources. Recipes, experiment records, and searchable databases are planned next.',
     primaryCta: 'Download for Windows',
     secondaryCta: 'Read the manual',
-    proof: ['Grouped samples', 'Reusable workflows', 'Recipe roadmap', 'Record roadmap', 'Plugin ecosystem'],
+    proof: ['Grouped samples', 'Reusable workflows', 'Recipes (planned)', 'Records (planned)', 'Plugin ecosystem'],
     heroPanelTitle: 'Workspace layers',
-    heroPanelLead: 'One product surface, built to grow from data handling into a broader lab workflow.',
+    heroPanelLead: 'A unified workspace, designed to grow from data handling into a broader lab workflow.',
     heroHighlights: [
       { icon: 'import', title: 'Import files', text: 'Bring instrument tables into sample groups.' },
       { icon: 'workflow', title: 'Process groups', text: 'Tune once, then reuse the workflow.' },
-      { icon: 'export', title: 'Export results', text: 'Produce data, images, project files, and integration handoff.' },
+      { icon: 'export', title: 'Export results', text: 'Produce data, images, project files, and files ready for Origin.' },
       { icon: 'plugin', title: 'Extend tools', text: 'Add plugins, themes, and community resources.' },
       {
         icon: 'formula',
         title: 'Plan recipes',
-        text: 'Prepare for formula calculation and saved recipes.',
+        text: 'Formula calculation and saved recipes are planned.',
         status: 'Planned'
       },
       {
         icon: 'database',
         title: 'Build records',
-        text: 'Move toward searchable experiment history.',
+        text: 'Searchable experiment history is planned.',
         status: 'Planned'
       }
     ],
@@ -217,13 +217,13 @@ const copy = {
         icon: 'import',
         tint: 'orange',
         title: 'Import instrument files',
-        text: 'Load CSV, TXT, and Excel files, inspect parsing settings, choose sheets, and organize imported files into sample groups.'
+        text: 'Load CSV, TXT, and Excel files, configure parsing, choose sheets, and organize them into sample groups.'
       },
       {
         icon: 'workflow',
         tint: 'blue',
         title: 'Build reusable workflows',
-        text: 'Save the current group’s recorded steps, parameters, axis mapping, and plot defaults so a matching dataset can reuse the flow.'
+        text: 'Save the current group’s recorded steps, parameters, axis mapping, and plot defaults so similar datasets can reuse the same flow.'
       },
       {
         icon: 'batch',
@@ -253,7 +253,7 @@ const copy = {
     howKicker: 'How it works',
     howTitle: 'From raw measurements to reusable results.',
     howLead:
-      'Nebula Lab keeps import settings, processing steps, sample groups, exports, and future experiment records in one workflow instead of scattering them across files.',
+      'Nebula Lab keeps import settings, processing steps, sample groups, and exports in one workflow, with experiment records planned next.',
     inputLabel: 'Inputs',
     coreLabel: 'Nebula Lab',
     coreRole: 'Workflow workspace',
@@ -275,12 +275,12 @@ const copy = {
       { icon: 'chart', text: 'PNG / JPG / SVG images' },
       { icon: 'package', text: 'Nebula project files' }
     ],
-    advantagesKicker: 'Why it is different',
+    advantagesKicker: 'Why Nebula Lab',
     advantagesTitle: 'Designed for repeated experimental work.',
     advantages: [
       {
         icon: 'sample',
-        title: 'Sample groups are the working unit',
+        title: 'Sample groups are the core unit',
         text: 'Imported files can stay together as one group or be split into separate groups, so related measurements are handled consistently.'
       },
       {
@@ -290,7 +290,7 @@ const copy = {
       },
       {
         icon: 'origin',
-        title: 'Origin remains part of the stack',
+        title: 'Built to work with Origin',
         text: 'Nebula Lab prepares the grouped data, template choice, theme choice, and style settings before sending the result to Origin.'
       },
       {
@@ -308,13 +308,13 @@ const copy = {
       'Install plugins and browse shared community assets.'
     ],
     roadmapKicker: 'Roadmap',
-    roadmapTitle: "The next step isn't more buttons; it is connecting each experiment end to end.",
+    roadmapTitle: "The next step isn't more buttons; it's connecting every experiment end to end.",
     roadmap: [
       {
         icon: 'formula',
         label: 'Recipe',
         title: 'Recipe calculation and saving',
-        text: 'Planned work starts before data processing: calculate a recipe once, save it, and reuse ratios, target amounts, and addition order.'
+        text: 'Recipe work starts before data processing: calculate a recipe once, save it, and reuse ratios, target amounts, and addition order.'
       },
       {
         icon: 'file',
@@ -332,13 +332,13 @@ const copy = {
         icon: 'chart',
         label: 'Result',
         title: 'Processed results written back',
-        text: 'Processed curves, key metrics, and conclusions are planned to flow back into the experiment record for later review.'
+        text: 'Processed curves, key metrics, and conclusions will flow back into the experiment record for later review.'
       },
       {
         icon: 'history',
         label: 'Search',
         title: 'History lookup',
-        text: 'The roadmap calls for searching past recipes, conditions, samples, results, and their original data across projects.'
+        text: 'Search past recipes, conditions, samples, results, and their original data across projects.'
       },
       {
         icon: 'server',
@@ -355,23 +355,23 @@ const copy = {
     roadmapCta: 'View the roadmap'
   },
   zh: {
-    badge: '科研工作流工作台',
+    badge: '实验流程工作台',
     version: '最新版本',
     heroTitle: 'Nebula Lab',
-    heroAccent: '先把样品、流程和结果串起来，再走向实验记录。',
-    heroLead: 'Nebula Lab 是面向实验工作的桌面工作台。当前从成组仪器文件和可复用处理流程开始，后续会继续扩展配方、实验记录、可检索数据库、插件和共享资源。',
+    heroAccent: '当前先串起样品、流程和结果，实验记录在下一步规划中。',
+    heroLead: 'Nebula Lab 是面向实验工作的桌面工作台。当前支持成组仪器文件、可复用处理流程、Origin 导出、插件和社区资源。配方、实验记录和可检索数据库在规划中。',
     primaryCta: '下载 Windows 版',
     secondaryCta: '阅读用户手册',
-    proof: ['成组样品', '流程复用', '配方规划', '记录规划', '插件生态'],
-    heroPanelTitle: '工作台层级',
+    proof: ['成组样品', '流程复用', '配方（规划中）', '记录（规划中）', '插件生态'],
+    heroPanelTitle: '能力一览',
     heroPanelLead: '先从数据处理入手，再逐步延伸到完整实验工作流。',
     heroHighlights: [
       { icon: 'import', title: '导入文件', text: '把仪器表格整理成样品组。' },
       { icon: 'workflow', title: '处理分组', text: '先调一个，再复用到整组。' },
-      { icon: 'export', title: '导出结果', text: '生成数据、图片、工程文件和 Origin 对接文件。' },
+      { icon: 'export', title: '导出结果', text: '输出数据、图片、工程文件，并可导出到 Origin。' },
       { icon: 'plugin', title: '扩展工具', text: '接入插件、主题和社区资源。' },
-      { icon: 'formula', title: '规划配方', text: '为后续的配方计算和保存做好准备。', status: '规划中' },
-      { icon: 'database', title: '建立记录库', text: '走向可检索的实验历史。', status: '规划中' }
+      { icon: 'formula', title: '规划配方', text: '规划配方计算和保存功能。', status: '规划中' },
+      { icon: 'database', title: '建立记录库', text: '规划可检索的实验历史。', status: '规划中' }
     ],
     featureKicker: '核心能力',
     featureTitle: '从导入到导出，按真实流程推进。',
@@ -386,7 +386,7 @@ const copy = {
         icon: 'workflow',
         tint: 'blue',
         title: '复用处理流程',
-        text: '保存当前分组的处理步骤、参数、轴映射和绘图默认设置，后续可套用到结构匹配的数据。'
+        text: '保存当前分组的处理步骤、参数、轴映射和绘图默认设置，后续可套用到相似数据。'
       },
       {
         icon: 'batch',
@@ -414,8 +414,8 @@ const copy = {
       }
     ],
     howKicker: '工作方式',
-    howTitle: '从原始测试文件到可复用结果。',
-    howLead: 'Nebula Lab 把导入设置、处理步骤、样品分组、导出内容和未来实验记录整合到同一个工作流中，而不是散落在不同文件中。',
+    howTitle: '从仪器原始数据到可复用结果。',
+    howLead: 'Nebula Lab 把导入设置、处理步骤、样品分组和导出内容放在同一条流程里，实验记录会在后续接入。',
     inputLabel: '输入',
     coreLabel: 'Nebula Lab',
     coreRole: '工作流工作台',
@@ -437,7 +437,7 @@ const copy = {
       { icon: 'chart', text: 'PNG / JPG / SVG 图片' },
       { icon: 'package', text: 'Nebula 工程文件' }
     ],
-    advantagesKicker: '不同之处',
+    advantagesKicker: '核心优势',
     advantagesTitle: '面向需要重复处理的实验数据。',
     advantages: [
       {
@@ -457,13 +457,13 @@ const copy = {
       },
       {
         icon: 'community',
-        title: '共享资产可复用',
+        title: '社区资源可复用',
         text: '社区资源覆盖工作流、Origin 绘图模板、Origin 主题和科研脚本，并保留便于检索的元数据。'
       }
     ],
     screenshotsKicker: '产品截图',
-    screenshotsTitle: '围绕重复工作组织真实界面。',
-    screenshotBullets: ['先整理数据分组。', '在真实样品上预览处理步骤。', '把选中的样品组导出到 Origin。', '安装插件并浏览社区资源。'],
+    screenshotsTitle: '为重复工作而设计的真实界面。',
+    screenshotBullets: ['先整理数据分组。', '在真实样品上预览处理步骤。', '把选中的样品组导出到 Origin，支持选择模板和主题。', '安装插件并浏览社区资源。'],
     roadmapKicker: '未来规划',
     roadmapTitle: '下一步不是多做几个按钮，而是把一次实验串起来。',
     roadmap: [
@@ -471,7 +471,7 @@ const copy = {
         icon: 'formula',
         label: '配方',
         title: '配方计算与保存',
-        text: '规划从数据处理之前开始：先计算配方、保存配方，再复用比例、目标量和添加顺序。'
+        text: '配方计算在数据处理之前进行：算好配方、保存下来，后续直接复用比例、目标量和添加顺序。'
       },
       {
         icon: 'file',
@@ -495,7 +495,7 @@ const copy = {
         icon: 'history',
         label: '检索',
         title: '历史实验检索',
-        text: '后续要能检索配方的使用次数、特定条件下的样品结果，以及对应原始数据的位置。'
+        text: '支持检索配方使用次数、特定条件下的样品结果，以及原始数据的位置。'
       },
       {
         icon: 'server',

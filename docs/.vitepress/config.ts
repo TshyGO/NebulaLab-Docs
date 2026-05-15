@@ -29,7 +29,7 @@ const appVersion = await fetchLatestReleaseTag()
 export default defineConfig({
   lang: 'en-US',
   title: 'Nebula Lab',
-  description: 'A desktop workspace for experimental samples, workflows, records, exports, plugins, and shared lab resources',
+  description: 'A desktop workspace for experimental data: import, process, and export in reusable workflows.',
   base: '/NebulaLab-Docs/',
   cleanUrls: true,
   lastUpdated: true,
@@ -48,7 +48,7 @@ export default defineConfig({
         {
           text: '用户手册',
           items: [
-            { text: '开始之前', link: '/manual/' },
+            { text: '入门指南', link: '/manual/' },
             { text: '核心概念', link: '/manual/concepts' },
             { text: '数据准备', link: '/manual/data-preparation' },
             { text: '数据处理流程', link: '/manual/workflow' },
@@ -67,7 +67,7 @@ export default defineConfig({
       ],
       '/roadmap/': [
         {
-          text: 'Roadmap',
+          text: '路线图',
           items: [
             { text: '长期方向', link: '/roadmap/' }
           ]
