@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import { nextTick, onMounted, onUnmounted, ref, watch } from 'vue'
-import { useData, withBase } from 'vitepress'
 import { useNebulaPreferences, type NebulaLanguage } from '../composables/preferences'
 
-const { isDark } = useData()
-const { language, setLanguage, initPreferences, labels, nav, searchTranslations } = useNebulaPreferences()
+const { language, setLanguage, initPreferences, labels, searchTranslations } = useNebulaPreferences()
 const languageMenu = ref<HTMLDetailsElement | null>(null)
 const languageOptions: Array<{ code: NebulaLanguage; short: string; label: string }> = [
   { code: 'en', short: 'EN', label: 'English' },
@@ -23,23 +21,11 @@ onUnmounted(() => {
 
 watch(language, () => nextTick(applySearchButtonLabel), { immediate: true })
 
-function toggleTheme() {
-  isDark.value = !isDark.value
-}
-
 function chooseLanguage(nextLanguage: NebulaLanguage) {
   setLanguage(nextLanguage)
   if (languageMenu.value) {
     languageMenu.value.open = false
   }
-}
-
-function resolveLink(link: string) {
-  return link.startsWith('http') ? link : withBase(link)
-}
-
-function isExternal(link: string) {
-  return link.startsWith('http')
 }
 
 function applySearchButtonLabel() {
@@ -67,40 +53,6 @@ function closeLanguageMenuOnOutsideClick(event: MouseEvent) {
 
 <template>
   <div class="NebulaNavControls" aria-label="Display preferences">
-    <nav class="nebula-nav-menu" aria-label="Main navigation">
-      <a
-        v-for="item in nav"
-        :key="item.text"
-        :href="resolveLink(item.link)"
-        :target="isExternal(item.link) ? '_blank' : undefined"
-        :rel="isExternal(item.link) ? 'noreferrer' : undefined"
-      >
-        {{ item.text }}
-        <span v-if="isExternal(item.link)" aria-hidden="true">↗</span>
-      </a>
-    </nav>
-    <button
-      type="button"
-      class="nebula-theme-button"
-      :aria-label="isDark ? labels.light : labels.dark"
-      :title="isDark ? labels.light : labels.dark"
-      @click="toggleTheme"
-    >
-      <svg v-if="!isDark" viewBox="0 0 24 24" aria-hidden="true">
-        <circle cx="12" cy="12" r="4" />
-        <path d="M12 2v2" />
-        <path d="M12 20v2" />
-        <path d="m4.93 4.93 1.41 1.41" />
-        <path d="m17.66 17.66 1.41 1.41" />
-        <path d="M2 12h2" />
-        <path d="M20 12h2" />
-        <path d="m6.34 17.66-1.41 1.41" />
-        <path d="m19.07 4.93-1.41 1.41" />
-      </svg>
-      <svg v-else viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M20 14.7A8.5 8.5 0 0 1 9.3 4a7 7 0 1 0 10.7 10.7Z" />
-      </svg>
-    </button>
     <details ref="languageMenu" class="nebula-language-menu">
       <summary :aria-label="labels.language">
         <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -136,38 +88,9 @@ function closeLanguageMenuOnOutsideClick(event: MouseEvent) {
   align-items: center;
   gap: 8px;
   margin-left: 12px;
-  order: 3;
   pointer-events: auto;
 }
 
-.nebula-nav-menu {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  margin-right: 8px;
-}
-
-.nebula-nav-menu a {
-  color: var(--vp-c-text-1);
-  font-size: 14px;
-  font-weight: 600;
-  line-height: var(--vp-nav-height);
-  text-decoration: none;
-  transition: color 180ms ease;
-}
-
-.nebula-nav-menu a:hover {
-  color: var(--vp-c-brand-1);
-  text-decoration: none;
-}
-
-.nebula-nav-menu span {
-  margin-left: 3px;
-  color: var(--vp-c-text-3);
-  font-size: 11px;
-}
-
-.nebula-theme-button,
 .nebula-language-menu summary {
   display: inline-flex;
   height: 34px;
@@ -183,11 +106,6 @@ function closeLanguageMenuOnOutsideClick(event: MouseEvent) {
   transition: background 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease;
 }
 
-.nebula-theme-button {
-  width: 34px;
-}
-
-.nebula-theme-button svg,
 .nebula-language-menu svg {
   width: 17px;
   height: 17px;
@@ -198,7 +116,6 @@ function closeLanguageMenuOnOutsideClick(event: MouseEvent) {
   stroke-width: 2;
 }
 
-.nebula-theme-button:hover,
 .nebula-language-menu[open] summary,
 .nebula-language-menu summary:hover {
   border-color: rgba(249, 115, 22, 0.28);
@@ -280,39 +197,9 @@ function closeLanguageMenuOnOutsideClick(event: MouseEvent) {
   box-shadow: 0 18px 48px rgba(0, 0, 0, 0.38);
 }
 
-:global(.VPNavBar .content-body > .appearance),
-:global(.VPNavBarMenu),
-:global(.VPNavBarExtra .item.appearance),
-:global(.VPNavScreenMenu),
-:global(.VPNavScreenAppearance) {
-  display: none !important;
-}
-
-:global(.VPNavBar .social-links) {
-  order: 4;
-}
-
-:global(.VPNavBar .extra) {
-  order: 5;
-}
-
-:global(.VPNavBar .hamburger) {
-  order: 6;
-}
-
 @media (min-width: 768px) {
   .NebulaNavControls {
     display: flex;
-  }
-}
-
-@media (max-width: 900px) {
-  .nebula-nav-menu {
-    gap: 14px;
-  }
-
-  .nebula-nav-menu a {
-    font-size: 13px;
   }
 }
 </style>
