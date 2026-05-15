@@ -1,667 +1,1771 @@
 <script setup>
-import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { computed, h, onMounted, onUnmounted, ref } from 'vue'
 import { useData, withBase } from 'vitepress'
+import { useNebulaPreferences } from '../composables/preferences'
 
 const releaseUrl = 'https://github.com/TshyGO/NebulaLab-Releases/releases/latest'
 
-const { theme } = useData()
-const appVersion = computed(() => (theme.value).appVersion || '')
-const kickerText = computed(() =>
-  appVersion.value ? `Windows 桌面端 · ${appVersion.value}` : 'Windows 桌面端'
-)
-const windowTitle = computed(() =>
-  appVersion.value ? `Nebula Lab · ${appVersion.value}` : 'Nebula Lab'
-)
+const { theme, isDark } = useData()
+const appVersion = computed(() => theme.value.appVersion || '')
+const { language: selectedLanguage, initPreferences } = useNebulaPreferences()
 
-const slides = [
+const iconShapes = {
+  import: [
+    { type: 'path', d: 'M4 14v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4' },
+    { type: 'path', d: 'M12 3v11' },
+    { type: 'path', d: 'm7 9 5 5 5-5' },
+    { type: 'path', d: 'M6 4h12' }
+  ],
+  workflow: [
+    { type: 'circle', cx: '6', cy: '6', r: '3' },
+    { type: 'circle', cx: '18', cy: '6', r: '3' },
+    { type: 'circle', cx: '12', cy: '18', r: '3' },
+    { type: 'path', d: 'M8.6 7.6 11 10a3.4 3.4 0 0 1 1 2.4V15' },
+    { type: 'path', d: 'M15.4 7.6 13 10a3.4 3.4 0 0 0-1 2.4V15' }
+  ],
+  batch: [
+    { type: 'path', d: 'm12 3 8 4.5-8 4.5-8-4.5Z' },
+    { type: 'path', d: 'm4 12 8 4.5 8-4.5' },
+    { type: 'path', d: 'm4 16.5 8 4.5 8-4.5' }
+  ],
+  export: [
+    { type: 'path', d: 'M4 19V5a2 2 0 0 1 2-2h7' },
+    { type: 'path', d: 'M14 3h6v6' },
+    { type: 'path', d: 'm11 12 9-9' },
+    { type: 'path', d: 'M7 15h3l2-3 3 4 2-2' }
+  ],
+  plugin: [
+    { type: 'path', d: 'M8 3h8v5h2a3 3 0 1 1 0 6h-2v7H8v-7H6a3 3 0 1 1 0-6h2Z' },
+    { type: 'path', d: 'M10 8h4' }
+  ],
+  community: [
+    { type: 'path', d: 'M16 20v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2' },
+    { type: 'circle', cx: '10', cy: '7', r: '4' },
+    { type: 'path', d: 'M20 20v-2.2a3.2 3.2 0 0 0-2.4-3.1' },
+    { type: 'path', d: 'M16.5 3.4a4 4 0 0 1 0 7.2' }
+  ],
+  sample: [
+    { type: 'path', d: 'M5 4h14v5H5Z' },
+    { type: 'path', d: 'M7 9v11' },
+    { type: 'path', d: 'M17 9v11' },
+    { type: 'path', d: 'M4 20h16' },
+    { type: 'path', d: 'M9 13h6' }
+  ],
+  history: [
+    { type: 'path', d: 'M3 12a9 9 0 1 0 3-6.7' },
+    { type: 'path', d: 'M3 4v5h5' },
+    { type: 'path', d: 'M12 7v5l3 2' }
+  ],
+  origin: [
+    { type: 'path', d: 'M12 21a9 9 0 1 0-9-9' },
+    { type: 'path', d: 'M3 12h6' },
+    { type: 'path', d: 'M12 3v6' },
+    { type: 'path', d: 'M15 12h6' },
+    { type: 'path', d: 'M12 15v6' }
+  ],
+  theme: [
+    { type: 'circle', cx: '13', cy: '12', r: '8' },
+    { type: 'path', d: 'M7.5 6.5h.01' },
+    { type: 'path', d: 'M6 12h.01' },
+    { type: 'path', d: 'M9 17h.01' },
+    { type: 'path', d: 'M14 8h.01' },
+    { type: 'path', d: 'M15 16h1a3 3 0 0 0 0-6h-1' }
+  ],
+  formula: [
+    { type: 'path', d: 'M4 5h16' },
+    { type: 'path', d: 'M7 5v14' },
+    { type: 'path', d: 'M17 5v14' },
+    { type: 'path', d: 'M4 19h16' },
+    { type: 'path', d: 'M9.5 9h5' },
+    { type: 'path', d: 'M10 13h4' }
+  ],
+  database: [
+    { type: 'ellipse', cx: '12', cy: '5', rx: '7', ry: '3' },
+    { type: 'path', d: 'M5 5v6c0 1.7 3.1 3 7 3s7-1.3 7-3V5' },
+    { type: 'path', d: 'M5 11v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6' }
+  ],
+  server: [
+    { type: 'rect', x: '4', y: '4', width: '16', height: '6', rx: '2' },
+    { type: 'rect', x: '4', y: '14', width: '16', height: '6', rx: '2' },
+    { type: 'path', d: 'M8 7h.01' },
+    { type: 'path', d: 'M8 17h.01' },
+    { type: 'path', d: 'M12 10v4' }
+  ],
+  file: [
+    { type: 'path', d: 'M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z' },
+    { type: 'path', d: 'M14 3v5h5' },
+    { type: 'path', d: 'M8 13h8' },
+    { type: 'path', d: 'M8 17h5' }
+  ],
+  chart: [
+    { type: 'path', d: 'M4 19V5' },
+    { type: 'path', d: 'M4 19h16' },
+    { type: 'path', d: 'm7 15 4-5 3 3 5-7' }
+  ],
+  package: [
+    { type: 'path', d: 'm12 3 8 4.5v9L12 21l-8-4.5v-9Z' },
+    { type: 'path', d: 'M12 12 4 7.5' },
+    { type: 'path', d: 'm12 12 8-4.5' },
+    { type: 'path', d: 'M12 12v9' }
+  ],
+  share: [
+    { type: 'circle', cx: '18', cy: '5', r: '3' },
+    { type: 'circle', cx: '6', cy: '12', r: '3' },
+    { type: 'circle', cx: '18', cy: '19', r: '3' },
+    { type: 'path', d: 'm8.6 13.5 6.8 4' },
+    { type: 'path', d: 'm15.4 6.5-6.8 4' }
+  ]
+}
+
+const IconGlyph = (props) => {
+  const shapes = iconShapes[props.name] || iconShapes.workflow
+  return h(
+    'svg',
+    { viewBox: '0 0 24 24', 'aria-hidden': 'true' },
+    shapes.map(({ type, ...attrs }) => h(type, attrs))
+  )
+}
+
+const showcaseSlides = [
   {
+    id: 'prepare',
+    icon: 'import',
     image: '/01-data.png',
-    alt: 'Nebula Lab 数据准备界面截图',
-    caption: '导入 CSV、Excel 或 TXT，按样品分组建立工作集。'
+    darkImage: '/数据-深色.png',
+    alt: 'Nebula Lab data preparation workspace',
+    label: 'Prepare',
+    title: 'Prepare instrument files before plotting.',
+    zhTitle: '先整理仪器导出的数据文件。'
   },
   {
+    id: 'process',
+    icon: 'workflow',
     image: '/02-plot.png',
-    alt: 'Nebula Lab 绘图工作台界面截图',
-    caption: '映射坐标列，叠加平滑、归一化、基线扣除等处理步骤。'
+    darkImage: '/绘图-深色.png',
+    alt: 'Nebula Lab processing and plotting workspace',
+    label: 'Process',
+    title: 'Tune one sample, then apply the workflow to its group.',
+    zhTitle: '先处理一个样品，再套用到整组。'
   },
   {
+    id: 'export',
+    icon: 'export',
     image: '/03-export.png',
-    alt: 'Nebula Lab Origin 导出界面截图',
-    caption: '预览确认后导出到 Origin，连同图形模板与主题一并交付。'
+    darkImage: '/导出-深色.png',
+    alt: 'Nebula Lab Origin export preview',
+    label: 'Export',
+    title: 'Export selected groups to Origin with templates and themes.',
+    zhTitle: '把选中的样品组连同模板和主题导出到 Origin。'
+  },
+  {
+    id: 'plugins',
+    icon: 'plugin',
+    image: '/插件.png',
+    darkImage: '/插件深色.png',
+    alt: 'Nebula Lab plugin marketplace workspace',
+    label: 'Plugins',
+    title: 'Install plugins to extend data-processing workflows.',
+    zhTitle: '安装插件，扩展数据处理流程。'
+  },
+  {
+    id: 'community',
+    icon: 'community',
+    image: '/社区.png',
+    darkImage: '/社区深色.png',
+    alt: 'Nebula Lab community resources workspace',
+    label: 'Community',
+    title: 'Browse shared workflows, Origin templates, themes, and scripts.',
+    zhTitle: '浏览共享的处理流程、Origin 模板、主题和科研脚本。'
   }
 ]
 
-const active = ref(0)
-const activeSlide = computed(() => slides[active.value] ?? slides[0])
-const isPaused = ref(false)
-const progressKey = ref(0)
-let timer
-
-function setSlide(index) {
-  if (active.value === index) return
-  active.value = index
-  startTimer()
+const copy = {
+  en: {
+    badge: 'Scientific workflow workspace',
+    version: 'Latest release',
+    heroTitle: 'Nebula Lab',
+    heroAccent: 'Connect samples, workflows, and results today; records come next.',
+    heroLead:
+      'Nebula Lab is a desktop workspace for experimental work. It starts with grouped instrument files today, and grows toward recipes, experiment records, searchable databases, plugins, and shared lab resources.',
+    primaryCta: 'Download for Windows',
+    secondaryCta: 'Read the manual',
+    proof: ['Grouped samples', 'Reusable workflows', 'Recipe roadmap', 'Record roadmap', 'Plugin ecosystem'],
+    heroPanelTitle: 'Workspace layers',
+    heroPanelLead: 'One product surface, built to grow from data handling into a broader lab workflow.',
+    heroHighlights: [
+      { icon: 'import', title: 'Import files', text: 'Bring instrument tables into sample groups.' },
+      { icon: 'workflow', title: 'Process groups', text: 'Tune once, then reuse the workflow.' },
+      { icon: 'export', title: 'Export results', text: 'Produce data, images, project files, and integration handoff.' },
+      { icon: 'plugin', title: 'Extend tools', text: 'Add plugins, themes, and community resources.' },
+      {
+        icon: 'formula',
+        title: 'Plan recipes',
+        text: 'Prepare for formula calculation and saved recipes.',
+        status: 'Planned'
+      },
+      {
+        icon: 'database',
+        title: 'Build records',
+        text: 'Move toward searchable experiment history.',
+        status: 'Planned'
+      }
+    ],
+    featureKicker: 'Core capabilities',
+    featureTitle: 'Follow the same path from import to export.',
+    features: [
+      {
+        icon: 'import',
+        tint: 'orange',
+        title: 'Import instrument files',
+        text: 'Load CSV, TXT, and Excel files, inspect parsing settings, choose sheets, and organize imported files into sample groups.'
+      },
+      {
+        icon: 'workflow',
+        tint: 'blue',
+        title: 'Build reusable workflows',
+        text: 'Record crop, smooth, baseline, normalization, derivative, and related steps so they can be saved and applied again.'
+      },
+      {
+        icon: 'batch',
+        tint: 'green',
+        title: 'Apply steps to a group',
+        text: 'Tune the workflow on a single sample, then replay the same steps from raw data across the rest of the group.'
+      },
+      {
+        icon: 'export',
+        tint: 'violet',
+        title: 'Export to Origin',
+        text: 'Send selected sample groups to Origin, with optional graph templates, Origin themes, and image output settings.'
+      },
+      {
+        icon: 'plugin',
+        tint: 'amber',
+        title: 'Extend with plugins',
+        text: 'Install official or community plugins from the plugin store to add analysis, export, visualization, and workflow tools.'
+      },
+      {
+        icon: 'community',
+        tint: 'pink',
+        title: 'Share through the community',
+        text: 'Publish and browse workflows, Origin graph templates, Origin themes, and research scripts shared by other users.'
+      }
+    ],
+    howKicker: 'How it works',
+    howTitle: 'From raw measurements to reusable results.',
+    howLead:
+      'Nebula Lab keeps import settings, processing steps, sample groups, exports, and future experiment records in one workflow instead of scattering them across files.',
+    inputLabel: 'Inputs',
+    coreLabel: 'Nebula Lab',
+    coreRole: 'Workflow workspace',
+    flowSteps: [
+      { icon: 'chart', text: 'Import and map data' },
+      { icon: 'workflow', text: 'Apply workflow' },
+      { icon: 'package', text: 'Export or save results' }
+    ],
+    inputs: [
+      { icon: 'file', text: 'Instrument files' },
+      { icon: 'chart', text: 'Measurement curves' },
+      { icon: 'sample', text: 'Grouped samples' },
+      { icon: 'package', text: 'Nebula project files' }
+    ],
+    outputLabel: 'Outputs',
+    outputs: [
+      { icon: 'origin', text: 'Origin workbook and graph' },
+      { icon: 'file', text: 'CSV exports' },
+      { icon: 'chart', text: 'PNG / JPG / SVG images' },
+      { icon: 'package', text: 'Nebula project files' }
+    ],
+    advantagesKicker: 'Why it is different',
+    advantagesTitle: 'Designed for repeated experimental work.',
+    advantages: [
+      {
+        icon: 'sample',
+        title: 'Sample groups are the working unit',
+        text: 'Imported files can stay together as one group or be split into separate groups, so related measurements are handled consistently.'
+      },
+      {
+        icon: 'history',
+        title: 'Processing steps stay visible',
+        text: 'Pipeline steps and workflow execution records show what happened before export, which makes repeat work easier to check.'
+      },
+      {
+        icon: 'origin',
+        title: 'Origin remains part of the stack',
+        text: 'Nebula Lab prepares the grouped data, template choice, theme choice, and style settings before sending the result to Origin.'
+      },
+      {
+        icon: 'community',
+        title: 'Shared assets stay reusable',
+        text: 'Community resources include workflows, Origin graph templates, Origin themes, and scripts, with metadata that helps others find them.'
+      }
+    ],
+    screenshotsKicker: 'Product views',
+    screenshotsTitle: 'Real screens, organized around the work you repeat.',
+    screenshotBullets: [
+      'Organize data groups before processing.',
+      'Preview each operation on actual samples.',
+      'Export selected groups to Origin with template and theme options.',
+      'Install plugins and browse shared community assets.'
+    ],
+    roadmapKicker: 'Roadmap',
+    roadmapTitle: "The next step isn't more buttons; it is connecting each experiment end to end.",
+    roadmap: [
+      {
+        icon: 'formula',
+        label: 'Recipe',
+        title: 'Recipe calculation and saving',
+        text: 'Planned work starts before data processing: calculate a recipe once, save it, and reuse ratios, target amounts, and addition order.'
+      },
+      {
+        icon: 'file',
+        label: 'Record',
+        title: 'Experiment records',
+        text: 'Each experiment should link back to a recipe and sample group, with conditions, operations, and outputs recorded together.'
+      },
+      {
+        icon: 'database',
+        label: 'Archive',
+        title: 'Raw data attached to experiments',
+        text: 'Imported instrument files will attach to the related experiment instead of living as disconnected project files.'
+      },
+      {
+        icon: 'chart',
+        label: 'Result',
+        title: 'Processed results written back',
+        text: 'Processed curves, key metrics, and conclusions are planned to flow back into the experiment record for later review.'
+      },
+      {
+        icon: 'history',
+        label: 'Search',
+        title: 'History lookup',
+        text: 'The roadmap calls for searching past recipes, conditions, samples, results, and their original data across projects.'
+      },
+      {
+        icon: 'server',
+        label: 'Team',
+        title: 'Self-hosted lab server',
+        text: 'Today, sharing uses cloud community organizations. Longer term, lab-owned servers can manage accounts, permissions, records, file indexes, sharing, and backups.'
+      }
+    ],
+    finalKicker: 'Start here',
+    finalTitle: 'Prepare one sample group, then reuse the workflow.',
+    finalLead:
+      'Start with a small dataset, check the import settings, apply a few processing steps, then export the selected group or save it as a reusable project.',
+    tutorialCta: 'Open the first tutorial',
+    roadmapCta: 'View the roadmap'
+  },
+  zh: {
+    badge: '科研工作流工作台',
+    version: '最新版本',
+    heroTitle: 'Nebula Lab',
+    heroAccent: '先把样品、流程和结果串起来，再走向实验记录。',
+    heroLead: 'Nebula Lab 是面向实验工作的桌面工作台。当前从成组仪器文件和可复用处理流程开始，后续会继续扩展配方、实验记录、可检索数据库、插件和共享资源。',
+    primaryCta: '下载 Windows 版',
+    secondaryCta: '阅读用户手册',
+    proof: ['成组样品', '流程复用', '配方规划', '记录规划', '插件生态'],
+    heroPanelTitle: '工作台层级',
+    heroPanelLead: '先从数据处理入手，再逐步延伸到完整实验工作流。',
+    heroHighlights: [
+      { icon: 'import', title: '导入文件', text: '把仪器表格整理成样品组。' },
+      { icon: 'workflow', title: '处理分组', text: '先调一个，再复用到整组。' },
+      { icon: 'export', title: '导出结果', text: '生成数据、图片、工程文件和 Origin 对接文件。' },
+      { icon: 'plugin', title: '扩展工具', text: '接入插件、主题和社区资源。' },
+      { icon: 'formula', title: '规划配方', text: '为后续的配方计算和保存做好准备。', status: '规划中' },
+      { icon: 'database', title: '建立记录库', text: '走向可检索的实验历史。', status: '规划中' }
+    ],
+    featureKicker: '核心能力',
+    featureTitle: '从导入到导出，按真实流程推进。',
+    features: [
+      {
+        icon: 'import',
+        tint: 'orange',
+        title: '导入仪器文件',
+        text: '读取 CSV、TXT 和 Excel 文件，检查解析设置，选择工作表，并把导入文件整理成样品组。'
+      },
+      {
+        icon: 'workflow',
+        tint: 'blue',
+        title: '复用处理流程',
+        text: '记录裁剪、平滑、基线、归一化、求导等步骤，保存后可再次套用。'
+      },
+      {
+        icon: 'batch',
+        tint: 'green',
+        title: '应用到整组',
+        text: '先在单个样品上调好流程，确认后从原始数据把同一套步骤重放到整组。'
+      },
+      {
+        icon: 'export',
+        tint: 'violet',
+        title: '导出到 Origin',
+        text: '把选中的样品组发送到 Origin，并可选择图形模板、Origin 主题和图片导出设置。'
+      },
+      {
+        icon: 'plugin',
+        tint: 'amber',
+        title: '插件扩展',
+        text: '从插件商店安装官方或社区插件，扩展分析、导出、可视化和工作区工具。'
+      },
+      {
+        icon: 'community',
+        tint: 'pink',
+        title: '社区共享',
+        text: '发布和浏览工作流、Origin 绘图模板、Origin 主题和科研脚本。'
+      }
+    ],
+    howKicker: '工作方式',
+    howTitle: '从原始测试文件到可复用结果。',
+    howLead: 'Nebula Lab 把导入设置、处理步骤、样品分组、导出内容和未来实验记录整合到同一个工作流中，而不是散落在不同文件中。',
+    inputLabel: '输入',
+    coreLabel: 'Nebula Lab',
+    coreRole: '工作流工作台',
+    flowSteps: [
+      { icon: 'chart', text: '导入并映射数据' },
+      { icon: 'workflow', text: '应用处理流程' },
+      { icon: 'package', text: '导出或保存结果' }
+    ],
+    inputs: [
+      { icon: 'file', text: '仪器文件' },
+      { icon: 'chart', text: '测试曲线' },
+      { icon: 'sample', text: '成组样品' },
+      { icon: 'package', text: 'Nebula 工程文件' }
+    ],
+    outputLabel: '输出',
+    outputs: [
+      { icon: 'origin', text: 'Origin 工作簿与图形' },
+      { icon: 'file', text: 'CSV 导出' },
+      { icon: 'chart', text: 'PNG / JPG / SVG 图片' },
+      { icon: 'package', text: 'Nebula 工程文件' }
+    ],
+    advantagesKicker: '不同之处',
+    advantagesTitle: '面向需要重复处理的实验数据。',
+    advantages: [
+      {
+        icon: 'sample',
+        title: '以样品组为单位',
+        text: '导入时可以把文件合并成一组，也可以拆成多个分组，便于统一处理相关样品。'
+      },
+      {
+        icon: 'history',
+        title: '处理步骤可追踪',
+        text: '处理流水线和执行记录会保留导出前的操作，便于复用和检查。'
+      },
+      {
+        icon: 'origin',
+        title: '继续配合 Origin',
+        text: '在发送到 Origin 前准备好分组数据、模板、主题和样式设置。'
+      },
+      {
+        icon: 'community',
+        title: '共享资产可复用',
+        text: '社区资源覆盖工作流、Origin 绘图模板、Origin 主题和科研脚本，并保留便于检索的元数据。'
+      }
+    ],
+    screenshotsKicker: '产品截图',
+    screenshotsTitle: '围绕重复工作组织真实界面。',
+    screenshotBullets: ['先整理数据分组。', '在真实样品上预览处理步骤。', '把选中的样品组导出到 Origin。', '安装插件并浏览社区资源。'],
+    roadmapKicker: '未来规划',
+    roadmapTitle: '下一步不是多做几个按钮，而是把一次实验串起来。',
+    roadmap: [
+      {
+        icon: 'formula',
+        label: '配方',
+        title: '配方计算与保存',
+        text: '规划从数据处理之前开始：先计算配方、保存配方，再复用比例、目标量和添加顺序。'
+      },
+      {
+        icon: 'file',
+        label: '记录',
+        title: '实验记录',
+        text: '每次实验绑定到一个配方和一组样品，记录条件、操作过程和产物信息。'
+      },
+      {
+        icon: 'database',
+        label: '归档',
+        title: '原始数据接入实验',
+        text: '现有数据处理能力继续保留；接入实验记录后，原始文件会关联到对应的实验记录。'
+      },
+      {
+        icon: 'chart',
+        label: '结果',
+        title: '处理结果回流',
+        text: '处理后的曲线、关键指标和结论写回实验记录，方便以后复查。'
+      },
+      {
+        icon: 'history',
+        label: '检索',
+        title: '历史实验检索',
+        text: '后续要能检索配方的使用次数、特定条件下的样品结果，以及对应原始数据的位置。'
+      },
+      {
+        icon: 'server',
+        label: '课题组',
+        title: '课题组自有服务器',
+        text: '现阶段共享通过云端社区组织完成；更远期由课题组自有服务器管理账号、权限、实验记录、文件索引、共享和备份。'
+      }
+    ],
+    finalKicker: '开始使用',
+    finalTitle: '先处理一个样品组，再复用这套流程。',
+    finalLead: '从小数据集开始，检查导入设置，套用几个处理步骤，再导出选中的样品组或保存为可复用工程。',
+    tutorialCta: '打开基础教程',
+    roadmapCta: '查看路线图'
+  }
 }
 
-function startTimer() {
-  window.clearInterval(timer)
-  isPaused.value = false
-  progressKey.value += 1
-  timer = window.setInterval(() => {
-    active.value = (active.value + 1) % slides.length
-    progressKey.value += 1
-  }, 5200)
+const t = computed(() => copy[selectedLanguage.value])
+const releaseText = computed(() =>
+  appVersion.value ? `${t.value.version} ${appVersion.value}` : t.value.version
+)
+const showcaseActive = ref(0)
+const reduceMotion = ref(false)
+let showcaseTimer
+let revealObserver
+
+function getShowcasePosition(index) {
+  const last = showcaseSlides.length - 1
+  const previous = showcaseActive.value === 0 ? last : showcaseActive.value - 1
+  const next = showcaseActive.value === last ? 0 : showcaseActive.value + 1
+
+  if (index === showcaseActive.value) return 'active'
+  if (index === previous) return 'previous'
+  if (index === next) return 'next'
+  return 'hidden'
 }
 
-function stopTimer() {
-  window.clearInterval(timer)
-  isPaused.value = true
+function stopShowcase() {
+  window.clearInterval(showcaseTimer)
 }
 
-onMounted(startTimer)
-onUnmounted(stopTimer)
+function startShowcase() {
+  stopShowcase()
+  if (reduceMotion.value) return
+  showcaseTimer = window.setInterval(() => {
+    showcaseActive.value = (showcaseActive.value + 1) % showcaseSlides.length
+  }, 4600)
+}
+
+function selectShowcase(index) {
+  if (index === showcaseActive.value) return
+  showcaseActive.value = index
+  startShowcase()
+}
+
+function moveShowcase(direction) {
+  const next = showcaseActive.value + direction
+  showcaseActive.value = (next + showcaseSlides.length) % showcaseSlides.length
+  startShowcase()
+}
+
+function resolveSlideImage(slide) {
+  return isDark.value && slide.darkImage ? slide.darkImage : slide.image
+}
+
+function setupRevealAnimations() {
+  const elements = Array.from(
+    document.querySelectorAll(
+      '.nl-card, .nl-flow-map, .nl-advantage-list, .nl-showcase-carousel, .nl-roadmap-card, .nl-final'
+    )
+  )
+
+  if (!elements.length) return
+
+  elements.forEach((element) => element.classList.add('nl-reveal'))
+
+  if (reduceMotion.value || !('IntersectionObserver' in window)) {
+    elements.forEach((element) => element.classList.add('is-visible'))
+    return
+  }
+
+  revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return
+        entry.target.classList.add('is-visible')
+        observer.unobserve(entry.target)
+      })
+    },
+    {
+      rootMargin: '0px 0px -12% 0px',
+      threshold: 0.16
+    }
+  )
+
+  elements.forEach((element) => revealObserver.observe(element))
+}
+
+onMounted(() => {
+  initPreferences()
+  reduceMotion.value = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  startShowcase()
+  setupRevealAnimations()
+})
+
+onUnmounted(() => {
+  stopShowcase()
+  revealObserver?.disconnect()
+})
 </script>
 
 <template>
   <main class="nl-home">
     <section class="nl-hero">
-      <div class="nl-hero-copy">
-        <p class="nl-kicker">{{ kickerText }}</p>
-        <h1>Nebula Lab</h1>
-        <p class="nl-lead">
-          成组实验数据的预处理工作台。一条样品调好流程，整组一起跑完，再交给 Origin。
-        </p>
-        <div class="nl-actions" aria-label="主要操作">
-          <a class="nl-btn nl-btn-primary" :href="releaseUrl" target="_blank" rel="noreferrer">下载 Nebula Lab</a>
-          <a class="nl-btn nl-btn-secondary" :href="withBase('/manual/')">阅读用户手册</a>
+      <div class="nl-hero-inner">
+        <p class="nl-hero-kicker">{{ t.badge }}</p>
+        <h1>{{ t.heroTitle }}</h1>
+        <p class="nl-hero-accent">{{ t.heroAccent }}</p>
+        <p class="nl-lead">{{ t.heroLead }}</p>
+        <div class="nl-actions" aria-label="Primary actions">
+          <a class="nl-btn nl-btn-primary" :href="releaseUrl" target="_blank" rel="noreferrer">
+            {{ t.primaryCta }}
+          </a>
+          <a class="nl-btn nl-btn-secondary" :href="withBase('/manual/')">
+            {{ t.secondaryCta }}
+          </a>
         </div>
-        <div class="nl-proof-row" aria-label="当前能力">
-          <span>CSV / TXT / Excel</span>
-          <span>处理流程复用</span>
-          <span>Origin 模板</span>
-          <span>社区资源</span>
+        <div class="nl-proof-row" aria-label="Product capabilities">
+          <span v-for="item in t.proof" :key="item">{{ item }}</span>
         </div>
+        <p class="nl-release-line">{{ releaseText }}</p>
       </div>
 
-      <div class="nl-product" @mouseenter="stopTimer" @mouseleave="startTimer">
-        <div class="nl-tabs" :class="{ paused: isPaused }" aria-label="产品流程截图">
-          <button class="nl-tab" :class="{ active: active === 0 }" type="button" @click="setSlide(0)">
-            <span>01</span>
-            数据准备
-            <i v-if="active === 0" :key="`progress-${progressKey}-0`" aria-hidden="true"></i>
-          </button>
-          <button class="nl-tab" :class="{ active: active === 1 }" type="button" @click="setSlide(1)">
-            <span>02</span>
-            绘图工作台
-            <i v-if="active === 1" :key="`progress-${progressKey}-1`" aria-hidden="true"></i>
-          </button>
-          <button class="nl-tab" :class="{ active: active === 2 }" type="button" @click="setSlide(2)">
-            <span>03</span>
-            导出
-            <i v-if="active === 2" :key="`progress-${progressKey}-2`" aria-hidden="true"></i>
-          </button>
+      <div class="nl-hero-panel" aria-label="Nebula Lab workspace layers">
+        <div class="nl-hero-panel-head">
+          <span>{{ t.heroPanelTitle }}</span>
+          <p>{{ t.heroPanelLead }}</p>
         </div>
-        <div class="nl-window">
-          <div class="nl-window-bar">
-            <span class="nl-dot red"></span>
-            <span class="nl-dot yellow"></span>
-            <span class="nl-dot green"></span>
-            <span class="nl-window-title">{{ windowTitle }}</span>
+        <div class="nl-hero-panel-grid">
+          <article v-for="item in t.heroHighlights" :key="item.title">
+            <i aria-hidden="true"><IconGlyph :name="item.icon" /></i>
+            <strong>
+              {{ item.title }}
+              <em v-if="item.status">{{ item.status }}</em>
+            </strong>
+            <span>{{ item.text }}</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="nl-section nl-features" aria-labelledby="features-title">
+      <div class="nl-section-heading">
+        <p>{{ t.featureKicker }}</p>
+        <h2 id="features-title">{{ t.featureTitle }}</h2>
+      </div>
+      <div class="nl-feature-grid">
+        <article v-for="item in t.features" :key="item.title" class="nl-card">
+          <span class="nl-icon" :class="`nl-${item.tint}`" aria-hidden="true">
+            <IconGlyph :name="item.icon" />
+          </span>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.text }}</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="nl-section nl-how" aria-labelledby="how-title">
+      <div class="nl-section-heading">
+        <p>{{ t.howKicker }}</p>
+        <h2 id="how-title">{{ t.howTitle }}</h2>
+        <span>{{ t.howLead }}</span>
+      </div>
+      <div class="nl-flow-map">
+        <div class="nl-flow-column">
+          <strong>{{ t.inputLabel }}</strong>
+          <span v-for="item in t.inputs" :key="item.text" class="nl-flow-chip">
+            <i aria-hidden="true"><IconGlyph :name="item.icon" /></i>
+            <b>{{ item.text }}</b>
+          </span>
+        </div>
+
+        <div class="nl-flow-engine">
+          <div class="nl-flow-engine-head">
+            <b>{{ t.coreLabel }}</b>
+            <span>{{ t.coreRole }}</span>
           </div>
-          <div class="nl-screen">
-            <Transition name="nl-fade" mode="out-in">
-              <img :key="activeSlide.image" :src="withBase(activeSlide.image)" :alt="activeSlide.alt">
-            </Transition>
+          <ol>
+            <li v-for="item in t.flowSteps" :key="item.text">
+              <span aria-hidden="true"><IconGlyph :name="item.icon" /></span>
+              <strong>{{ item.text }}</strong>
+            </li>
+          </ol>
+        </div>
+
+        <div class="nl-flow-column">
+          <strong>{{ t.outputLabel }}</strong>
+          <span v-for="item in t.outputs" :key="item.text" class="nl-flow-chip">
+            <i aria-hidden="true"><IconGlyph :name="item.icon" /></i>
+            <b>{{ item.text }}</b>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <section class="nl-section nl-advantages" aria-labelledby="advantages-title">
+      <div class="nl-section-heading">
+        <p>{{ t.advantagesKicker }}</p>
+        <h2 id="advantages-title">{{ t.advantagesTitle }}</h2>
+      </div>
+      <div class="nl-advantage-list">
+        <article v-for="item in t.advantages" :key="item.title">
+          <span class="nl-advantage-icon" aria-hidden="true"><IconGlyph :name="item.icon" /></span>
+          <div>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.text }}</p>
           </div>
-        </div>
-        <p class="nl-caption">{{ activeSlide.caption }}</p>
+        </article>
       </div>
     </section>
 
-    <section class="nl-section nl-workflow" aria-labelledby="workflow-title">
-      <div>
-        <p class="nl-section-label">工作方式</p>
-        <h2 id="workflow-title">先整理，再作图。</h2>
+    <section class="nl-section nl-showcase" aria-labelledby="screens-title">
+      <div class="nl-section-heading">
+        <p>{{ t.screenshotsKicker }}</p>
+        <h2 id="screens-title">{{ t.screenshotsTitle }}</h2>
+        <ul>
+          <li v-for="item in t.screenshotBullets" :key="item">{{ item }}</li>
+        </ul>
       </div>
-      <div class="nl-flow">
-        <a :href="withBase('/manual/workflow')" class="nl-flow-item">
-          <span>01</span>
-          <strong>导入仪器文件</strong>
-          <p>读入 CSV、TXT、Excel，确认表头、坐标列与样品分组。</p>
-        </a>
-        <a :href="withBase('/tutorials/basic-processing')" class="nl-flow-item">
-          <span>02</span>
-          <strong>先调一条样品</strong>
-          <p>在一条样品上试好裁剪、平滑、归一化、基线扣除，确认曲线没问题。</p>
-        </a>
-        <a :href="withBase('/manual/concepts')" class="nl-flow-item">
-          <span>03</span>
-          <strong>批量套用到整组</strong>
-          <p>把这条样品的处理流程套到同组其它样品上，避免重复点击。</p>
-        </a>
-        <a :href="withBase('/manual/concepts')" class="nl-flow-item">
-          <span>04</span>
-          <strong>交付到 Origin</strong>
-          <p>导出组级数据，连同图形模板与主题一并交给 Origin 作图。</p>
-        </a>
-      </div>
-    </section>
-
-    <section class="nl-section nl-community" aria-labelledby="community-title">
-      <div>
-        <p class="nl-section-label">社区资源</p>
-        <h2 id="community-title">别人调好的流程、模板和脚本，直接拿来就用。</h2>
-      </div>
-      <div class="nl-resource-grid">
-        <a :href="withBase('/manual/community')" class="nl-resource-item">
-          <span>Workflow</span>
-          <strong>数据处理流程</strong>
-          <p>把常用处理步骤打包成 Workflow，下载即可在自己的数据上重放。</p>
-        </a>
-        <a :href="withBase('/manual/community')" class="nl-resource-item">
-          <span>Origin</span>
-          <strong>绘图模板与主题</strong>
-          <p>直接套用他人沉淀的 Origin 图形模板与外观主题。</p>
-        </a>
-        <a :href="withBase('/manual/community')" class="nl-resource-item">
-          <span>Script</span>
-          <strong>科研脚本</strong>
-          <p>汇总 ImageJ、MATLAB、Python 等自动化脚本，按学科和软件分类查找。</p>
-        </a>
-      </div>
-    </section>
-
-    <section class="nl-section nl-audience" aria-labelledby="audience-title">
-      <div>
-        <p class="nl-section-label">适合场景</p>
-        <h2 id="audience-title">从材料到化学、生物到能源——按样品分组的数据都能处理。</h2>
-      </div>
-      <div class="nl-audience-grid">
-        <div>
-          <strong>谱图、曲线、表格数据</strong>
-          <p>XRD、Raman、XPS、TGA、DSC、FTIR 等表征曲线，或任何按样品分组的测试结果。</p>
+      <div class="nl-showcase-carousel" aria-label="Product screenshot carousel" @mouseenter="stopShowcase" @mouseleave="startShowcase">
+        <button class="nl-showcase-arrow previous" type="button" aria-label="Previous screenshot" @click="moveShowcase(-1)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+        </button>
+        <div class="nl-showcase-stage">
+          <article
+            v-for="(slide, index) in showcaseSlides"
+            :key="slide.id"
+            :class="getShowcasePosition(index)"
+            :role="index === showcaseActive ? undefined : 'button'"
+            :tabindex="getShowcasePosition(index) === 'hidden' || index === showcaseActive ? -1 : 0"
+            :aria-current="index === showcaseActive ? 'true' : undefined"
+            :aria-hidden="getShowcasePosition(index) === 'hidden' ? 'true' : undefined"
+            :aria-label="selectedLanguage === 'zh' ? slide.zhTitle : slide.title"
+            @click="selectShowcase(index)"
+            @keydown.enter.prevent="selectShowcase(index)"
+            @keydown.space.prevent="selectShowcase(index)"
+          >
+            <img
+              :key="`${slide.id}-${isDark ? 'dark' : 'light'}`"
+              :src="withBase(resolveSlideImage(slide))"
+              :alt="slide.alt"
+              width="2559"
+              height="1379"
+              decoding="async"
+              :loading="index === showcaseActive ? 'eager' : 'lazy'"
+            >
+            <div>
+              <span class="nl-showcase-icon" aria-hidden="true"><IconGlyph :name="slide.icon" /></span>
+              <strong>{{ selectedLanguage === 'zh' ? slide.zhTitle : slide.title }}</strong>
+            </div>
+          </article>
         </div>
-        <div>
-          <strong>同类样品批量处理</strong>
-          <p>一组样品、一套处理、一次完成。先在一条上验证，再批量复用。</p>
-        </div>
-        <div>
-          <strong>进入 Origin 前的整理</strong>
-          <p>在 Nebula Lab 里把数据结构和处理步骤固定下来，Origin 只负责最后的排版。</p>
+        <button class="nl-showcase-arrow next" type="button" aria-label="Next screenshot" @click="moveShowcase(1)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+        </button>
+        <div class="nl-showcase-dots" aria-label="Choose screenshot">
+          <button
+            v-for="(slide, index) in showcaseSlides"
+            :key="`${slide.id}-dot`"
+            type="button"
+            :class="{ active: index === showcaseActive }"
+            :aria-label="selectedLanguage === 'zh' ? slide.zhTitle : slide.title"
+            @click="selectShowcase(index)"
+          ></button>
         </div>
       </div>
     </section>
 
     <section class="nl-section nl-roadmap" aria-labelledby="roadmap-title">
-      <div>
-        <p class="nl-section-label">接下来</p>
-        <h2 id="roadmap-title">从单次处理，长成课题组的实验库。</h2>
+      <div class="nl-section-heading">
+        <p>{{ t.roadmapKicker }}</p>
+        <h2 id="roadmap-title">{{ t.roadmapTitle }}</h2>
       </div>
-      <div class="nl-resource-grid">
-        <a :href="withBase('/roadmap/')" class="nl-resource-item">
-          <span>现在 · v0.8</span>
-          <strong>实验数据预处理</strong>
-          <p>导入、清洗、批量处理、交付 Origin，加上模板与脚本的共享。</p>
-        </a>
-        <a :href="withBase('/roadmap/')" class="nl-resource-item">
-          <span>近期</span>
-          <strong>串起一次完整实验</strong>
-          <p>把配方、样品、原始数据和处理结果连成一条记录，从结果能倒查回当初的配方。</p>
-        </a>
-        <a :href="withBase('/roadmap/')" class="nl-resource-item">
-          <span>远期</span>
-          <strong>课题组自己的实验库</strong>
-          <p>桌面端跑数据，组内服务器存账号、记录与文件，一组人多年的数据可以一起检索。</p>
+      <div class="nl-roadmap-grid">
+        <a v-for="item in t.roadmap" :key="item.title" :href="withBase('/roadmap/')" class="nl-roadmap-card">
+          <span class="nl-roadmap-icon" aria-hidden="true"><IconGlyph :name="item.icon" /></span>
+          <span class="nl-roadmap-label">{{ item.label }}</span>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.text }}</p>
         </a>
       </div>
     </section>
 
-    <section class="nl-final" aria-label="下一步">
+    <section class="nl-final" aria-label="Start using Nebula Lab">
       <div>
-        <p class="nl-section-label">下一步</p>
-        <h2>打开教程，跟着做完第一组样品。</h2>
-        <p>想先动手就跟着基础教程做一遍；想了解后续计划，再翻 Roadmap。</p>
+        <p>{{ t.finalKicker }}</p>
+        <h2>{{ t.finalTitle }}</h2>
+        <span>{{ t.finalLead }}</span>
       </div>
       <div class="nl-actions">
-        <a class="nl-btn nl-btn-primary" :href="withBase('/tutorials/basic-processing')">开始基础教程</a>
-        <a class="nl-btn nl-btn-secondary" :href="withBase('/roadmap/')">查看路线图</a>
+        <a class="nl-btn nl-btn-primary" :href="withBase('/tutorials/basic-processing')">
+          {{ t.tutorialCta }}
+        </a>
+        <a class="nl-btn nl-btn-secondary" :href="withBase('/roadmap/')">
+          {{ t.roadmapCta }}
+        </a>
       </div>
     </section>
   </main>
 </template>
 
-<style scoped>
-:global(.VPContent) {
+<style>
+.VPContent {
   padding-top: 0;
 }
 
-:global(.VPPage) {
+.VPPage {
   padding-bottom: 0;
 }
 
-:global(:root) {
-  --nl-ink: #17191f;
-  --nl-muted: #667085;
-  --nl-line: rgba(23, 25, 31, 0.1);
-  --nl-brand: #e85d2c;
-  --nl-brand-dark: #bf4519;
-  --nl-bg: #fff;
-  --nl-bg-gradient: linear-gradient(180deg, rgba(232, 93, 44, 0.08) 0, rgba(255, 255, 255, 0) 360px);
-  --nl-panel: #fff;
-  --nl-panel-hover: #fff8f5;
-  --nl-soft-panel: #f4f7fb;
-  --nl-window-bar: #eceff3;
-  --nl-window-title: #7f8794;
-  --nl-secondary-bg: rgba(255, 255, 255, 0.82);
-  --nl-secondary-hover-border: rgba(23, 25, 31, 0.24);
-  --nl-body-copy: #4b5565;
-  --nl-note: #7a8291;
-  --nl-tab-text: #697386;
-  --nl-tab-muted: #9aa3b2;
-  --nl-shadow: 0 24px 60px rgba(27, 39, 64, 0.16), 0 4px 10px rgba(27, 39, 64, 0.06);
+:root {
+  --nl-ink: #17130f;
+  --nl-muted: #6f665f;
+  --nl-subtle: #9b8f84;
+  --nl-line: rgba(88, 63, 43, 0.14);
+  --nl-brand: #f97316;
+  --nl-brand-strong: #ea580c;
+  --nl-brand-soft: #fff1e7;
+  --nl-bg: #fffaf5;
+  --nl-bg-2: #ffffff;
+  --nl-panel: rgba(255, 255, 255, 0.86);
+  --nl-panel-solid: #ffffff;
+  --nl-panel-hover: #fff7ed;
+  --nl-soft-panel: #f8efe6;
+  --nl-card-shadow: 0 8px 20px rgba(144, 80, 28, 0.04);
+  --nl-card-shadow-hover: 0 24px 56px rgba(249, 115, 22, 0.18), 0 0 0 1px rgba(249, 115, 22, 0.1);
+  --nl-flow-shadow: 0 24px 64px rgba(249, 115, 22, 0.14), 0 0 0 8px rgba(249, 115, 22, 0.04);
+  --nl-showcase-shadow: 0 14px 32px rgba(144, 80, 28, 0.09);
+  --nl-showcase-shadow-hover: 0 28px 68px rgba(249, 115, 22, 0.16), 0 0 0 1px rgba(249, 115, 22, 0.08);
+  --nl-sheen: rgba(255, 255, 255, 0.46);
+  --nl-type-xs: 12px;
+  --nl-type-sm: 14px;
+  --nl-type-base: 16px;
+  --nl-type-xl: 20px;
+  --nl-type-3xl: 30px;
+  --nl-type-4xl: 36px;
+  --nl-type-5xl: 48px;
+  --nl-type-8xl: 92px;
+}
+
+html.dark {
+  --nl-ink: #fff7ed;
+  --nl-muted: #d9c9bd;
+  --nl-subtle: #a99687;
+  --nl-line: rgba(255, 255, 255, 0.14);
+  --nl-brand: #fb923c;
+  --nl-brand-strong: #ffb86b;
+  --nl-brand-soft: rgba(251, 146, 60, 0.16);
+  --nl-bg: #101114;
+  --nl-bg-2: #17151a;
+  --nl-panel: rgba(29, 29, 34, 0.88);
+  --nl-panel-solid: #1b1b20;
+  --nl-panel-hover: #252228;
+  --nl-soft-panel: #202026;
+  --nl-card-shadow: 0 14px 28px rgba(0, 0, 0, 0.2);
+  --nl-card-shadow-hover: 0 26px 64px rgba(249, 115, 22, 0.14), 0 0 0 1px rgba(251, 146, 60, 0.14);
+  --nl-flow-shadow: 0 26px 70px rgba(0, 0, 0, 0.34), 0 0 0 8px rgba(251, 146, 60, 0.06);
+  --nl-showcase-shadow: 0 18px 42px rgba(0, 0, 0, 0.24);
+  --nl-showcase-shadow-hover: 0 30px 76px rgba(249, 115, 22, 0.14), 0 0 0 1px rgba(251, 146, 60, 0.12);
+  --nl-sheen: rgba(255, 237, 213, 0.22);
 }
 
 .nl-home {
-  color: var(--nl-ink);
-  background: var(--nl-bg-gradient), var(--nl-bg);
+  position: relative;
   margin: 0 calc(50% - 50vw);
   overflow: hidden;
+  color: var(--nl-ink);
+  background:
+    radial-gradient(circle at 50% 2%, rgba(249, 115, 22, 0.2), transparent 360px),
+    linear-gradient(180deg, var(--nl-bg) 0, var(--nl-bg-2) 46%, var(--nl-bg) 100%);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
 }
 
-:global(html.dark) {
-  --nl-ink: #f4f7fb;
-  --nl-muted: #a9b3c4;
-  --nl-line: rgba(255, 255, 255, 0.12);
-  --nl-brand: #ff7a45;
-  --nl-brand-dark: #ff9a6f;
-  --nl-bg: #0d1117;
-  --nl-bg-gradient: linear-gradient(180deg, rgba(232, 93, 44, 0.16) 0, rgba(13, 17, 23, 0) 360px);
-  --nl-panel: #111827;
-  --nl-panel-hover: #18202d;
-  --nl-soft-panel: #151d29;
-  --nl-window-bar: #1d2633;
-  --nl-window-title: #a8b2c2;
-  --nl-secondary-bg: rgba(255, 255, 255, 0.06);
-  --nl-secondary-hover-border: rgba(255, 255, 255, 0.24);
-  --nl-body-copy: #c4ccd8;
-  --nl-note: #98a2b3;
-  --nl-tab-text: #b8c2d2;
-  --nl-tab-muted: #8390a3;
-  --nl-shadow: 0 24px 70px rgba(0, 0, 0, 0.38), 0 4px 14px rgba(0, 0, 0, 0.24);
-}
-
-@media (prefers-color-scheme: dark) {
-  :global(:root) {
-    --nl-ink: #f4f7fb;
-    --nl-muted: #a9b3c4;
-    --nl-line: rgba(255, 255, 255, 0.12);
-    --nl-brand: #ff7a45;
-    --nl-brand-dark: #ff9a6f;
-    --nl-bg: #0d1117;
-    --nl-bg-gradient: linear-gradient(180deg, rgba(232, 93, 44, 0.16) 0, rgba(13, 17, 23, 0) 360px);
-    --nl-panel: #111827;
-    --nl-panel-hover: #18202d;
-    --nl-soft-panel: #151d29;
-    --nl-window-bar: #1d2633;
-    --nl-window-title: #a8b2c2;
-    --nl-secondary-bg: rgba(255, 255, 255, 0.06);
-    --nl-secondary-hover-border: rgba(255, 255, 255, 0.24);
-    --nl-body-copy: #c4ccd8;
-    --nl-note: #98a2b3;
-    --nl-tab-text: #b8c2d2;
-    --nl-tab-muted: #8390a3;
-    --nl-shadow: 0 24px 70px rgba(0, 0, 0, 0.38), 0 4px 14px rgba(0, 0, 0, 0.24);
-  }
+.nl-home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(249, 115, 22, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(249, 115, 22, 0.08) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.42), transparent 900px);
 }
 
 .nl-hero,
 .nl-section,
 .nl-final {
+  position: relative;
   width: min(1180px, calc(100vw - 48px));
   margin: 0 auto;
 }
 
 .nl-hero {
-  display: grid;
-  grid-template-columns: minmax(460px, 0.98fr) minmax(520px, 1.12fr);
-  gap: 48px;
-  align-items: center;
-  padding: 96px 0 72px;
+  padding: 86px 0 82px;
+  text-align: center;
 }
 
-.nl-hero-copy {
-  max-width: 580px;
+.nl-hero-inner {
+  max-width: 910px;
+  margin: 0 auto;
   animation: nl-rise 560ms ease-out both;
 }
 
-.nl-kicker,
-.nl-section-label {
-  margin: 0 0 12px;
-  color: var(--nl-brand-dark);
+.nl-hero-kicker,
+.nl-section-heading > p,
+.nl-final p {
+  display: inline-flex;
+  margin: 0;
+  color: var(--nl-brand-strong);
+  font-size: var(--nl-type-sm);
+  font-weight: 800;
+}
+
+.nl-hero-kicker {
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(249, 115, 22, 0.22);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.62);
+  box-shadow: 0 10px 28px rgba(249, 115, 22, 0.08);
   font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 0;
-  text-transform: none;
+  padding: 8px 13px;
+}
+
+html.dark .nl-hero-kicker {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.nl-hero-kicker::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--nl-brand);
+  box-shadow: 0 0 0 5px rgba(249, 115, 22, 0.13);
 }
 
 .nl-hero h1 {
-  margin: 0;
-  max-width: 580px;
-  font-size: clamp(48px, 7.8vw, 92px);
+  margin: 18px 0 0;
+  font-size: clamp(58px, 10vw, 86px);
   line-height: 0.98;
   font-weight: 800;
   letter-spacing: 0;
-  white-space: nowrap;
 }
 
-.nl-lead {
-  margin: 24px 0 0;
-  max-width: 500px;
-  color: var(--nl-body-copy);
-  font-size: 19px;
-  line-height: 1.7;
+.nl-hero-accent {
+  margin: 20px auto 0;
+  max-width: 780px;
+  font-size: clamp(26px, 3vw, 34px);
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.nl-lead,
+.nl-section-heading > span,
+.nl-final span {
+  margin: 22px auto 0;
+  max-width: 720px;
+  color: var(--nl-muted);
+  font-size: 18px;
+  line-height: 1.65;
 }
 
 .nl-actions {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
+  justify-content: center;
+  gap: 14px;
   margin-top: 32px;
 }
 
 .nl-btn {
   display: inline-flex;
-  min-height: 44px;
+  min-height: 46px;
   align-items: center;
   justify-content: center;
   border-radius: 999px;
-  padding: 0 22px;
   font-size: 15px;
-  font-weight: 650;
+  font-weight: 800;
+  padding: 0 22px;
   text-decoration: none;
-  white-space: nowrap;
-  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
 }
 
 .nl-btn:hover {
-  transform: translateY(-1px);
+  transform: translateY(-2px);
   text-decoration: none;
 }
 
 .nl-btn-primary {
   background: var(--nl-brand);
+  box-shadow: 0 16px 34px rgba(249, 115, 22, 0.26);
   color: #fff;
-  box-shadow: 0 12px 28px rgba(232, 93, 44, 0.22);
 }
 
 .nl-btn-primary:hover {
   color: #fff;
-  background: var(--nl-brand-dark);
 }
 
 .nl-btn-secondary {
   border: 1px solid var(--nl-line);
+  background: rgba(255, 255, 255, 0.76);
   color: var(--nl-ink);
-  background: var(--nl-secondary-bg);
 }
 
-.nl-btn-secondary:hover {
-  color: var(--nl-ink);
-  border-color: var(--nl-secondary-hover-border);
-}
-
-.nl-note {
-  margin: 18px 0 0;
-  color: var(--nl-note);
-  font-size: 13px;
+html.dark .nl-btn-secondary {
+  background: rgba(29, 29, 34, 0.9);
 }
 
 .nl-proof-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 18px;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
 }
 
 .nl-proof-row span {
   border: 1px solid var(--nl-line);
   border-radius: 999px;
-  background: var(--nl-secondary-bg);
+  background: rgba(255, 255, 255, 0.68);
   color: var(--nl-muted);
-  font-size: 12px;
-  font-weight: 650;
-  line-height: 1;
-  padding: 9px 12px;
-}
-
-.nl-product {
-  min-width: 0;
-  animation: nl-rise 680ms 90ms ease-out both;
-}
-
-.nl-tabs {
-  display: flex;
-  justify-content: center;
-  gap: 6px;
-  margin-bottom: 16px;
-}
-
-.nl-tab {
-  border: 1px solid transparent;
-  border-radius: 999px;
-  background: transparent;
-  color: var(--nl-tab-text);
-  cursor: pointer;
-  font: inherit;
   font-size: 13px;
-  font-weight: 650;
-  padding: 9px 16px;
-  overflow: hidden;
-  position: relative;
-  white-space: nowrap;
-  transition: background 180ms ease, border-color 180ms ease, color 180ms ease;
+  font-weight: 700;
+  padding: 8px 12px;
 }
 
-.nl-tab span {
-  margin-right: 6px;
-  color: var(--nl-tab-muted);
-  font-size: 11px;
+html.dark .nl-proof-row span {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.nl-release-line {
+  margin: 18px 0 0;
+  color: var(--nl-subtle);
+  font-size: 13px;
+}
+
+.nl-hero-panel {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  max-width: 860px;
+  margin: 54px auto 0;
+  border: 1px solid rgba(249, 115, 22, 0.2);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(249, 115, 22, 0.16), transparent 58%),
+    var(--nl-panel);
+  box-shadow: var(--nl-flow-shadow);
+  text-align: left;
+  animation: nl-rise 680ms 120ms ease-out both;
+}
+
+.nl-hero-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(249, 115, 22, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(249, 115, 22, 0.08) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: radial-gradient(circle at 50% 20%, rgba(0, 0, 0, 0.7), transparent 68%);
+}
+
+.nl-hero-panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+.nl-hero-panel-head {
+  display: grid;
+  gap: 8px;
+  border-bottom: 1px solid var(--nl-line);
+  padding: 22px 24px;
+}
+
+.nl-hero-panel-head span {
+  color: var(--nl-brand-strong);
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.nl-hero-panel-head p {
+  margin: 0;
+  color: var(--nl-muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.nl-hero-panel-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--nl-line);
+}
+
+.nl-hero-panel-grid article {
+  display: grid;
+  gap: 9px;
+  background: var(--nl-panel);
+  padding: 20px;
+}
+
+.nl-hero-panel-grid i {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border-radius: 11px;
+  background: var(--nl-brand-soft);
+  color: var(--nl-brand-strong);
+}
+
+.nl-hero-panel-grid svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.9;
+}
+
+.nl-hero-panel-grid strong {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  color: var(--nl-ink);
+  font-size: 16px;
+  line-height: 1.35;
   font-weight: 800;
 }
 
-.nl-tab:hover,
-.nl-tab.active {
-  background: var(--nl-panel);
-  border-color: var(--nl-line);
-  color: var(--nl-ink);
-  box-shadow: 0 1px 4px rgba(23, 25, 31, 0.08);
-}
-
-.nl-tab.active span {
-  color: var(--nl-brand);
-}
-
-.nl-tab i {
-  position: absolute;
-  right: 12px;
-  bottom: 0;
-  left: 12px;
-  height: 2px;
+.nl-hero-panel-grid em {
+  display: inline-flex;
+  border: 1px solid rgba(249, 115, 22, 0.26);
   border-radius: 999px;
-  background: var(--nl-brand);
-  transform: scaleX(0);
-  transform-origin: left center;
-  animation: nl-tab-progress 5200ms linear forwards;
-}
-
-.nl-tabs.paused .nl-tab i {
-  animation-play-state: paused;
-}
-
-.nl-window {
-  border: 1px solid var(--nl-line);
-  border-radius: 14px;
-  overflow: hidden;
-  background: var(--nl-soft-panel);
-  box-shadow: var(--nl-shadow);
-}
-
-.nl-window-bar {
-  height: 34px;
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  padding: 0 13px;
-  background: var(--nl-window-bar);
-  border-bottom: 1px solid var(--nl-line);
-}
-
-.nl-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-}
-
-.nl-dot.red { background: #ff5f57; }
-.nl-dot.yellow { background: #febc2e; }
-.nl-dot.green { background: #28c840; }
-
-.nl-window-title {
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--nl-window-title);
+  background: rgba(249, 115, 22, 0.1);
+  color: var(--nl-brand-strong);
   font-size: 11px;
-  font-weight: 650;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1;
+  padding: 4px 7px;
 }
 
-.nl-screen {
-  aspect-ratio: 2559 / 1379;
-  background: var(--nl-soft-panel);
-  overflow: hidden;
-}
-
-.nl-screen img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top left;
-}
-
-.nl-fade-enter-active,
-.nl-fade-leave-active {
-  transition: opacity 280ms ease, transform 280ms ease;
-}
-
-.nl-fade-enter-from {
-  opacity: 0;
-  transform: translateY(4px);
-}
-
-.nl-fade-leave-to {
-  opacity: 0;
-  transform: translateY(-4px);
-}
-
-.nl-caption {
-  min-height: 24px;
-  margin: 16px auto 0;
-  max-width: 620px;
+.nl-hero-panel-grid span {
   color: var(--nl-muted);
   font-size: 14px;
-  line-height: 1.7;
-  text-align: center;
+  line-height: 1.55;
 }
 
 .nl-section {
-  display: grid;
-  grid-template-columns: 0.72fr 1.28fr;
-  gap: 56px;
-  padding: 86px 0;
+  padding: 88px 0;
   border-top: 1px solid var(--nl-line);
 }
 
-.nl-section h2,
+.nl-section-heading {
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.nl-section-heading h2,
 .nl-final h2 {
   margin: 0;
-  max-width: 560px;
-  font-size: clamp(30px, 4vw, 48px);
-  line-height: 1.12;
-  font-weight: 760;
+  font-size: clamp(30px, 2.65vw, 42px);
+  line-height: 1.18;
+  font-weight: 800;
   letter-spacing: 0;
 }
 
-.nl-flow,
-.nl-resource-grid,
-.nl-audience-grid {
+.nl-section-heading ul {
   display: grid;
-  gap: 1px;
-  background: var(--nl-line);
-  border: 1px solid var(--nl-line);
-  border-radius: 14px;
+  justify-content: center;
+  margin: 22px auto 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nl-section-heading li {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  color: var(--nl-muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.nl-section-heading li::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  flex: 0 0 auto;
+  margin-top: 10px;
+  border-radius: 50%;
+  background: var(--nl-brand);
+}
+
+.nl-feature-grid,
+.nl-roadmap-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 42px;
+}
+
+.nl-card,
+.nl-roadmap-card {
+  position: relative;
   overflow: hidden;
-}
-
-.nl-flow {
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.nl-flow-item,
-.nl-resource-item,
-.nl-audience-grid div {
+  isolation: isolate;
+  min-height: 230px;
+  border: 1px solid var(--nl-line);
+  border-radius: 18px;
   background: var(--nl-panel);
-  padding: 26px;
-}
-
-.nl-flow-item,
-.nl-resource-item {
+  box-shadow: var(--nl-card-shadow);
   color: var(--nl-ink);
+  padding: 26px;
   text-decoration: none;
-  transition: background 180ms ease;
+  transition: transform 200ms ease, border-color 200ms ease, background 200ms ease, box-shadow 200ms ease;
 }
 
-.nl-flow-item:hover,
-.nl-resource-item:hover {
+.nl-reveal {
+  opacity: 0;
+  transform: translateY(26px);
+}
+
+.nl-reveal.is-visible {
+  animation: nl-section-rise 620ms ease-out both;
+}
+
+.nl-card.nl-reveal:nth-child(2),
+.nl-roadmap-card.nl-reveal:nth-child(2),
+.nl-showcase-carousel.nl-reveal {
+  animation-delay: 70ms;
+}
+
+.nl-card.nl-reveal:nth-child(3),
+.nl-roadmap-card.nl-reveal:nth-child(3) {
+  animation-delay: 120ms;
+}
+
+.nl-card.nl-reveal:nth-child(4),
+.nl-roadmap-card.nl-reveal:nth-child(4) {
+  animation-delay: 170ms;
+}
+
+.nl-card.nl-reveal:nth-child(5),
+.nl-roadmap-card.nl-reveal:nth-child(5) {
+  animation-delay: 220ms;
+}
+
+.nl-card.nl-reveal:nth-child(6),
+.nl-roadmap-card.nl-reveal:nth-child(6) {
+  animation-delay: 270ms;
+}
+
+.nl-card:hover,
+.nl-roadmap-card:hover {
+  border-color: rgba(249, 115, 22, 0.58);
   background: var(--nl-panel-hover);
+  box-shadow: var(--nl-card-shadow-hover);
+  transform: translateY(-6px);
   text-decoration: none;
 }
 
-.nl-flow-item span,
-.nl-resource-item span {
-  color: var(--nl-brand);
+.nl-card > *,
+.nl-roadmap-card > *,
+.nl-flow-chip > *,
+.nl-advantage-list article > *,
+.nl-showcase-stage article > * {
+  position: relative;
+  z-index: 1;
+}
+
+.nl-card::before,
+.nl-roadmap-card::before,
+.nl-flow-chip::before,
+.nl-advantage-list article::before,
+.nl-showcase-stage article::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: 0;
+  border-radius: inherit;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(255, 255, 255, 0.8), transparent 30%),
+    radial-gradient(circle at 50% 0%, rgba(249, 115, 22, 0.34), transparent 38%),
+    linear-gradient(135deg, rgba(249, 115, 22, 0.2), transparent 52%);
+  opacity: 0;
+  transition: opacity 220ms ease;
+}
+
+html.dark .nl-card::before,
+html.dark .nl-roadmap-card::before,
+html.dark .nl-flow-chip::before,
+html.dark .nl-advantage-list article::before,
+html.dark .nl-showcase-stage article::before {
+  background:
+    radial-gradient(circle at 18% 0%, rgba(255, 237, 213, 0.2), transparent 30%),
+    radial-gradient(circle at 50% 0%, rgba(251, 146, 60, 0.22), transparent 38%),
+    linear-gradient(135deg, rgba(251, 146, 60, 0.16), transparent 52%);
+}
+
+.nl-card::after,
+.nl-roadmap-card::after,
+.nl-flow-chip::after,
+.nl-advantage-list article::after,
+.nl-showcase-stage article::after {
+  content: "";
+  position: absolute;
+  top: -35%;
+  bottom: -35%;
+  left: -70%;
+  z-index: 0;
+  width: 44%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, transparent, var(--nl-sheen), transparent);
+  opacity: 0;
+  transform: rotate(16deg) translateX(0);
+  transition: opacity 220ms ease, transform 520ms ease;
+}
+
+.nl-card:hover::before,
+.nl-roadmap-card:hover::before,
+.nl-flow-chip:hover::before,
+.nl-advantage-list article:hover::before,
+.nl-showcase-stage article:hover::before {
+  opacity: 1;
+}
+
+.nl-card:hover::after,
+.nl-roadmap-card:hover::after,
+.nl-flow-chip:hover::after,
+.nl-advantage-list article:hover::after,
+.nl-showcase-stage article:hover::after {
+  opacity: 1;
+  transform: rotate(16deg) translateX(360%);
+}
+
+.nl-icon,
+.nl-roadmap-icon,
+.nl-advantage-icon,
+.nl-showcase-icon {
+  display: inline-grid;
+  place-items: center;
+  border-radius: 14px;
+  background: var(--nl-brand-soft);
+  color: var(--nl-brand-strong);
+}
+
+.nl-icon {
+  width: 54px;
+  height: 54px;
+}
+
+.nl-roadmap-icon,
+.nl-advantage-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.nl-showcase-icon {
+  width: 42px;
+  height: 42px;
+}
+
+.nl-icon svg,
+.nl-roadmap-icon svg,
+.nl-advantage-icon svg,
+.nl-showcase-icon svg,
+.nl-flow-chip svg,
+.nl-flow-engine svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.9;
+}
+
+.nl-orange { background: rgba(249, 115, 22, 0.14); color: #ea580c; }
+.nl-blue { background: rgba(37, 99, 235, 0.12); color: #2563eb; }
+.nl-green { background: rgba(22, 163, 74, 0.12); color: #16a34a; }
+.nl-violet { background: rgba(124, 58, 237, 0.12); color: #7c3aed; }
+.nl-amber { background: rgba(217, 119, 6, 0.14); color: #d97706; }
+.nl-pink { background: rgba(219, 39, 119, 0.12); color: #db2777; }
+
+.nl-card h3,
+.nl-roadmap-card h3,
+.nl-advantage-list h3 {
+  margin: 22px 0 0;
+  font-size: 20px;
+  line-height: 1.38;
+  font-weight: 800;
+}
+
+.nl-card p,
+.nl-roadmap-card p,
+.nl-advantage-list p {
+  margin: 12px 0 0;
+  color: var(--nl-muted);
+  font-size: 16px;
+  line-height: 1.62;
+}
+
+.nl-flow-map {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) minmax(260px, 320px) minmax(180px, 1fr);
+  align-items: center;
+  gap: 32px;
+  min-height: 460px;
+  margin-top: 48px;
+}
+
+.nl-flow-column {
+  display: grid;
+  gap: 14px;
+}
+
+.nl-flow-column strong {
+  color: var(--nl-brand-strong);
   font-size: 12px;
   font-weight: 800;
 }
 
-.nl-flow-item strong,
-.nl-resource-item strong,
-.nl-audience-grid strong {
+.nl-flow-chip {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: 38px 1fr;
+  align-items: center;
+  gap: 14px;
+  border: 1px solid var(--nl-line);
+  border-radius: 15px;
+  background: var(--nl-panel);
+  box-shadow: var(--nl-card-shadow);
+  color: var(--nl-ink);
+  font-size: 16px;
+  font-weight: 700;
+  padding: 18px;
+  transition: transform 200ms ease, border-color 200ms ease, background 200ms ease, box-shadow 200ms ease;
+}
+
+.nl-flow-chip:hover {
+  border-color: rgba(249, 115, 22, 0.5);
+  background: var(--nl-panel-hover);
+  box-shadow: var(--nl-card-shadow-hover);
+  transform: translateX(4px) translateY(-2px);
+}
+
+.nl-flow-chip i,
+.nl-flow-engine li span {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border-radius: 11px;
+  background: var(--nl-brand-soft);
+  color: var(--nl-brand-strong);
+}
+
+.nl-flow-engine {
+  position: relative;
+  border: 1px solid rgba(249, 115, 22, 0.32);
+  border-radius: 22px;
+  background:
+    linear-gradient(180deg, rgba(255, 247, 237, 0.96), rgba(255, 255, 255, 0.94)),
+    radial-gradient(circle at 50% 0%, rgba(249, 115, 22, 0.18), transparent 55%);
+  box-shadow: var(--nl-flow-shadow);
+  color: var(--nl-ink);
+  padding: 18px;
+}
+
+html.dark .nl-flow-engine {
+  background:
+    linear-gradient(180deg, rgba(35, 34, 40, 0.96), rgba(25, 25, 30, 0.94)),
+    radial-gradient(circle at 50% 0%, rgba(249, 115, 22, 0.18), transparent 55%);
+}
+
+.nl-flow-engine-head {
+  border: 1px solid rgba(249, 115, 22, 0.22);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.74);
+  padding: 16px;
+}
+
+html.dark .nl-flow-engine-head {
+  border-color: rgba(251, 146, 60, 0.24);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.nl-flow-engine-head b {
   display: block;
-  margin-top: 12px;
-  font-size: 17px;
-  font-weight: 730;
+  font-size: 20px;
 }
 
-.nl-flow-item p,
-.nl-resource-item p,
-.nl-audience-grid p,
-.nl-final p {
-  margin: 10px 0 0;
-  color: var(--nl-muted);
-  font-size: 14px;
-  line-height: 1.75;
+.nl-flow-engine-head span {
+  display: block;
+  margin-top: 4px;
+  color: var(--nl-brand-strong);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
-.nl-resource-grid {
-  grid-template-columns: repeat(3, 1fr);
+.nl-flow-engine ol {
+  display: grid;
+  gap: 10px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
 }
 
-.nl-audience-grid {
-  grid-template-columns: 1fr;
+.nl-flow-engine li {
+  display: grid;
+  grid-template-columns: 38px 1fr;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--nl-line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.82);
+  padding: 12px;
 }
 
-.nl-audience-grid strong {
+html.dark .nl-flow-engine li {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.nl-advantage-list {
+  display: grid;
+  gap: 1px;
+  overflow: hidden;
+  margin-top: 42px;
+  border: 1px solid var(--nl-line);
+  border-radius: 18px;
+  background: var(--nl-line);
+}
+
+.nl-advantage-list article {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: 58px 1fr;
+  gap: 22px;
+  background: var(--nl-panel);
+  padding: 26px;
+  transition: background 200ms ease, box-shadow 200ms ease, transform 200ms ease;
+}
+
+.nl-advantage-list article:hover {
+  background: var(--nl-panel-hover);
+  box-shadow: inset 4px 0 0 var(--nl-brand), 0 18px 40px rgba(249, 115, 22, 0.1);
+  transform: translateX(4px);
+}
+
+.nl-advantage-list h3 {
   margin-top: 0;
+}
+
+.nl-showcase-carousel {
+  position: relative;
+  width: 100%;
+  margin-top: 42px;
+  overflow: hidden;
+  padding: 10px 74px 54px;
+}
+
+.nl-showcase-stage {
+  position: relative;
+  height: clamp(430px, 50vw, 690px);
+  margin: 0 auto;
+}
+
+.nl-showcase-stage article {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(960px, 74vw);
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid var(--nl-line);
+  border-radius: 18px;
+  background: var(--nl-panel-solid);
+  box-shadow: var(--nl-showcase-shadow);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-50%) scale(0.78);
+  transition: opacity 420ms ease, transform 520ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.nl-showcase-stage article.active {
+  z-index: 3;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) scale(1);
+}
+
+.nl-showcase-stage article.previous {
+  z-index: 2;
+  opacity: 0.44;
+  pointer-events: auto;
+  transform: translateX(-96%) scale(0.82);
+  cursor: pointer;
+}
+
+.nl-showcase-stage article.next {
+  z-index: 2;
+  opacity: 0.44;
+  pointer-events: auto;
+  transform: translateX(-4%) scale(0.82);
+  cursor: pointer;
+}
+
+.nl-showcase-stage article.hidden {
+  transform: translateX(-50%) scale(0.72);
+}
+
+.nl-showcase-stage article:hover {
+  border-color: rgba(249, 115, 22, 0.5);
+  box-shadow: var(--nl-showcase-shadow-hover);
+}
+
+.nl-showcase-stage article.active:hover {
+  transform: translateX(-50%) translateY(-5px) scale(1);
+}
+
+.nl-showcase-stage article.previous:hover {
+  transform: translateX(-96%) translateY(-4px) scale(0.82);
+}
+
+.nl-showcase-stage article.next:hover {
+  transform: translateX(-4%) translateY(-4px) scale(0.82);
+}
+
+.nl-showcase-stage article:hover img {
+  transform: scale(1.02);
+}
+
+.nl-showcase-stage article:focus-visible {
+  outline: 3px solid rgba(249, 115, 22, 0.48);
+  outline-offset: 4px;
+}
+
+.nl-showcase-stage img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2559 / 1379;
+  background: var(--nl-soft-panel);
+  object-fit: contain;
+  object-position: top left;
+  transform-origin: center top;
+  transition: transform 360ms ease;
+}
+
+.nl-showcase-stage article > div {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 18px 20px;
+}
+
+.nl-showcase-stage strong {
+  color: var(--nl-ink);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.nl-showcase-arrow {
+  position: absolute;
+  top: calc(50% - 32px);
+  z-index: 5;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid var(--nl-line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: var(--nl-card-shadow);
+  color: var(--nl-brand-strong);
+  cursor: pointer;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+}
+
+html.dark .nl-showcase-arrow {
+  background: rgba(29, 29, 34, 0.92);
+}
+
+.nl-showcase-arrow.previous {
+  left: 10px;
+}
+
+.nl-showcase-arrow.next {
+  right: 10px;
+}
+
+.nl-showcase-arrow:hover {
+  border-color: rgba(249, 115, 22, 0.5);
+  background: var(--nl-panel-hover);
+  box-shadow: var(--nl-card-shadow-hover);
+  transform: translateY(-2px);
+}
+
+.nl-showcase-arrow svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.4;
+}
+
+.nl-showcase-dots {
+  position: absolute;
+  right: 74px;
+  bottom: 12px;
+  left: 74px;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+}
+
+.nl-showcase-dots button {
+  width: 8px;
+  height: 8px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(249, 115, 22, 0.28);
+  cursor: pointer;
+  padding: 0;
+  transition: width 220ms ease, background 220ms ease, transform 220ms ease;
+}
+
+.nl-showcase-dots button.active {
+  width: 34px;
+  background: var(--nl-brand);
+}
+
+.nl-showcase-dots button:hover {
+  transform: translateY(-1px);
+}
+
+.nl-roadmap-label {
+  display: block;
+  margin-top: 18px;
+  color: var(--nl-brand-strong);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
 .nl-final {
@@ -669,18 +1773,23 @@ onUnmounted(stopTimer)
   align-items: flex-end;
   justify-content: space-between;
   gap: 48px;
-  padding: 76px 0 96px;
+  padding: 84px 0 104px;
   border-top: 1px solid var(--nl-line);
+}
+
+.nl-final > div:first-child {
+  max-width: 720px;
 }
 
 .nl-final .nl-actions {
   flex: 0 0 auto;
+  margin-top: 0;
 }
 
 @keyframes nl-rise {
   from {
     opacity: 0;
-    transform: translateY(18px);
+    transform: translateY(24px);
   }
   to {
     opacity: 1;
@@ -688,51 +1797,43 @@ onUnmounted(stopTimer)
   }
 }
 
-@keyframes nl-tab-progress {
+@keyframes nl-section-rise {
   from {
-    transform: scaleX(0);
+    opacity: 0;
+    transform: translateY(26px);
   }
   to {
-    transform: scaleX(1);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (max-width: 1120px) {
-  .nl-hero {
-    grid-template-columns: 1fr;
-    padding-top: 48px;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    scroll-behavior: auto !important;
+    transition-duration: 1ms !important;
   }
+}
 
-  .nl-hero-copy {
-    max-width: 760px;
-  }
-
-  .nl-lead {
-    max-width: 760px;
-  }
-
-  .nl-section,
+@media (max-width: 1080px) {
   .nl-final {
-    grid-template-columns: 1fr;
     display: block;
   }
 
-  .nl-flow,
-  .nl-resource-grid {
-    grid-template-columns: 1fr;
-    margin-top: 32px;
-  }
-
-  .nl-audience-grid {
-    margin-top: 32px;
-  }
-
   .nl-final .nl-actions {
-    margin-top: 30px;
+    margin-top: 28px;
+  }
+
+  .nl-feature-grid,
+  .nl-roadmap-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 820px) {
   .nl-hero,
   .nl-section,
   .nl-final {
@@ -740,45 +1841,112 @@ onUnmounted(stopTimer)
   }
 
   .nl-hero {
-    gap: 34px;
-    padding: 36px 0 58px;
+    padding: 54px 0 70px;
   }
 
   .nl-hero h1 {
-    font-size: clamp(42px, 12vw, 46px);
+    font-size: clamp(48px, 15vw, 64px);
   }
 
-  .nl-lead {
-    font-size: 16px;
+  .nl-hero-accent {
+    font-size: clamp(24px, 7vw, 32px);
   }
 
-  .nl-actions,
-  .nl-tabs {
+  .nl-flow-map {
+    grid-template-columns: 1fr;
+  }
+
+  .nl-flow-map {
+    min-height: 0;
+  }
+
+  .nl-flow-engine {
+    width: min(100%, 340px);
+    margin: 12px auto;
+  }
+
+  .nl-showcase-carousel {
+    padding: 8px 0 46px;
+  }
+
+  .nl-showcase-stage {
+    height: clamp(300px, 88vw, 470px);
+  }
+
+  .nl-showcase-stage article {
+    width: min(100%, 520px);
+  }
+
+  .nl-showcase-stage article.previous,
+  .nl-showcase-stage article.next {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-50%) scale(0.86);
+  }
+
+  .nl-showcase-arrow {
+    top: auto;
+    bottom: 0;
+    width: 38px;
+    height: 38px;
+  }
+
+  .nl-showcase-arrow.previous {
+    left: calc(50% - 86px);
+  }
+
+  .nl-showcase-arrow.next {
+    right: calc(50% - 86px);
+  }
+
+  .nl-showcase-dots {
+    right: 64px;
+    bottom: 14px;
+    left: 64px;
+  }
+
+  .nl-section {
+    padding: 68px 0;
+  }
+
+  .nl-final {
+    padding: 70px 0 84px;
+  }
+}
+
+@media (max-width: 640px) {
+  .nl-feature-grid,
+  .nl-roadmap-grid,
+  .nl-hero-panel-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .nl-actions {
     align-items: stretch;
     flex-direction: column;
   }
 
-  .nl-btn,
-  .nl-tab {
+  .nl-btn {
     width: 100%;
   }
 
-  .nl-window {
-    border-radius: 10px;
+  .nl-hero-panel {
+    margin-top: 34px;
+    border-radius: 18px;
   }
 
-  .nl-caption {
-    text-align: left;
+  .nl-hero-panel-grid article,
+  .nl-card,
+  .nl-roadmap-card,
+  .nl-advantage-list article {
+    padding: 22px;
   }
 
-  .nl-section,
-  .nl-final {
-    padding: 60px 0;
-  }
-
-  .nl-section h2,
-  .nl-final h2 {
-    font-size: 31px;
+  .nl-advantage-list article {
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
 }
 </style>

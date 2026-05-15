@@ -27,20 +27,21 @@ async function fetchLatestReleaseTag(): Promise<string> {
 const appVersion = await fetchLatestReleaseTag()
 
 export default defineConfig({
-  lang: 'zh-CN',
+  lang: 'en-US',
   title: 'Nebula Lab',
-  description: '面向科研数据预处理、批处理执行与 Origin 交接的 Windows 桌面工作站',
+  description: 'A desktop workspace for experimental samples, workflows, records, exports, plugins, and shared lab resources',
   base: '/NebulaLab-Docs/',
   cleanUrls: true,
   lastUpdated: true,
+  appearance: 'dark',
   themeConfig: {
     appVersion,
     logo: '/logo.png',
     nav: [
-      { text: '用户手册', link: '/manual/' },
-      { text: '教程', link: '/tutorials/' },
+      { text: 'Manual', link: '/manual/' },
+      { text: 'Tutorials', link: '/tutorials/' },
       { text: 'Roadmap', link: '/roadmap/' },
-      { text: '下载', link: 'https://github.com/TshyGO/NebulaLab-Releases/releases/latest' }
+      { text: 'Download', link: 'https://github.com/TshyGO/NebulaLab-Releases/releases/latest' }
     ],
     sidebar: {
       '/manual/': [
@@ -81,22 +82,22 @@ export default defineConfig({
       options: {
         translations: {
           button: {
-            buttonText: '搜索',
-            buttonAriaLabel: '搜索文档'
+            buttonText: 'Search',
+            buttonAriaLabel: 'Search docs'
           },
           modal: {
-            displayDetails: '显示详情',
-            resetButtonTitle: '清除搜索',
-            backButtonTitle: '关闭搜索',
-            noResultsText: '没有找到结果',
+            displayDetails: 'Display details',
+            resetButtonTitle: 'Clear search',
+            backButtonTitle: 'Close search',
+            noResultsText: 'No results found',
             footer: {
-              selectText: '选择',
-              selectKeyAriaLabel: '回车键',
-              navigateText: '切换',
-              navigateUpKeyAriaLabel: '上箭头',
-              navigateDownKeyAriaLabel: '下箭头',
-              closeText: '关闭',
-              closeKeyAriaLabel: 'Esc'
+              selectText: 'Select',
+              selectKeyAriaLabel: 'Enter',
+              navigateText: 'Navigate',
+              navigateUpKeyAriaLabel: 'Up arrow',
+              navigateDownKeyAriaLabel: 'Down arrow',
+              closeText: 'Close',
+              closeKeyAriaLabel: 'Escape'
             }
           }
         }
