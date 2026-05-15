@@ -223,7 +223,7 @@ const copy = {
         icon: 'workflow',
         tint: 'blue',
         title: 'Build reusable workflows',
-        text: 'Record crop, smooth, baseline, normalization, derivative, and related steps so they can be saved and applied again.'
+        text: 'Save the current group’s recorded steps, parameters, axis mapping, and plot defaults so a matching dataset can reuse the flow.'
       },
       {
         icon: 'batch',
@@ -386,7 +386,7 @@ const copy = {
         icon: 'workflow',
         tint: 'blue',
         title: '复用处理流程',
-        text: '记录裁剪、平滑、基线、归一化、求导等步骤，保存后可再次套用。'
+        text: '保存当前分组的处理步骤、参数、轴映射和绘图默认设置，后续可套用到结构匹配的数据。'
       },
       {
         icon: 'batch',
