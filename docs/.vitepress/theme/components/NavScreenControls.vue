@@ -16,7 +16,7 @@ function chooseLanguage(nextLanguage: NebulaLanguage) {
 </script>
 
 <template>
-  <div class="NebulaNavScreenControls" aria-label="Display preferences">
+  <div class="NebulaNavScreenControls" :aria-label="labels.theme">
     <div class="row">
       <span>{{ labels.language }}</span>
       <details class="screen-language-menu">

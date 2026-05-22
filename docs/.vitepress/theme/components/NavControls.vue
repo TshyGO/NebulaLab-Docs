@@ -52,7 +52,7 @@ function closeLanguageMenuOnOutsideClick(event: MouseEvent) {
 </script>
 
 <template>
-  <div class="NebulaNavControls" aria-label="Display preferences">
+  <div class="NebulaNavControls" :aria-label="labels.theme">
     <details ref="languageMenu" class="nebula-language-menu">
       <summary :aria-label="labels.language">
         <svg viewBox="0 0 24 24" aria-hidden="true">

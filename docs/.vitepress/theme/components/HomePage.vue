@@ -642,7 +642,7 @@ onUnmounted(() => {
         <h1>{{ t.heroTitle }}</h1>
         <p class="nl-hero-accent">{{ t.heroAccent }}</p>
         <p class="nl-lead">{{ t.heroLead }}</p>
-        <div class="nl-actions" aria-label="Primary actions">
+        <div class="nl-actions" :aria-label="selectedLanguage === 'zh' ? '主要操作' : 'Primary actions'">
           <a class="nl-btn nl-btn-primary" :href="betaReleaseUrl" target="_blank" rel="noreferrer">
             {{ t.betaCta }}
           </a>
@@ -653,12 +653,12 @@ onUnmounted(() => {
             {{ t.secondaryCta }}
           </a>
         </div>
-        <div class="nl-proof-row" aria-label="Product capabilities">
+        <div class="nl-proof-row" :aria-label="selectedLanguage === 'zh' ? '产品能力' : 'Product capabilities'">
           <span v-for="item in t.proof" :key="item">{{ item }}</span>
         </div>
       </div>
 
-      <div class="nl-hero-panel" aria-label="Nebula Lab workspace layers">
+      <div class="nl-hero-panel" :aria-label="selectedLanguage === 'zh' ? 'Nebula Lab 工作台层级' : 'Nebula Lab workspace layers'">
         <div class="nl-hero-panel-head">
           <span>{{ t.heroPanelTitle }}</span>
           <p>{{ t.heroPanelLead }}</p>
@@ -754,8 +754,18 @@ onUnmounted(() => {
           <li v-for="item in t.screenshotBullets" :key="item">{{ item }}</li>
         </ul>
       </div>
-      <div class="nl-showcase-carousel" aria-label="Product screenshot carousel" @mouseenter="stopShowcase" @mouseleave="startShowcase">
-        <button class="nl-showcase-arrow previous" type="button" aria-label="Previous screenshot" @click="moveShowcase(-1)">
+      <div
+        class="nl-showcase-carousel"
+        :aria-label="selectedLanguage === 'zh' ? '产品截图轮播' : 'Product screenshot carousel'"
+        @mouseenter="stopShowcase"
+        @mouseleave="startShowcase"
+      >
+        <button
+          class="nl-showcase-arrow previous"
+          type="button"
+          :aria-label="selectedLanguage === 'zh' ? '上一张截图' : 'Previous screenshot'"
+          @click="moveShowcase(-1)"
+        >
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
         </button>
         <div class="nl-showcase-stage">
@@ -787,10 +797,15 @@ onUnmounted(() => {
             </div>
           </article>
         </div>
-        <button class="nl-showcase-arrow next" type="button" aria-label="Next screenshot" @click="moveShowcase(1)">
+        <button
+          class="nl-showcase-arrow next"
+          type="button"
+          :aria-label="selectedLanguage === 'zh' ? '下一张截图' : 'Next screenshot'"
+          @click="moveShowcase(1)"
+        >
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
         </button>
-        <div class="nl-showcase-dots" aria-label="Choose screenshot">
+        <div class="nl-showcase-dots" :aria-label="selectedLanguage === 'zh' ? '选择截图' : 'Choose screenshot'">
           <button
             v-for="(slide, index) in showcaseSlides"
             :key="`${slide.id}-dot`"
@@ -818,7 +833,7 @@ onUnmounted(() => {
       </div>
     </section>
 
-    <section class="nl-final" aria-label="Start using Nebula Lab">
+    <section class="nl-final" :aria-label="selectedLanguage === 'zh' ? '开始使用 Nebula Lab' : 'Start using Nebula Lab'">
       <div>
         <p>{{ t.finalKicker }}</p>
         <h2>{{ t.finalTitle }}</h2>

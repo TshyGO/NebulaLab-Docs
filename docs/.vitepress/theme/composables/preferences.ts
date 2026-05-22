@@ -3,7 +3,7 @@ import { computed, ref, watch } from 'vue'
 export type NebulaLanguage = 'en' | 'zh'
 
 const STORAGE_KEY = 'nebulalab-home-language'
-const language = ref<NebulaLanguage>('en')
+const language = ref<NebulaLanguage>('zh')
 let initialized = false
 
 const searchTranslations = {
@@ -75,7 +75,7 @@ export function useNebulaPreferences() {
     if (stored === 'en' || stored === 'zh') {
       language.value = stored
     } else {
-      language.value = 'en'
+      language.value = 'zh'
     }
 
     watch(language, (value) => {
