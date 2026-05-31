@@ -203,6 +203,7 @@ jobs:
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          model: claude-sonnet-4-6
           direct_prompt: |
             请 review 这个文档 PR，重点关注：
             1. 内容准确性，有无技术错误或过时信息
