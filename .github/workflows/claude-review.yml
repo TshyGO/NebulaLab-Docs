@@ -1,54 +1,21 @@
 name: Claude Code Review
 
 on:
-  pull_request:
-    types: [opened, synchronize, reopened]
-    branches: [main]
   issue_comment:
-    types: [created]
-  pull_request_review_comment:
     types: [created]
 
 jobs:
-  auto-review:
-    name: Auto Review on PR
-    if: github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pull-requests: write
-      issues: write
-      id-token: write
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 1
-      - uses: anthropics/claude-code-action@beta
-        with:
-          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          direct_prompt: |
-            请 review 这个文档 PR，重点关注：
-            1. 内容准确性，有无技术错误或过时信息
-            2. 表述是否清晰，有无歧义
-            3. 格式规范（标题层级、代码块、链接等）
-            4. 与现有文档风格是否一致
-            请用中文回复，给出具体的行内建议。
-
   on-demand-review:
     name: On-demand Review via @claude
     if: |
-      contains(github.event.comment.body, '@claude') &&
-      (
-        (github.event_name == 'issue_comment' && github.event.issue.pull_request != null) ||
-        github.event_name == 'pull_request_review_comment'
-      )
+      github.event_name == 'issue_comment' &&
+      github.event.issue.pull_request != null &&
+      contains(github.event.comment.body, '@claude')
     runs-on: ubuntu-latest
     permissions:
       contents: read
       pull-requests: write
       issues: write
-      id-token: write
     steps:
       - uses: actions/checkout@v4
         with:
