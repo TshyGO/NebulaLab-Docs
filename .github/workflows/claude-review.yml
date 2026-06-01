@@ -1,10 +1,42 @@
 name: Claude Code Review
 
 on:
+  pull_request:
+    types: [opened, reopened, ready_for_review]
+    branches: [main]
   issue_comment:
     types: [created]
 
 jobs:
+  auto-review:
+    name: Auto Review on PR
+    if: |
+      github.event_name == 'pull_request' &&
+      contains(fromJSON('["opened", "reopened", "ready_for_review"]'), github.event.action)
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: anthropics/claude-code-action@beta
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          model: claude-sonnet-4-6
+          use_sticky_comment: true
+          direct_prompt: |
+            请 review 这个文档 PR，重点关注：
+            1. 内容准确性，有无技术错误或过时信息
+            2. 表述是否清晰，有无歧义
+            3. 格式规范（标题层级、代码块、链接等）
+            4. 与现有文档风格是否一致
+            请用中文回复，给出具体的行内建议。
+
   on-demand-review:
     name: On-demand Review via @claude
     if: |
