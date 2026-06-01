@@ -25,91 +25,577 @@ html {
    1. 3D Snapping Cylinder Sidebar Nav System
    ==================================================== */
 
-/* Premium Frosted Glass Sidebar with specificity elevation */
-.theme-default .VPSidebar {
+/* Sidebar width constraint */
+:root {
+  --vp-sidebar-width: 260px !important;
+}
+
+/* Ensure top navbar is always on top of the sidebar */
+.VPNav, .VPNav[data-v-5d98c3a5] {
+  z-index: 100 !important;
+}
+
+/* Premium Frosted Glass Sidebar */
+.VPSidebar, .VPSidebar[data-v-319d5ca6] {
+  width: 260px !important;
+  max-width: 260px !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  height: 100vh !important;
+  box-sizing: border-box !important;
   background: rgba(248, 250, 252, 0.85) !important;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-right: 1px solid rgba(226, 232, 240, 0.8);
-  box-shadow: 4px 0 30px rgba(15, 23, 42, 0.02);
-  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-  z-index: 50;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-right: 1px solid rgba(226, 232, 240, 0.8) !important;
+  box-shadow: 4px 0 30px rgba(0, 0, 0, 0.02) !important;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease !important;
+  z-index: 50 !important;
 }
 
-.dark .VPSidebar {
+.dark .VPSidebar, .dark .VPSidebar[data-v-319d5ca6] {
   background: rgba(15, 23, 42, 0.85) !important;
-  border-right: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow: 4px 0 40px rgba(0, 0, 0, 0.3);
+  border-right: 1px solid rgba(255, 255, 255, 0.06) !important;
+  box-shadow: 4px 0 40px rgba(0, 0, 0, 0.3) !important;
 }
 
-/* Cylinder 3D Camera Container Setup - Set perspective solely on parent to reduce GPU composite layers */
-.VPSidebar .group {
-  perspective: 1200px;
-  transform-style: preserve-3d;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding: 12px 8px;
+/* Disable background curtain overlay */
+.VPSidebar .curtain,
+.VPSidebar .curtain[data-v-319d5ca6] {
+  display: none !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  opacity: 0 !important;
 }
 
-/* 3D Snapping Cylinder Sidebar Item Styling */
-.VPSidebarItem {
-  transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
-  border-radius: 8px;
-  margin: 2px 0;
+/* Sidebar container layout */
+.VPSidebar .container, .VPSidebar .container[data-v-319d5ca6] {
+  width: 260px !important;
+  max-width: 260px !important;
+  height: 100vh !important;
+  padding-left: 20px !important;
+  padding-right: 24px !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
 }
 
-/* Default unselected 3D cylindrical projection */
-.VPSidebarItem.level-1 {
-  transform: rotateX(12deg) translateZ(-8px) scale(0.96);
-  opacity: 0.72;
-  background: transparent;
-  border-left: 3px solid transparent;
+.VPSidebar .nav, .VPSidebar .nav[data-v-319d5ca6] {
+  width: 100% !important;
+  max-width: 260px !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
 }
 
-/* Sidebar item hover effect */
-.VPSidebarItem.level-1:hover {
-  transform: rotateX(0deg) translateZ(4px) scale(1.02);
-  opacity: 0.95;
-  background: rgba(249, 115, 22, 0.04);
-  border-left: 3px solid rgba(249, 115, 22, 0.4);
-}
-
-/* Active Highlight Spotlights (3D Popout & Orange Glow)
-   Targets both native .active and custom active classes for complete robustness */
-.VPSidebarItem.level-1.active,
-.VPSidebarItem.level-1.is-active,
-.VPSidebarItem.level-1:has(.active) {
-  transform: rotateX(0deg) translateZ(16px) scale(1.05);
-  opacity: 1;
-  background: rgba(249, 115, 22, 0.09);
-  border-left: 3.5px solid var(--vp-c-brand-1);
-  box-shadow: 0 4px 20px rgba(249, 115, 22, 0.08);
-}
-
-.VPSidebarItem.level-1.active .text,
-.VPSidebarItem.level-1.is-active .text,
-.VPSidebarItem.level-1:has(.active) .text {
-  color: var(--vp-c-brand-1);
-  font-weight: 700;
-  text-shadow: 0 0 12px rgba(249, 115, 22, 0.25);
+/* Force sidebar item group to fit 100% */
+.VPSidebar .group, .VPSidebar .group[data-v-c40bc020] {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
 }
 
 /* Prevent text wrap & boundary clipping */
 .VPSidebarItem .text {
-  white-space: nowrap;
-  transition: all 0.3s ease;
+  white-space: nowrap !important;
+  overflow: visible !important;
+}
+
+/* Level-0 section header styling */
+.VPSidebarItem.level-0,
+.VPSidebarItem.level-0[data-v-b3fd67f8] {
+  position: relative !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  text-align: center !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  height: 100% !important;
+  flex-grow: 1 !important;
+  box-sizing: border-box !important;
+}
+
+/* Level-0 header text styling */
+.VPSidebarItem.level-0 > .item[role="button"] > .text,
+.VPSidebarItem.level-0[data-v-b3fd67f8] > .item[role="button"][data-v-b3fd67f8] > .text[data-v-b3fd67f8] {
+  font-family: var(--vp-font-family-base) !important;
+  font-size: 2.2rem !important;
+  font-weight: 850 !important;
+  letter-spacing: 2px !important;
+  background: linear-gradient(135deg, #e07840 20%, #f08840 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  display: block !important;
+  text-align: center !important;
+  padding-left: 0 !important;
+  margin: 0 auto !important;
+  text-shadow: 0 4px 10px rgba(224, 120, 64, 0.05) !important;
+  line-height: 1.35 !important;
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+  overflow: visible !important;
+}
+
+.dark .VPSidebarItem.level-0 > .item[role="button"] > .text,
+.dark .VPSidebarItem.level-0[data-v-b3fd67f8] > .item[role="button"][data-v-b3fd67f8] > .text[data-v-b3fd67f8] {
+  background: linear-gradient(135deg, #f08840 30%, #ff9e64 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* Level-0 underline accent */
+.VPSidebarItem.level-0 > .item[role="button"]::after,
+.VPSidebarItem.level-0[data-v-b3fd67f8] > .item[role="button"][data-v-b3fd67f8]::after {
+  content: "" !important;
+  position: absolute !important;
+  bottom: -1px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 60px !important;
+  height: 3px !important;
+  background: linear-gradient(90deg, transparent 0%, #f08840 50%, transparent 100%) !important;
+  border-radius: 99px !important;
+  box-shadow: 0 0 12px rgba(240, 136, 64, 0.6) !important;
+}
+
+.dark .VPSidebarItem.level-0 > .item[role="button"],
+.dark .VPSidebarItem.level-0[data-v-b3fd67f8] > .item[role="button"][data-v-b3fd67f8] {
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Level-1 items container - 3D cylinder setup */
+.VPSidebarItem.level-0 .items,
+.VPSidebarItem.level-0 .items[data-v-b3fd67f8] {
+  flex-grow: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+  margin-bottom: 0 !important;
+  height: 370px !important;
+  max-height: 370px !important;
+  perspective: 1000px !important;
+  transform-style: preserve-3d !important;
+  overflow: visible !important;
+}
+
+/* Level-1 item styling - 3D positioned */
+.VPSidebarItem.level-1 .text,
+.VPSidebarItem.level-1 .text[data-v-b3fd67f8] {
+  font-family: var(--vp-font-family-base) !important;
+  font-size: 1.22rem !important;
+  font-weight: 600 !important;
+  color: #475569 !important;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  text-shadow: none !important;
+  transition: color 0.25s, text-shadow 0.25s !important;
+}
+
+.dark .VPSidebarItem.level-1 .text,
+.dark .VPSidebarItem.level-1 .text[data-v-b3fd67f8] {
+  color: #94a3b8 !important;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  text-shadow: none !important;
+}
+
+.VPSidebarItem.level-1,
+.VPSidebarItem.level-1[data-v-b3fd67f8] {
+  position: absolute !important;
+  width: 220px !important;
+  height: 52px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transform-style: preserve-3d !important;
+  backface-visibility: hidden !important;
+  transition: opacity 0.25s ease, transform 0.1s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.VPSidebarItem.level-1 .item,
+.VPSidebarItem.level-1 .item[data-v-b3fd67f8] {
+  border-radius: 8px !important;
+  padding: 8px 12px !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  background: transparent !important;
+  border: 1px solid transparent !important;
+  position: relative !important;
+  box-sizing: border-box !important;
+}
+
+/* Force link to occupy 100% for click */
+.VPSidebarItem.level-1 .item a.link,
+.VPSidebarItem.level-1 .item a.link[data-v-b3fd67f8] {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+  padding: 8px 12px !important;
+  z-index: 5 !important;
+  text-decoration: none !important;
+}
+
+/* Clear underline on level-1 items */
+.VPSidebarItem.level-1 .item::after,
+.VPSidebarItem.level-1 .item[data-v-b3fd67f8]::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Hover state: neon frosted glass capsule */
+.VPSidebarItem.level-1 .item:hover,
+.VPSidebarItem.level-1 .item[data-v-b3fd67f8] :hover {
+  background: linear-gradient(135deg, rgba(224, 120, 64, 0.06) 0%, rgba(56, 189, 248, 0.05) 100%) !important;
+  border-color: rgba(224, 120, 64, 0.16) !important;
+  box-shadow: 0 4px 12px rgba(224, 120, 64, 0.04) !important;
+}
+
+.dark .VPSidebarItem.level-1 .item:hover,
+.dark .VPSidebarItem.level-1 .item[data-v-b3fd67f8] :hover {
+  background: linear-gradient(135deg, rgba(224, 120, 64, 0.1) 0%, rgba(56, 189, 248, 0.08) 100%) !important;
+  border-color: rgba(224, 120, 64, 0.28) !important;
+  box-shadow: 0 4px 16px rgba(224, 120, 64, 0.08) !important;
+}
+
+.VPSidebarItem.level-1 .item:hover .text {
+  color: #9a3412 !important;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  text-shadow: 0 0 8px rgba(154, 52, 18, 0.15) !important;
+}
+
+.dark .VPSidebarItem.level-1 .item:hover .text {
+  color: #ffb07c !important;
+  text-shadow: 0 0 8px rgba(255, 176, 124, 0.3) !important;
+}
+
+/* Active state: vibrant glowing capsule */
+.VPSidebarItem.level-1.is-active .item,
+.VPSidebarItem.level-1.is-active .item[data-v-b3fd67f8] {
+  background: linear-gradient(135deg, rgba(224, 120, 64, 0.12) 0%, rgba(56, 189, 248, 0.1) 100%) !important;
+  border-color: rgba(224, 120, 64, 0.25) !important;
+  box-shadow: 0 4px 15px rgba(224, 120, 64, 0.06), 0 4px 15px rgba(56, 189, 248, 0.06) !important;
+}
+
+.dark .VPSidebarItem.level-1.is-active .item,
+.dark .VPSidebarItem.level-1.is-active .item[data-v-b3fd67f8] {
+  background: linear-gradient(135deg, rgba(224, 120, 64, 0.18) 0%, rgba(56, 189, 248, 0.14) 100%) !important;
+  border-color: rgba(224, 120, 64, 0.38) !important;
+  box-shadow: 0 4px 20px rgba(224, 120, 64, 0.12), 0 4px 20px rgba(56, 189, 248, 0.12) !important;
+}
+
+/* Active text styling */
+.VPSidebarItem.level-1.is-active>.item .link>.text,
+.VPSidebarItem.level-1.is-active>.item .link>.text[data-v-b3fd67f8],
+.VPSidebarItem.level-1.is-active .text,
+.VPSidebarItem.level-1.is-active .text[data-v-b3fd67f8],
+.active-text {
+  color: #7c2d12 !important;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  font-weight: 700 !important;
+  text-shadow: 0 0 10px rgba(124, 45, 18, 0.08) !important;
+}
+
+.dark .VPSidebarItem.level-1.is-active>.item .link>.text,
+.dark .VPSidebarItem.level-1.is-active>.item .link>.text[data-v-b3fd67f8],
+.dark .VPSidebarItem.level-1.is-active .text,
+.dark .VPSidebarItem.level-1.is-active .text[data-v-b3fd67f8],
+.dark .active-text {
+  color: #ff9e64 !important;
+  background: none !important;
+  -webkit-background-clip: initial !important;
+  -webkit-text-fill-color: initial !important;
+  font-weight: 700 !important;
+  text-shadow: 0 0 12px rgba(255, 158, 100, 0.35) !important;
+}
+
+/* Glowing Left Indicator Bar */
+.VPSidebarItem.level-1 .indicator,
+.VPSidebarItem.level-1 .indicator[data-v-b3fd67f8] {
+  position: absolute !important;
+  left: 2px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 4px !important;
+  height: 18px !important;
+  border-radius: 99px !important;
+  background-color: transparent !important;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.VPSidebarItem.level-1.is-active .indicator,
+.VPSidebarItem.level-1.is-active .indicator[data-v-b3fd67f8] {
+  background-color: #f08840 !important;
+  box-shadow: 0 0 12px #f08840, 0 0 4px #f08840 !important;
+  height: 24px !important;
+}
+
+/* Content area padding for sidebar */
+.VPContent.has-sidebar {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 260px !important;
+  padding-right: 0 !important;
+  transition: padding-left 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding-right 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.VPLocalNav.has-sidebar {
+  padding-left: 260px !important;
+  transition: padding-left 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Footer matching sidebar */
+.VPFooter.has-sidebar {
+  margin-left: 0 !important;
+  padding-left: 260px !important;
+  transition: padding-left 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 /* ====================================================
-   2. Frosted Glass Sub-drawer (Outline / ToC Showcase)
+   Sidebar Toggle Button
+   ==================================================== */
+
+.sidebar-toggle-btn {
+  position: fixed;
+  left: 260px !important;
+  top: 50%;
+  transform: translate(-50%, -50%) !important;
+  z-index: 10000;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  background: #ffffff !important;
+  border: 1.5px solid #cbd5e1 !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #475569 !important;
+  cursor: pointer !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  user-select: none !important;
+  padding: 0 !important;
+}
+
+.dark .sidebar-toggle-btn {
+  background: #151d30 !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+  color: #94a3b8 !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45) !important;
+}
+
+.sidebar-toggle-btn:hover {
+  background: #f8fafc !important;
+  color: #38bdf8 !important;
+  border-color: #38bdf8 !important;
+  transform: translate(-50%, -50%) scale(1.1) !important;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.35) !important;
+}
+
+.dark .sidebar-toggle-btn:hover {
+  background: #1e293b !important;
+  color: #38bdf8 !important;
+  border-color: #38bdf8 !important;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.4) !important;
+}
+
+.sidebar-toggle-btn .toggle-icon {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  width: 26px !important;
+  height: 26px !important;
+  stroke-width: 3.5 !important;
+}
+
+.sidebar-toggle-btn.collapsed .toggle-icon {
+  transform: rotate(180deg) !important;
+}
+
+/* Collapsed layout */
+html.sidebar-collapsed .VPSidebar {
+  transform: translateX(-100%) !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+html.sidebar-collapsed .VPContent {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+html.sidebar-collapsed .VPLocalNav {
+  padding-left: 0 !important;
+}
+
+html.sidebar-collapsed .VPFooter {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+html.sidebar-collapsed .sidebar-toggle-btn {
+  left: 0px !important;
+  transform: translate(0, -50%) !important;
+  border-radius: 0 20px 20px 0 !important;
+  width: 28px !important;
+  border-left: none !important;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+.dark html.sidebar-collapsed .sidebar-toggle-btn {
+  box-shadow: 2px 4px 16px rgba(0, 0, 0, 0.4) !important;
+}
+
+html.sidebar-collapsed .sidebar-toggle-btn:hover {
+  width: 40px !important;
+  color: #38bdf8 !important;
+  border-color: #38bdf8 !important;
+  transform: translate(0, -50%) scale(1.02) !important;
+}
+
+/* ====================================================
+   Sub-drawer (磨砂玻璃侧推副大纲罗盘)
+   ==================================================== */
+
+.sidebar-sub-drawer {
+  position: fixed !important;
+  left: 260px !important;
+  top: 0 !important;
+  width: 200px !important;
+  height: 100vh !important;
+  background: rgba(248, 250, 252, 0.75) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  border-right: 1px solid rgba(226, 232, 240, 0.8) !important;
+  box-shadow: 6px 0 30px rgba(0, 0, 0, 0.02) !important;
+  box-sizing: border-box !important;
+  padding: 120px 16px 40px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.4s ease !important;
+  z-index: 40 !important;
+  transform: translateX(-10px) !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  overflow-y: auto !important;
+}
+
+.dark .sidebar-sub-drawer {
+  background: rgba(15, 23, 42, 0.75) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.05) !important;
+  box-shadow: 6px 0 40px rgba(0, 0, 0, 0.2) !important;
+}
+
+.sidebar-sub-drawer.show {
+  transform: translateX(0) !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+html.sidebar-collapsed .sidebar-sub-drawer {
+  transform: translateX(-100%) !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.sub-drawer-title {
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+  color: #94a3b8 !important;
+  margin-bottom: 8px !important;
+  border-bottom: 1px dashed rgba(148, 163, 184, 0.2) !important;
+  padding-bottom: 6px !important;
+}
+
+.sub-drawer-item {
+  font-size: 0.92rem !important;
+  font-weight: 600 !important;
+  color: #475569 !important;
+  padding: 8px 12px !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  transition: all 0.25s ease !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  border: 1px solid transparent !important;
+  text-decoration: none !important;
+  display: block !important;
+}
+
+.dark .sub-drawer-item {
+  color: #94a3b8 !important;
+}
+
+.sub-drawer-item:hover {
+  background: linear-gradient(135deg, rgba(224, 120, 64, 0.06) 0%, rgba(56, 189, 248, 0.05) 100%) !important;
+  border-color: rgba(224, 120, 64, 0.12) !important;
+  color: #d96a2b !important;
+  padding-left: 16px !important;
+}
+
+.dark .sub-drawer-item:hover {
+  background: linear-gradient(135deg, rgba(224, 120, 64, 0.1) 0%, rgba(56, 189, 248, 0.08) 100%) !important;
+  border-color: rgba(224, 120, 64, 0.24) !important;
+  color: #ff9e64 !important;
+}
+
+.sub-drawer-item.active {
+  background: linear-gradient(135deg, rgba(224, 120, 64, 0.08) 0%, rgba(56, 189, 248, 0.06) 100%) !important;
+  border-color: rgba(224, 120, 64, 0.2) !important;
+  color: #c2410c !important;
+  font-weight: 700 !important;
+}
+
+.dark .sub-drawer-item.active {
+  background: linear-gradient(135deg, rgba(224, 120, 64, 0.16) 0%, rgba(56, 189, 248, 0.12) 100%) !important;
+  border-color: rgba(224, 120, 64, 0.3) !important;
+  color: #ff9e64 !important;
+}
+
+/* ====================================================
+   2. Frosted Glass Outline / ToC
    ==================================================== */
 
 .VPDocAside {
   padding-left: 16px;
 }
 
-/* Transforming VitePress outline into a luxurious floating drawer */
 .VPDocAsideOutline {
   background: rgba(248, 250, 252, 0.75) !important;
   backdrop-filter: blur(12px);
@@ -127,16 +613,14 @@ html {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
 }
 
-/* Subtle physical hover pull-out micro-animation */
 .VPDocAsideOutline:hover {
   transform: translateX(-6px);
   box-shadow: 0 12px 40px rgba(249, 115, 22, 0.06);
   border-color: rgba(249, 115, 22, 0.2);
 }
 
-/* Heading outline list beauty */
 .VPDocAsideOutline .outline-link {
-  position: relative !important; /* CRITICAL FIX: Establish stacking context for ::before pseudo positioning */
+  position: relative !important;
   font-weight: 500;
   transition: all 0.25s ease;
   padding: 4px 0;
@@ -147,14 +631,12 @@ html {
   padding-left: 4px;
 }
 
-/* ScrollSpy Active Heading Glow */
 .VPDocAsideOutline .outline-link.active {
   color: var(--vp-c-brand-1);
   font-weight: 700;
   text-shadow: 0 0 8px rgba(249, 115, 22, 0.15);
 }
 
-/* Custom indicator dot for active heading */
 .VPDocAsideOutline .outline-link.active::before {
   content: "";
   position: absolute;
@@ -169,17 +651,15 @@ html {
 }
 
 /* ====================================================
-   3. Performance Optimizations & Adaptive Fallbacks
+   3. Performance & Adaptive Fallbacks
    ==================================================== */
 
-/* GPU Optimization for scrolling container */
 .VPSidebar, .VPDocAsideOutline, .VPSidebarItem {
   will-change: transform, opacity;
 }
 
-/* Performance degradation fallback for mobile/low-end devices */
 @media (max-width: 768px) {
-  .theme-default .VPSidebar {
+  .VPSidebar {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     background: rgb(248, 250, 252) !important;
@@ -201,7 +681,6 @@ html {
   }
 }
 
-/* Accessible reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   .VPSidebar, .VPDocAsideOutline, .VPSidebarItem {
     transition: none !important;
