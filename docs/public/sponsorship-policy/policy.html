@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>NebulaLab 贡献结算规则</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --paper: #f3f4f6;
+        --paper-strong: #ffffff;
+        --ink: #101114;
+        --muted: #62666f;
+        --line: rgba(16, 17, 20, 0.14);
+        --line-strong: rgba(16, 17, 20, 0.28);
+        --accent: #b91c1c;
+        --accent-strong: #7f1d1d;
+        --surface: rgba(255, 255, 255, 0.86);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: linear-gradient(180deg, #ffffff 0%, var(--paper) 58%, #e5e7eb 100%);
+        color: var(--ink);
+        font-family:
+          ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", sans-serif;
+        letter-spacing: 0;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .shell {
+        width: min(1120px, calc(100% - 44px));
+        margin: 0 auto;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 18px 0;
+        border-bottom: 2px solid var(--ink);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 14px;
+        font-weight: 800;
+        letter-spacing: 0;
+      }
+
+      .brand-mark {
+        width: 34px;
+        height: 34px;
+        display: grid;
+        place-items: center;
+        border: 2px solid var(--ink);
+        background: var(--ink);
+        color: #fff;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .nav a {
+        text-decoration: none;
+      }
+
+      .hero {
+        padding: 40px 0 36px;
+        border-bottom: 2px solid var(--line-strong);
+      }
+
+      .eyebrow {
+        margin: 0 0 14px;
+        color: var(--accent);
+        font-size: 13px;
+        font-weight: 900;
+        letter-spacing: 0;
+      }
+
+      h1 {
+        max-width: 760px;
+        margin: 0;
+        font-size: clamp(30px, 4vw, 44px);
+        line-height: 1.18;
+        font-weight: 820;
+      }
+
+      .nowrap {
+        white-space: nowrap;
+      }
+
+      .lead {
+        max-width: 780px;
+        margin: 20px 0 0;
+        color: #343840;
+        font-size: 16px;
+        line-height: 1.75;
+      }
+
+      .article {
+        display: grid;
+        grid-template-columns: 260px minmax(0, 1fr);
+        gap: 56px;
+        padding: 54px 0 82px;
+      }
+
+      .toc {
+        position: sticky;
+        top: 24px;
+        align-self: start;
+        display: grid;
+        gap: 10px;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 750;
+      }
+
+      .toc a {
+        text-decoration: none;
+      }
+
+      .content {
+        display: grid;
+        gap: 38px;
+        min-width: 0;
+      }
+
+      section {
+        min-width: 0;
+        padding-bottom: 44px;
+        border-bottom: 2px solid var(--line-strong);
+      }
+
+      section:last-child {
+        border-bottom: 0;
+      }
+
+      h2 {
+        margin: 0 0 18px;
+        font-size: clamp(22px, 2.4vw, 30px);
+        line-height: 1.28;
+        font-weight: 820;
+      }
+
+      p,
+      li {
+        color: #343840;
+        font-size: 16px;
+        line-height: 1.82;
+        overflow-wrap: break-word;
+      }
+
+      ul,
+      ol {
+        padding-left: 1.25em;
+      }
+
+      .formula {
+        overflow-x: auto;
+        padding: 18px 20px;
+        border-left: 6px solid var(--accent);
+        background: rgba(185, 28, 28, 0.08);
+        color: #2f1515;
+        font-family:
+          "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+        line-height: 1.75;
+        white-space: pre-wrap;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 18px 0;
+        background: var(--surface);
+      }
+
+      th,
+      td {
+        padding: 14px 16px;
+        border: 1px solid var(--line);
+        text-align: left;
+        font-size: 14px;
+      }
+
+      th {
+        color: var(--muted);
+        font-size: 12px;
+        text-transform: uppercase;
+      }
+
+      code {
+        font-family:
+          "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+        font-size: 0.92em;
+      }
+
+      .callout {
+        padding: 18px 20px;
+        border: 2px solid var(--ink);
+        background: var(--surface);
+      }
+
+      .footer {
+        padding: 42px 0 56px;
+        color: var(--muted);
+        font-size: 13px;
+        border-top: 2px solid var(--line-strong);
+      }
+
+      @media (max-width: 860px) {
+        .shell {
+          width: min(100% - 28px, 680px);
+        }
+
+        .topbar,
+        .article {
+          grid-template-columns: 1fr;
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 14px;
+        }
+
+        .nav {
+          width: 100%;
+          flex-wrap: wrap;
+          gap: 14px;
+        }
+
+        .toc {
+          position: static;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 520px) {
+        h1 {
+          font-size: clamp(28px, 8vw, 36px);
+          line-height: 1.18;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="shell topbar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">N</div>
+        <span>NebulaLab</span>
+      </div>
+      <nav class="nav" aria-label="页面导航">
+        <a href="index.html">贡献看板</a>
+        <a href="history.html">贡献历史</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="shell hero">
+        <p class="eyebrow">制度原文</p>
+        <h1>NebulaLab <span class="nowrap">贡献结算规则</span></h1>
+        <p class="lead">
+          本规则用于规范 NebulaLab 贡献结算、公共支出预算及结余处理。结算比例以 GitHub
+          已合并的有效改动为主要依据，并由统一脚本按固定口径计算。
+        </p>
+      </div>
+
+      <article class="shell article">
+        <aside class="toc" aria-label="目录">
+          <a href="#purpose">1. 目的</a>
+          <a href="#pool">2. 资金池</a>
+          <a href="#annual">3. 跨年度结算</a>
+          <a href="#score">4. 工作量积分</a>
+          <a href="#exclude">5. 排除项</a>
+          <a href="#squash">6. Squash 与多人协作</a>
+          <a href="#data">7. 数据维护</a>
+          <a href="#statement">8. 执行口径</a>
+        </aside>
+
+        <div class="content">
+          <section id="purpose">
+            <h2>1. 目的</h2>
+            <p>
+              本规则用于明确 NebulaLab 贡献结算、公共支出预算和结余处理方式，确保项目公共支出具备稳定预算，
+              贡献者分配具备明确依据，并降低人工评审成本。
+            </p>
+            <p>
+              NebulaLab 的开发协作主要发生在 GitHub。考虑到团队成员普遍使用 AI 辅助开发，逐项评定 Issue
+              或 PR 难度缺乏稳定标准，且会增加维护负担。因此，贡献结算以 GitHub 已合并的有效改动为主要依据。
+            </p>
+            <p>
+              本规则不以 commit 数或原始增删行作为单一依据。commit 数主要反映提交频率，原始增删行容易受到 lock
+              文件、自动生成文件、格式化改动及机械性重构影响。正式结算采用有效工作量积分。
+            </p>
+          </section>
+
+          <section id="pool">
+            <h2>2. 资金池</h2>
+            <p>每次年度赞助到账后，先扣除必要运维开支。</p>
+            <pre class="formula">可分配余额 = 赞助到账金额 - 必要运维开支</pre>
+            <pre class="formula">年度结算池 = 可分配余额 × 50%
+项目公共池 = 可分配余额 × 50%</pre>
+            <p>年度结算池用于按贡献比例向贡献者分配。项目公共池用于项目公共支出，包括模型调用费用、服务器、域名、工具订阅、CI / 构建资源、临时协作支出及其他必要运营支出。</p>
+          </section>
+
+          <section id="annual">
+            <h2>3. 跨年度结算</h2>
+            <p>从第二个赞助周期开始，每次新赞助到账时，将上一周期公共池结余并入本年度结算池。</p>
+            <pre class="formula">本年度结算池 = 上一周期公共池结余 + 本年度新赞助扣除必要运维后的 50%</pre>
+            <p>
+              本年度结算池按上一赞助周期内的有效工作量积分分配。例如，2027 年 5 月获得新赞助时，2027 年度结算池按
+              2026-05 到 2027-05 的 GitHub 有效工作量积分分配。
+            </p>
+          </section>
+
+          <section id="score">
+            <h2>4. 有效工作量积分</h2>
+            <p>只统计已合并进入主分支的非 merge commit。计算步骤：</p>
+            <ol>
+              <li>用 <code>git log --no-merges -M -C --numstat</code> 读取每个纳入结算仓库主分支 commit；<code>-M -C</code> 让 rename / copy 不被识别为先删后增。</li>
+              <li>解析每个 commit message 中的 <code>Co-authored-by:</code> 行，commit 的有效改动量在 primary author 与所有 co-authors 之间均分。</li>
+              <li>通过 <code>identity_aliases</code> 归并同一贡献者的不同 Git 身份；通过 <code>bot_names</code> 与 <code>[bot]</code> 启发式排除自动化提交与 AI 助手 trailer。</li>
+              <li>按文件类别为增删行设置权重；<strong>新增行按 1 倍计入，删除行按 0.5 倍计入</strong>。</li>
+              <li>按 (作者, ISO 周, 仓库) 三维聚合 weighted churn，对聚合值开方后乘以仓库权重得到该桶得分。</li>
+              <li>汇总每位贡献者所有桶的得分，按占比分配。</li>
+            </ol>
+            <table>
+              <thead>
+                <tr><th>文件类型</th><th>权重</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>核心代码 (<code>src/</code>、<code>engine/</code>、<code>modules/</code>、<code>app/</code>、<code>web/</code>、<code>src-tauri/src/</code>、<code>.css/.html/.vue</code>)</td><td>1.0</td></tr>
+                <tr><td>测试代码 (<code>tests/</code>、<code>*.test.*</code>、<code>*.spec.*</code>)</td><td>0.8</td></tr>
+                <tr><td>配置 / CI / 脚本 (<code>.github/</code>、<code>scripts/</code>、<code>supabase/</code>、<code>*.config.ts</code>)</td><td>0.6</td></tr>
+                <tr><td>文档 (<code>docs/</code>、<code>README*</code>、<code>*.md/.mdx/.rst</code>)</td><td>0.4</td></tr>
+                <tr><td>未分类 (fallback)</td><td>0.0</td></tr>
+                <tr><td>排除项 (lock / 构建产物 / vendored)</td><td>0.0</td></tr>
+              </tbody>
+            </table>
+            <table>
+              <thead>
+                <tr><th>仓库</th><th>权重</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>NebulaLab 主产品仓库</td><td>1.0</td></tr>
+                <tr><td>NebulaLab Plugins 插件库</td><td>0.9</td></tr>
+                <tr><td>NebulaLab Docs 用户手册 / 文档仓库</td><td>0.45</td></tr>
+              </tbody>
+            </table>
+            <pre class="formula">file_weighted_churn = (additions + 0.5 × deletions) × file_type_weight
+bucket_churn(author, week, repo) = Σ (1 / N_authors) × file_weighted_churn
+bucket_score(author, week, repo) = sqrt(bucket_churn) × repo_weight
+个人周期积分 = Σ over (week, repo) of bucket_score(self, week, repo)
+个人分配比例 = 个人周期积分 / 全部贡献者周期积分之和</pre>
+            <p>
+              <strong>为什么按周聚合：</strong>如果按 commit 直接开方，1000 行工作拆成 10 个 100 行 commit 可以得到 10 × √100 = 100 分，而一次性提交只有 √1000 ≈ 31.6 分，算法会变相鼓励 commit 切片。按 (作者, ISO 周, 仓库) 聚合后，同一作者在同一周内的工作先合并、再开方，拆分对最终结果几乎没有影响。
+            </p>
+          </section>
+
+          <section id="exclude">
+            <h2>5. 默认排除项</h2>
+            <p>以下内容默认 <code>weight = 0</code>，不计入有效工作量：</p>
+            <ul>
+              <li><code>package-lock.json</code>、<code>Cargo.lock</code>、<code>yarn.lock</code>、<code>pnpm-lock.yaml</code>、<code>poetry.lock</code>、<code>uv.lock</code>、<code>Pipfile.lock</code>、<code>composer.lock</code></li>
+              <li>后缀 <code>.min.js</code>、<code>.min.css</code>、<code>.map</code>、<code>.lock</code> 的文件</li>
+              <li>路径前缀 <code>dist/</code>、<code>build/</code>、<code>out/</code>、<code>vendor/</code>、<code>third_party/</code>、<code>node_modules/</code>、<code>src-tauri/gen/</code>、<code>assets/data/</code></li>
+            </ul>
+            <p>以下两类<strong>无法自动识别</strong>，需要由维护者在 PR review 阶段人工标记，必要时在合入前手动剔除：</p>
+            <ul>
+              <li>纯格式化 / 自动重排版改动</li>
+              <li>一次性引入的自动生成 schema 或迁移产物</li>
+            </ul>
+            <p>如果某次被排除文件的修改确实代表重要工程工作，例如依赖体系迁移或构建系统升级，可在结算时单独说明并人工确认是否部分计入。</p>
+          </section>
+
+          <section id="squash">
+            <h2>6. Squash merge 与多人协作</h2>
+            <p>
+              NebulaLab 默认使用 GitHub squash merge。squash 之后，PR 内的多个 commit 会被合并为 main 上的一个 commit，结果 commit 的 <code>author</code> 字段只能保留一人。
+            </p>
+            <p>
+              为避免多人协作的非主作者贡献丢失，<strong>多人协作的 PR 必须在 commit message 中保留 <code>Co-authored-by:</code> trailer</strong>：
+            </p>
+            <pre class="formula">Co-authored-by: Name &lt;name@example.com&gt;</pre>
+            <p>
+              结算脚本会解析这些 trailer，并将该 commit 的 weighted churn 在 primary author 与所有 co-authors 之间均分。GitHub 在 squash merge 时会自动把 PR 内各 commit 的非 primary author 提为 <code>Co-authored-by:</code>，但如果开发者使用 <code>git rebase</code> / 本地 squash 时手动改写过 commit message，请确认 trailer 仍然存在。
+            </p>
+            <p>
+              AI 助手（Claude、Codex 等）若被自动写入 <code>Co-authored-by:</code>，会被 <code>contribution-identity.json</code> 中的 <code>bot_names</code> 过滤，不参与积分分配。
+            </p>
+          </section>
+
+          <section id="data">
+            <h2>7. 数据公开与维护</h2>
+            <p>
+              贡献统计由 <code>scripts/contribution_metrics.py</code> 自动生成，并输出结构化统计数据。统计数据包含必要的 commit 明细，因此网页可以按全部历史、年度、月份、自定义日期段或仓库重新计算贡献比例。
+            </p>
+            <p>
+              身份归并 (<code>identity_aliases</code>) 与 Bot 列表 (<code>bot_names</code>) 集中在 <code>docs/sponsorship-policy/contribution-identity.json</code>，新增贡献者或 bot 不需要改 Python 代码。仓库列表与权重集中在 <code>docs/sponsorship-policy/contribution-repos.json</code>。
+            </p>
+            <p>
+              统计数据不作秒级实时刷新。页面筛选在浏览器中即时重算；底层 <code>metrics.json</code> 在 GitHub Pages workflow 完成后通过 <code>upload-pages-artifact</code> 部署，<strong>不会回写到 git 仓库</strong>。<code>docs/sponsorship-policy/metrics.json</code> 被 <code>.gitignore</code> 忽略，本地预览需手动运行脚本生成。
+            </p>
+            <p>规则文档和统计页面由仓库维护者管理。其他成员如需提出修改建议，应通过 Issue、Discussion 或其他明确记录渠道提出。</p>
+          </section>
+
+          <section id="statement">
+            <h2>8. 执行口径</h2>
+            <p>
+              每次年度赞助到账并扣除必要运维开支后，其中 50% 与上一赞助周期公共池结余合并为本年度结算池，按上一赞助周期内 GitHub 已合并有效工作量积分分配；剩余 50% 进入新的项目公共池，用于下一赞助周期内的公共支出。
+            </p>
+            <p>
+              有效工作量积分基于已合并 commit 自动计算。统计时排除 Bot、lock 文件、自动生成文件、构建产物与 vendored 代码，并按代码、测试、文档、配置等类型设置文件权重，同时按主仓库、插件库和 Docs 仓库设置仓库权重。删除行按新增行的 50% 计入；rename / copy 通过 <code>git -M -C</code> 单算；多人协作通过 <code>Co-authored-by:</code> 在贡献者间均分。最终按 (作者, ISO 周, 仓库) 聚合后开方，再乘以仓库权重，得到个人周期积分。
+            </p>
+          </section>
+        </div>
+      </article>
+    </main>
+
+    <footer class="shell footer">
+      <div>本页面为 NebulaLab 贡献结算规则的网页版本，由仓库维护者统一维护。</div>
+    </footer>
+  </body>
+</html>

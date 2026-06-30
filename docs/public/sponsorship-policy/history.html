@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>NebulaLab 贡献历史</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --paper: #f3f4f6;
+        --ink: #101114;
+        --ink-soft: #25272d;
+        --muted: #62666f;
+        --muted-strong: #41444c;
+        --line: rgba(16, 17, 20, 0.14);
+        --line-strong: rgba(16, 17, 20, 0.28);
+        --accent: #b91c1c;
+        --accent-strong: #7f1d1d;
+        --accent-soft: rgba(185, 28, 28, 0.07);
+        --surface: rgba(255, 255, 255, 0.86);
+        --shadow-card: 0 12px 30px rgba(16, 17, 20, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background:
+          linear-gradient(90deg, rgba(16, 17, 20, 0.04) 1px, transparent 1px),
+          linear-gradient(180deg, #ffffff 0%, var(--paper) 54%, #e5e7eb 100%);
+        background-size: 56px 56px, auto;
+        color: var(--ink);
+        font-family:
+          ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", sans-serif;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .shell {
+        width: min(1180px, calc(100% - 44px));
+        margin: 0 auto;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 18px 0;
+        border-bottom: 2px solid var(--ink);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+      }
+
+      .brand-mark {
+        width: 34px;
+        height: 34px;
+        display: grid;
+        place-items: center;
+        border: 2px solid var(--ink);
+        background: var(--ink);
+        color: #fff;
+      }
+
+      .brand-copy {
+        display: grid;
+        gap: 3px;
+        line-height: 1;
+      }
+
+      .brand-name {
+        font-size: 13px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .brand-tagline {
+        color: var(--accent);
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.2em;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .nav a:hover,
+      .nav a.active {
+        color: var(--ink);
+      }
+
+      .hero {
+        padding: 42px 0 30px;
+      }
+
+      .eyebrow {
+        margin: 0 0 16px;
+        color: var(--accent);
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(32px, 5vw, 48px);
+        line-height: 1.1;
+        font-weight: 820;
+      }
+
+      .lead {
+        max-width: 720px;
+        margin: 18px 0 24px;
+        color: #343840;
+        font-size: 16px;
+        line-height: 1.78;
+      }
+
+      .toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 42px;
+        padding: 0 16px;
+        border: 2px solid var(--ink);
+        background: var(--ink);
+        color: #fff;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 850;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+
+      .button.secondary {
+        background: transparent;
+        color: var(--ink);
+      }
+
+      .button.ghost {
+        background: transparent;
+        color: var(--muted-strong);
+        border-color: var(--line-strong);
+      }
+
+      .filters {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 12px;
+        margin: 20px 0 28px;
+        padding: 20px;
+        border: 2px solid var(--ink);
+        background: rgba(255, 255, 255, 0.82);
+      }
+
+      .filter-field {
+        display: grid;
+        gap: 6px;
+      }
+
+      .filter-field label {
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 680;
+      }
+
+      .filter-field select,
+      .filter-field input {
+        width: 100%;
+        min-height: 38px;
+        border: 2px solid var(--line-strong);
+        background: rgba(255, 255, 255, 0.92);
+        color: var(--ink);
+        padding: 0 11px;
+        font: inherit;
+        font-size: 14px;
+      }
+
+      .timeline {
+        position: relative;
+        padding: 24px 0 60px;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 14px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: var(--line-strong);
+      }
+
+      .week-card {
+        position: relative;
+        margin: 0 0 22px;
+        padding: 24px 26px;
+        margin-left: 44px;
+        border: 2px solid var(--ink);
+        background: var(--surface);
+        box-shadow: var(--shadow-card);
+      }
+
+      .week-card::before {
+        content: "";
+        position: absolute;
+        left: -38px;
+        top: 30px;
+        width: 16px;
+        height: 16px;
+        background: var(--ink);
+        border-radius: 50%;
+        box-shadow: 0 0 0 4px #fff;
+      }
+
+      .week-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+      }
+
+      .week-title {
+        margin: 0;
+        font-size: 20px;
+        font-weight: 900;
+      }
+
+      .week-range {
+        margin: 0;
+        font-size: 12px;
+        color: var(--muted);
+        font-weight: 700;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .week-summary {
+        margin: 0 0 14px;
+        font-size: 14.5px;
+        line-height: 1.78;
+        color: var(--ink-soft);
+      }
+
+      .week-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 12px;
+        font-size: 12px;
+        color: var(--muted);
+        margin-bottom: 14px;
+      }
+
+      .week-meta strong {
+        color: var(--ink);
+      }
+
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 16px;
+      }
+
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 9px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .chip.contributor {
+        background: rgba(15, 118, 110, 0.1);
+        color: #0f766e;
+      }
+
+      .chip.category {
+        background: rgba(37, 99, 235, 0.08);
+        color: #1d4ed8;
+      }
+
+      .highlights {
+        margin: 0 0 16px;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 8px;
+      }
+
+      .highlight {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        gap: 10px;
+        align-items: baseline;
+        padding: 8px 10px;
+        border-left: 3px solid var(--accent);
+        background: var(--accent-soft);
+        font-size: 13px;
+        line-height: 1.55;
+      }
+
+      .hash {
+        font-family: "SFMono-Regular", Consolas, monospace;
+        color: var(--accent-strong);
+        font-size: 11px;
+      }
+
+      .highlight-author {
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .week-source-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 3px 8px;
+        border: 1px solid var(--line-strong);
+        border-radius: 999px;
+        color: var(--muted-strong);
+        font-size: 11px;
+        font-weight: 700;
+      }
+
+      .week-source-tag.llm,
+      .week-source-tag.llm-cached {
+        border-color: rgba(37, 99, 235, 0.55);
+        color: #1d4ed8;
+      }
+
+      .commit-toggle {
+        margin-top: 6px;
+        padding: 7px 12px;
+        border: 1px solid var(--line-strong);
+        background: transparent;
+        color: var(--muted-strong);
+        font: inherit;
+        font-size: 12px;
+        font-weight: 700;
+        cursor: pointer;
+        border-radius: 999px;
+      }
+
+      .commit-toggle[aria-expanded="true"] {
+        background: var(--ink);
+        color: #fff;
+        border-color: var(--ink);
+      }
+
+      .commit-list {
+        margin: 12px 0 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 6px;
+      }
+
+      .commit-list[hidden] {
+        display: none;
+      }
+
+      .commit-item {
+        display: grid;
+        grid-template-columns: 110px 90px 1fr auto auto;
+        gap: 12px;
+        padding: 8px 0;
+        border-bottom: 1px solid var(--line);
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      .commit-item:last-child {
+        border-bottom: 0;
+      }
+
+      .commit-item .hash {
+        padding-top: 1px;
+      }
+
+      .commit-item .date {
+        color: var(--muted);
+        font-variant-numeric: tabular-nums;
+      }
+
+      .commit-item .churn {
+        color: var(--muted-strong);
+        font-variant-numeric: tabular-nums;
+      }
+
+      .empty-state {
+        margin: 24px 0;
+        padding: 26px;
+        border: 2px dashed var(--line-strong);
+        text-align: center;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .footer {
+        padding: 32px 0 56px;
+        color: var(--muted);
+        font-size: 13px;
+        border-top: 2px solid var(--line-strong);
+        display: grid;
+        gap: 6px;
+      }
+
+      @media (max-width: 720px) {
+        .topbar {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 14px;
+        }
+        .week-card {
+          margin-left: 28px;
+        }
+        .week-card::before {
+          left: -22px;
+        }
+        .timeline::before {
+          left: 6px;
+        }
+        .commit-item {
+          grid-template-columns: 1fr;
+          gap: 4px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="shell topbar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">N</div>
+        <div class="brand-copy">
+          <span class="brand-name">NebulaLab Ledger</span>
+          <span class="brand-tagline">残酷的监工</span>
+        </div>
+      </div>
+      <nav class="nav" aria-label="页面导航">
+        <a href="index.html">贡献看板</a>
+        <a class="active" href="history.html">贡献历史</a>
+        <a href="policy.html">制度原文</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="shell hero">
+        <p class="eyebrow">Contribution History</p>
+        <h1>贡献历史时间线</h1>
+        <p class="lead">
+          按 ISO 周倒序展示自项目开始以来的所有贡献。每周由 DeepSeek-V3.2 自动生成人话摘要，
+          点名当周贡献者，并附改动量最大的 commit 高亮。展开每周可查看完整 commit 明细。
+        </p>
+        <div class="toolbar">
+          <a class="button secondary" href="index.html">← 返回结算看板</a>
+        </div>
+      </section>
+
+      <section class="shell">
+        <div class="filters" aria-label="历史筛选">
+          <div class="filter-field">
+            <label for="contributor-filter">贡献者</label>
+            <select id="contributor-filter">
+              <option value="all">全部</option>
+            </select>
+          </div>
+          <div class="filter-field">
+            <label for="year-filter">年度</label>
+            <select id="year-filter">
+              <option value="all">全部</option>
+            </select>
+          </div>
+          <div class="filter-field">
+            <label for="search-filter">关键词</label>
+            <input id="search-filter" type="search" placeholder="搜索摘要或 commit subject" />
+          </div>
+          <div class="filter-field">
+            <label>&nbsp;</label>
+            <button class="button ghost" type="button" id="reset-filters">重置</button>
+          </div>
+        </div>
+
+        <div class="timeline" id="timeline"></div>
+      </section>
+    </main>
+
+    <footer class="shell footer">
+      <div>本页内容由 Pages workflow 在每次合入 main / 每日定时跑 / 手动 dispatch 后自动重新生成。</div>
+      <div id="schema-info">--</div>
+    </footer>
+
+    <script>
+      const SUMMARY_SOURCE_LABEL = {
+        "llm": "DeepSeek-V3.2 摘要",
+        "llm-cached": "DeepSeek-V3.2 摘要 · 缓存",
+        "template": "模板摘要",
+        "template-fallback": "LLM 失败 · 模板兜底",
+      };
+
+      const CATEGORY_LABELS = {
+        feat: "新增功能",
+        fix: "修复问题",
+        docs: "文档",
+        refactor: "重构",
+        chore: "日常",
+        test: "测试",
+        perf: "性能",
+        style: "样式",
+        build: "构建",
+        ci: "CI",
+        revert: "回滚",
+        other: "其他",
+      };
+
+      const expandedWeeks = new Set();
+      let sourceMetrics = null;
+      let filters = { contributor: "all", year: "all", search: "" };
+
+      function formatPlainDate(value) {
+        if (!value) return "未设置";
+        return new Intl.DateTimeFormat("zh-CN", { dateStyle: "medium" }).format(
+          new Date(`${value}T00:00:00`),
+        );
+      }
+
+      function escapeHtml(text) {
+        return (text || "").replace(/[&<>"]/g, (ch) => ({
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+        }[ch]));
+      }
+
+      function getCommitsForWeek(week) {
+        return (sourceMetrics.commits || []).filter((c) => c.iso_week === week);
+      }
+
+      function applyFilters(digests) {
+        const keyword = filters.search.trim().toLowerCase();
+        return digests.filter((week) => {
+          if (filters.contributor !== "all" && !week.contributors.includes(filters.contributor)) {
+            return false;
+          }
+          if (filters.year !== "all" && !(week.start || "").startsWith(filters.year)) {
+            return false;
+          }
+          if (keyword) {
+            const haystack = [
+              week.summary || "",
+              ...week.contributors,
+              ...week.highlights.map((h) => h.subject || ""),
+              ...getCommitsForWeek(week.iso_week).map((c) => c.subject || ""),
+            ]
+              .join(" ")
+              .toLowerCase();
+            if (!haystack.includes(keyword)) return false;
+          }
+          return true;
+        });
+      }
+
+      function renderTimeline() {
+        const timeline = document.getElementById("timeline");
+        const digests = sourceMetrics.weekly_digests || [];
+        const filtered = applyFilters(digests);
+
+        if (filtered.length === 0) {
+          timeline.innerHTML = '<div class="empty-state">当前筛选下没有匹配的周。</div>';
+          return;
+        }
+
+        timeline.innerHTML = filtered.map(renderWeekCard).join("");
+        timeline.querySelectorAll(".commit-toggle").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const week = btn.dataset.week;
+            if (expandedWeeks.has(week)) expandedWeeks.delete(week);
+            else expandedWeeks.add(week);
+            renderTimeline();
+            requestAnimationFrame(() => {
+              const anchor = document.getElementById(week);
+              if (anchor) anchor.scrollIntoView({ block: "start", behavior: "smooth" });
+            });
+          });
+        });
+      }
+
+      function renderWeekCard(week) {
+        const isOpen = expandedWeeks.has(week.iso_week);
+        const commits = isOpen ? getCommitsForWeek(week.iso_week) : [];
+        const categoryChips = Object.entries(week.categories || {})
+          .filter(([, n]) => n > 0)
+          .sort((a, b) => b[1] - a[1])
+          .map(
+            ([key, n]) => `<span class="chip category">${CATEGORY_LABELS[key] || key} · ${n}</span>`,
+          )
+          .join("");
+        const contribChips = week.contributors
+          .map((name) => `<span class="chip contributor">${escapeHtml(name)}</span>`)
+          .join("");
+        const highlights = (week.highlights || [])
+          .map(
+            (h) => `
+              <li class="highlight">
+                <span class="hash">${escapeHtml(h.short_hash || (h.hash || "").slice(0, 12))}</span>
+                <span>${escapeHtml(h.subject || "")}</span>
+                <span class="highlight-author">${escapeHtml(h.contributor || "")}</span>
+              </li>
+            `,
+          )
+          .join("");
+        const sourceClass = (week.summary_source || "template").replace(/[^a-z\-]/gi, "");
+        const sourceLabel = SUMMARY_SOURCE_LABEL[week.summary_source] || week.summary_source;
+        const commitList = commits
+          .map(
+            (commit) => `
+              <li class="commit-item">
+                <span class="hash">${escapeHtml(commit.short_hash || (commit.hash || "").slice(0, 12))}</span>
+                <span class="date">${commit.date || ""}</span>
+                <span>${escapeHtml(commit.subject || "")}</span>
+                <span class="highlight-author">${escapeHtml(commit.contributor_id || "")}</span>
+                <span class="churn">${commit.effective ? Number(commit.weighted_churn || 0).toFixed(1) : "—"}</span>
+              </li>
+            `,
+          )
+          .join("");
+
+        return `
+          <article class="week-card" id="${week.iso_week}">
+            <div class="week-head">
+              <h2 class="week-title">${week.iso_week}</h2>
+              <p class="week-range">${formatPlainDate(week.start)} 至 ${formatPlainDate(week.end)}</p>
+            </div>
+            <p class="week-summary">${escapeHtml(week.summary || "")}</p>
+            <div class="week-meta">
+              <span><strong>${week.commit_count}</strong> 个 commit</span>
+              <span><strong>${week.effective_count}</strong> 计入积分</span>
+              <span><strong>${week.contributors.length}</strong> 位贡献者</span>
+              <span class="week-source-tag ${sourceClass}">${sourceLabel}</span>
+            </div>
+            <div class="chips">${contribChips}${categoryChips}</div>
+            <ul class="highlights">${highlights}</ul>
+            <button class="commit-toggle" type="button" data-week="${week.iso_week}" aria-expanded="${isOpen}">
+              ${isOpen ? "收起 commit 明细" : `展开 ${week.commit_count} 条 commit ▾`}
+            </button>
+            <ul class="commit-list" ${isOpen ? "" : "hidden"}>${commitList}</ul>
+          </article>
+        `;
+      }
+
+      function populateFilters() {
+        const contribSet = new Set();
+        const yearSet = new Set();
+        (sourceMetrics.weekly_digests || []).forEach((week) => {
+          week.contributors.forEach((c) => contribSet.add(c));
+          if (week.start) yearSet.add(week.start.slice(0, 4));
+        });
+        const contribSelect = document.getElementById("contributor-filter");
+        contribSelect.innerHTML =
+          '<option value="all">全部</option>' +
+          Array.from(contribSet)
+            .sort()
+            .map((name) => `<option value="${escapeHtml(name)}">${escapeHtml(name)}</option>`)
+            .join("");
+        const yearSelect = document.getElementById("year-filter");
+        yearSelect.innerHTML =
+          '<option value="all">全部</option>' +
+          Array.from(yearSet)
+            .sort()
+            .reverse()
+            .map((year) => `<option value="${year}">${year}</option>`)
+            .join("");
+      }
+
+      function bindFilters() {
+        document.getElementById("contributor-filter").addEventListener("change", (e) => {
+          filters.contributor = e.target.value;
+          renderTimeline();
+        });
+        document.getElementById("year-filter").addEventListener("change", (e) => {
+          filters.year = e.target.value;
+          renderTimeline();
+        });
+        document.getElementById("search-filter").addEventListener("input", (e) => {
+          filters.search = e.target.value;
+          renderTimeline();
+        });
+        document.getElementById("reset-filters").addEventListener("click", () => {
+          filters = { contributor: "all", year: "all", search: "" };
+          document.getElementById("contributor-filter").value = "all";
+          document.getElementById("year-filter").value = "all";
+          document.getElementById("search-filter").value = "";
+          renderTimeline();
+        });
+      }
+
+      function maybeExpandFromHash() {
+        const hash = window.location.hash.replace(/^#/, "");
+        if (hash) {
+          expandedWeeks.add(hash);
+        }
+      }
+
+      async function init() {
+        const response = await fetch("metrics.json", { cache: "no-store" });
+        if (!response.ok) {
+          throw new Error(`Unable to load metrics.json: ${response.status}`);
+        }
+        sourceMetrics = await response.json();
+        document.getElementById("schema-info").textContent =
+          `Schema v${sourceMetrics.schema_version || "?"} · revision ${sourceMetrics.revision || "?"} · ${(sourceMetrics.weekly_digests || []).length} 周`;
+        populateFilters();
+        bindFilters();
+        maybeExpandFromHash();
+        renderTimeline();
+        if (window.location.hash) {
+          const target = document.getElementById(window.location.hash.replace(/^#/, ""));
+          if (target) target.scrollIntoView({ block: "start" });
+        }
+      }
+
+      init().catch((error) => {
+        const timeline = document.getElementById("timeline");
+        timeline.innerHTML = `<div class="empty-state">数据读取失败：${escapeHtml(error.message)}</div>`;
+        console.error(error);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,2234 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>NebulaLab 贡献结算看板</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --paper: #f3f4f6;
+        --paper-strong: #ffffff;
+        --ink: #101114;
+        --ink-soft: #25272d;
+        --muted: #62666f;
+        --muted-strong: #41444c;
+        --line: rgba(16, 17, 20, 0.14);
+        --line-strong: rgba(16, 17, 20, 0.28);
+        --accent: #b91c1c;
+        --accent-strong: #7f1d1d;
+        --accent-soft: rgba(185, 28, 28, 0.08);
+        --steel: #1f2937;
+        --surface: rgba(255, 255, 255, 0.86);
+        --shadow: 0 30px 70px rgba(16, 17, 20, 0.12);
+        --shadow-card: 0 12px 30px rgba(16, 17, 20, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background:
+          linear-gradient(90deg, rgba(16, 17, 20, 0.04) 1px, transparent 1px),
+          linear-gradient(180deg, #ffffff 0%, var(--paper) 54%, #e5e7eb 100%);
+        background-size: 56px 56px, auto;
+        color: var(--ink);
+        font-family:
+          ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC", sans-serif;
+        letter-spacing: 0;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .shell {
+        width: min(1180px, calc(100% - 44px));
+        margin: 0 auto;
+      }
+
+      /* ============= Topbar ============= */
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 18px 0;
+        border-bottom: 2px solid var(--ink);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+      }
+
+      .brand-mark {
+        width: 34px;
+        height: 34px;
+        display: grid;
+        place-items: center;
+        border: 2px solid var(--ink);
+        background: var(--ink);
+        color: #fff;
+      }
+
+      .brand-copy {
+        display: grid;
+        gap: 3px;
+        line-height: 1;
+      }
+
+      .brand-name {
+        font-size: 13px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .brand-tagline {
+        color: var(--accent);
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.2em;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .nav a:hover {
+        color: var(--ink);
+      }
+
+      /* ============= Hero ============= */
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+        padding: 46px 0 8px;
+      }
+
+      .hero-copy {
+        max-width: 760px;
+      }
+
+      .eyebrow {
+        margin: 0 0 18px;
+        color: var(--accent);
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0;
+        max-width: 620px;
+        font-size: clamp(34px, 5vw, 54px);
+        line-height: 1.08;
+        font-weight: 820;
+        letter-spacing: 0;
+      }
+
+      .lead {
+        max-width: 600px;
+        margin: 20px 0 0;
+        color: #343840;
+        font-size: 16px;
+        line-height: 1.78;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 24px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 0 18px;
+        border: 2px solid var(--ink);
+        background: var(--ink);
+        color: #fff;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 850;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: transform 160ms ease, background 160ms ease, color 160ms ease;
+      }
+
+      .button.secondary {
+        background: transparent;
+        color: var(--ink);
+      }
+
+      .button.ghost {
+        background: transparent;
+        color: var(--muted-strong);
+        border-color: var(--line-strong);
+      }
+
+      .button:hover {
+        transform: translateY(-1px);
+      }
+
+      .button:focus-visible,
+      .segment-button:focus-visible,
+      select:focus-visible,
+      input:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
+
+      .weekly-card {
+        margin: 14px 0 4px;
+        padding: 30px;
+        border: 2px solid var(--ink);
+        background: var(--surface);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(14px);
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+        gap: 32px;
+        align-items: stretch;
+      }
+
+      .weekly-card-main {
+        display: grid;
+        gap: 18px;
+        align-content: start;
+      }
+
+      .weekly-card-side {
+        display: grid;
+        gap: 12px;
+        align-content: start;
+        padding-left: 28px;
+        border-left: 1px solid var(--line);
+      }
+
+      .weekly-card-side-title {
+        margin: 0;
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted-strong);
+      }
+
+      @media (max-width: 880px) {
+        .weekly-card {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+        .weekly-card-side {
+          padding-left: 0;
+          padding-top: 18px;
+          border-left: 0;
+          border-top: 1px solid var(--line);
+        }
+      }
+
+      .weekly-card-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .weekly-card-eyebrow {
+        margin: 0;
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--accent-strong);
+      }
+
+      .weekly-card-range {
+        margin: 0;
+        font-size: 12px;
+        color: var(--muted);
+        font-weight: 700;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .weekly-card-title {
+        margin: 0;
+        font-size: 22px;
+        font-weight: 900;
+        line-height: 1.25;
+      }
+
+      .weekly-card-summary {
+        margin: 0;
+        font-size: 14.5px;
+        line-height: 1.8;
+        color: var(--ink-soft);
+      }
+
+      .weekly-card-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 12px;
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      .weekly-card-meta strong {
+        color: var(--ink);
+      }
+
+      .weekly-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .weekly-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 9px;
+        background: rgba(37, 99, 235, 0.08);
+        color: #1d4ed8;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .weekly-chip.contributor {
+        background: rgba(15, 118, 110, 0.1);
+        color: #0f766e;
+      }
+
+      .weekly-highlights {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 10px;
+      }
+
+      .weekly-highlight {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 10px;
+        align-items: start;
+        padding: 10px 12px;
+        border-left: 3px solid var(--accent);
+        background: rgba(185, 28, 28, 0.05);
+        font-size: 13px;
+        line-height: 1.55;
+      }
+
+      .weekly-highlight-hash {
+        font-family: "SFMono-Regular", Consolas, monospace;
+        color: var(--accent-strong);
+        font-size: 11px;
+        padding-top: 1px;
+      }
+
+      .weekly-highlight-subject strong {
+        font-weight: 700;
+      }
+
+      .weekly-highlight-author {
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .weekly-card-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding-top: 8px;
+        border-top: 1px solid var(--line);
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      .weekly-source-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 3px 8px;
+        border: 1px solid var(--line-strong);
+        border-radius: 999px;
+        color: var(--muted-strong);
+        font-size: 11px;
+        font-weight: 700;
+      }
+
+      .weekly-source-tag.llm {
+        border-color: rgba(37, 99, 235, 0.6);
+        color: #1d4ed8;
+      }
+
+      .weekly-source-tag.template,
+      .weekly-source-tag.template-fallback {
+        border-color: var(--line-strong);
+      }
+
+      /* ============= Overseer (SVG, refined) ============= */
+
+      .overseer-strip {
+        margin: 8px 0 0;
+        padding: 14px 18px 16px;
+        border: 2px solid var(--ink);
+        background:
+          linear-gradient(90deg, var(--accent-soft), transparent 56%),
+          rgba(255, 255, 255, 0.7);
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 16px;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      .overseer-caption {
+        margin: 0;
+        color: var(--accent-strong);
+        font-size: 11px;
+        font-weight: 900;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .overseer-sub {
+        margin: 4px 0 0;
+        color: var(--muted-strong);
+        font-size: 12px;
+        line-height: 1.55;
+      }
+
+      .overseer-stage {
+        position: relative;
+        width: 320px;
+        height: 96px;
+      }
+
+      .overseer-svg {
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+      }
+
+      .overseer-floor {
+        stroke: var(--ink);
+        stroke-width: 2;
+        stroke-linecap: square;
+      }
+
+      .overseer-figure {
+        transform-origin: 60px 78px;
+        animation: overseer-bob 1800ms ease-in-out infinite;
+      }
+
+      .overseer-body,
+      .overseer-head,
+      .overseer-leg {
+        fill: var(--ink);
+      }
+
+      .overseer-arm {
+        fill: var(--ink);
+        transform-origin: 64px 42px;
+        animation: overseer-arm 1200ms cubic-bezier(0.45, 0, 0.2, 1) infinite;
+      }
+
+      .overseer-whip {
+        fill: none;
+        stroke: var(--accent);
+        stroke-width: 2.4;
+        stroke-linecap: round;
+        transform-origin: 78px 42px;
+        animation: overseer-whip 1200ms cubic-bezier(0.45, 0, 0.2, 1) infinite;
+      }
+
+      .overseer-crack {
+        fill: none;
+        stroke: var(--accent);
+        stroke-width: 2;
+        stroke-linecap: round;
+        opacity: 0;
+        animation: overseer-crack 1200ms steps(1, end) infinite;
+      }
+
+      .overseer-spark {
+        fill: var(--accent);
+        opacity: 0;
+        transform-origin: 188px 46px;
+        animation: overseer-spark 1200ms ease-out infinite;
+      }
+
+      @keyframes overseer-bob {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-1.6px); }
+      }
+
+      @keyframes overseer-arm {
+        0%, 100% { transform: rotate(-22deg); }
+        46% { transform: rotate(18deg); }
+        60% { transform: rotate(6deg); }
+      }
+
+      @keyframes overseer-whip {
+        0%, 100% { transform: rotate(-26deg) scaleX(0.85); }
+        46% { transform: rotate(14deg) scaleX(1); }
+        58% { transform: rotate(2deg) scaleX(0.96); }
+      }
+
+      @keyframes overseer-crack {
+        0%, 44%, 100% { opacity: 0; }
+        46%, 54% { opacity: 1; }
+      }
+
+      @keyframes overseer-spark {
+        0%, 45% { opacity: 0; transform: scale(0.6) translate(0, 0); }
+        50% { opacity: 1; transform: scale(1) translate(0, 0); }
+        70% { opacity: 0; transform: scale(1.3) translate(6px, -2px); }
+        100% { opacity: 0; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .overseer-figure,
+        .overseer-arm,
+        .overseer-whip,
+        .overseer-crack,
+        .overseer-spark {
+          animation: none !important;
+        }
+      }
+
+      /* ============= Meter board (recent) ============= */
+
+      .recent-board {
+        position: relative;
+        margin: 28px 0 18px;
+        padding: 28px 30px;
+        background: var(--surface);
+        border: 2px solid var(--ink);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(14px);
+      }
+
+      .recent-head {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 16px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid var(--line-strong);
+        flex-wrap: wrap;
+      }
+
+      .recent-title {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 900;
+      }
+
+      .timestamp {
+        margin: 6px 0 0;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 650;
+      }
+
+      .recent-window {
+        margin: 4px 0 0;
+        color: var(--ink-soft);
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .recent-stat {
+        min-width: 120px;
+        padding-left: 20px;
+        border-left: 2px solid var(--line-strong);
+        text-align: right;
+      }
+
+      .recent-stat-value {
+        font-size: 38px;
+        line-height: 0.95;
+        font-weight: 900;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .recent-stat-label {
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .rank-list {
+        display: grid;
+        gap: 18px;
+        margin-top: 24px;
+      }
+
+      .rank-row {
+        display: grid;
+        grid-template-columns: minmax(120px, 0.7fr) minmax(0, 1.7fr) 84px;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .name {
+        font-size: 15px;
+        font-weight: 900;
+      }
+
+      .meta {
+        margin-top: 5px;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .bar {
+        height: 10px;
+        overflow: hidden;
+        background: rgba(16, 17, 20, 0.1);
+      }
+
+      .bar span {
+        display: block;
+        width: 0;
+        height: 100%;
+        background: linear-gradient(90deg, #2563eb, #0f766e);
+        transition: width 800ms cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      .percent {
+        text-align: right;
+        font-variant-numeric: tabular-nums;
+        font-size: 17px;
+        font-weight: 900;
+      }
+
+      /* ============= Sections ============= */
+
+      section {
+        padding: 60px 0;
+        border-top: 2px solid var(--line-strong);
+      }
+
+      .section-head {
+        display: grid;
+        grid-template-columns: minmax(220px, 0.58fr) minmax(0, 1fr);
+        gap: 44px;
+        align-items: start;
+        margin-bottom: 30px;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: clamp(26px, 3.2vw, 36px);
+        line-height: 1.12;
+        font-weight: 820;
+        letter-spacing: 0;
+      }
+
+      .section-copy {
+        margin: 0;
+        color: #343840;
+        font-size: 16px;
+        line-height: 1.72;
+      }
+
+      /* ============= Period panel ============= */
+
+      .period-panel {
+        display: grid;
+        grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.2fr);
+        gap: 24px;
+        align-items: end;
+        margin-bottom: 24px;
+        padding: 22px 24px;
+        border: 2px solid var(--ink);
+        background: rgba(255, 255, 255, 0.82);
+      }
+
+      .period-title {
+        margin: 0 0 6px;
+        font-size: 16px;
+        font-weight: 900;
+      }
+
+      .period-status {
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.55;
+      }
+
+      .period-toolbar {
+        display: flex;
+        gap: 10px;
+        margin-top: 12px;
+        flex-wrap: wrap;
+      }
+
+      .period-controls {
+        display: grid;
+        gap: 14px;
+      }
+
+      .segmented {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        border: 2px solid var(--ink);
+      }
+
+      .segment-button {
+        min-height: 38px;
+        border: 0;
+        border-right: 2px solid var(--ink);
+        background: transparent;
+        color: var(--ink);
+        font: inherit;
+        font-size: 13px;
+        font-weight: 850;
+        cursor: pointer;
+      }
+
+      .segment-button:last-child {
+        border-right: 0;
+      }
+
+      .segment-button[aria-pressed="true"] {
+        background: var(--ink);
+        color: #fff;
+      }
+
+      .period-inputs {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .period-field {
+        display: grid;
+        gap: 6px;
+      }
+
+      .period-field label {
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 680;
+      }
+
+      .period-field select,
+      .period-field input {
+        width: 100%;
+        min-height: 40px;
+        border: 2px solid var(--line-strong);
+        background: rgba(255, 255, 255, 0.92);
+        color: var(--ink);
+        padding: 0 11px;
+        font: inherit;
+        font-size: 14px;
+      }
+
+      .period-field[hidden] {
+        display: none;
+      }
+
+      /* ============= Metrics + table ============= */
+
+      .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0;
+        background: transparent;
+        border: 2px solid var(--ink);
+      }
+
+      .metric {
+        min-height: 140px;
+        padding: 22px 24px;
+        background: rgba(255, 255, 255, 0.88);
+        border-right: 1px solid var(--line);
+      }
+
+      .metric:last-child {
+        border-right: 0;
+      }
+
+      .metric-label {
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .metric-value {
+        margin-top: 18px;
+        font-size: 38px;
+        font-weight: 900;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .metric-note {
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .settlement-detail {
+        display: grid;
+        grid-template-columns: minmax(280px, 0.42fr) minmax(0, 1fr);
+        gap: 24px;
+        margin-top: 24px;
+        align-items: stretch;
+      }
+
+      .share-panel {
+        display: grid;
+        gap: 20px;
+        align-content: start;
+        padding: 26px;
+        border: 2px solid var(--ink);
+        background: rgba(255, 255, 255, 0.86);
+      }
+
+      .share-panel-title {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 900;
+      }
+
+      .share-chart {
+        position: relative;
+        width: min(220px, 100%);
+        aspect-ratio: 1;
+        margin: 2px auto 0;
+        border-radius: 50%;
+        background: #e5e7eb;
+      }
+
+      .share-chart::after {
+        content: "";
+        position: absolute;
+        inset: 27%;
+        border-radius: 50%;
+        background: #fff;
+        border: 1px solid var(--line);
+      }
+
+      .share-chart-center {
+        position: absolute;
+        inset: 31%;
+        z-index: 1;
+        display: grid;
+        place-content: center;
+        text-align: center;
+        font-size: 12px;
+        color: var(--muted);
+        font-weight: 800;
+      }
+
+      .share-chart-center strong {
+        display: block;
+        color: var(--ink);
+        font-size: 26px;
+        line-height: 1;
+        font-weight: 900;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .share-legend {
+        display: grid;
+        gap: 10px;
+      }
+
+      .share-legend-item {
+        display: grid;
+        grid-template-columns: 12px minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 10px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .share-swatch {
+        width: 12px;
+        height: 12px;
+        background: var(--swatch);
+      }
+
+      .share-legend-name {
+        min-width: 0;
+        overflow: hidden;
+        color: var(--ink);
+        font-weight: 820;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .share-legend-value {
+        font-variant-numeric: tabular-nums;
+        font-weight: 820;
+      }
+
+      .table-wrap {
+        overflow-x: auto;
+        border: 2px solid var(--ink);
+        background: rgba(255, 255, 255, 0.86);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 880px;
+      }
+
+      th,
+      td {
+        padding: 16px 18px;
+        border-bottom: 1px solid var(--line);
+        text-align: left;
+        font-size: 14px;
+        vertical-align: top;
+      }
+
+      th {
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      td.number,
+      th.number {
+        text-align: right;
+        font-variant-numeric: tabular-nums;
+      }
+
+      tr.contrib-row {
+        cursor: pointer;
+        transition: background 150ms ease;
+      }
+
+      tr.contrib-row:hover {
+        background: rgba(37, 99, 235, 0.04);
+      }
+
+      tr.contrib-row[aria-expanded="true"] {
+        background: rgba(37, 99, 235, 0.06);
+      }
+
+      .expand-caret {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        margin-right: 8px;
+        transition: transform 180ms ease;
+        color: var(--muted);
+      }
+
+      tr.contrib-row[aria-expanded="true"] .expand-caret {
+        transform: rotate(90deg);
+        color: var(--ink);
+      }
+
+      tr.drilldown-row > td {
+        padding: 0;
+        background: rgba(16, 17, 20, 0.03);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .drilldown {
+        padding: 14px 22px 22px;
+      }
+
+      .drilldown-title {
+        margin: 4px 0 10px;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .drilldown-table {
+        width: 100%;
+        min-width: 720px;
+        border-collapse: collapse;
+        font-size: 13px;
+      }
+
+      .drilldown-table th,
+      .drilldown-table td {
+        padding: 8px 10px;
+        border-bottom: 1px solid var(--line);
+        font-size: 13px;
+      }
+
+      .drilldown-table tbody tr:last-child td {
+        border-bottom: 0;
+      }
+
+      .commit-hash {
+        font-family: "SFMono-Regular", Consolas, monospace;
+        color: var(--accent-strong);
+        font-size: 12px;
+      }
+
+      .commit-co {
+        display: inline-block;
+        margin-left: 6px;
+        padding: 1px 7px;
+        background: rgba(37, 99, 235, 0.12);
+        color: #1d4ed8;
+        border-radius: 999px;
+        font-size: 11px;
+        font-weight: 700;
+      }
+
+      tr:last-child td {
+        border-bottom: 0;
+      }
+
+      .empty-row td {
+        color: var(--muted);
+        font-style: italic;
+      }
+
+      /* ============= Rules / formula ============= */
+
+      .rules {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0;
+        background: transparent;
+        border: 2px solid var(--ink);
+      }
+
+      .rule {
+        padding: 24px;
+        background: rgba(255, 255, 255, 0.86);
+        border-right: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .rule strong {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 16px;
+        font-weight: 900;
+      }
+
+      .rule p {
+        margin: 0;
+        color: var(--muted-strong);
+        font-size: 14px;
+        line-height: 1.65;
+      }
+
+      .formula {
+        padding: 22px 24px;
+        border-left: 6px solid var(--accent);
+        background: var(--accent-soft);
+        color: #2f1515;
+        font-family:
+          "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+        font-size: 13px;
+        line-height: 1.85;
+        margin: 18px 0 0;
+        white-space: pre-wrap;
+      }
+
+      .footer {
+        padding: 36px 0 56px;
+        color: var(--muted);
+        font-size: 13px;
+        border-top: 2px solid var(--line-strong);
+        display: grid;
+        gap: 8px;
+      }
+
+      .footer a {
+        text-decoration: underline;
+        text-decoration-color: var(--line-strong);
+      }
+
+      /* ============= Responsive ============= */
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation: none !important;
+          transition: none !important;
+        }
+      }
+
+      @media (max-width: 980px) {
+        .hero {
+          grid-template-columns: 1fr;
+          gap: 28px;
+          padding-top: 34px;
+        }
+        .section-head,
+        .period-panel,
+        .settlement-detail,
+        .rules {
+          grid-template-columns: 1fr;
+        }
+        .metrics-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .metric {
+          border-right: 1px solid var(--line);
+        }
+        .metric:nth-child(2n) {
+          border-right: 0;
+        }
+        .overseer-strip {
+          grid-template-columns: 1fr;
+        }
+        .overseer-stage {
+          width: 100%;
+          height: 100px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .topbar {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 14px;
+        }
+        .recent-head {
+          flex-direction: column;
+        }
+        .recent-stat {
+          border-left: 0;
+          padding-left: 0;
+          text-align: left;
+        }
+        .rank-row {
+          grid-template-columns: 1fr;
+          gap: 6px;
+        }
+        .percent {
+          text-align: left;
+        }
+        .metrics-grid {
+          grid-template-columns: 1fr;
+        }
+        .metric {
+          border-right: 0;
+        }
+        .segmented,
+        .period-inputs {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="shell topbar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">N</div>
+        <div class="brand-copy">
+          <span class="brand-name">NebulaLab Ledger</span>
+          <span class="brand-tagline">残酷的监工</span>
+        </div>
+      </div>
+      <nav class="nav" aria-label="页面导航">
+        <a href="#metrics">工作量</a>
+        <a href="#method">计算方法</a>
+        <a href="history.html">贡献历史</a>
+        <a href="policy.html">制度原文</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="shell hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Contribution Settlement</p>
+          <h1 id="hero-title">贡献结算看板</h1>
+          <p class="lead">
+            本页面展示 NebulaLab 相关仓库已合并贡献的结算比例。数据由仓库脚本生成，按 GitHub
+            可追溯记录自动折算，不手工填写。
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#metrics">查看当前比例</a>
+            <a class="button secondary" href="policy.html">阅读制度原文</a>
+          </div>
+        </div>
+
+        <div class="overseer-strip" aria-label="监工挥鞭动画">
+            <div>
+              <p class="overseer-caption">残酷的监工 · 在线巡视</p>
+              <p class="overseer-sub">
+                算法不打扰开发，但它一直在看。拆 commit、堆 lock 文件、纯格式化提交，都已自动失效。
+              </p>
+            </div>
+            <div class="overseer-stage" role="img" aria-label="监工挥鞭循环动画">
+              <svg
+                class="overseer-svg"
+                viewBox="0 0 220 92"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <defs>
+                  <linearGradient id="overseer-ground" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="rgba(16,17,20,0.16)" />
+                    <stop offset="1" stop-color="rgba(16,17,20,0)" />
+                  </linearGradient>
+                </defs>
+                <line class="overseer-floor" x1="6" y1="82" x2="214" y2="82" />
+                <rect x="6" y="82" width="208" height="6" fill="url(#overseer-ground)" />
+
+                <g class="overseer-figure">
+                  <ellipse cx="60" cy="84" rx="22" ry="3" fill="rgba(16,17,20,0.18)" />
+                  <circle class="overseer-head" cx="60" cy="22" r="9" />
+                  <path
+                    class="overseer-body"
+                    d="M50 32 Q60 28 70 32 L66 64 Q60 66 54 64 Z"
+                  />
+                  <path class="overseer-leg" d="M55 64 L52 82 L56 82 L60 66 Z" />
+                  <path class="overseer-leg" d="M65 64 L68 82 L64 82 L60 66 Z" />
+                  <g class="overseer-arm">
+                    <rect x="62" y="40" width="22" height="5" rx="2.4" />
+                    <circle cx="83" cy="42.5" r="3" />
+                  </g>
+                </g>
+
+                <path
+                  class="overseer-whip"
+                  d="M82 42 Q120 30 158 38 Q186 44 198 50"
+                />
+                <path
+                  class="overseer-crack"
+                  d="M186 32 L196 26 M190 38 L204 36 M192 44 L208 46"
+                />
+                <g class="overseer-spark">
+                  <circle cx="188" cy="46" r="2" />
+                  <circle cx="194" cy="42" r="1.4" />
+                  <circle cx="184" cy="40" r="1.2" />
+                </g>
+              </svg>
+            </div>
+          </div>
+
+        <aside class="weekly-card" aria-label="本周动态" id="weekly-card">
+          <div class="weekly-card-main">
+            <div class="weekly-card-head">
+              <p class="weekly-card-eyebrow">本周动态</p>
+              <p class="weekly-card-range" id="weekly-range">读取中…</p>
+            </div>
+            <h2 class="weekly-card-title" id="weekly-title">正在生成摘要</h2>
+            <p class="weekly-card-summary" id="weekly-summary">页面正在读取最新的统计数据。</p>
+            <div class="weekly-card-meta" id="weekly-meta"></div>
+            <div class="weekly-chips" id="weekly-contributors" aria-label="本周贡献者"></div>
+            <div class="weekly-card-footer">
+              <a class="button secondary" href="history.html" id="weekly-history-link">查看完整历史 →</a>
+              <span class="weekly-source-tag" id="weekly-source-tag">--</span>
+            </div>
+          </div>
+          <div class="weekly-card-side">
+            <p class="weekly-card-side-title">本周重点改动</p>
+            <ul class="weekly-highlights" id="weekly-highlights" aria-label="本周重点改动"></ul>
+          </div>
+        </aside>
+      </section>
+
+      <div class="shell">
+        <section class="recent-board" aria-labelledby="recent-title" style="border-top: 0;">
+          <div class="recent-head">
+            <div>
+              <h2 class="recent-title" id="recent-title">最新动态</h2>
+              <p class="recent-window" id="recent-window">读取中…</p>
+              <p class="timestamp" id="updated-at">正在读取统计数据</p>
+            </div>
+            <div class="recent-stat" aria-label="近期有效提交数">
+              <div class="recent-stat-value" id="recent-commit-count">--</div>
+              <div class="recent-stat-label">近 30 天有效 Commit</div>
+            </div>
+          </div>
+          <div class="rank-list" id="rank-list"></div>
+        </section>
+      </div>
+
+      <section class="shell" id="metrics">
+        <div class="section-head">
+          <h2>贡献结算追溯</h2>
+          <p class="section-copy">
+            选择统计区间后，总计指标、比例图和明细表会基于同一份 commit
+            明细同步更新。表格行点击可展开该作者的 commit 明细。
+          </p>
+        </div>
+
+        <div class="period-panel" aria-label="时间筛选">
+          <div>
+            <p class="period-title">统计区间</p>
+            <p class="period-status" id="period-status">全部历史</p>
+            <div class="period-toolbar">
+              <button class="button ghost" type="button" id="reset-filters">重置筛选</button>
+              <button class="button ghost" type="button" id="copy-markdown">复制 Markdown</button>
+              <button class="button ghost" type="button" id="download-csv">下载 CSV</button>
+            </div>
+          </div>
+          <div class="period-controls">
+            <div class="segmented" role="group" aria-label="筛选模式">
+              <button class="segment-button" type="button" data-period-mode="all" aria-pressed="true">全部</button>
+              <button class="segment-button" type="button" data-period-mode="year" aria-pressed="false">按年</button>
+              <button class="segment-button" type="button" data-period-mode="month" aria-pressed="false">按月</button>
+              <button class="segment-button" type="button" data-period-mode="custom" aria-pressed="false">自定义</button>
+            </div>
+            <div class="period-inputs">
+              <div class="period-field">
+                <label for="repo-select">仓库</label>
+                <select id="repo-select"></select>
+              </div>
+              <div class="period-field" id="year-field" hidden>
+                <label for="year-select">年度</label>
+                <select id="year-select"></select>
+              </div>
+              <div class="period-field" id="month-field" hidden>
+                <label for="month-input">月份</label>
+                <input id="month-input" type="month" />
+              </div>
+              <div class="period-field" id="start-field" hidden>
+                <label for="start-date">开始日期</label>
+                <input id="start-date" type="date" />
+              </div>
+              <div class="period-field" id="end-field" hidden>
+                <label for="end-date">结束日期</label>
+                <input id="end-date" type="date" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="metrics-grid">
+          <div class="metric">
+            <div class="metric-label">贡献者</div>
+            <div class="metric-value" id="total-contributors">--</div>
+            <div class="metric-note">排除 Bot 与 AI Co-author</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">有效 Commit</div>
+            <div class="metric-value" id="total-effective-commits">--</div>
+            <div class="metric-note">存在有效加权改动</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">加权改动量</div>
+            <div class="metric-value" id="total-weighted-churn">--</div>
+            <div class="metric-note">含文件与仓库权重</div>
+          </div>
+          <div class="metric">
+            <div class="metric-label">未分类文件</div>
+            <div class="metric-value" id="total-unknown-files">--</div>
+            <div class="metric-note">命中 fallback，待人工归类</div>
+          </div>
+        </div>
+
+        <div class="settlement-detail">
+          <aside class="share-panel" aria-label="贡献比例图">
+            <p class="share-panel-title">贡献比例图</p>
+            <div class="share-chart" id="share-chart" role="img" aria-label="当前区间贡献比例">
+              <div class="share-chart-center">
+                <strong id="share-chart-total">--</strong>
+                贡献者
+              </div>
+            </div>
+            <div class="share-legend" id="share-legend"></div>
+          </aside>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>贡献者</th>
+                  <th class="number">分配比例</th>
+                  <th class="number">积分</th>
+                  <th class="number">有效 Commit</th>
+                  <th class="number">原始 Commit</th>
+                  <th class="number">加权改动量</th>
+                  <th class="number">触达文件</th>
+                </tr>
+              </thead>
+              <tbody id="contributors-table"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="shell" id="method">
+        <div class="section-head">
+          <h2>统计口径</h2>
+          <p class="section-copy">
+            本机制刻意避免人工打分。它只使用 GitHub 可追溯数据，并通过分级权重 + 周聚合 + sqrt
+            折算降低机械改动对分配结果的影响。
+          </p>
+        </div>
+        <div class="rules">
+          <div class="rule">
+            <strong>只算已合并贡献</strong>
+            <p>统计主分支中的非 merge commit。未合并分支、实验代码和废弃改动不进入结算。</p>
+          </div>
+          <div class="rule">
+            <strong>排除低信号文件</strong>
+            <p>lock / min / map / dist / vendor 等默认权重 0；未分类路径 fallback 也是 0，避免依赖更新或大型数据导入放大比例。</p>
+          </div>
+          <div class="rule">
+            <strong>按周开方</strong>
+            <p>把同一作者一周内的 weighted churn 累加后再 sqrt，commit 切片刷分自动失效。</p>
+          </div>
+          <div class="rule">
+            <strong>Co-authored-by 均分</strong>
+            <p>Squash merge 时 GitHub 自动写入 Co-authored-by trailer；脚本会把 weighted churn 在所有贡献者间均分。</p>
+          </div>
+          <div class="rule">
+            <strong>非秒级实时</strong>
+            <p>页面筛选即时重算；底层数据由 GitHub Actions 在 main 更新、每日定时或手动运行时重新生成并部署。</p>
+          </div>
+          <div class="rule">
+            <strong>跨仓库权重</strong>
+            <p>主仓库 1.0、插件库 0.9、Docs 0.45。仓库筛选只影响查看口径，默认结算看全部仓库。</p>
+          </div>
+        </div>
+        <pre class="formula">file_weighted_churn = (additions + 0.5 × deletions) × file_type_weight
+bucket_churn(author, week, repo) = Σ (1 / N_authors) × file_weighted_churn
+bucket_score(author, week, repo) = sqrt(bucket_churn) × repo_weight
+个人积分 = Σ over (week, repo) of bucket_score(self, week, repo)
+个人分配比例 = 个人积分 / 全部贡献者积分之和</pre>
+      </section>
+    </main>
+
+    <footer class="shell footer">
+      <div>Pages workflow 完成后部署最新数据；本地预览需手动运行 <code>scripts/contribution_metrics.py</code>。</div>
+      <div>Schema v3 · <span id="schema-info">--</span></div>
+    </footer>
+
+    <script>
+      const formatNumber = new Intl.NumberFormat("zh-CN", { maximumFractionDigits: 1 });
+      const formatScore = new Intl.NumberFormat("zh-CN", { maximumFractionDigits: 2 });
+      const shareColors = [
+        "#2563eb",
+        "#0f766e",
+        "#d97706",
+        "#7c3aed",
+        "#dc2626",
+        "#475569",
+        "#0891b2",
+        "#65a30d",
+      ];
+      const OTHER_COLOR = "#94a3b8";
+      const OTHER_THRESHOLD = 1.0; // percent
+
+      function escapeHtml(value) {
+        return String(value ?? "").replace(/[&<>"']/g, (char) => {
+          const entities = {
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            '"': "&quot;",
+            "'": "&#39;",
+          };
+          return entities[char];
+        });
+      }
+
+      let sourceMetrics = null;
+      const defaultPeriodState = () => ({
+        mode: "all",
+        year: "",
+        month: "",
+        start: "",
+        end: "",
+        repo: "all",
+      });
+      let periodState = defaultPeriodState();
+      let expandedContributor = null;
+      let lastFiltered = null;
+
+      function setText(id, value) {
+        const el = document.getElementById(id);
+        if (el) el.textContent = value;
+      }
+
+      function formatDate(value) {
+        if (!value) return "尚未生成";
+        return new Intl.DateTimeFormat("zh-CN", {
+          dateStyle: "medium",
+          timeStyle: "short",
+        }).format(new Date(value));
+      }
+
+      function formatPlainDate(value) {
+        if (!value) return "未设置";
+        return new Intl.DateTimeFormat("zh-CN", { dateStyle: "medium" }).format(new Date(`${value}T00:00:00`));
+      }
+
+      function toIsoDate(date) {
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, "0");
+        const day = String(date.getDate()).padStart(2, "0");
+        return `${year}-${month}-${day}`;
+      }
+
+      function shiftMonth(value, offset) {
+        const date = new Date(`${value}T00:00:00`);
+        date.setMonth(date.getMonth() + offset);
+        return toIsoDate(date);
+      }
+
+      function getCommitDate(commit) {
+        return commit.date || (commit.authored_at ? commit.authored_at.slice(0, 10) : "");
+      }
+
+      function getCommitRepoId(commit) {
+        return commit.repo_id || "nebulalab";
+      }
+
+      function getCommitRepoName(commit) {
+        return commit.repo_name || "NebulaLab";
+      }
+
+      function uniqueSorted(values) {
+        return Array.from(new Set(values.filter(Boolean))).sort();
+      }
+
+      function getAvailableYears(commits) {
+        return uniqueSorted(commits.map((commit) => getCommitDate(commit).slice(0, 4))).reverse();
+      }
+
+      function getAvailableMonths(commits) {
+        return uniqueSorted(commits.map((commit) => getCommitDate(commit).slice(0, 7))).reverse();
+      }
+
+      function getAvailableRepositories(metrics) {
+        if (Array.isArray(metrics.repositories) && metrics.repositories.length > 0) {
+          return metrics.repositories.map((repo) => ({
+            id: repo.id,
+            name: repo.name,
+            weight: repo.weight,
+          }));
+        }
+        const byId = new Map();
+        (metrics.commits || []).forEach((commit) => {
+          byId.set(getCommitRepoId(commit), {
+            id: getCommitRepoId(commit),
+            name: getCommitRepoName(commit),
+            weight: commit.repo_weight || 1,
+          });
+        });
+        return Array.from(byId.values()).sort((a, b) => a.name.localeCompare(b.name));
+      }
+
+      function repositoryLabel(repoId) {
+        if (repoId === "all") return "全部仓库";
+        const repo = getAvailableRepositories(sourceMetrics).find((item) => item.id === repoId);
+        return repo ? repo.name : repoId;
+      }
+
+      function filterCommitsByRepository(commits) {
+        if (periodState.repo === "all") return commits;
+        return commits.filter((commit) => getCommitRepoId(commit) === periodState.repo);
+      }
+
+      function filterCommitsByPeriod(commits) {
+        if (periodState.mode === "year") {
+          return commits.filter((commit) => getCommitDate(commit).startsWith(periodState.year));
+        }
+        if (periodState.mode === "month") {
+          return commits.filter((commit) => getCommitDate(commit).startsWith(periodState.month));
+        }
+        if (periodState.mode === "custom") {
+          return commits.filter((commit) => {
+            const date = getCommitDate(commit);
+            if (!date) return false;
+            if (periodState.start && date < periodState.start) return false;
+            if (periodState.end && date > periodState.end) return false;
+            return true;
+          });
+        }
+        return commits;
+      }
+
+      function filterCommits(commits) {
+        return filterCommitsByPeriod(filterCommitsByRepository(commits));
+      }
+
+      function commitAuthorIds(commit) {
+        if (Array.isArray(commit.all_contributor_ids) && commit.all_contributor_ids.length > 0) {
+          return commit.all_contributor_ids;
+        }
+        return [commit.contributor_id];
+      }
+
+      function emptyContributor(cid) {
+        return {
+          id: cid,
+          display_name: cid,
+          raw_commits: 0,
+          effective_commits: 0,
+          additions: 0,
+          deletions: 0,
+          raw_churn: 0,
+          weighted_churn: 0,
+          score: 0,
+          files_touched: 0,
+          co_authored_commits: 0,
+          commits: [],
+        };
+      }
+
+      function aggregateCommits(commits) {
+        const contributors = new Map();
+        const bucket = new Map(); // key: cid|iso_week|repo_id -> {churn, repo_weight}
+        let unknownFiles = 0;
+        const effectiveHashes = new Set();
+        const totalHashes = new Set();
+
+        commits.forEach((commit) => {
+          totalHashes.add(commit.hash);
+          if (commit.effective) effectiveHashes.add(commit.hash);
+          const authors = commitAuthorIds(commit);
+          const share = 1 / Math.max(authors.length, 1);
+          const fileChurn = commit.file_weighted_churn || 0;
+          const repoWeight = commit.repo_weight || 1;
+          const isoWeek = commit.iso_week || "";
+          const repoId = getCommitRepoId(commit);
+          const effective = !!commit.effective;
+          unknownFiles += commit.unknown_files || 0;
+
+          authors.forEach((cid) => {
+            if (!contributors.has(cid)) {
+              contributors.set(cid, emptyContributor(cid));
+            }
+            const c = contributors.get(cid);
+            c.raw_commits += 1;
+            if (effective) c.effective_commits += 1;
+            c.additions += (commit.additions || 0) * share;
+            c.deletions += (commit.deletions || 0) * share;
+            c.raw_churn += (commit.raw_churn || 0) * share;
+            c.weighted_churn += (commit.weighted_churn || 0) * share;
+            c.files_touched += (commit.files_touched || 0) * share;
+            if (authors.length > 1) c.co_authored_commits += 1;
+            c.commits.push({
+              hash: commit.hash,
+              short_hash: commit.short_hash || (commit.hash || "").slice(0, 12),
+              date: getCommitDate(commit),
+              iso_week: isoWeek,
+              subject: commit.subject || "",
+              repo_id: repoId,
+              repo_name: getCommitRepoName(commit),
+              effective,
+              weighted_churn: (commit.weighted_churn || 0) * share,
+              additions: (commit.additions || 0) * share,
+              deletions: (commit.deletions || 0) * share,
+              files_touched: (commit.files_touched || 0) * share,
+              co_authored: authors.length > 1,
+            });
+
+            if (effective && isoWeek) {
+              const key = `${cid}|${isoWeek}|${repoId}`;
+              let slot = bucket.get(key);
+              if (!slot) {
+                slot = { churn: 0, repo_weight: repoWeight };
+                bucket.set(key, slot);
+              }
+              slot.churn += fileChurn * share;
+            }
+          });
+        });
+
+        bucket.forEach((slot, key) => {
+          const cid = key.split("|", 1)[0];
+          const contributor = contributors.get(cid);
+          if (contributor) {
+            contributor.score += Math.sqrt(slot.churn) * slot.repo_weight;
+          }
+        });
+
+        const output = Array.from(contributors.values());
+        const totalScore = output.reduce((sum, item) => sum + item.score, 0);
+        const totalWeightedChurn = output.reduce((sum, item) => sum + item.weighted_churn, 0);
+
+        output.forEach((item) => {
+          item.weighted_churn = Number(item.weighted_churn.toFixed(2));
+          item.score = Number(item.score.toFixed(4));
+          item.share_pct = totalScore ? Number(((item.score / totalScore) * 100).toFixed(2)) : 0;
+          item.weighted_churn_share_pct = totalWeightedChurn
+            ? Number(((item.weighted_churn / totalWeightedChurn) * 100).toFixed(2))
+            : 0;
+          item.additions = Math.round(item.additions);
+          item.deletions = Math.round(item.deletions);
+          item.files_touched = Math.round(item.files_touched);
+          item.commits.sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+        });
+        output.sort((a, b) => b.score - a.score);
+
+        return {
+          contributors: output,
+          totals: {
+            contributors: output.length,
+            raw_commits: totalHashes.size,
+            effective_commits: effectiveHashes.size,
+            weighted_churn: Number(totalWeightedChurn.toFixed(2)),
+            score: Number(totalScore.toFixed(4)),
+            unknown_files: unknownFiles,
+          },
+        };
+      }
+
+      function currentPeriodLabel(commits) {
+        if (periodState.mode === "year") return `${periodState.year} 年`;
+        if (periodState.mode === "month") return `${periodState.month} 月`;
+        if (periodState.mode === "custom") {
+          const start = periodState.start ? formatPlainDate(periodState.start) : "最早记录";
+          const end = periodState.end ? formatPlainDate(periodState.end) : "最新记录";
+          return `${start} 至 ${end}`;
+        }
+        const dates = commits.map(getCommitDate).filter(Boolean).sort();
+        if (dates.length === 0) return "全部历史";
+        return `${formatPlainDate(dates[0])} 至 ${formatPlainDate(dates[dates.length - 1])}`;
+      }
+
+      function currentFilterLabel(repoScopedCommits) {
+        const periodLabel = currentPeriodLabel(repoScopedCommits);
+        const repoLabel = repositoryLabel(periodState.repo);
+        return periodState.repo === "all" ? periodLabel : `${periodLabel} · ${repoLabel}`;
+      }
+
+      function updatePeriodControls() {
+        document.querySelectorAll(".segment-button").forEach((button) => {
+          button.setAttribute("aria-pressed", String(button.dataset.periodMode === periodState.mode));
+        });
+        document.getElementById("year-field").hidden = periodState.mode !== "year";
+        document.getElementById("month-field").hidden = periodState.mode !== "month";
+        document.getElementById("start-field").hidden = periodState.mode !== "custom";
+        document.getElementById("end-field").hidden = periodState.mode !== "custom";
+      }
+
+      function updatePeriodUrl() {
+        const params = new URLSearchParams();
+        if (periodState.mode !== "all") params.set("period", periodState.mode);
+        if (periodState.mode === "year" && periodState.year) params.set("year", periodState.year);
+        if (periodState.mode === "month" && periodState.month) params.set("month", periodState.month);
+        if (periodState.mode === "custom") {
+          if (periodState.start) params.set("start", periodState.start);
+          if (periodState.end) params.set("end", periodState.end);
+        }
+        if (periodState.repo !== "all") params.set("repo", periodState.repo);
+        const query = params.toString();
+        const nextUrl = `${window.location.pathname}${query ? `?${query}` : ""}${window.location.hash}`;
+        window.history.replaceState(null, "", nextUrl);
+      }
+
+      function renderTableEmptyState() {
+        document.getElementById("contributors-table").innerHTML =
+          '<tr class="empty-row"><td colspan="7">当前时间段没有有效贡献记录。</td></tr>';
+      }
+
+      function rollupContributorsForChart(contributors) {
+        const main = [];
+        const small = [];
+        contributors.forEach((item) => {
+          if (item.share_pct >= OTHER_THRESHOLD) main.push(item);
+          else small.push(item);
+        });
+        const segments = main.map((item, index) => ({
+          name: item.display_name,
+          share_pct: item.share_pct,
+          color: shareColors[index % shareColors.length],
+          id: item.id,
+        }));
+        if (small.length > 0) {
+          const otherShare = small.reduce((sum, item) => sum + item.share_pct, 0);
+          segments.push({
+            name: `其他 (${small.length} 人)`,
+            share_pct: Number(otherShare.toFixed(2)),
+            color: OTHER_COLOR,
+            id: "__other__",
+          });
+        }
+        return segments;
+      }
+
+      function renderShareChart(contributors) {
+        const chart = document.getElementById("share-chart");
+        const legend = document.getElementById("share-legend");
+        const total = document.getElementById("share-chart-total");
+        legend.innerHTML = "";
+        total.textContent = formatNumber.format(contributors.length);
+
+        if (contributors.length === 0) {
+          chart.style.background = "#e5e7eb";
+          chart.setAttribute("aria-label", "当前区间没有有效贡献记录");
+          legend.innerHTML = '<div class="meta">当前区间没有有效贡献记录。</div>';
+          return;
+        }
+
+        const segments = rollupContributorsForChart(contributors);
+        let cursor = 0;
+        const gradientStops = segments.map((seg, index) => {
+          const start = cursor;
+          const end = index === segments.length - 1 ? 360 : cursor + seg.share_pct * 3.6;
+          cursor = end;
+          return `${seg.color} ${start.toFixed(2)}deg ${end.toFixed(2)}deg`;
+        });
+        chart.style.background = `conic-gradient(${gradientStops.join(", ")})`;
+        chart.setAttribute(
+          "aria-label",
+          `当前区间共 ${contributors.length} 位贡献者，比例图按积分占比从大到小排列。`,
+        );
+
+        segments.forEach((seg) => {
+          const row = document.createElement("div");
+          row.className = "share-legend-item";
+          row.style.setProperty("--swatch", seg.color);
+          row.innerHTML = `
+            <span class="share-swatch" aria-hidden="true"></span>
+            <span class="share-legend-name">${escapeHtml(seg.name)}</span>
+            <span class="share-legend-value">${seg.share_pct.toFixed(2)}%</span>
+          `;
+          legend.appendChild(row);
+        });
+      }
+
+      function renderRank(contributors) {
+        const list = document.getElementById("rank-list");
+        list.innerHTML = "";
+        if (contributors.length === 0) {
+          list.innerHTML = '<div class="meta">近 30 天没有有效贡献记录。</div>';
+          return;
+        }
+        contributors.forEach((item) => {
+          const row = document.createElement("div");
+          row.className = "rank-row";
+          row.innerHTML = `
+            <div>
+              <div class="name">${escapeHtml(item.display_name)}</div>
+              <div class="meta">${item.effective_commits} 个有效 commit${item.co_authored_commits ? ` · ${item.co_authored_commits} 个 co-author` : ""}</div>
+            </div>
+            <div class="bar" aria-hidden="true"><span style="width:${item.share_pct}%"></span></div>
+            <div class="percent">${item.share_pct.toFixed(2)}%</div>
+          `;
+          list.appendChild(row);
+        });
+      }
+
+      function renderContributorRow(item) {
+        const expanded = expandedContributor === item.id;
+        return `
+          <tr class="contrib-row" data-id="${escapeHtml(item.id)}" role="button" tabindex="0" aria-expanded="${expanded}">
+            <td>
+              <span class="expand-caret" aria-hidden="true">▶</span>
+              <strong>${escapeHtml(item.display_name)}</strong>
+            </td>
+            <td class="number">${item.share_pct.toFixed(2)}%</td>
+            <td class="number">${formatScore.format(item.score)}</td>
+            <td class="number">${formatNumber.format(item.effective_commits)}</td>
+            <td class="number">${formatNumber.format(item.raw_commits)}</td>
+            <td class="number">${formatNumber.format(item.weighted_churn)}</td>
+            <td class="number">${formatNumber.format(item.files_touched)}</td>
+          </tr>
+        `;
+      }
+
+      function renderDrilldownRow(item) {
+        if (expandedContributor !== item.id) return "";
+        const commits = item.commits.slice(0, 60);
+        const more = item.commits.length - commits.length;
+        const rows = commits
+          .map(
+            (commit) => `
+              <tr>
+                <td><span class="commit-hash">${escapeHtml(commit.short_hash)}</span></td>
+                <td>${escapeHtml(commit.date || "—")}</td>
+                <td>${escapeHtml(commit.iso_week || "—")}</td>
+                <td>${escapeHtml(commit.subject || "")}${commit.co_authored ? '<span class="commit-co">co-author</span>' : ""}</td>
+                <td>${escapeHtml(commit.repo_name)}</td>
+                <td class="number">${formatNumber.format(commit.weighted_churn)}</td>
+                <td class="number">${commit.effective ? "✓" : "—"}</td>
+              </tr>
+            `,
+          )
+          .join("");
+        return `
+          <tr class="drilldown-row">
+            <td colspan="7">
+              <div class="drilldown">
+                <p class="drilldown-title">${escapeHtml(item.display_name)} 的 commit 明细 (按日期倒序，最多 60 条${more > 0 ? `，余 ${more} 条已省略` : ""})</p>
+                <div style="overflow-x:auto;">
+                <table class="drilldown-table">
+                  <thead>
+                    <tr>
+                      <th>Hash</th>
+                      <th>日期</th>
+                      <th>ISO 周</th>
+                      <th>说明</th>
+                      <th>仓库</th>
+                      <th class="number">加权改动</th>
+                      <th class="number">有效</th>
+                    </tr>
+                  </thead>
+                  <tbody>${rows}</tbody>
+                </table>
+                </div>
+              </div>
+            </td>
+          </tr>
+        `;
+      }
+
+      function renderTable(contributors) {
+        const body = document.getElementById("contributors-table");
+        body.innerHTML = contributors
+          .map((item) => renderContributorRow(item) + renderDrilldownRow(item))
+          .join("");
+        body.querySelectorAll(".contrib-row").forEach((row) => {
+          row.addEventListener("click", () => toggleExpanded(row.dataset.id));
+          row.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              toggleExpanded(row.dataset.id);
+            }
+          });
+        });
+      }
+
+      function toggleExpanded(cid) {
+        expandedContributor = expandedContributor === cid ? null : cid;
+        if (lastFiltered) renderTable(lastFiltered.contributors);
+      }
+
+      function getRecentWindow(commits) {
+        const dates = commits.map(getCommitDate).filter(Boolean).sort();
+        const end = sourceMetrics.generated_at
+          ? sourceMetrics.generated_at.slice(0, 10)
+          : dates[dates.length - 1] || toIsoDate(new Date());
+        const start = shiftMonth(end, -1);
+        return {
+          label: `${formatPlainDate(start)} 至 ${formatPlainDate(end)}`,
+          rangeStart: start,
+          rangeEnd: end,
+          commits: commits.filter((commit) => {
+            const date = getCommitDate(commit);
+            return date && date >= start && date <= end;
+          }),
+        };
+      }
+
+      function renderRecentBoard() {
+        const commits = sourceMetrics.commits || [];
+        const recent = getRecentWindow(commits);
+        const metrics = aggregateCommits(recent.commits);
+        setText("recent-window", `统计窗口：${recent.label}`);
+        setText("updated-at", `数据生成于 ${formatDate(sourceMetrics.generated_at)}`);
+        setText("recent-commit-count", formatNumber.format(metrics.totals.effective_commits));
+        renderRank(metrics.contributors);
+      }
+
+      function renderMetricsView(metrics, label, filteredCommitCount) {
+        setText("period-status", `${label} · ${filteredCommitCount} non-bot commits`);
+        setText("total-contributors", formatNumber.format(metrics.totals.contributors));
+        setText("total-effective-commits", formatNumber.format(metrics.totals.effective_commits));
+        setText("total-weighted-churn", formatNumber.format(metrics.totals.weighted_churn));
+        setText("total-unknown-files", formatNumber.format(metrics.totals.unknown_files || 0));
+        renderShareChart(metrics.contributors);
+
+        if (metrics.contributors.length === 0) {
+          renderTableEmptyState();
+          return;
+        }
+        renderTable(metrics.contributors);
+      }
+
+      function applyPeriodFilter() {
+        const commits = sourceMetrics.commits || [];
+        updatePeriodControls();
+        updatePeriodUrl();
+        const repoScoped = filterCommitsByRepository(commits);
+        const filtered = filterCommitsByPeriod(repoScoped);
+        const metrics = aggregateCommits(filtered);
+        lastFiltered = metrics;
+        renderMetricsView(metrics, currentFilterLabel(repoScoped), filtered.length);
+      }
+
+      function hydratePeriodStateFromUrl({ years, months, dates, repositories }) {
+        const params = new URLSearchParams(window.location.search);
+        const mode = params.get("period");
+        if (["all", "year", "month", "custom"].includes(mode)) {
+          periodState.mode = mode;
+        }
+
+        const year = params.get("year");
+        if (year && years.includes(year)) periodState.year = year;
+
+        const month = params.get("month");
+        if (month && months.includes(month)) periodState.month = month;
+
+        const minDate = dates[0];
+        const maxDate = dates[dates.length - 1];
+        const start = params.get("start");
+        const end = params.get("end");
+        if (start && (!minDate || (start >= minDate && start <= maxDate))) periodState.start = start;
+        if (end && (!maxDate || (end >= minDate && end <= maxDate))) periodState.end = end;
+
+        const repo = params.get("repo");
+        if (repo && repositories.some((item) => item.id === repo)) periodState.repo = repo;
+      }
+
+      function initializePeriodInputs(commits) {
+        const years = getAvailableYears(commits);
+        const months = getAvailableMonths(commits);
+        const repositories = getAvailableRepositories(sourceMetrics);
+        const yearSelect = document.getElementById("year-select");
+        const monthInput = document.getElementById("month-input");
+        const repoSelect = document.getElementById("repo-select");
+        const dates = commits.map(getCommitDate).filter(Boolean).sort();
+
+        repoSelect.innerHTML = [
+          '<option value="all">全部仓库</option>',
+          ...repositories.map(
+            (repo) => `<option value="${escapeHtml(repo.id)}">${escapeHtml(repo.name)} · 权重 ${repo.weight}</option>`,
+          ),
+        ].join("");
+
+        yearSelect.innerHTML = years.map((year) => `<option value="${escapeHtml(year)}">${escapeHtml(year)}</option>`).join("");
+        periodState.year = years[0] || "";
+        yearSelect.value = periodState.year;
+
+        periodState.month = months[0] || "";
+        monthInput.value = periodState.month;
+        if (months.length > 0) {
+          monthInput.max = months[0];
+          monthInput.min = months[months.length - 1];
+        }
+
+        if (dates.length > 0) {
+          document.getElementById("start-date").min = dates[0];
+          document.getElementById("start-date").max = dates[dates.length - 1];
+          document.getElementById("end-date").min = dates[0];
+          document.getElementById("end-date").max = dates[dates.length - 1];
+        }
+
+        hydratePeriodStateFromUrl({ years, months, dates, repositories });
+        repoSelect.value = periodState.repo;
+        yearSelect.value = periodState.year;
+        monthInput.value = periodState.month;
+        document.getElementById("start-date").value = periodState.start;
+        document.getElementById("end-date").value = periodState.end;
+
+        document.querySelectorAll(".segment-button").forEach((button) => {
+          button.addEventListener("click", () => {
+            periodState.mode = button.dataset.periodMode;
+            applyPeriodFilter();
+          });
+        });
+        repoSelect.addEventListener("change", (event) => {
+          periodState.repo = event.target.value;
+          applyPeriodFilter();
+        });
+        yearSelect.addEventListener("change", (event) => {
+          periodState.year = event.target.value;
+          applyPeriodFilter();
+        });
+        monthInput.addEventListener("change", (event) => {
+          periodState.month = event.target.value;
+          applyPeriodFilter();
+        });
+        document.getElementById("start-date").addEventListener("change", (event) => {
+          periodState.start = event.target.value;
+          applyPeriodFilter();
+        });
+        document.getElementById("end-date").addEventListener("change", (event) => {
+          periodState.end = event.target.value;
+          applyPeriodFilter();
+        });
+      }
+
+      function bindToolbar() {
+        document.getElementById("reset-filters").addEventListener("click", () => {
+          periodState = defaultPeriodState();
+          const yearSelect = document.getElementById("year-select");
+          const monthInput = document.getElementById("month-input");
+          periodState.year = yearSelect.options[0]?.value || "";
+          periodState.month = monthInput.max || "";
+          document.getElementById("repo-select").value = "all";
+          yearSelect.value = periodState.year;
+          monthInput.value = periodState.month;
+          document.getElementById("start-date").value = "";
+          document.getElementById("end-date").value = "";
+          applyPeriodFilter();
+        });
+        document.getElementById("copy-markdown").addEventListener("click", copyMarkdown);
+        document.getElementById("download-csv").addEventListener("click", downloadCsv);
+      }
+
+      async function copyMarkdown() {
+        if (!lastFiltered) return;
+        const header = "| 贡献者 | 分配比例 | 积分 | 有效 Commit | 加权改动量 |";
+        const sep = "|---|---:|---:|---:|---:|";
+        const rows = lastFiltered.contributors.map(
+          (item) =>
+            `| ${item.display_name} | ${item.share_pct.toFixed(2)}% | ${formatScore.format(item.score)} | ${item.effective_commits} | ${formatNumber.format(item.weighted_churn)} |`,
+        );
+        const md = [header, sep, ...rows].join("\n");
+        try {
+          await navigator.clipboard.writeText(md);
+          flashToolbar("已复制到剪贴板");
+        } catch (error) {
+          console.error(error);
+          flashToolbar("复制失败，请检查权限");
+        }
+      }
+
+      function downloadCsv() {
+        if (!lastFiltered) return;
+        const rows = [
+          ["contributor", "share_pct", "score", "effective_commits", "raw_commits", "weighted_churn", "files_touched"],
+        ];
+        lastFiltered.contributors.forEach((item) => {
+          rows.push([
+            item.display_name,
+            item.share_pct.toFixed(2),
+            item.score.toFixed(4),
+            item.effective_commits,
+            item.raw_commits,
+            item.weighted_churn,
+            item.files_touched,
+          ]);
+        });
+        const csv = rows
+          .map((row) => row.map((cell) => `"${String(cell).replace(/"/g, '""')}"`).join(","))
+          .join("\n");
+        const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = `nebulalab-contribution-${new Date().toISOString().slice(0, 10)}.csv`;
+        link.click();
+        URL.revokeObjectURL(url);
+      }
+
+      function flashToolbar(message) {
+        const status = document.getElementById("period-status");
+        const original = status.textContent;
+        status.textContent = message;
+        setTimeout(() => {
+          status.textContent = original;
+        }, 1600);
+      }
+
+      const SUMMARY_SOURCE_LABEL = {
+        "llm": "DeepSeek-V3.2 摘要",
+        "llm-cached": "DeepSeek-V3.2 摘要 · 缓存",
+        "template": "模板摘要",
+        "template-fallback": "LLM 失败 · 模板兜底",
+      };
+
+      function renderWeeklyCard() {
+        const digests = sourceMetrics.weekly_digests || [];
+        const card = document.getElementById("weekly-card");
+        if (!card) return;
+        if (digests.length === 0) {
+          setText("weekly-range", "暂无周动态");
+          setText("weekly-title", "本周暂无合并贡献");
+          setText("weekly-summary", "等待新的合并到主分支的 commit 后，看板会自动总结本周工作。");
+          document.getElementById("weekly-meta").innerHTML = "";
+          document.getElementById("weekly-contributors").innerHTML = "";
+          document.getElementById("weekly-highlights").innerHTML = "";
+          document.getElementById("weekly-source-tag").textContent = "暂无数据";
+          return;
+        }
+        const week = digests[0];
+        setText("weekly-range", `${week.iso_week} · ${formatPlainDate(week.start)} 至 ${formatPlainDate(week.end)}`);
+        setText("weekly-title", `${week.iso_week} 工作总结`);
+        setText("weekly-summary", week.summary || "(无摘要)");
+
+        const meta = document.getElementById("weekly-meta");
+        meta.innerHTML = `
+          <span><strong>${week.commit_count}</strong> 个 commit</span>
+          <span><strong>${week.effective_count}</strong> 计入积分</span>
+          <span><strong>${week.contributors.length}</strong> 位贡献者</span>
+        `;
+
+        const contribBox = document.getElementById("weekly-contributors");
+        contribBox.innerHTML = week.contributors
+          .map((name) => `<span class="weekly-chip contributor">${name}</span>`)
+          .join("");
+
+        const highlights = document.getElementById("weekly-highlights");
+        highlights.innerHTML = week.highlights
+          .slice(0, 4)
+          .map(
+            (h) => `
+              <li class="weekly-highlight">
+                <span class="weekly-highlight-hash">${h.short_hash || (h.hash || "").slice(0, 12)}</span>
+                <span>
+                  <span class="weekly-highlight-subject">${(h.subject || "").replace(/</g, "&lt;")}</span><br />
+                  <span class="weekly-highlight-author">${h.contributor || ""}</span>
+                </span>
+              </li>
+            `,
+          )
+          .join("");
+
+        const tag = document.getElementById("weekly-source-tag");
+        tag.textContent = SUMMARY_SOURCE_LABEL[week.summary_source] || week.summary_source;
+        tag.className = `weekly-source-tag ${week.summary_source}`;
+
+        const link = document.getElementById("weekly-history-link");
+        link.href = `history.html#${week.iso_week}`;
+      }
+
+      async function init() {
+        const response = await fetch("metrics.json", { cache: "no-store" });
+        if (!response.ok) {
+          throw new Error(`Unable to load metrics.json: ${response.status}`);
+        }
+        sourceMetrics = await response.json();
+        setText(
+          "schema-info",
+          `revision ${sourceMetrics.revision || "?"} · 仓库 ${(sourceMetrics.repositories || []).length || 1} 个`,
+        );
+        initializePeriodInputs(sourceMetrics.commits || []);
+        bindToolbar();
+        renderWeeklyCard();
+        renderRecentBoard();
+        applyPeriodFilter();
+      }
+
+      init().catch((error) => {
+        setText("updated-at", "统计数据读取失败");
+        console.error(error);
+      });
+    </script>
+  </body>
+</html>
