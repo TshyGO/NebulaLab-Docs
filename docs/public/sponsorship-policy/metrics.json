@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-06-30T12:33:21.697687+00:00",
+  "generated_at": "2026-06-30T21:46:01.772768+00:00",
   "revision": "multi-repository",
   "repositories": [
     {
@@ -22,7 +22,7 @@
       "name": "NebulaLab Docs",
       "path": "external/NebulaLab-Docs",
       "weight": 0.45,
-      "revision": "60654cfbcfac"
+      "revision": "9c77af986dbd"
     }
   ],
   "range": {
@@ -102,15 +102,15 @@
     ]
   },
   "totals": {
-    "contributors": 4,
-    "raw_commits": 268,
-    "effective_commits": 257,
-    "weighted_churn": 117193.7,
-    "score": 1295.9714,
+    "contributors": 5,
+    "raw_commits": 269,
+    "effective_commits": 258,
+    "weighted_churn": 119649.44,
+    "score": 1329.2142,
     "category_churn": {
       "core_code": 86563.0,
       "tests": 14240.8,
-      "documentation": 11868.2,
+      "documentation": 17325.4,
       "configuration": 6407.7,
       "unknown": 0.0,
       "excluded": 0.0
@@ -172,8 +172,8 @@
         }
       ],
       "co_authored_commits": 1,
-      "share_pct": 80.56,
-      "weighted_churn_share_pct": 93.83
+      "share_pct": 78.54,
+      "weighted_churn_share_pct": 91.9
     },
     {
       "id": "wagtyq",
@@ -215,8 +215,8 @@
         }
       ],
       "co_authored_commits": 1,
-      "share_pct": 16.22,
-      "weighted_churn_share_pct": 5.65
+      "share_pct": 15.82,
+      "weighted_churn_share_pct": 5.53
     },
     {
       "id": "crema-lida",
@@ -249,8 +249,42 @@
         }
       ],
       "co_authored_commits": 0,
-      "share_pct": 2.71,
-      "weighted_churn_share_pct": 0.44
+      "share_pct": 2.64,
+      "weighted_churn_share_pct": 0.43
+    },
+    {
+      "id": "nebula-sponsorship-bot",
+      "display_name": "nebula-sponsorship-bot",
+      "raw_commits": 1,
+      "effective_commits": 1,
+      "additions": 13643,
+      "deletions": 0,
+      "raw_churn": 13643.0,
+      "weighted_churn": 2455.74,
+      "score": 33.2428,
+      "files_touched": 4,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 0.0,
+        "documentation": 5457.2,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      },
+      "repository_scores": [
+        {
+          "id": "docs",
+          "name": "NebulaLab Docs",
+          "weight": 0.45,
+          "raw_commits": 1,
+          "effective_commits": 1,
+          "weighted_churn": 2455.74,
+          "score": 33.2428
+        }
+      ],
+      "co_authored_commits": 0,
+      "share_pct": 2.5,
+      "weighted_churn_share_pct": 2.05
     },
     {
       "id": "delicious-icecream",
@@ -283,7 +317,7 @@
         }
       ],
       "co_authored_commits": 0,
-      "share_pct": 0.52,
+      "share_pct": 0.5,
       "weighted_churn_share_pct": 0.08
     }
   ],
@@ -8622,6 +8656,40 @@
       }
     },
     {
+      "hash": "9c77af986dbd2983d22f0a73f9e405348af03870",
+      "short_hash": "9c77af986dbd",
+      "repo_id": "docs",
+      "repo_name": "NebulaLab Docs",
+      "repo_weight": 0.45,
+      "contributor_id": "nebula-sponsorship-bot",
+      "display_name": "nebula-sponsorship-bot",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "nebula-sponsorship-bot"
+      ],
+      "authored_at": "2026-06-30T12:33:28Z",
+      "date": "2026-06-30",
+      "iso_week": "2026-W27",
+      "subject": "chore(sponsorship): refresh published policy + metrics",
+      "effective": true,
+      "additions": 13643,
+      "deletions": 0,
+      "raw_churn": 13643,
+      "file_weighted_churn": 5457.2,
+      "weighted_churn": 2455.74,
+      "files_touched": 4,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 0.0,
+        "documentation": 5457.2,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
       "hash": "60654cfbcfac3d7992dea9a80365872e848da10c",
       "short_hash": "60654cfbcfac",
       "repo_id": "docs",
@@ -9408,16 +9476,26 @@
     {
       "iso_week": "2026-W27",
       "start": "2026-06-29",
-      "end": "2026-06-29",
+      "end": "2026-06-30",
       "contributors": [
-        "TshyGO"
+        "TshyGO",
+        "nebula-sponsorship-bot"
       ],
-      "commit_count": 3,
-      "effective_count": 3,
+      "commit_count": 4,
+      "effective_count": 4,
       "categories": {
+        "chore": 1,
         "refactor": 3
       },
       "highlights": [
+        {
+          "hash": "9c77af986dbd2983d22f0a73f9e405348af03870",
+          "short_hash": "9c77af986dbd",
+          "subject": "chore(sponsorship): refresh published policy + metrics",
+          "contributor": "nebula-sponsorship-bot",
+          "weighted_churn": 2455.74,
+          "repo_id": "docs"
+        },
         {
           "hash": "76a3b9c6c1c578e67c9da4b212e65e2aeafd944d",
           "short_hash": "76a3b9c6c1c5",
@@ -9443,7 +9521,7 @@
           "repo_id": "docs"
         }
       ],
-      "summary": "本周 TshyGO 优化了代码审核流程，将原本分散的AI自动评审功能整合到一个统一的中心系统中。这样一来，团队在提交新功能或修复时，能获得更一致、高效的自动化检查支持，有助于提升整体代码质量和协作效率。",
+      "summary": "本周TshyGO同学集中优化了代码审查流程，将AI自动评审功能统一到公共平台，让后续的代码检查更高效可靠。同时，赞助机器人更新了公开的赞助政策和数据看板，使项目运营信息更透明。",
       "summary_source": "llm"
     },
     {
