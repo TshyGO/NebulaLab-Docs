@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-06-30T21:46:01.772768+00:00",
+  "generated_at": "2026-07-01T05:51:55.203951+00:00",
   "revision": "multi-repository",
   "repositories": [
     {
@@ -8,7 +8,7 @@
       "name": "NebulaLab",
       "path": ".",
       "weight": 1.0,
-      "revision": "5886f64a5378"
+      "revision": "f6dca35b938c"
     },
     {
       "id": "plugins",
@@ -22,7 +22,7 @@
       "name": "NebulaLab Docs",
       "path": "external/NebulaLab-Docs",
       "weight": 0.45,
-      "revision": "9c77af986dbd"
+      "revision": "0a4e5401f4f0"
     }
   ],
   "range": {
@@ -97,27 +97,29 @@
       "dependabot[bot]",
       "developer@nebulalab.io",
       "github-actions[bot]",
+      "nebula-sponsorship-bot",
       "noreply@anthropic.com",
-      "noreply@nebula-lab.dev"
+      "noreply@nebula-lab.dev",
+      "noreply@nebulalab.dev"
     ]
   },
   "totals": {
-    "contributors": 5,
+    "contributors": 4,
     "raw_commits": 269,
     "effective_commits": 258,
-    "weighted_churn": 119649.44,
-    "score": 1329.2142,
+    "weighted_churn": 117908.3,
+    "score": 1315.6197,
     "category_churn": {
-      "core_code": 86563.0,
-      "tests": 14240.8,
-      "documentation": 17325.4,
+      "core_code": 87162.0,
+      "tests": 14356.4,
+      "documentation": 11868.2,
       "configuration": 6407.7,
       "unknown": 0.0,
       "excluded": 0.0
     }
   },
   "excluded": {
-    "bot_commits": 120,
+    "bot_commits": 123,
     "zero_weight_files": 40,
     "unknown_classification_files": 134,
     "binary_files": 46
@@ -126,17 +128,17 @@
     {
       "id": "TshyGO",
       "display_name": "TshyGO",
-      "raw_commits": 242,
-      "effective_commits": 231,
-      "additions": 150076,
-      "deletions": 54610,
-      "raw_churn": 204686.0,
-      "weighted_churn": 109963.28,
-      "score": 1043.9734,
-      "files_touched": 1319,
+      "raw_commits": 243,
+      "effective_commits": 232,
+      "additions": 150632,
+      "deletions": 54986,
+      "raw_churn": 205617.0,
+      "weighted_churn": 110677.88,
+      "score": 1063.6217,
+      "files_touched": 1330,
       "category_churn": {
-        "core_code": 81462.75,
-        "tests": 12405.4,
+        "core_code": 82061.75,
+        "tests": 12521.0,
         "documentation": 11587.6,
         "configuration": 6160.35,
         "unknown": 0.0,
@@ -147,10 +149,10 @@
           "id": "nebulalab",
           "name": "NebulaLab",
           "weight": 1.0,
-          "raw_commits": 177,
-          "effective_commits": 172,
-          "weighted_churn": 106382.0,
-          "score": 904.3428
+          "raw_commits": 178,
+          "effective_commits": 173,
+          "weighted_churn": 107096.6,
+          "score": 923.9911
         },
         {
           "id": "plugins",
@@ -172,8 +174,8 @@
         }
       ],
       "co_authored_commits": 1,
-      "share_pct": 78.54,
-      "weighted_churn_share_pct": 91.9
+      "share_pct": 80.85,
+      "weighted_churn_share_pct": 93.87
     },
     {
       "id": "wagtyq",
@@ -215,8 +217,8 @@
         }
       ],
       "co_authored_commits": 1,
-      "share_pct": 15.82,
-      "weighted_churn_share_pct": 5.53
+      "share_pct": 15.98,
+      "weighted_churn_share_pct": 5.61
     },
     {
       "id": "crema-lida",
@@ -249,42 +251,8 @@
         }
       ],
       "co_authored_commits": 0,
-      "share_pct": 2.64,
+      "share_pct": 2.66,
       "weighted_churn_share_pct": 0.43
-    },
-    {
-      "id": "nebula-sponsorship-bot",
-      "display_name": "nebula-sponsorship-bot",
-      "raw_commits": 1,
-      "effective_commits": 1,
-      "additions": 13643,
-      "deletions": 0,
-      "raw_churn": 13643.0,
-      "weighted_churn": 2455.74,
-      "score": 33.2428,
-      "files_touched": 4,
-      "category_churn": {
-        "core_code": 0.0,
-        "tests": 0.0,
-        "documentation": 5457.2,
-        "configuration": 0.0,
-        "unknown": 0.0,
-        "excluded": 0.0
-      },
-      "repository_scores": [
-        {
-          "id": "docs",
-          "name": "NebulaLab Docs",
-          "weight": 0.45,
-          "raw_commits": 1,
-          "effective_commits": 1,
-          "weighted_churn": 2455.74,
-          "score": 33.2428
-        }
-      ],
-      "co_authored_commits": 0,
-      "share_pct": 2.5,
-      "weighted_churn_share_pct": 2.05
     },
     {
       "id": "delicious-icecream",
@@ -317,11 +285,45 @@
         }
       ],
       "co_authored_commits": 0,
-      "share_pct": 0.5,
+      "share_pct": 0.51,
       "weighted_churn_share_pct": 0.08
     }
   ],
   "commits": [
+    {
+      "hash": "383e3d97386c2577115577b34d64f7afbfe6598b",
+      "short_hash": "383e3d97386c",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-01T13:38:50+08:00",
+      "date": "2026-07-01",
+      "iso_week": "2026-W27",
+      "subject": "[codex] Redesign license management panel (#307)",
+      "effective": true,
+      "additions": 556,
+      "deletions": 375,
+      "raw_churn": 931,
+      "file_weighted_churn": 714.6,
+      "weighted_churn": 714.6,
+      "files_touched": 11,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 599.0,
+        "tests": 115.6,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
     {
       "hash": "76a3b9c6c1c578e67c9da4b212e65e2aeafd944d",
       "short_hash": "76a3b9c6c1c5",
@@ -8656,40 +8658,6 @@
       }
     },
     {
-      "hash": "9c77af986dbd2983d22f0a73f9e405348af03870",
-      "short_hash": "9c77af986dbd",
-      "repo_id": "docs",
-      "repo_name": "NebulaLab Docs",
-      "repo_weight": 0.45,
-      "contributor_id": "nebula-sponsorship-bot",
-      "display_name": "nebula-sponsorship-bot",
-      "co_authors": [],
-      "all_contributor_ids": [
-        "nebula-sponsorship-bot"
-      ],
-      "authored_at": "2026-06-30T12:33:28Z",
-      "date": "2026-06-30",
-      "iso_week": "2026-W27",
-      "subject": "chore(sponsorship): refresh published policy + metrics",
-      "effective": true,
-      "additions": 13643,
-      "deletions": 0,
-      "raw_churn": 13643,
-      "file_weighted_churn": 5457.2,
-      "weighted_churn": 2455.74,
-      "files_touched": 4,
-      "unknown_files": 0,
-      "binary_files": 0,
-      "category_churn": {
-        "core_code": 0.0,
-        "tests": 0.0,
-        "documentation": 5457.2,
-        "configuration": 0.0,
-        "unknown": 0.0,
-        "excluded": 0.0
-      }
-    },
-    {
       "hash": "60654cfbcfac3d7992dea9a80365872e848da10c",
       "short_hash": "60654cfbcfac",
       "repo_id": "docs",
@@ -9476,25 +9444,24 @@
     {
       "iso_week": "2026-W27",
       "start": "2026-06-29",
-      "end": "2026-06-30",
+      "end": "2026-07-01",
       "contributors": [
-        "TshyGO",
-        "nebula-sponsorship-bot"
+        "TshyGO"
       ],
       "commit_count": 4,
       "effective_count": 4,
       "categories": {
-        "chore": 1,
+        "other": 1,
         "refactor": 3
       },
       "highlights": [
         {
-          "hash": "9c77af986dbd2983d22f0a73f9e405348af03870",
-          "short_hash": "9c77af986dbd",
-          "subject": "chore(sponsorship): refresh published policy + metrics",
-          "contributor": "nebula-sponsorship-bot",
-          "weighted_churn": 2455.74,
-          "repo_id": "docs"
+          "hash": "383e3d97386c2577115577b34d64f7afbfe6598b",
+          "short_hash": "383e3d97386c",
+          "subject": "[codex] Redesign license management panel (#307)",
+          "contributor": "TshyGO",
+          "weighted_churn": 714.6,
+          "repo_id": "nebulalab"
         },
         {
           "hash": "76a3b9c6c1c578e67c9da4b212e65e2aeafd944d",
@@ -9521,7 +9488,7 @@
           "repo_id": "docs"
         }
       ],
-      "summary": "本周TshyGO同学集中优化了代码审查流程，将AI自动评审功能统一到公共平台，让后续的代码检查更高效可靠。同时，赞助机器人更新了公开的赞助政策和数据看板，使项目运营信息更透明。",
+      "summary": "本周 TshyGO 重新设计了许可证管理面板，让用户查看和管理软件授权信息时界面更清晰、操作更简便。同时，他还优化了代码审查流程，通过引入集中的自动化工具，提升了团队在合并代码前的检查效率和一致性。",
       "summary_source": "llm"
     },
     {
