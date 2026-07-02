@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-07-01T21:47:13.261731+00:00",
+  "generated_at": "2026-07-02T21:31:57.861316+00:00",
   "revision": "multi-repository",
   "repositories": [
     {
@@ -8,7 +8,7 @@
       "name": "NebulaLab",
       "path": ".",
       "weight": 1.0,
-      "revision": "051d569b0b1c"
+      "revision": "2fe9cc4dc7d9"
     },
     {
       "id": "plugins",
@@ -22,7 +22,7 @@
       "name": "NebulaLab Docs",
       "path": "external/NebulaLab-Docs",
       "weight": 0.45,
-      "revision": "feeec234e027"
+      "revision": "cb3ac03c1eca"
     }
   ],
   "range": {
@@ -105,13 +105,13 @@
   },
   "totals": {
     "contributors": 4,
-    "raw_commits": 271,
-    "effective_commits": 260,
-    "weighted_churn": 120822.0,
-    "score": 1348.4236,
+    "raw_commits": 276,
+    "effective_commits": 265,
+    "weighted_churn": 121718.6,
+    "score": 1355.3957,
     "category_churn": {
-      "core_code": 88939.5,
-      "tests": 15409.2,
+      "core_code": 89280.5,
+      "tests": 15964.8,
       "documentation": 11951.6,
       "configuration": 6407.7,
       "unknown": 0.0,
@@ -119,7 +119,7 @@
     }
   },
   "excluded": {
-    "bot_commits": 124,
+    "bot_commits": 125,
     "zero_weight_files": 40,
     "unknown_classification_files": 134,
     "binary_files": 46
@@ -128,17 +128,17 @@
     {
       "id": "TshyGO",
       "display_name": "TshyGO",
-      "raw_commits": 245,
-      "effective_commits": 234,
-      "additions": 153744,
-      "deletions": 55364,
-      "raw_churn": 209108.0,
-      "weighted_churn": 113591.58,
-      "score": 1096.4256,
-      "files_touched": 1360,
+      "raw_commits": 250,
+      "effective_commits": 239,
+      "additions": 154720,
+      "deletions": 55484,
+      "raw_churn": 210204.0,
+      "weighted_churn": 114488.18,
+      "score": 1103.3978,
+      "files_touched": 1387,
       "category_churn": {
-        "core_code": 83839.25,
-        "tests": 13573.8,
+        "core_code": 84180.25,
+        "tests": 14129.4,
         "documentation": 11671.0,
         "configuration": 6160.35,
         "unknown": 0.0,
@@ -149,10 +149,10 @@
           "id": "nebulalab",
           "name": "NebulaLab",
           "weight": 1.0,
-          "raw_commits": 180,
-          "effective_commits": 175,
-          "weighted_churn": 110010.3,
-          "score": 956.795
+          "raw_commits": 185,
+          "effective_commits": 180,
+          "weighted_churn": 110906.9,
+          "score": 963.7671
         },
         {
           "id": "plugins",
@@ -174,8 +174,8 @@
         }
       ],
       "co_authored_commits": 1,
-      "share_pct": 81.31,
-      "weighted_churn_share_pct": 94.02
+      "share_pct": 81.41,
+      "weighted_churn_share_pct": 94.06
     },
     {
       "id": "wagtyq",
@@ -217,8 +217,8 @@
         }
       ],
       "co_authored_commits": 1,
-      "share_pct": 15.59,
-      "weighted_churn_share_pct": 5.48
+      "share_pct": 15.51,
+      "weighted_churn_share_pct": 5.44
     },
     {
       "id": "crema-lida",
@@ -251,7 +251,7 @@
         }
       ],
       "co_authored_commits": 0,
-      "share_pct": 2.6,
+      "share_pct": 2.59,
       "weighted_churn_share_pct": 0.42
     },
     {
@@ -285,11 +285,181 @@
         }
       ],
       "co_authored_commits": 0,
-      "share_pct": 0.5,
+      "share_pct": 0.49,
       "weighted_churn_share_pct": 0.08
     }
   ],
   "commits": [
+    {
+      "hash": "2fe9cc4dc7d9231f5675ad108287a6f4710673fd",
+      "short_hash": "2fe9cc4dc7d9",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-02T21:32:16+08:00",
+      "date": "2026-07-02",
+      "iso_week": "2026-W27",
+      "subject": "fix(community): make the topbar 社区 button's active state visible (#330)",
+      "effective": true,
+      "additions": 14,
+      "deletions": 1,
+      "raw_churn": 15,
+      "file_weighted_churn": 14.5,
+      "weighted_churn": 14.5,
+      "files_touched": 2,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 14.5,
+        "tests": 0.0,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "be60702d28a5e77fbe0590619157827a9aeb3a89",
+      "short_hash": "be60702d28a5",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-02T21:29:58+08:00",
+      "date": "2026-07-02",
+      "iso_week": "2026-W27",
+      "subject": "[codex] Improve export workbench layout (#328)",
+      "effective": true,
+      "additions": 102,
+      "deletions": 9,
+      "raw_churn": 111,
+      "file_weighted_churn": 93.5,
+      "weighted_churn": 93.5,
+      "files_touched": 4,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 41.5,
+        "tests": 52.0,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "b4037ebb24fcb1421ca65a5465db3f309562a24e",
+      "short_hash": "b4037ebb24fc",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-02T21:29:38+08:00",
+      "date": "2026-07-02",
+      "iso_week": "2026-W27",
+      "subject": "fix(community): 移除发布表单冗余的\"作者显示名\"字段 (#327)",
+      "effective": true,
+      "additions": 74,
+      "deletions": 66,
+      "raw_churn": 140,
+      "file_weighted_churn": 89.7,
+      "weighted_churn": 89.7,
+      "files_touched": 3,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 20.5,
+        "tests": 69.2,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "53f163863da7bc64778ea5bc1d7ef87c1ff668cc",
+      "short_hash": "53f163863da7",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-02T21:29:25+08:00",
+      "date": "2026-07-02",
+      "iso_week": "2026-W27",
+      "subject": "fix(community): 测量类型展示统一大小写，不再被强制小写 (#326)",
+      "effective": true,
+      "additions": 110,
+      "deletions": 7,
+      "raw_churn": 117,
+      "file_weighted_churn": 95.1,
+      "weighted_churn": 95.1,
+      "files_touched": 8,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 21.5,
+        "tests": 73.6,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "4782b2c4053515168b6477ce024bdea687af8f42",
+      "short_hash": "4782b2c40535",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-02T21:28:55+08:00",
+      "date": "2026-07-02",
+      "iso_week": "2026-W27",
+      "subject": "[codex] Fix issue 323 UI interaction regressions (#324)",
+      "effective": true,
+      "additions": 675,
+      "deletions": 38,
+      "raw_churn": 713,
+      "file_weighted_churn": 603.8,
+      "weighted_churn": 603.8,
+      "files_touched": 10,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 243.0,
+        "tests": 360.8,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
     {
       "hash": "051d569b0b1c5f74154aee9465b328b215c5bd8f",
       "short_hash": "051d569b0b1c",
@@ -9512,15 +9682,15 @@
     {
       "iso_week": "2026-W27",
       "start": "2026-06-29",
-      "end": "2026-07-01",
+      "end": "2026-07-02",
       "contributors": [
         "TshyGO"
       ],
-      "commit_count": 6,
-      "effective_count": 6,
+      "commit_count": 11,
+      "effective_count": 11,
       "categories": {
-        "fix": 1,
-        "other": 2,
+        "other": 4,
+        "fix": 4,
         "refactor": 3
       },
       "highlights": [
@@ -9541,31 +9711,31 @@
           "repo_id": "nebulalab"
         },
         {
-          "hash": "76a3b9c6c1c578e67c9da4b212e65e2aeafd944d",
-          "short_hash": "76a3b9c6c1c5",
-          "subject": "refactor: centralize AI PR review via ci-central (opencode go); keep Claude auto-review",
+          "hash": "4782b2c4053515168b6477ce024bdea687af8f42",
+          "short_hash": "4782b2c40535",
+          "subject": "[codex] Fix issue 323 UI interaction regressions (#324)",
           "contributor": "TshyGO",
-          "weighted_churn": 69.9,
+          "weighted_churn": 603.8,
           "repo_id": "nebulalab"
         },
         {
-          "hash": "c6072e4f6c0c3ae043dea0e39a73860ef0cef213",
-          "short_hash": "c6072e4f6c0c",
-          "subject": "refactor: use centralized reusable AI PR review workflow (opencode go) (#28)",
+          "hash": "53f163863da7bc64778ea5bc1d7ef87c1ff668cc",
+          "short_hash": "53f163863da7",
+          "subject": "fix(community): 测量类型展示统一大小写，不再被强制小写 (#326)",
           "contributor": "TshyGO",
-          "weighted_churn": 62.91,
-          "repo_id": "plugins"
+          "weighted_churn": 95.1,
+          "repo_id": "nebulalab"
         },
         {
-          "hash": "6c7549eecbe139c15f53ecb0e6b692810d077ad0",
-          "short_hash": "6c7549eecbe1",
-          "subject": "fix: prevent M10 license refresh test hang (#317)",
+          "hash": "be60702d28a5e77fbe0590619157827a9aeb3a89",
+          "short_hash": "be60702d28a5",
+          "subject": "[codex] Improve export workbench layout (#328)",
           "contributor": "TshyGO",
-          "weighted_churn": 53.6,
+          "weighted_churn": 93.5,
           "repo_id": "nebulalab"
         }
       ],
-      "summary": "本周，TshyGO 主要改进了两个用户能直接感知的功能。他重新设计了导出工作台，解决了部分样本被意外跳过的问题；同时优化了许可证管理面板的界面和操作。此外，他还统一了代码审查的自动化流程，并修复了一个可能导致测试卡住的许可证刷新问题。",
+      "summary": "本周由 TshyGO 负责了多项界面优化与问题修复。他重新设计了导出工作台和许可证管理面板，让相关操作更直观易用；同时修复了社区模块中测量类型显示异常、顶部导航按钮状态不明显等细节问题，提升了整体使用体验。此外，他还优化了代码审查流程，使其更高效可靠。",
       "summary_source": "llm"
     },
     {
