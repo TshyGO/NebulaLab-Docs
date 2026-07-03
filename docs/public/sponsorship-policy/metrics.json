@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-07-02T21:31:57.861316+00:00",
+  "generated_at": "2026-07-03T21:31:20.916670+00:00",
   "revision": "multi-repository",
   "repositories": [
     {
@@ -22,7 +22,7 @@
       "name": "NebulaLab Docs",
       "path": "external/NebulaLab-Docs",
       "weight": 0.45,
-      "revision": "cb3ac03c1eca"
+      "revision": "b1c6b0dcbfc1"
     }
   ],
   "range": {
@@ -119,7 +119,7 @@
     }
   },
   "excluded": {
-    "bot_commits": 125,
+    "bot_commits": 126,
     "zero_weight_files": 40,
     "unknown_classification_files": 134,
     "binary_files": 46
@@ -9736,7 +9736,7 @@
         }
       ],
       "summary": "本周由 TshyGO 负责了多项界面优化与问题修复。他重新设计了导出工作台和许可证管理面板，让相关操作更直观易用；同时修复了社区模块中测量类型显示异常、顶部导航按钮状态不明显等细节问题，提升了整体使用体验。此外，他还优化了代码审查流程，使其更高效可靠。",
-      "summary_source": "llm"
+      "summary_source": "llm-cached"
     },
     {
       "iso_week": "2026-W24",
@@ -10492,7 +10492,6 @@
     }
   ],
   "weekly_digest_summary_sources": [
-    "llm",
     "llm-cached"
   ]
 }
