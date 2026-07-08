@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-07-07T21:40:15.174206+00:00",
+  "generated_at": "2026-07-08T21:30:54.034888+00:00",
   "revision": "multi-repository",
   "repositories": [
     {
@@ -8,7 +8,7 @@
       "name": "NebulaLab",
       "path": ".",
       "weight": 1.0,
-      "revision": "7ac5251864c8"
+      "revision": "e02470a6f00a"
     },
     {
       "id": "plugins",
@@ -22,7 +22,7 @@
       "name": "NebulaLab Docs",
       "path": "external/NebulaLab-Docs",
       "weight": 0.45,
-      "revision": "83041da4c7a7"
+      "revision": "27ade65acdbc"
     }
   ],
   "range": {
@@ -119,7 +119,7 @@
     }
   },
   "excluded": {
-    "bot_commits": 130,
+    "bot_commits": 152,
     "zero_weight_files": 41,
     "unknown_classification_files": 135,
     "binary_files": 46
@@ -9813,7 +9813,7 @@
         }
       ],
       "summary": "本周，TshyGO 主要完成了两项工作。他发布了项目的新版本 v0.8.10，这标志着我们软件的一次稳定更新。同时，他修复了一个输入体验上的小问题，现在在参数框中连续输入多位数字时，系统不会再频繁报错打断输入，让填写过程更加顺畅。",
-      "summary_source": "llm"
+      "summary_source": "llm-cached"
     },
     {
       "iso_week": "2026-W27",
@@ -10628,7 +10628,6 @@
     }
   ],
   "weekly_digest_summary_sources": [
-    "llm",
     "llm-cached"
   ]
 }
