@@ -422,7 +422,7 @@ bucket_score(author, week, repo) = sqrt(bucket_churn) × repo_weight
               身份归并 (<code>identity_aliases</code>) 与 Bot 列表 (<code>bot_names</code>) 集中在 <code>docs/sponsorship-policy/contribution-identity.json</code>，新增贡献者或 bot 不需要改 Python 代码。仓库列表与权重集中在 <code>docs/sponsorship-policy/contribution-repos.json</code>。
             </p>
             <p>
-              统计数据不作秒级实时刷新。页面筛选在浏览器中即时重算；底层 <code>metrics.json</code> 由 <code>sponsorship-policy</code> workflow 生成后推送到 <code>Nebulalab228/NebulaLab-Docs</code> 的 <code>docs/public/sponsorship-policy/</code>，<strong>不会回写到主应用仓库</strong>。该发布步骤依赖 <code>RELEASE_REPO_TOKEN</code>，token 应仅授予目标 companion repo 所需的 <code>contents: write</code> 权限；主仓 workflow 自身只需要 <code>contents: read</code> 与 <code>pull-requests: read</code>。<code>docs/sponsorship-policy/metrics.json</code> 被 <code>.gitignore</code> 忽略，本地预览需手动运行脚本生成。
+              统计数据不作秒级实时刷新。页面筛选在浏览器中即时重算；底层 <code>metrics.json</code> 由 <code>sponsorship-policy</code> workflow 生成后推送到 <code>TshyGO/NebulaLab-Docs</code> 的 <code>docs/public/sponsorship-policy/</code>，<strong>不会回写到主应用仓库</strong>。该发布步骤依赖 <code>RELEASE_REPO_TOKEN</code>，token 应仅授予目标 companion repo 所需的 <code>contents: write</code> 权限；主仓 workflow 自身只需要 <code>contents: read</code> 与 <code>pull-requests: read</code>。<code>docs/sponsorship-policy/metrics.json</code> 被 <code>.gitignore</code> 忽略，本地预览需手动运行脚本生成。
             </p>
             <p>规则文档和统计页面由仓库维护者管理。其他成员如需提出修改建议，应通过 Issue、Discussion 或其他明确记录渠道提出。</p>
           </section>
