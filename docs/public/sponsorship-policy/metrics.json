@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-07-12T21:06:35.671796+00:00",
+  "generated_at": "2026-07-13T21:12:30.372892+00:00",
   "revision": "multi-repository",
   "repositories": [
     {
@@ -8,7 +8,7 @@
       "name": "NebulaLab",
       "path": ".",
       "weight": 1.0,
-      "revision": "99e7da96f8fb"
+      "revision": "307bad0e8e74"
     },
     {
       "id": "plugins",
@@ -22,7 +22,7 @@
       "name": "NebulaLab Docs",
       "path": "external/NebulaLab-Docs",
       "weight": 0.45,
-      "revision": "50643e359412"
+      "revision": "37eeb464bc6d"
     }
   ],
   "range": {
@@ -105,21 +105,21 @@
   },
   "totals": {
     "contributors": 5,
-    "raw_commits": 636,
-    "effective_commits": 622,
-    "weighted_churn": 282328.44,
-    "score": 2317.9744,
+    "raw_commits": 640,
+    "effective_commits": 626,
+    "weighted_churn": 287358.74,
+    "score": 2388.8991,
     "category_churn": {
-      "core_code": 196870.0,
-      "tests": 52176.0,
-      "documentation": 24538.6,
+      "core_code": 200370.5,
+      "tests": 53426.0,
+      "documentation": 24818.4,
       "configuration": 10695.3,
       "unknown": 0.0,
       "excluded": 0.0
     }
   },
   "excluded": {
-    "bot_commits": 17,
+    "bot_commits": 18,
     "zero_weight_files": 68,
     "unknown_classification_files": 230,
     "binary_files": 101
@@ -128,18 +128,18 @@
     {
       "id": "TshyGO",
       "display_name": "TshyGO",
-      "raw_commits": 560,
-      "effective_commits": 546,
-      "additions": 305526,
-      "deletions": 101860,
-      "raw_churn": 407386.0,
-      "weighted_churn": 238343.97,
-      "score": 1804.5731,
-      "files_touched": 3248,
+      "raw_commits": 564,
+      "effective_commits": 550,
+      "additions": 310600,
+      "deletions": 103238,
+      "raw_churn": 413838.0,
+      "weighted_churn": 243374.27,
+      "score": 1875.4978,
+      "files_touched": 3306,
       "category_churn": {
-        "core_code": 161443.0,
-        "tests": 43961.2,
-        "documentation": 24214.0,
+        "core_code": 164943.5,
+        "tests": 45211.2,
+        "documentation": 24493.8,
         "configuration": 10444.05,
         "unknown": 0.0,
         "excluded": 0.0
@@ -149,10 +149,10 @@
           "id": "nebulalab",
           "name": "NebulaLab",
           "weight": 1.0,
-          "raw_commits": 491,
-          "effective_commits": 483,
-          "weighted_churn": 234627.15,
-          "score": 1656.195
+          "raw_commits": 495,
+          "effective_commits": 487,
+          "weighted_churn": 239657.45,
+          "score": 1727.1196
         },
         {
           "id": "plugins",
@@ -174,8 +174,8 @@
         }
       ],
       "co_authored_commits": 2,
-      "share_pct": 77.85,
-      "weighted_churn_share_pct": 84.42
+      "share_pct": 78.51,
+      "weighted_churn_share_pct": 84.69
     },
     {
       "id": "wagtyq",
@@ -217,8 +217,8 @@
         }
       ],
       "co_authored_commits": 2,
-      "share_pct": 17.77,
-      "weighted_churn_share_pct": 14.09
+      "share_pct": 17.25,
+      "weighted_churn_share_pct": 13.85
     },
     {
       "id": "crema-lida",
@@ -251,8 +251,8 @@
         }
       ],
       "co_authored_commits": 1,
-      "share_pct": 4.01,
-      "weighted_churn_share_pct": 1.45
+      "share_pct": 3.9,
+      "weighted_churn_share_pct": 1.42
     },
     {
       "id": "delicious-icecream",
@@ -285,8 +285,8 @@
         }
       ],
       "co_authored_commits": 0,
-      "share_pct": 0.29,
-      "weighted_churn_share_pct": 0.04
+      "share_pct": 0.28,
+      "weighted_churn_share_pct": 0.03
     },
     {
       "id": "Copilot Autofix powered by AI",
@@ -324,6 +324,142 @@
     }
   ],
   "commits": [
+    {
+      "hash": "307bad0e8e74fae8b50d4a451d8f7d127d37d778",
+      "short_hash": "307bad0e8e74",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-13T21:12:53+08:00",
+      "date": "2026-07-13",
+      "iso_week": "2026-W29",
+      "subject": "feat(formulation): calculator v3.1 M1+M2 frontend package (#415) (#417)",
+      "effective": true,
+      "additions": 3960,
+      "deletions": 1239,
+      "raw_churn": 5199,
+      "file_weighted_churn": 4248.3,
+      "weighted_churn": 4248.3,
+      "files_touched": 41,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 3258.5,
+        "tests": 922.8,
+        "documentation": 67.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "0b3330bfa36a6993a413d12963084a68c42742a9",
+      "short_hash": "0b3330bfa36a",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-13T19:58:14+08:00",
+      "date": "2026-07-13",
+      "iso_week": "2026-W29",
+      "subject": "Show experiments before data in sidebar (#419)",
+      "effective": true,
+      "additions": 20,
+      "deletions": 17,
+      "raw_churn": 37,
+      "file_weighted_churn": 27.0,
+      "weighted_churn": 27.0,
+      "files_touched": 2,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 21.0,
+        "tests": 6.0,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "0db1be252fe2e407fe8ddc5c4c1d44dd85da6cff",
+      "short_hash": "0db1be252fe2",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-13T18:06:36+08:00",
+      "date": "2026-07-13",
+      "iso_week": "2026-W29",
+      "subject": "fix(license): isolate concurrent appdata probes (#418)",
+      "effective": true,
+      "additions": 77,
+      "deletions": 4,
+      "raw_churn": 81,
+      "file_weighted_churn": 65.2,
+      "weighted_churn": 65.2,
+      "files_touched": 2,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 10.0,
+        "tests": 55.2,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "f3507d9c7f3f089832feea1e225ff9f08d309c54",
+      "short_hash": "f3507d9c7f3f",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-13T12:34:19+08:00",
+      "date": "2026-07-13",
+      "iso_week": "2026-W29",
+      "subject": "fix(formulation): strip real recipes from shipped examples, land v3.1 anti-drift spec assets (#416)",
+      "effective": true,
+      "additions": 1016,
+      "deletions": 119,
+      "raw_churn": 1135,
+      "file_weighted_churn": 689.8,
+      "weighted_churn": 689.8,
+      "files_touched": 12,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 211.0,
+        "tests": 266.0,
+        "documentation": 212.8,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
     {
       "hash": "99e7da96f8fbffe1fe75f4f6111dac9c783b9cc1",
       "short_hash": "99e7da96f8fb",
@@ -21960,6 +22096,57 @@
   ],
   "weekly_digests": [
     {
+      "iso_week": "2026-W29",
+      "start": "2026-07-13",
+      "end": "2026-07-13",
+      "contributors": [
+        "TshyGO"
+      ],
+      "commit_count": 4,
+      "effective_count": 4,
+      "categories": {
+        "fix": 2,
+        "feat": 1,
+        "other": 1
+      },
+      "highlights": [
+        {
+          "hash": "307bad0e8e74fae8b50d4a451d8f7d127d37d778",
+          "short_hash": "307bad0e8e74",
+          "subject": "feat(formulation): calculator v3.1 M1+M2 frontend package (#415) (#417)",
+          "contributor": "TshyGO",
+          "weighted_churn": 4248.3,
+          "repo_id": "nebulalab"
+        },
+        {
+          "hash": "f3507d9c7f3f089832feea1e225ff9f08d309c54",
+          "short_hash": "f3507d9c7f3f",
+          "subject": "fix(formulation): strip real recipes from shipped examples, land v3.1 anti-drift spec assets (#416)",
+          "contributor": "TshyGO",
+          "weighted_churn": 689.8,
+          "repo_id": "nebulalab"
+        },
+        {
+          "hash": "0db1be252fe2e407fe8ddc5c4c1d44dd85da6cff",
+          "short_hash": "0db1be252fe2",
+          "subject": "fix(license): isolate concurrent appdata probes (#418)",
+          "contributor": "TshyGO",
+          "weighted_churn": 65.2,
+          "repo_id": "nebulalab"
+        },
+        {
+          "hash": "0b3330bfa36a6993a413d12963084a68c42742a9",
+          "short_hash": "0b3330bfa36a",
+          "subject": "Show experiments before data in sidebar (#419)",
+          "contributor": "TshyGO",
+          "weighted_churn": 27.0,
+          "repo_id": "nebulalab"
+        }
+      ],
+      "summary": "本周 TshyGO 为配方计算器推出了新版本的前端功能包，并移除了示例中可能引起混淆的实际配方数据，让界面更清晰。他还优化了应用启动时的数据加载逻辑，避免多个任务同时运行导致冲突，并调整了侧边栏的显示顺序，现在实验项目会优先于数据列表展示。",
+      "summary_source": "llm"
+    },
+    {
       "iso_week": "2026-W28",
       "start": "2026-07-06",
       "end": "2026-07-12",
@@ -22021,7 +22208,7 @@
         }
       ],
       "summary": "本周 TshyGO 主要优化了实验和配方功能的使用体验。他让实验数据库的操作流程更完整，并重新设计了配方计算器，使其更安全易用；同时为材料库增加了中文别名和更紧凑的界面。此外，他还补充了匿名使用统计、本地身份设置等基础功能。",
-      "summary_source": "llm"
+      "summary_source": "llm-cached"
     },
     {
       "iso_week": "2026-W27",
