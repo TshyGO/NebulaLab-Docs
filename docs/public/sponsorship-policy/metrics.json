@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-07-13T21:12:30.372892+00:00",
+  "generated_at": "2026-07-14T21:14:31.038033+00:00",
   "revision": "multi-repository",
   "repositories": [
     {
@@ -8,7 +8,7 @@
       "name": "NebulaLab",
       "path": ".",
       "weight": 1.0,
-      "revision": "307bad0e8e74"
+      "revision": "5f19752f2fc4"
     },
     {
       "id": "plugins",
@@ -22,7 +22,7 @@
       "name": "NebulaLab Docs",
       "path": "external/NebulaLab-Docs",
       "weight": 0.45,
-      "revision": "37eeb464bc6d"
+      "revision": "84f3ce54dae7"
     }
   ],
   "range": {
@@ -105,22 +105,22 @@
   },
   "totals": {
     "contributors": 5,
-    "raw_commits": 640,
-    "effective_commits": 626,
-    "weighted_churn": 287358.74,
-    "score": 2388.8991,
+    "raw_commits": 644,
+    "effective_commits": 630,
+    "weighted_churn": 292408.24,
+    "score": 2418.3727,
     "category_churn": {
-      "core_code": 200370.5,
-      "tests": 53426.0,
+      "core_code": 204773.5,
+      "tests": 54070.4,
       "documentation": 24818.4,
-      "configuration": 10695.3,
+      "configuration": 10697.4,
       "unknown": 0.0,
       "excluded": 0.0
     }
   },
   "excluded": {
-    "bot_commits": 18,
-    "zero_weight_files": 68,
+    "bot_commits": 19,
+    "zero_weight_files": 69,
     "unknown_classification_files": 230,
     "binary_files": 101
   },
@@ -128,19 +128,19 @@
     {
       "id": "TshyGO",
       "display_name": "TshyGO",
-      "raw_commits": 564,
-      "effective_commits": 550,
-      "additions": 310600,
-      "deletions": 103238,
-      "raw_churn": 413838.0,
-      "weighted_churn": 243374.27,
-      "score": 1875.4978,
-      "files_touched": 3306,
+      "raw_commits": 568,
+      "effective_commits": 554,
+      "additions": 319786,
+      "deletions": 106306,
+      "raw_churn": 426092.0,
+      "weighted_churn": 248423.77,
+      "score": 1904.9714,
+      "files_touched": 3334,
       "category_churn": {
-        "core_code": 164943.5,
-        "tests": 45211.2,
+        "core_code": 169346.5,
+        "tests": 45855.6,
         "documentation": 24493.8,
-        "configuration": 10444.05,
+        "configuration": 10446.15,
         "unknown": 0.0,
         "excluded": 0.0
       },
@@ -149,10 +149,10 @@
           "id": "nebulalab",
           "name": "NebulaLab",
           "weight": 1.0,
-          "raw_commits": 495,
-          "effective_commits": 487,
-          "weighted_churn": 239657.45,
-          "score": 1727.1196
+          "raw_commits": 499,
+          "effective_commits": 491,
+          "weighted_churn": 244706.95,
+          "score": 1756.5932
         },
         {
           "id": "plugins",
@@ -174,8 +174,8 @@
         }
       ],
       "co_authored_commits": 2,
-      "share_pct": 78.51,
-      "weighted_churn_share_pct": 84.69
+      "share_pct": 78.77,
+      "weighted_churn_share_pct": 84.96
     },
     {
       "id": "wagtyq",
@@ -217,8 +217,8 @@
         }
       ],
       "co_authored_commits": 2,
-      "share_pct": 17.25,
-      "weighted_churn_share_pct": 13.85
+      "share_pct": 17.04,
+      "weighted_churn_share_pct": 13.61
     },
     {
       "id": "crema-lida",
@@ -251,8 +251,8 @@
         }
       ],
       "co_authored_commits": 1,
-      "share_pct": 3.9,
-      "weighted_churn_share_pct": 1.42
+      "share_pct": 3.85,
+      "weighted_churn_share_pct": 1.4
     },
     {
       "id": "delicious-icecream",
@@ -324,6 +324,142 @@
     }
   ],
   "commits": [
+    {
+      "hash": "5f19752f2fc44791b296b8da6440beb1d56f4779",
+      "short_hash": "5f19752f2fc4",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-14T21:40:32+08:00",
+      "date": "2026-07-14",
+      "iso_week": "2026-W29",
+      "subject": "feat(formulation): add collapsible classic ribbon (#428)",
+      "effective": true,
+      "additions": 256,
+      "deletions": 2,
+      "raw_churn": 258,
+      "file_weighted_churn": 243.8,
+      "weighted_churn": 243.8,
+      "files_touched": 3,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 191.0,
+        "tests": 52.8,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "c7f00733a9cd9a1794ea43d99748522fad80431b",
+      "short_hash": "c7f00733a9cd",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-14T17:05:54+08:00",
+      "date": "2026-07-14",
+      "iso_week": "2026-W29",
+      "subject": "fix(formulation): improve recipe sheet persistence controls (#427)",
+      "effective": true,
+      "additions": 1006,
+      "deletions": 72,
+      "raw_churn": 1078,
+      "file_weighted_churn": 963.5,
+      "weighted_churn": 963.5,
+      "files_touched": 4,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 649.5,
+        "tests": 314.0,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "865170821c375da972747351bd803d37008678fd",
+      "short_hash": "865170821c37",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-14T14:45:01+08:00",
+      "date": "2026-07-14",
+      "iso_week": "2026-W29",
+      "subject": "feat(formulation): 配方表可保存/打开/切 tab 不丢（Univer T1 持久化） (#426)",
+      "effective": true,
+      "additions": 2973,
+      "deletions": 1727,
+      "raw_churn": 4700,
+      "file_weighted_churn": 3767.1,
+      "weighted_churn": 3767.1,
+      "files_touched": 15,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 3489.5,
+        "tests": 277.6,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "6744cf3e04e643ccfe580d7ea626ba3a9517288a",
+      "short_hash": "6744cf3e04e6",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-14T13:07:41+08:00",
+      "date": "2026-07-14",
+      "iso_week": "2026-W29",
+      "subject": "feat(formulation): 集成 Univer 电子表格为新「配方表」tab（Univer 方向第一步） (#425)",
+      "effective": true,
+      "additions": 4952,
+      "deletions": 1266,
+      "raw_churn": 6218,
+      "file_weighted_churn": 75.1,
+      "weighted_churn": 75.1,
+      "files_touched": 7,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 73.0,
+        "tests": 0.0,
+        "documentation": 0.0,
+        "configuration": 2.1,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
     {
       "hash": "307bad0e8e74fae8b50d4a451d8f7d127d37d778",
       "short_hash": "307bad0e8e74",
@@ -22098,15 +22234,15 @@
     {
       "iso_week": "2026-W29",
       "start": "2026-07-13",
-      "end": "2026-07-13",
+      "end": "2026-07-14",
       "contributors": [
         "TshyGO"
       ],
-      "commit_count": 4,
-      "effective_count": 4,
+      "commit_count": 8,
+      "effective_count": 8,
       "categories": {
-        "fix": 2,
-        "feat": 1,
+        "fix": 3,
+        "feat": 4,
         "other": 1
       },
       "highlights": [
@@ -22119,6 +22255,22 @@
           "repo_id": "nebulalab"
         },
         {
+          "hash": "865170821c375da972747351bd803d37008678fd",
+          "short_hash": "865170821c37",
+          "subject": "feat(formulation): 配方表可保存/打开/切 tab 不丢（Univer T1 持久化） (#426)",
+          "contributor": "TshyGO",
+          "weighted_churn": 3767.1,
+          "repo_id": "nebulalab"
+        },
+        {
+          "hash": "c7f00733a9cd9a1794ea43d99748522fad80431b",
+          "short_hash": "c7f00733a9cd",
+          "subject": "fix(formulation): improve recipe sheet persistence controls (#427)",
+          "contributor": "TshyGO",
+          "weighted_churn": 963.5,
+          "repo_id": "nebulalab"
+        },
+        {
           "hash": "f3507d9c7f3f089832feea1e225ff9f08d309c54",
           "short_hash": "f3507d9c7f3f",
           "subject": "fix(formulation): strip real recipes from shipped examples, land v3.1 anti-drift spec assets (#416)",
@@ -22127,23 +22279,15 @@
           "repo_id": "nebulalab"
         },
         {
-          "hash": "0db1be252fe2e407fe8ddc5c4c1d44dd85da6cff",
-          "short_hash": "0db1be252fe2",
-          "subject": "fix(license): isolate concurrent appdata probes (#418)",
+          "hash": "5f19752f2fc44791b296b8da6440beb1d56f4779",
+          "short_hash": "5f19752f2fc4",
+          "subject": "feat(formulation): add collapsible classic ribbon (#428)",
           "contributor": "TshyGO",
-          "weighted_churn": 65.2,
-          "repo_id": "nebulalab"
-        },
-        {
-          "hash": "0b3330bfa36a6993a413d12963084a68c42742a9",
-          "short_hash": "0b3330bfa36a",
-          "subject": "Show experiments before data in sidebar (#419)",
-          "contributor": "TshyGO",
-          "weighted_churn": 27.0,
+          "weighted_churn": 243.8,
           "repo_id": "nebulalab"
         }
       ],
-      "summary": "本周 TshyGO 为配方计算器推出了新版本的前端功能包，并移除了示例中可能引起混淆的实际配方数据，让界面更清晰。他还优化了应用启动时的数据加载逻辑，避免多个任务同时运行导致冲突，并调整了侧边栏的显示顺序，现在实验项目会优先于数据列表展示。",
+      "summary": "本周 TshyGO 完成了配方计算器 v3.1 的前端打包，并引入了一个新的电子表格界面作为“配方表”标签页，使得编辑和切换配方时数据不会丢失。同时，他优化了界面布局，增加了可折叠的经典工具栏，并移除了示例中的真实配方数据以符合规范。这些工作让配方模块的保存、管理和使用体验更加稳定和直观。",
       "summary_source": "llm"
     },
     {
