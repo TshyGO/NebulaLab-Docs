@@ -7,8 +7,9 @@ const releasesApiUrl = 'https://api.github.com/repos/TshyGO/NebulaLab-Releases/r
 const stableReleaseUrl = 'https://github.com/TshyGO/NebulaLab-Releases/releases/latest'
 const betaReleaseFallbackUrl = 'https://github.com/TshyGO/NebulaLab-Releases/releases?q=prerelease%3Atrue'
 
-const { isDark } = useData()
-const { language: selectedLanguage, initPreferences } = useNebulaPreferences()
+const { isDark, lang } = useData()
+const { initPreferences } = useNebulaPreferences()
+const selectedLanguage = computed(() => (lang.value || '').startsWith('en') ? 'en' : 'zh')
 const betaReleaseUrl = ref(betaReleaseFallbackUrl)
 
 const iconShapes = {

@@ -1,51 +1,51 @@
 # Roadmap
 
-这页讲三件事：Nebula Lab 现在能做什么、接下来要做什么、最远想做到哪儿。
+This page talks about three things: what Nebula Lab can do now, what is planned next, and the long-term vision.
 
-## 现在（v0.8 系列）
+## Now (v0.8 series)
 
-落地的是「成组实验数据从仪器到 Origin」那一段：
+Currently implemented is the segment "grouped experimental data from instrument to Origin":
 
-- 从 CSV、TXT、Excel 导入仪器数据，按样品分组管理。
-- 常用的处理步骤（裁剪、平滑、归一化、基线扣除……）可以在一条样品上调好，再套用到同组其它样品。
-- 把整理好的组级数据，连同 Origin 图形模板、主题文件一起交给 Origin 继续作图。
-- 社区可以下载别人调好的处理流程、Origin 模板、各种自动化脚本。
+- Import instrument data from CSV, TXT, and Excel, and manage them by sample groups.
+- Common processing steps (cropping, smoothing, normalization, baseline subtraction...) can be tuned on one sample and applied to other samples in the same group.
+- Send the organized group-level data along with Origin graph templates and theme files to Origin to continue plotting.
+- Download workflows, Origin templates, and various automation scripts shared by others in the community.
 
-这一段以后不会大改。会继续修 bug、补细节，跟上 Origin 的版本。
+This segment will not undergo major changes. We will continue fixing bugs, refining details, and keeping up with Origin version updates.
 
-## 接下来：把一次实验串起来
+## Next: Chain the Experiment Together
 
-数据处理只是一次实验的中间一段。再往前走，是「这次实验是怎么做出来的」；再往后走，是「做过的实验，过几个月还查得到吗」。我打算沿着这条链路一步步往两头长：
+Data processing is only the middle part of an experiment. Looking forward, it is about "how this experiment was made"; looking backward, it is about "can the experiments done months ago still be retrieved". I plan to grow step-by-step toward both ends of this link:
 
-> 配方计算 → 配方保存 → 实验记录 → 原始数据导入 → 数据处理 → 结果写回记录 → 历史检索
+> Recipe Calculation → Recipe Saving → Experiment Record → Raw Data Import → Data Processing → Result Writeback to Record → History Search
 
-每一段大致是这样：
+Each segment is roughly as follows:
 
-- **配方计算与保存** —— 先解决「算一个配方、把它存下来」。比例、目标量、添加顺序都能复用。
-- **实验记录** —— 每次实验绑定到一个配方和一组样品，记下条件、操作、产物。
-- **原始数据 → 实验** —— 现在的处理功能继续用，但接入实验记录后，原始文件会自动挂回对应的实验。
-- **结果回流** —— 处理完的曲线、关键指标、结论写回到实验记录，翻历史时能直接看到。
-- **历史检索** —— 搜某个配方做过几次、某个条件下样品长什么样、某个结果对应的原始数据在哪儿。
+- **Recipe Calculation & Saving** — Solve "calculating a recipe and saving it" first. Ratios, target amounts, and addition order can all be reused.
+- **Experiment Record** — Bind each experiment to a recipe and a group of samples, recording conditions, operations, and products.
+- **Raw Data → Experiment** — Continue using the current processing features, but after connecting to the experiment record, raw files will automatically hang back to the corresponding experiment.
+- **Result Return** — Write processed curves, key metrics, and conclusions back to the experiment record so they can be viewed directly when browsing history.
+- **History Search** — Search how many times a recipe was run, what samples looked like under a certain condition, and where the raw data corresponding to a result is.
 
-这条链路是分阶段做的，不会一次全推上去。
+This link is built in phases and will not be pushed all at once.
 
-## 再之后：课题组自己的实验库
+## After That: The Research Group's Own Experiment Library
 
-桌面端能跑一个人的数据。要让一组人多年的数据汇到一起，需要一台课题组自己的服务器：
+The desktop client handles data for a single person. To gather data from a group of people over many years, a private server for the research group is needed:
 
-- **桌面端**继续负责本地的数据处理、绘图、脚本。
-- **课题组服务器**管账号、权限、实验记录、文件索引、共享、备份。
-- **数据库**把配方、工艺、样品、原始数据、处理流程、结论之间的关系存下来——它们之间能互相跳转。
+- **Desktop Client** continues to be responsible for local data processing, plotting, and scripting.
+- **Research Group Server** manages accounts, permissions, experiment records, file indexes, sharing, and backups.
+- **Database** stores the relationships between recipes, processes, samples, raw data, processing workflows, and conclusions—allowing mutual navigation between them.
 
-等课题组数据积累得够多，再往上加材料检索、数据合集、基于自家数据的问答这些能力。
+Once the research group's data accumulation is sufficient, we can layer features such as material search, data collections, and Q&A based on the group's own data.
 
-## 不会做的
+## What We Won't Do
 
-- **不做 Origin 的替代品。** 排图、出报告交给 Origin 或其它作图软件，Nebula Lab 只负责到 Origin 之前那段。
-- **不做云托管。** 所有数据走本地，或者放在课题组自己的服务器上，不上 Nebula 这边的云。
+- **We will not replace Origin.** Layout and reporting are left to Origin or other plotting software; Nebula Lab is only responsible for the stage leading up to Origin.
+- **We will not host data on our cloud.** All data resides locally or on the research group's own server, never on Nebula's public cloud.
 
-## 更细的版本计划
+## Detailed Release Plan
 
-每个版本具体要做什么，维护在 GitHub Project：
+The specific features for each version are maintained in the GitHub Project:
 
 [Nebula Lab Roadmap](https://github.com/users/TshyGO/projects/1)

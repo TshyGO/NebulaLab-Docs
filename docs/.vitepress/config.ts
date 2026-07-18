@@ -2,7 +2,6 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   title: 'Nebula Lab',
-  description: '面向实验数据的桌面工作台：导入、处理，并通过可复用流程导出结果。',
   base: '/NebulaLab-Docs/',
   cleanUrls: true,
   lastUpdated: true,
@@ -29,8 +28,12 @@ export default defineConfig({
                 noResultsText: '没有找到结果',
                 footer: {
                   selectText: '选择',
+                  selectKeyAriaLabel: '回车键',
                   navigateText: '切换',
-                  closeText: '关闭'
+                  navigateUpKeyAriaLabel: '上箭头',
+                  navigateDownKeyAriaLabel: '下箭头',
+                  closeText: '关闭',
+                  closeKeyAriaLabel: 'Esc'
                 }
               }
             }
@@ -48,8 +51,12 @@ export default defineConfig({
                 noResultsText: 'No results found',
                 footer: {
                   selectText: 'Select',
+                  selectKeyAriaLabel: 'Enter key',
                   navigateText: 'Navigate',
-                  closeText: 'Close'
+                  navigateUpKeyAriaLabel: 'Up arrow',
+                  navigateDownKeyAriaLabel: 'Down arrow',
+                  closeText: 'Close',
+                  closeKeyAriaLabel: 'Escape'
                 }
               }
             }
@@ -62,6 +69,7 @@ export default defineConfig({
     root: {
       label: '简体中文',
       lang: 'zh-CN',
+      description: '面向实验数据的桌面工作台：导入、处理，并通过可复用流程导出结果。',
       themeConfig: {
         outline: {
           label: '本页目录'
@@ -124,6 +132,7 @@ export default defineConfig({
     en: {
       label: 'English',
       lang: 'en-US',
+      description: 'A desktop workspace for experimental data: import, process, and export results through reusable workflows.',
       link: '/en/',
       themeConfig: {
         outline: {

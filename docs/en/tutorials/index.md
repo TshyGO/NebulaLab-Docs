@@ -1,11 +1,11 @@
-# 教程
+# Tutorials
 
-教程会用具体场景带你完成 Nebula Lab 的常见操作。
+Tutorials will guide you through common operations in Nebula Lab using specific scenarios.
 
-当前计划补充：
+Currently planned additions:
 
-- 完成一次基础数据处理。
-- 保存并复用工作流模板。
-- 使用社区资源。
-- 导出图谱和结果。
-- 结合实际实验数据的案例教程。
+- Complete basic data processing.
+- Save and reuse workflow templates.
+- Use community resources.
+- Export spectrums and results.
+- Case tutorials combining actual experimental data.

@@ -1,43 +1,48 @@
-# 手把手实战：完成一次基础数据处理
+# Hands-On Tutorial: Complete Basic Data Processing
 
-无需记忆复杂的概念，跟着这 5 个具体的操作步骤，快速完成从“导入仪器原始数据”到“绘制出图与导出”的全过程。
-
----
-
-## 1. 进入数据准备工作台并导入文件
-启动 NebulaLab 软件后，您将直接进入“数据准备”核心工作台。这是您进行数据处理与清洗的第一步。
-* **定位导入按钮**：在左侧“原始数据管理”面板的右上方，找到并点击带有高亮背景的“导入文件”按钮。
-* **选择或拖拽文件**：在弹出的文件浏览器中选择您需要分析的 CSV、Excel (XLSX)、TXT 或 DAT 原始仪器文件。您也可以直接将这些文件从电脑文件夹拖拽到左侧的空白区域，实现极速静默装载。
-* **认识主界面布局**：中间的大片区域为“表格工作区”，数据导入后将在其中展开；右侧则是状态监控和“数据处理流程”工作流管理器。
+Without memorizing complex concepts, follow these 5 concrete operational steps to quickly complete the entire process from "importing raw instrument data" to "plotting and exporting".
 
 ---
 
-## 2. 配置解析与核对数据预览
-在导入文件后，软件会自动弹出一个智能的“文件导入解析配置”对话框。您需要在这里确保仪器数据被正确解译为二维数据表格。
-* **智能预览首行**：在对话框底部的“轻量预览（前5行）”中观察数据格式，确认表头物理量与数值行是否对齐、无错位。
-* **设置跳过与表头**：通过调整“跳过行数（Skip Lines）”避开仪器的环境描述元数据信息；手动指定“表头行（Header Line）”，使其完美对准您的物理变量列名（如“波长”、“时间”）。
-* **设定样品分组**：您可以选择将这批数据合并导入为一个“样品组 (Group)”，或者分别为每个文件独立建组，它们将作为清晰的树状结构悬挂在左侧样品树中。
+## 1. Enter the Data Prep Workspace & Import Files
+
+After starting the NebulaLab software, you will enter the core "Data Preparation" workspace directly. This is your first step in data processing and cleaning.
+* **Locate the Import Button**: At the top right of the "Raw Data Management" panel on the left, find and click the highlighted "Import File" button.
+* **Select or Drag Files**: Select the raw instrument CSV, Excel (XLSX), TXT, or DAT files you need to analyze in the popup file browser. You can also drag and drop these files from your computer folder directly into the blank area on the left for silent loading.
+* **Understand the Layout**: The large central area is the "Table Workspace", where the data will be expanded after import. The right side is for status monitoring and the "Data Processing Workflow" manager.
 
 ---
 
-## 3. 物理轴线映射与数据预处理
-数据正确解析为表格后，您需要为其映射物理坐标轴，并构建一个全自动的数据清洗流水线。
-* **映射物理坐标轴**：在中间的“表格工作区”中，右键点击想要作为自变量的列名，设为 **X轴**；右键点击需要作为因变量的列名，设为 **Y轴**。
-* **过滤物理噪声坏点**：如果在某些点存在由于瞬间断电或仪器气泡产生的突变坏点，您可以直接双击该单元格，手动修改或直接清除明显的异常值。
-* **建立处理流水线**：在右下角“数据处理流程”面板中，点击“添加操作”，将多个清洗步骤进行叠加串联，如：数据裁剪（滤除无效头尾响应区）、平滑滤波 (SG)（Savitzky-Golay 算法平滑去除高频噪点）、以及自适应基线扣除。
+## 2. Configure Parsing & Check Data Preview
+
+After importing files, the software will automatically pop up a smart "File Import Parsing Configuration" dialog. You need to ensure that the instrument data is correctly interpreted as a two-dimensional data table here.
+* **Smart Preview Top Rows**: Observe the data format in the "Lightweight Preview (first 5 rows)" at the bottom of the dialog to confirm if the header physical quantities and numerical rows are aligned and not misplaced.
+* **Set Skip & Header**: Adjust "Skip Lines" to bypass the instrument's environmental description metadata. Manually specify the "Header Line" to perfectly align with your physical variable column names (such as "wavelength", "time").
+* **Set Sample Grouping**: You can choose to merge this batch of data and import it as a single "Sample Group", or create an independent group for each file. They will be displayed as a clear tree structure hanging in the sample tree on the left.
 
 ---
 
-## 4. 同屏样品勾选对比与绘图属性微调
-数据处理妥当后，前往图形看板，勾选需要比对的同批或不同批样品，进行直观的同屏绘制对比。
-* **多样品同屏绘制**：在左侧的树形样品列表中，直接勾选您想对比的任意数量的数据样品。软件会立刻在绘图看板视窗中，使用经过配色优化的专属色系，将它们同屏完美勾勒。
-* **物理量轴标签精修**：在右侧绘图属性面板中，您可以自由调整物理轴的标签文字（如输入带有希腊字母或上下标的学术符号与单位，如 `λ (nm)` 或 `A (a.u.)`）。
-* **线条与图例自定义**：您可以独立微调每一条曲线的粗细、线型（实线、虚线）以及数据标记点符号；鼠标直接按住图例框，即可随意拖动以防遮盖关键的特征谱峰。
+## 3. Physical Axis Mapping & Data Preprocessing
+
+After the data is correctly parsed into a table, you need to map physical coordinate axes for it and build an automatic data cleaning pipeline.
+* **Map Physical Coordinate Axes**: In the central "Table Workspace", right-click the column name you want to use as the independent variable and set it as the **X-axis**. Right-click the column name you need to use as the dependent variable and set it as the **Y-axis**.
+* **Filter Physical Noise Outliers**: If there are sudden bad points at certain positions due to transient power outages or instrument bubbles, you can double-click the cell to manually modify or clear the obvious anomaly.
+* **Build a Processing Pipeline**: In the "Data Processing Workflow" panel in the bottom right corner, click "Add Operation" to chain multiple cleaning steps together, such as: data cropping (filtering out invalid start/end response areas), smoothing filter (SG) (Savitzky-Golay algorithm to smoothly remove high-frequency noise), and adaptive baseline subtraction.
 
 ---
 
-## 5. 一键导出无损图表与工作流模板化
-完成满意的图像精细微调后，您可以将其导出为用于学术发表的高清插图，或将数据一键无缝送往 Origin，并保存为复用模板。
-* **导出学术发表插图**：在绘图区上方点击“导出图片”，支持直接导出为 **SVG 矢量图**（可在 Word 或 LaTeX 排版中任意缩放，绝对无损不模糊）或高分辨率的 PNG 图表。
-* **流式发送至 Origin 深度细修**：如果您需要利用 Origin 的高阶三维渲染等功能，只需在左侧样品树中右键点击样品，选择“发送到 Origin”。NebulaLab 会在后台调用您本地已安装的 Origin 软件并全自动将处理好的数据流式输送过去，免去手动复制粘贴之苦。
-* **沉淀工作流模板**：如果您每天都需要处理该仪器产出的同类数据，请点击右下角的“保存为数据处理流程模板”。下一次，只需一键点击“导入模板”，即可在 2 秒内对数万行原始数据完成全自动清洗与高精绘图，彻底解放重复劳动！
+## 4. On-Screen Sample Checking Comparison & Plotting Fine-Tuning
+
+After the data is properly processed, go to the plotting dashboard and check the samples from the same or different batches to perform intuitive on-screen comparisons.
+* **Plot Multiple Samples on One Screen**: In the tree sample list on the left, check any number of data samples you want to compare. The software will immediately draw them on the viewport of the plotting dashboard using visually optimized exclusive color schemes.
+* **Refining Axis Labels**: In the plotting properties panel on the right, you can adjust the physical axis label text freely (e.g., input physical quantity symbols and units containing Greek letters or subscripts/superscripts, such as `λ (nm)` or `A (a.u.)`).
+* **Line & Legend Customization**: You can independently fine-tune the thickness and line style (solid, dashed) of each curve, as well as data marker symbols. Hold and drag the legend box directly to move it anywhere in the graph area to avoid covering key spectral peaks.
+
+---
+
+## 5. One-Click Export Lossless Chart & Workflow Templating
+
+After completing the fine-tuning of the image, you can export it as a high-definition illustration for academic publication, or send the data to Origin, and save it as a reusable template.
+* **Export Academic Publication Illustrations**: Click "Export Image" above the plotting area to export directly as a **SVG vector graphic** (which can be scaled infinitely in Word or LaTeX layouts without loss or blur) or a high-resolution PNG chart.
+* **Stream to Origin for Deep Refining**: If you need to use Origin's advanced 3D rendering features, right-click the sample in the left sample tree and select "Send to Origin". NebulaLab will call your locally installed Origin software in the background and automatically stream the processed data over, saving you from manual copy-pasting.
+* **Establish Workflow Templates**: If you need to process similar data produced by this instrument daily, please click "Save as Data Processing Workflow Template" in the bottom right corner. Next time, just click "Import Template" to complete automatic cleaning and high-precision plotting of tens of thousands of rows of raw data in 2 seconds, freeing you from repetitive labor!
