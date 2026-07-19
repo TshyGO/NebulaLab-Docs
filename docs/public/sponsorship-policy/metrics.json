@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-07-18T21:05:55.778553+00:00",
+  "generated_at": "2026-07-19T21:06:53.586853+00:00",
   "revision": "multi-repository",
   "repositories": [
     {
@@ -22,7 +22,7 @@
       "name": "NebulaLab Docs",
       "path": "external/NebulaLab-Docs",
       "weight": 0.45,
-      "revision": "f4c171b89fd2"
+      "revision": "ecf9c655d584"
     }
   ],
   "range": {
@@ -119,7 +119,7 @@
     }
   },
   "excluded": {
-    "bot_commits": 23,
+    "bot_commits": 24,
     "zero_weight_files": 70,
     "unknown_classification_files": 230,
     "binary_files": 102
@@ -22595,7 +22595,7 @@
         }
       ],
       "summary": "本周 TshyGO 主要推进了配方计算和实验数据管理两大块。他让配方表可以像普通文档一样保存和切换，同时优化了物料库查询，现在离线也能快速找到化学品。此外，实验数据库增加了版本检查，避免因软件版本不一致导致数据打不开的问题。",
-      "summary_source": "llm"
+      "summary_source": "llm-cached"
     },
     {
       "iso_week": "2026-W28",
@@ -23572,7 +23572,6 @@
     }
   ],
   "weekly_digest_summary_sources": [
-    "llm",
     "llm-cached"
   ]
 }
