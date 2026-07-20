@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-07-19T21:06:53.586853+00:00",
+  "generated_at": "2026-07-20T21:32:02.301012+00:00",
   "revision": "multi-repository",
   "repositories": [
     {
@@ -8,7 +8,7 @@
       "name": "NebulaLab",
       "path": ".",
       "weight": 1.0,
-      "revision": "0e1d0cb858e5"
+      "revision": "d5b4d8061827"
     },
     {
       "id": "plugins",
@@ -22,7 +22,7 @@
       "name": "NebulaLab Docs",
       "path": "external/NebulaLab-Docs",
       "weight": 0.45,
-      "revision": "ecf9c655d584"
+      "revision": "aa66532647db"
     }
   ],
   "range": {
@@ -105,42 +105,42 @@
   },
   "totals": {
     "contributors": 5,
-    "raw_commits": 653,
-    "effective_commits": 639,
-    "weighted_churn": 325713.64,
-    "score": 2526.2656,
+    "raw_commits": 676,
+    "effective_commits": 662,
+    "weighted_churn": 335530.44,
+    "score": 2634.4998,
     "category_churn": {
-      "core_code": 230195.0,
-      "tests": 61607.2,
-      "documentation": 24837.6,
-      "configuration": 11025.3,
+      "core_code": 237510.5,
+      "tests": 64053.2,
+      "documentation": 24865.0,
+      "configuration": 11053.2,
       "unknown": 0.0,
       "excluded": 0.0
     }
   },
   "excluded": {
-    "bot_commits": 24,
-    "zero_weight_files": 70,
-    "unknown_classification_files": 230,
+    "bot_commits": 25,
+    "zero_weight_files": 71,
+    "unknown_classification_files": 231,
     "binary_files": 102
   },
   "contributors": [
     {
       "id": "TshyGO",
       "display_name": "TshyGO",
-      "raw_commits": 577,
-      "effective_commits": 563,
-      "additions": 354506,
-      "deletions": 109354,
-      "raw_churn": 463860.0,
-      "weighted_churn": 281729.17,
-      "score": 2012.8643,
-      "files_touched": 3528,
+      "raw_commits": 599,
+      "effective_commits": 585,
+      "additions": 361792,
+      "deletions": 115568,
+      "raw_churn": 477359.0,
+      "weighted_churn": 291453.37,
+      "score": 2111.4756,
+      "files_touched": 3640,
       "category_churn": {
-        "core_code": 194768.0,
-        "tests": 53392.4,
-        "documentation": 24513.0,
-        "configuration": 10774.05,
+        "core_code": 202020.5,
+        "tests": 55808.8,
+        "documentation": 24540.4,
+        "configuration": 10801.95,
         "unknown": 0.0,
         "excluded": 0.0
       },
@@ -149,10 +149,10 @@
           "id": "nebulalab",
           "name": "NebulaLab",
           "weight": 1.0,
-          "raw_commits": 508,
-          "effective_commits": 500,
-          "weighted_churn": 278012.35,
-          "score": 1864.4861
+          "raw_commits": 530,
+          "effective_commits": 522,
+          "weighted_churn": 287736.55,
+          "score": 1963.0975
         },
         {
           "id": "plugins",
@@ -174,23 +174,23 @@
         }
       ],
       "co_authored_commits": 2,
-      "share_pct": 79.68,
-      "weighted_churn_share_pct": 86.5
+      "share_pct": 80.15,
+      "weighted_churn_share_pct": 86.86
     },
     {
       "id": "wagtyq",
       "display_name": "wagtyq",
-      "raw_commits": 62,
-      "effective_commits": 62,
-      "additions": 32988,
-      "deletions": 17676,
-      "raw_churn": 50664.0,
-      "weighted_churn": 39792.03,
-      "score": 411.9867,
-      "files_touched": 236,
+      "raw_commits": 63,
+      "effective_commits": 63,
+      "additions": 33080,
+      "deletions": 17694,
+      "raw_churn": 50773.0,
+      "weighted_churn": 39884.63,
+      "score": 421.6096,
+      "files_touched": 238,
       "category_churn": {
-        "core_code": 33323.0,
-        "tests": 6270.8,
+        "core_code": 33386.0,
+        "tests": 6300.4,
         "documentation": 62.4,
         "configuration": 247.35,
         "unknown": 0.0,
@@ -201,10 +201,10 @@
           "id": "nebulalab",
           "name": "NebulaLab",
           "weight": 1.0,
-          "raw_commits": 59,
-          "effective_commits": 59,
-          "weighted_churn": 38788.35,
-          "score": 378.711
+          "raw_commits": 60,
+          "effective_commits": 60,
+          "weighted_churn": 38880.95,
+          "score": 388.3339
         },
         {
           "id": "plugins",
@@ -217,8 +217,8 @@
         }
       ],
       "co_authored_commits": 2,
-      "share_pct": 16.31,
-      "weighted_churn_share_pct": 12.22
+      "share_pct": 16.0,
+      "weighted_churn_share_pct": 11.89
     },
     {
       "id": "crema-lida",
@@ -251,8 +251,8 @@
         }
       ],
       "co_authored_commits": 1,
-      "share_pct": 3.68,
-      "weighted_churn_share_pct": 1.26
+      "share_pct": 3.53,
+      "weighted_churn_share_pct": 1.22
     },
     {
       "id": "delicious-icecream",
@@ -285,7 +285,7 @@
         }
       ],
       "co_authored_commits": 0,
-      "share_pct": 0.26,
+      "share_pct": 0.25,
       "weighted_churn_share_pct": 0.03
     },
     {
@@ -319,11 +319,793 @@
         }
       ],
       "co_authored_commits": 1,
-      "share_pct": 0.07,
+      "share_pct": 0.06,
       "weighted_churn_share_pct": 0.0
     }
   ],
   "commits": [
+    {
+      "hash": "22e5d9be3ec541ed023220269586555bb134823c",
+      "short_hash": "22e5d9be3ec5",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-07-20T23:48:19+08:00",
+      "date": "2026-07-20",
+      "iso_week": "2026-W30",
+      "subject": "fix(formulation): replace anchored materials in place",
+      "effective": true,
+      "additions": 91,
+      "deletions": 18,
+      "raw_churn": 109,
+      "file_weighted_churn": 92.6,
+      "weighted_churn": 92.6,
+      "files_touched": 3,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 63.0,
+        "tests": 29.6,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "12790c0fa9922b49e49b957fc03ac73b13d42845",
+      "short_hash": "12790c0fa992",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-20T21:14:25+08:00",
+      "date": "2026-07-20",
+      "iso_week": "2026-W30",
+      "subject": "align formula tests with default unit",
+      "effective": true,
+      "additions": 2,
+      "deletions": 0,
+      "raw_churn": 2,
+      "file_weighted_churn": 1.6,
+      "weighted_churn": 1.6,
+      "files_touched": 2,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 1.6,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "ba3500f8f1fa98917747765c60a1e586b329044b",
+      "short_hash": "ba3500f8f1fa",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-20T21:07:57+08:00",
+      "date": "2026-07-20",
+      "iso_week": "2026-W30",
+      "subject": "preserve specimen normalization diagnostics",
+      "effective": true,
+      "additions": 29,
+      "deletions": 0,
+      "raw_churn": 29,
+      "file_weighted_churn": 24.4,
+      "weighted_churn": 24.4,
+      "files_touched": 2,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 6.0,
+        "tests": 18.4,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "5e46de15f56b30b515fe94065ba3fc7d70cebcb7",
+      "short_hash": "5e46de15f56b",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-20T21:00:14+08:00",
+      "date": "2026-07-20",
+      "iso_week": "2026-W30",
+      "subject": "fix formulation fingerprint collisions in v4",
+      "effective": true,
+      "additions": 90,
+      "deletions": 18,
+      "raw_churn": 108,
+      "file_weighted_churn": 87.3,
+      "weighted_churn": 87.3,
+      "files_touched": 2,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 40.5,
+        "tests": 46.8,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "83d0413c6b5515607012d4d81817d641ad97db80",
+      "short_hash": "83d0413c6b55",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-20T20:52:34+08:00",
+      "date": "2026-07-20",
+      "iso_week": "2026-W30",
+      "subject": "refine formulation toolbar actions",
+      "effective": true,
+      "additions": 55,
+      "deletions": 5,
+      "raw_churn": 60,
+      "file_weighted_churn": 57.5,
+      "weighted_churn": 57.5,
+      "files_touched": 2,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 57.5,
+        "tests": 0.0,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "6b38e76616b452ff028aa5c7c946a3c01275326a",
+      "short_hash": "6b38e76616b4",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-20T20:41:29+08:00",
+      "date": "2026-07-20",
+      "iso_week": "2026-W30",
+      "subject": "remove duplicate add material toolbar action",
+      "effective": true,
+      "additions": 0,
+      "deletions": 1,
+      "raw_churn": 1,
+      "file_weighted_churn": 0.5,
+      "weighted_churn": 0.5,
+      "files_touched": 1,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.5,
+        "tests": 0.0,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "fc6de60c79bf63cf2d6424546679ee1a3ed789a4",
+      "short_hash": "fc6de60c79bf",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-20T20:37:40+08:00",
+      "date": "2026-07-20",
+      "iso_week": "2026-W30",
+      "subject": "fix autosave UX and mixed unit publishing",
+      "effective": true,
+      "additions": 105,
+      "deletions": 30,
+      "raw_churn": 135,
+      "file_weighted_churn": 113.3,
+      "weighted_churn": 113.3,
+      "files_touched": 4,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 86.5,
+        "tests": 26.8,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "458088a9131f0a0eef624b8db47bca8dd129db12",
+      "short_hash": "458088a9131f",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-20T20:06:08+08:00",
+      "date": "2026-07-20",
+      "iso_week": "2026-W30",
+      "subject": "fix formula unit controls and autosave toggle",
+      "effective": true,
+      "additions": 128,
+      "deletions": 16,
+      "raw_churn": 144,
+      "file_weighted_churn": 124.2,
+      "weighted_churn": 124.2,
+      "files_touched": 9,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 77.0,
+        "tests": 47.2,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "4ea0c47537c32eb5c2f5f5bbf92010b11ec43610",
+      "short_hash": "4ea0c47537c3",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-20T19:52:55+08:00",
+      "date": "2026-07-20",
+      "iso_week": "2026-W30",
+      "subject": "fix formula layout recognition and undo sync",
+      "effective": true,
+      "additions": 366,
+      "deletions": 12,
+      "raw_churn": 378,
+      "file_weighted_churn": 359.3,
+      "weighted_churn": 359.3,
+      "files_touched": 3,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 308.5,
+        "tests": 50.8,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "ac670899a51dfb1abc6ee41fdc64e89c6d8fc036",
+      "short_hash": "ac670899a51d",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-20T19:39:19+08:00",
+      "date": "2026-07-20",
+      "iso_week": "2026-W30",
+      "subject": "fix formula editor workflow clarity",
+      "effective": true,
+      "additions": 263,
+      "deletions": 43,
+      "raw_churn": 306,
+      "file_weighted_churn": 267.2,
+      "weighted_churn": 267.2,
+      "files_touched": 2,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 198.0,
+        "tests": 69.2,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "d2fe061429cdb7de0538a638a37a849f23798c2a",
+      "short_hash": "d2fe061429cd",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-20T19:03:47+08:00",
+      "date": "2026-07-20",
+      "iso_week": "2026-W30",
+      "subject": "repair overwritten material anchors",
+      "effective": true,
+      "additions": 37,
+      "deletions": 1,
+      "raw_churn": 38,
+      "file_weighted_churn": 33.3,
+      "weighted_churn": 33.3,
+      "files_touched": 2,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 16.5,
+        "tests": 16.8,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "728e198374448b8f4bf20484e9b07c1018d5943b",
+      "short_hash": "728e19837444",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-20T19:01:34+08:00",
+      "date": "2026-07-20",
+      "iso_week": "2026-W30",
+      "subject": "fix unsafe formula quantity rebinding",
+      "effective": true,
+      "additions": 71,
+      "deletions": 2,
+      "raw_churn": 73,
+      "file_weighted_churn": 67.6,
+      "weighted_churn": 67.6,
+      "files_touched": 3,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 50.0,
+        "tests": 17.6,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "738c785366dfa64be543e1ebe21d06af9c140a18",
+      "short_hash": "738c785366df",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-20T18:40:15+08:00",
+      "date": "2026-07-20",
+      "iso_week": "2026-W30",
+      "subject": "fix formula quantity input workflow",
+      "effective": true,
+      "additions": 288,
+      "deletions": 62,
+      "raw_churn": 350,
+      "file_weighted_churn": 300.2,
+      "weighted_churn": 300.2,
+      "files_touched": 10,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 225.0,
+        "tests": 75.2,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "b19e932761ec4bcad34eb9b64fa932e008063910",
+      "short_hash": "b19e932761ec",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-20T18:07:16+08:00",
+      "date": "2026-07-20",
+      "iso_week": "2026-W30",
+      "subject": "fix formula snapshot migration ordering",
+      "effective": true,
+      "additions": 129,
+      "deletions": 11,
+      "raw_churn": 140,
+      "file_weighted_churn": 116.4,
+      "weighted_churn": 116.4,
+      "files_touched": 3,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 44.0,
+        "tests": 72.4,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "b9202646eb90b54d4b39b5a7c09c25fe4b69b62a",
+      "short_hash": "b9202646eb90",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-20T17:47:10+08:00",
+      "date": "2026-07-20",
+      "iso_week": "2026-W30",
+      "subject": "feat(formulation): add Excel-style cell format dialog (#445)",
+      "effective": true,
+      "additions": 1932,
+      "deletions": 95,
+      "raw_churn": 2027,
+      "file_weighted_churn": 1891.7,
+      "weighted_churn": 1891.7,
+      "files_touched": 11,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 1545.5,
+        "tests": 345.6,
+        "documentation": 0.0,
+        "configuration": 0.6,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "88e1a3fb60e8be0678266180c570325ea792f3f7",
+      "short_hash": "88e1a3fb60e8",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-20T17:31:41+08:00",
+      "date": "2026-07-20",
+      "iso_week": "2026-W30",
+      "subject": "fix idempotent publish snapshot response",
+      "effective": true,
+      "additions": 8,
+      "deletions": 4,
+      "raw_churn": 12,
+      "file_weighted_churn": 9.6,
+      "weighted_churn": 9.6,
+      "files_touched": 2,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 8.0,
+        "tests": 1.6,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "c0493743dd729134ff8c21b35ee65344bc272a86",
+      "short_hash": "c0493743dd72",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-20T16:46:49+08:00",
+      "date": "2026-07-20",
+      "iso_week": "2026-W30",
+      "subject": "address formula snapshot review feedback",
+      "effective": true,
+      "additions": 13,
+      "deletions": 14,
+      "raw_churn": 27,
+      "file_weighted_churn": 20.0,
+      "weighted_churn": 20.0,
+      "files_touched": 3,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 20.0,
+        "tests": 0.0,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "2d957a18e450359da07a999ce669ff1b6d3292c0",
+      "short_hash": "2d957a18e450",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-20T16:36:35+08:00",
+      "date": "2026-07-20",
+      "iso_week": "2026-W30",
+      "subject": "switch specimen workflows to formula snapshots",
+      "effective": true,
+      "additions": 113,
+      "deletions": 535,
+      "raw_churn": 648,
+      "file_weighted_churn": 362.4,
+      "weighted_churn": 362.4,
+      "files_touched": 9,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 290.0,
+        "tests": 72.4,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "7b7c183b41b65cabe47649b717fc63227527eea5",
+      "short_hash": "7b7c183b41b6",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-20T16:36:09+08:00",
+      "date": "2026-07-20",
+      "iso_week": "2026-W30",
+      "subject": "publish authoritative formula snapshots",
+      "effective": true,
+      "additions": 1245,
+      "deletions": 978,
+      "raw_churn": 2223,
+      "file_weighted_churn": 1620.7,
+      "weighted_churn": 1620.7,
+      "files_touched": 10,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 1167.5,
+        "tests": 453.2,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "bcb89d665edad0ef3954b34869a20e50d43194bd",
+      "short_hash": "bcb89d665eda",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-20T16:35:53+08:00",
+      "date": "2026-07-20",
+      "iso_week": "2026-W30",
+      "subject": "add formula mapping and publish check UI",
+      "effective": true,
+      "additions": 418,
+      "deletions": 1994,
+      "raw_churn": 2412,
+      "file_weighted_churn": 1389.7,
+      "weighted_churn": 1389.7,
+      "files_touched": 8,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 1288.5,
+        "tests": 101.2,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "f0ed3f5bb4aedd81a29c06f7e14a2627eaab8290",
+      "short_hash": "f0ed3f5bb4ae",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-20T16:35:38+08:00",
+      "date": "2026-07-20",
+      "iso_week": "2026-W30",
+      "subject": "build blank semantic workbook insertion flow",
+      "effective": true,
+      "additions": 286,
+      "deletions": 535,
+      "raw_churn": 821,
+      "file_weighted_churn": 525.7,
+      "weighted_churn": 525.7,
+      "files_touched": 6,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 414.5,
+        "tests": 111.2,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "abd83ff361cf00658da17276eb92d544c42a1344",
+      "short_hash": "abd83ff361cf",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-20T16:35:25+08:00",
+      "date": "2026-07-20",
+      "iso_week": "2026-W30",
+      "subject": "add component registry and anchor lifecycle",
+      "effective": true,
+      "additions": 719,
+      "deletions": 1778,
+      "raw_churn": 2497,
+      "file_weighted_churn": 1493.7,
+      "weighted_churn": 1493.7,
+      "files_touched": 5,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 1098.5,
+        "tests": 382.8,
+        "documentation": 12.4,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "fbcee05927e4a205d705cc3246570d5d308f2b1e",
+      "short_hash": "fbcee05927e4",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-20T10:36:58+08:00",
+      "date": "2026-07-20",
+      "iso_week": "2026-W30",
+      "subject": "feat(storage): 实验库双层版本兼容与安全默认目录 (#450)",
+      "effective": true,
+      "additions": 988,
+      "deletions": 80,
+      "raw_churn": 1068,
+      "file_weighted_churn": 857.9,
+      "weighted_churn": 857.9,
+      "files_touched": 14,
+      "unknown_files": 1,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 310.0,
+        "tests": 505.6,
+        "documentation": 15.0,
+        "configuration": 27.3,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
     {
       "hash": "0e1d0cb858e51deadb6d32d46ff666a652f8607a",
       "short_hash": "0e1d0cb858e5",
@@ -22538,6 +23320,66 @@
   ],
   "weekly_digests": [
     {
+      "iso_week": "2026-W30",
+      "start": "2026-07-20",
+      "end": "2026-07-20",
+      "contributors": [
+        "TshyGO",
+        "wagtyq"
+      ],
+      "commit_count": 23,
+      "effective_count": 23,
+      "categories": {
+        "other": 20,
+        "feat": 2,
+        "fix": 1
+      },
+      "highlights": [
+        {
+          "hash": "b9202646eb90b54d4b39b5a7c09c25fe4b69b62a",
+          "short_hash": "b9202646eb90",
+          "subject": "feat(formulation): add Excel-style cell format dialog (#445)",
+          "contributor": "TshyGO",
+          "weighted_churn": 1891.7,
+          "repo_id": "nebulalab"
+        },
+        {
+          "hash": "7b7c183b41b65cabe47649b717fc63227527eea5",
+          "short_hash": "7b7c183b41b6",
+          "subject": "publish authoritative formula snapshots",
+          "contributor": "TshyGO",
+          "weighted_churn": 1620.7,
+          "repo_id": "nebulalab"
+        },
+        {
+          "hash": "abd83ff361cf00658da17276eb92d544c42a1344",
+          "short_hash": "abd83ff361cf",
+          "subject": "add component registry and anchor lifecycle",
+          "contributor": "TshyGO",
+          "weighted_churn": 1493.7,
+          "repo_id": "nebulalab"
+        },
+        {
+          "hash": "bcb89d665edad0ef3954b34869a20e50d43194bd",
+          "short_hash": "bcb89d665eda",
+          "subject": "add formula mapping and publish check UI",
+          "contributor": "TshyGO",
+          "weighted_churn": 1389.7,
+          "repo_id": "nebulalab"
+        },
+        {
+          "hash": "fbcee05927e4a205d705cc3246570d5d308f2b1e",
+          "short_hash": "fbcee05927e4",
+          "subject": "feat(storage): 实验库双层版本兼容与安全默认目录 (#450)",
+          "contributor": "TshyGO",
+          "weighted_churn": 857.9,
+          "repo_id": "nebulalab"
+        }
+      ],
+      "summary": "本周 TshyGO 为配方模块增加了类似 Excel 的单元格格式设置功能，并推出了权威公式快照，让配方数据的发布和版本管理更加清晰可靠。同时，团队修复了配方编辑过程中单位切换、自动保存等多项用户体验问题，提升了操作流畅度。wagtyq 则修复了替换已关联材料时的一个具体问题。",
+      "summary_source": "llm"
+    },
+    {
       "iso_week": "2026-W29",
       "start": "2026-07-13",
       "end": "2026-07-19",
@@ -23572,6 +24414,7 @@
     }
   ],
   "weekly_digest_summary_sources": [
+    "llm",
     "llm-cached"
   ]
 }
