@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-07-23T21:21:27.491945+00:00",
+  "generated_at": "2026-07-24T21:20:11.070015+00:00",
   "revision": "multi-repository",
   "repositories": [
     {
@@ -8,7 +8,7 @@
       "name": "NebulaLab",
       "path": ".",
       "weight": 1.0,
-      "revision": "51cd2db7ed1f"
+      "revision": "72c6da3e89ff"
     },
     {
       "id": "plugins",
@@ -22,7 +22,7 @@
       "name": "NebulaLab Docs",
       "path": "external/NebulaLab-Docs",
       "weight": 0.45,
-      "revision": "e867dc1d42f4"
+      "revision": "2927188845b7"
     }
   ],
   "range": {
@@ -105,13 +105,13 @@
   },
   "totals": {
     "contributors": 5,
-    "raw_commits": 685,
-    "effective_commits": 671,
-    "weighted_churn": 338613.54,
-    "score": 2658.2905,
+    "raw_commits": 694,
+    "effective_commits": 680,
+    "weighted_churn": 343917.54,
+    "score": 2713.6167,
     "category_churn": {
-      "core_code": 239468.0,
-      "tests": 65175.6,
+      "core_code": 243486.0,
+      "tests": 66461.6,
       "documentation": 24868.2,
       "configuration": 11053.2,
       "unknown": 0.0,
@@ -119,7 +119,7 @@
     }
   },
   "excluded": {
-    "bot_commits": 28,
+    "bot_commits": 29,
     "zero_weight_files": 71,
     "unknown_classification_files": 231,
     "binary_files": 102
@@ -174,23 +174,23 @@
         }
       ],
       "co_authored_commits": 2,
-      "share_pct": 79.92,
-      "weighted_churn_share_pct": 86.89
+      "share_pct": 78.29,
+      "weighted_churn_share_pct": 85.55
     },
     {
       "id": "wagtyq",
       "display_name": "wagtyq",
-      "raw_commits": 65,
-      "effective_commits": 65,
-      "additions": 33452,
-      "deletions": 17708,
-      "raw_churn": 51160.0,
-      "weighted_churn": 40202.93,
-      "score": 432.2574,
-      "files_touched": 248,
+      "raw_commits": 74,
+      "effective_commits": 74,
+      "additions": 38924,
+      "deletions": 18014,
+      "raw_churn": 56939.0,
+      "weighted_churn": 45506.93,
+      "score": 487.5837,
+      "files_touched": 296,
       "category_churn": {
-        "core_code": 33457.5,
-        "tests": 6547.2,
+        "core_code": 37475.5,
+        "tests": 7833.2,
         "documentation": 62.4,
         "configuration": 247.35,
         "unknown": 0.0,
@@ -201,10 +201,10 @@
           "id": "nebulalab",
           "name": "NebulaLab",
           "weight": 1.0,
-          "raw_commits": 62,
-          "effective_commits": 62,
-          "weighted_churn": 39199.25,
-          "score": 398.9817
+          "raw_commits": 71,
+          "effective_commits": 71,
+          "weighted_churn": 44503.25,
+          "score": 454.308
         },
         {
           "id": "plugins",
@@ -217,8 +217,8 @@
         }
       ],
       "co_authored_commits": 2,
-      "share_pct": 16.26,
-      "weighted_churn_share_pct": 11.87
+      "share_pct": 17.97,
+      "weighted_churn_share_pct": 13.23
     },
     {
       "id": "crema-lida",
@@ -251,8 +251,8 @@
         }
       ],
       "co_authored_commits": 1,
-      "share_pct": 3.5,
-      "weighted_churn_share_pct": 1.21
+      "share_pct": 3.43,
+      "weighted_churn_share_pct": 1.19
     },
     {
       "id": "delicious-icecream",
@@ -324,6 +324,278 @@
     }
   ],
   "commits": [
+    {
+      "hash": "d00bbcf9ab6e9bf72d8a9b34dbc57dbcf4bf6faf",
+      "short_hash": "d00bbcf9ab6e",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-07-24T19:33:45+08:00",
+      "date": "2026-07-24",
+      "iso_week": "2026-W30",
+      "subject": "fix(formulation): address formula review findings",
+      "effective": true,
+      "additions": 23,
+      "deletions": 4,
+      "raw_churn": 27,
+      "file_weighted_churn": 21.0,
+      "weighted_churn": 21.0,
+      "files_touched": 3,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 5.0,
+        "tests": 16.0,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "a415fe48b342e2d210c887d6832efdb9e8fc62b7",
+      "short_hash": "a415fe48b342",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-07-24T17:41:17+08:00",
+      "date": "2026-07-24",
+      "iso_week": "2026-W30",
+      "subject": "fix: synchronize formulation card and table views",
+      "effective": true,
+      "additions": 1064,
+      "deletions": 36,
+      "raw_churn": 1100,
+      "file_weighted_churn": 990.7,
+      "weighted_churn": 990.7,
+      "files_touched": 4,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 625.5,
+        "tests": 365.2,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "7eb40121221d15f3928a0c857e3312cd642a0f36",
+      "short_hash": "7eb40121221d",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-07-24T15:30:58+08:00",
+      "date": "2026-07-24",
+      "iso_week": "2026-W30",
+      "subject": "feat: add vertical material table layout",
+      "effective": true,
+      "additions": 187,
+      "deletions": 9,
+      "raw_churn": 196,
+      "file_weighted_churn": 184.0,
+      "weighted_churn": 184.0,
+      "files_touched": 3,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 154.0,
+        "tests": 30.0,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "3db3da0bc7d53f60f29387ec3e68089ab1f1bfed",
+      "short_hash": "3db3da0bc7d5",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-07-24T15:09:54+08:00",
+      "date": "2026-07-24",
+      "iso_week": "2026-W30",
+      "subject": "feat: switch formulation card and table views",
+      "effective": true,
+      "additions": 202,
+      "deletions": 33,
+      "raw_churn": 235,
+      "file_weighted_churn": 206.6,
+      "weighted_churn": 206.6,
+      "files_touched": 3,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 159.0,
+        "tests": 47.6,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "adefe939727f388c6d87754ae36f8b3d39df0d42",
+      "short_hash": "adefe939727f",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-07-24T14:51:29+08:00",
+      "date": "2026-07-24",
+      "iso_week": "2026-W30",
+      "subject": "fix: recalculate formula before publish preview",
+      "effective": true,
+      "additions": 55,
+      "deletions": 3,
+      "raw_churn": 58,
+      "file_weighted_churn": 49.1,
+      "weighted_churn": 49.1,
+      "files_touched": 2,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 19.5,
+        "tests": 29.6,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "d6fc27234b81e59ba74d709c6af23219c2451d10",
+      "short_hash": "d6fc27234b81",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-07-24T14:33:14+08:00",
+      "date": "2026-07-24",
+      "iso_week": "2026-W30",
+      "subject": "fix: harden formulation card interactions",
+      "effective": true,
+      "additions": 104,
+      "deletions": 9,
+      "raw_churn": 113,
+      "file_weighted_churn": 102.8,
+      "weighted_churn": 102.8,
+      "files_touched": 6,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 80.0,
+        "tests": 22.8,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "fecc364228992823774a1c30165f516b943a0e1b",
+      "short_hash": "fecc36422899",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-07-24T14:23:38+08:00",
+      "date": "2026-07-24",
+      "iso_week": "2026-W30",
+      "subject": "fix: address formulation card review feedback",
+      "effective": true,
+      "additions": 219,
+      "deletions": 175,
+      "raw_churn": 394,
+      "file_weighted_churn": 294.5,
+      "weighted_churn": 294.5,
+      "files_touched": 8,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 246.5,
+        "tests": 48.0,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "799717f00d061010aab25d689ab65ac03625b7dc",
+      "short_hash": "799717f00d06",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-07-24T13:37:21+08:00",
+      "date": "2026-07-24",
+      "iso_week": "2026-W30",
+      "subject": "feat: add formulation card UI",
+      "effective": true,
+      "additions": 3565,
+      "deletions": 35,
+      "raw_churn": 3600,
+      "file_weighted_churn": 3410.0,
+      "weighted_churn": 3410.0,
+      "files_touched": 17,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 2720.0,
+        "tests": 690.0,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
     {
       "hash": "10fbe70909d01713814f63349f96f3c89be1bd70",
       "short_hash": "10fbe70909d0",
@@ -557,6 +829,40 @@
         "core_code": 1141.5,
         "tests": 361.2,
         "documentation": 3.2,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "4d54c8280208e6223c35ebb086133b1f6dda2072",
+      "short_hash": "4d54c8280208",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-07-21T20:55:45+08:00",
+      "date": "2026-07-21",
+      "iso_week": "2026-W30",
+      "subject": "fix specimen preview text decorations",
+      "effective": true,
+      "additions": 53,
+      "deletions": 3,
+      "raw_churn": 56,
+      "file_weighted_churn": 45.3,
+      "weighted_churn": 45.3,
+      "files_touched": 2,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 8.5,
+        "tests": 36.8,
+        "documentation": 0.0,
         "configuration": 0.0,
         "unknown": 0.0,
         "excluded": 0.0
@@ -23628,20 +23934,28 @@
     {
       "iso_week": "2026-W30",
       "start": "2026-07-20",
-      "end": "2026-07-23",
+      "end": "2026-07-24",
       "contributors": [
         "TshyGO",
         "wagtyq"
       ],
-      "commit_count": 32,
-      "effective_count": 32,
+      "commit_count": 41,
+      "effective_count": 41,
       "categories": {
-        "other": 21,
-        "feat": 4,
-        "fix": 6,
+        "fix": 11,
+        "feat": 7,
+        "other": 22,
         "test": 1
       },
       "highlights": [
+        {
+          "hash": "799717f00d061010aab25d689ab65ac03625b7dc",
+          "short_hash": "799717f00d06",
+          "subject": "feat: add formulation card UI",
+          "contributor": "wagtyq",
+          "weighted_churn": 3410.0,
+          "repo_id": "nebulalab"
+        },
         {
           "hash": "b9202646eb90b54d4b39b5a7c09c25fe4b69b62a",
           "short_hash": "b9202646eb90",
@@ -23673,17 +23987,9 @@
           "contributor": "TshyGO",
           "weighted_churn": 1493.7,
           "repo_id": "nebulalab"
-        },
-        {
-          "hash": "bcb89d665edad0ef3954b34869a20e50d43194bd",
-          "short_hash": "bcb89d665eda",
-          "subject": "add formula mapping and publish check UI",
-          "contributor": "TshyGO",
-          "weighted_churn": 1389.7,
-          "repo_id": "nebulalab"
         }
       ],
-      "summary": "本周 TshyGO 为配方模块增加了类似 Excel 的单元格格式设置对话框，并引入了结构化样品结果查询功能，让数据查看更直观。同时，我们优化了配方编辑和保存流程，提升了操作的流畅性。wagtyq 协助修复了配方复制时的计算问题，确保数据准确性。整体上，团队进一步打磨了配方相关功能的用户体验。",
+      "summary": "本周 TshyGO 和 wagtyq 共同推进了配方功能的完善。TshyGO 主要增加了像 Excel 一样的单元格格式设置对话框，并建立了权威的配方快照机制，让配方数据更稳定可靠。同时，wagtyq 则专注于优化配方卡的界面与交互，使其与表格视图能顺畅同步切换，并修复了多处用户反馈的问题。",
       "summary_source": "llm"
     },
     {
