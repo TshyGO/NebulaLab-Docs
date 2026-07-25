@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-07-24T21:20:11.070015+00:00",
+  "generated_at": "2026-07-25T21:08:33.259190+00:00",
   "revision": "multi-repository",
   "repositories": [
     {
@@ -22,7 +22,7 @@
       "name": "NebulaLab Docs",
       "path": "external/NebulaLab-Docs",
       "weight": 0.45,
-      "revision": "2927188845b7"
+      "revision": "0f6c75a4ffdd"
     }
   ],
   "range": {
@@ -119,7 +119,7 @@
     }
   },
   "excluded": {
-    "bot_commits": 29,
+    "bot_commits": 30,
     "zero_weight_files": 71,
     "unknown_classification_files": 231,
     "binary_files": 102
@@ -23990,7 +23990,7 @@
         }
       ],
       "summary": "本周 TshyGO 和 wagtyq 共同推进了配方功能的完善。TshyGO 主要增加了像 Excel 一样的单元格格式设置对话框，并建立了权威的配方快照机制，让配方数据更稳定可靠。同时，wagtyq 则专注于优化配方卡的界面与交互，使其与表格视图能顺畅同步切换，并修复了多处用户反馈的问题。",
-      "summary_source": "llm"
+      "summary_source": "llm-cached"
     },
     {
       "iso_week": "2026-W29",
@@ -25027,7 +25027,6 @@
     }
   ],
   "weekly_digest_summary_sources": [
-    "llm",
     "llm-cached"
   ]
 }
