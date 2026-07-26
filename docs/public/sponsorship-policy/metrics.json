@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-07-25T21:08:33.259190+00:00",
+  "generated_at": "2026-07-26T21:11:04.306135+00:00",
   "revision": "multi-repository",
   "repositories": [
     {
@@ -22,7 +22,7 @@
       "name": "NebulaLab Docs",
       "path": "external/NebulaLab-Docs",
       "weight": 0.45,
-      "revision": "0f6c75a4ffdd"
+      "revision": "4ee8055cfe63"
     }
   ],
   "range": {
@@ -119,7 +119,7 @@
     }
   },
   "excluded": {
-    "bot_commits": 30,
+    "bot_commits": 31,
     "zero_weight_files": 71,
     "unknown_classification_files": 231,
     "binary_files": 102
