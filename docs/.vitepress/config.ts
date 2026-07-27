@@ -6,6 +6,10 @@ export default defineConfig({
   description: '面向实验数据的桌面工作台：导入、处理，并通过可复用流程导出结果。',
   base: '/',
   cleanUrls: true,
+  // docs/superpowers 下是内部实施计划和设计规格，不属于对外文档。
+  // VitePress 默认会把 docs 下每个 .md 都构建成页面，必须显式排除。
+  srcExclude: ['superpowers/**'],
+  sitemap: { hostname: 'https://nebulalab.app/' },
   lastUpdated: true,
   appearance: 'dark',
   head: [
