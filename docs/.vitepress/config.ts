@@ -4,7 +4,7 @@ export default defineConfig({
   lang: 'zh-CN',
   title: 'Nebula Lab',
   description: '面向实验数据的桌面工作台：导入、处理，并通过可复用流程导出结果。',
-  base: '/NebulaLab-Docs/',
+  base: '/',
   cleanUrls: true,
   lastUpdated: true,
   appearance: 'dark',

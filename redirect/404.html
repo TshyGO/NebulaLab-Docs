@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>Nebula Lab 文档已迁移</title>
+<link rel="canonical" href="https://nebulalab.app/">
+<meta name="robots" content="noindex">
+<meta http-equiv="refresh" content="1; url=https://nebulalab.app/">
+<script>
+  // GitHub Pages serves this file for every unknown path under /NebulaLab-Docs/.
+  // Carry the original path over to the new domain so deep links survive.
+  (function () {
+    var prefix = '/NebulaLab-Docs';
+    var path = window.location.pathname;
+    if (path.indexOf(prefix) === 0) {
+      path = path.slice(prefix.length);
+    }
+    if (path.charAt(0) !== '/') {
+      path = '/' + path;
+    }
+    window.location.replace('https://nebulalab.app' + path + window.location.search + window.location.hash);
+  })();
+</script>
+</head>
+<body>
+<p>Nebula Lab 文档站已迁至 <a href="https://nebulalab.app/">https://nebulalab.app/</a>，正在跳转……</p>
+</body>
+</html>
