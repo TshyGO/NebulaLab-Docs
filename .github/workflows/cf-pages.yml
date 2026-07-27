@@ -1,0 +1,42 @@
+name: Deploy docs to Cloudflare Pages
+
+# 构建留在 GitHub Actions（Node 版本、npm 缓存都已验证过），只把产物交给
+# Cloudflare Pages。这样不需要 Cloudflare 的 GitHub App 授权，也不占 CF 构建额度。
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'redirect/**'
+      - '.github/workflows/deploy.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: cf-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Build with VitePress
+        run: npm run docs:build
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy docs/.vitepress/dist --project-name=nebulalab-docs --branch=main
