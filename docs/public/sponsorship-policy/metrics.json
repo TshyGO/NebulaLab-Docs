@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-07-29T21:11:41.474280+00:00",
+  "generated_at": "2026-07-30T21:31:39.909900+00:00",
   "revision": "multi-repository",
   "repositories": [
     {
@@ -8,7 +8,7 @@
       "name": "NebulaLab",
       "path": ".",
       "weight": 1.0,
-      "revision": "b1d6f6fa0ef2"
+      "revision": "bc0b93610090"
     },
     {
       "id": "plugins",
@@ -22,7 +22,7 @@
       "name": "NebulaLab Docs",
       "path": "external/NebulaLab-Docs",
       "weight": 0.45,
-      "revision": "3537fabc86bc"
+      "revision": "203d9db1d6ab"
     }
   ],
   "range": {
@@ -105,13 +105,13 @@
   },
   "totals": {
     "contributors": 5,
-    "raw_commits": 727,
-    "effective_commits": 713,
-    "weighted_churn": 356312.24,
-    "score": 2828.2669,
+    "raw_commits": 734,
+    "effective_commits": 720,
+    "weighted_churn": 357533.64,
+    "score": 2863.2154,
     "category_churn": {
-      "core_code": 252178.5,
-      "tests": 70110.4,
+      "core_code": 252919.5,
+      "tests": 70590.8,
       "documentation": 24876.4,
       "configuration": 11173.8,
       "unknown": 0.0,
@@ -119,7 +119,7 @@
     }
   },
   "excluded": {
-    "bot_commits": 34,
+    "bot_commits": 35,
     "zero_weight_files": 71,
     "unknown_classification_files": 231,
     "binary_files": 105
@@ -174,23 +174,23 @@
         }
       ],
       "co_authored_commits": 2,
-      "share_pct": 79.17,
-      "weighted_churn_share_pct": 86.05
+      "share_pct": 78.21,
+      "weighted_churn_share_pct": 85.76
     },
     {
       "id": "wagtyq",
       "display_name": "wagtyq",
-      "raw_commits": 74,
-      "effective_commits": 74,
-      "additions": 38924,
-      "deletions": 18014,
-      "raw_churn": 56939.0,
-      "weighted_churn": 45506.93,
-      "score": 487.5837,
-      "files_touched": 296,
+      "raw_commits": 81,
+      "effective_commits": 81,
+      "additions": 40140,
+      "deletions": 18268,
+      "raw_churn": 58407.0,
+      "weighted_churn": 46728.33,
+      "score": 522.5322,
+      "files_touched": 318,
       "category_churn": {
-        "core_code": 37475.5,
-        "tests": 7833.2,
+        "core_code": 38216.5,
+        "tests": 8313.6,
         "documentation": 62.4,
         "configuration": 247.35,
         "unknown": 0.0,
@@ -201,10 +201,10 @@
           "id": "nebulalab",
           "name": "NebulaLab",
           "weight": 1.0,
-          "raw_commits": 71,
-          "effective_commits": 71,
-          "weighted_churn": 44503.25,
-          "score": 454.308
+          "raw_commits": 78,
+          "effective_commits": 78,
+          "weighted_churn": 45724.65,
+          "score": 489.2565
         },
         {
           "id": "plugins",
@@ -217,8 +217,8 @@
         }
       ],
       "co_authored_commits": 2,
-      "share_pct": 17.24,
-      "weighted_churn_share_pct": 12.77
+      "share_pct": 18.25,
+      "weighted_churn_share_pct": 13.07
     },
     {
       "id": "crema-lida",
@@ -251,8 +251,8 @@
         }
       ],
       "co_authored_commits": 1,
-      "share_pct": 3.29,
-      "weighted_churn_share_pct": 1.15
+      "share_pct": 3.25,
+      "weighted_churn_share_pct": 1.14
     },
     {
       "id": "delicious-icecream",
@@ -285,7 +285,7 @@
         }
       ],
       "co_authored_commits": 0,
-      "share_pct": 0.24,
+      "share_pct": 0.23,
       "weighted_churn_share_pct": 0.03
     },
     {
@@ -324,6 +324,244 @@
     }
   ],
   "commits": [
+    {
+      "hash": "8b2618cf00507872505cf6b50867439b75e8f1d8",
+      "short_hash": "8b2618cf0050",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-07-30T23:53:37+08:00",
+      "date": "2026-07-30",
+      "iso_week": "2026-W31",
+      "subject": "fix(ui): address catalog dialog review",
+      "effective": true,
+      "additions": 76,
+      "deletions": 31,
+      "raw_churn": 107,
+      "file_weighted_churn": 82.8,
+      "weighted_churn": 82.8,
+      "files_touched": 4,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 48.0,
+        "tests": 34.8,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "43dc7bfb7c4dbf9ede552efbaa71bb1e71d6a311",
+      "short_hash": "43dc7bfb7c4d",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-07-30T23:39:15+08:00",
+      "date": "2026-07-30",
+      "iso_week": "2026-W31",
+      "subject": "fix(ui): replace test catalog prompts",
+      "effective": true,
+      "additions": 487,
+      "deletions": 73,
+      "raw_churn": 560,
+      "file_weighted_churn": 488.4,
+      "weighted_churn": 488.4,
+      "files_touched": 4,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 348.0,
+        "tests": 140.4,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "ef695a76e3a1e5b7014f1db03ca72db253893fc9",
+      "short_hash": "ef695a76e3a1",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-07-30T17:28:13+08:00",
+      "date": "2026-07-30",
+      "iso_week": "2026-W31",
+      "subject": "fix(specimen): address review feedback",
+      "effective": true,
+      "additions": 10,
+      "deletions": 3,
+      "raw_churn": 13,
+      "file_weighted_churn": 9.8,
+      "weighted_churn": 9.8,
+      "files_touched": 2,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 3.0,
+        "tests": 6.8,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "1c632afb4597bd46ca6232b07bdd86f0c84a2456",
+      "short_hash": "1c632afb4597",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-07-30T16:53:36+08:00",
+      "date": "2026-07-30",
+      "iso_week": "2026-W31",
+      "subject": "fix(specimen): show basic info for sparse samples",
+      "effective": true,
+      "additions": 41,
+      "deletions": 2,
+      "raw_churn": 43,
+      "file_weighted_churn": 35.8,
+      "weighted_churn": 35.8,
+      "files_touched": 2,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 11.0,
+        "tests": 24.8,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "7fd5b5fa1ddf4477c3bdbfea08a6332fc4bf0512",
+      "short_hash": "7fd5b5fa1ddf",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-07-30T06:02:08+08:00",
+      "date": "2026-07-30",
+      "iso_week": "2026-W31",
+      "subject": "fix(formulation): address draft recovery review",
+      "effective": true,
+      "additions": 269,
+      "deletions": 33,
+      "raw_churn": 302,
+      "file_weighted_churn": 251.1,
+      "weighted_churn": 251.1,
+      "files_touched": 4,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 113.5,
+        "tests": 137.6,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "1f3c3ac71ee7306899bea081dfee64810239a964",
+      "short_hash": "1f3c3ac71ee7",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-07-30T00:05:34+08:00",
+      "date": "2026-07-30",
+      "iso_week": "2026-W31",
+      "subject": "fix(formulation): harden draft recovery",
+      "effective": true,
+      "additions": 112,
+      "deletions": 19,
+      "raw_churn": 131,
+      "file_weighted_churn": 108.5,
+      "weighted_churn": 108.5,
+      "files_touched": 2,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 56.5,
+        "tests": 52.0,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "763ceba621b8acb48f975b6f280375edc953b1ea",
+      "short_hash": "763ceba621b8",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-07-29T23:44:51+08:00",
+      "date": "2026-07-29",
+      "iso_week": "2026-W31",
+      "subject": "fix(formulation): recover unpublished draft workbooks",
+      "effective": true,
+      "additions": 220,
+      "deletions": 92,
+      "raw_churn": 312,
+      "file_weighted_churn": 245.0,
+      "weighted_churn": 245.0,
+      "files_touched": 4,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 161.0,
+        "tests": 84.0,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
     {
       "hash": "19b7c46080afd945677cf3a20d3f61126983599e",
       "short_hash": "19b7c46080af",
@@ -25056,14 +25294,15 @@
     {
       "iso_week": "2026-W31",
       "start": "2026-07-27",
-      "end": "2026-07-29",
+      "end": "2026-07-30",
       "contributors": [
-        "TshyGO"
+        "TshyGO",
+        "wagtyq"
       ],
-      "commit_count": 26,
-      "effective_count": 26,
+      "commit_count": 33,
+      "effective_count": 33,
       "categories": {
-        "fix": 10,
+        "fix": 17,
         "refactor": 2,
         "test": 6,
         "feat": 3,
@@ -25098,23 +25337,23 @@
           "repo_id": "nebulalab"
         },
         {
+          "hash": "43dc7bfb7c4dbf9ede552efbaa71bb1e71d6a311",
+          "short_hash": "43dc7bfb7c4d",
+          "subject": "fix(ui): replace test catalog prompts",
+          "contributor": "wagtyq",
+          "weighted_churn": 488.4,
+          "repo_id": "nebulalab"
+        },
+        {
           "hash": "72da4b4c867c21af26f456bb2b057858eb0c734a",
           "short_hash": "72da4b4c867c",
           "subject": "refactor(community): stop printing every card's metadata twice",
           "contributor": "TshyGO",
           "weighted_churn": 391.5,
           "repo_id": "nebulalab"
-        },
-        {
-          "hash": "1d4565918765b5e031632aade5ccb1ed3fc4e8c6",
-          "short_hash": "1d4565918765",
-          "subject": "fix(api): keep handled form 400s out of diagnostics",
-          "contributor": "TshyGO",
-          "weighted_churn": 382.4,
-          "repo_id": "nebulalab"
         }
       ],
-      "summary": "本周 TshyGO 完成了测试样本模块的核心功能迁移，并修复了多个影响用户体验的问题。他给网站加上了图标，并优化了社区卡片收藏等操作的便捷性。此外，项目已整体迁移至新的托管平台，运行会更稳定。",
+      "summary": "本周 TshyGO 完成了测试样本功能的核心迁移，并修复了多个数据处理和界面问题，让系统更稳定。wagtyq 则主要优化了表单草稿的恢复流程和界面提示，提升了用户操作的可靠性。两人还一起为网站更换了托管平台并添加了站点图标，改善了访问体验。",
       "summary_source": "llm"
     },
     {
