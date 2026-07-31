@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-07-30T21:31:39.909900+00:00",
+  "generated_at": "2026-07-31T21:21:52.179318+00:00",
   "revision": "multi-repository",
   "repositories": [
     {
@@ -22,7 +22,7 @@
       "name": "NebulaLab Docs",
       "path": "external/NebulaLab-Docs",
       "weight": 0.45,
-      "revision": "203d9db1d6ab"
+      "revision": "69e01755aa61"
     }
   ],
   "range": {
@@ -119,7 +119,7 @@
     }
   },
   "excluded": {
-    "bot_commits": 35,
+    "bot_commits": 36,
     "zero_weight_files": 71,
     "unknown_classification_files": 231,
     "binary_files": 105
@@ -25354,7 +25354,7 @@
         }
       ],
       "summary": "本周 TshyGO 完成了测试样本功能的核心迁移，并修复了多个数据处理和界面问题，让系统更稳定。wagtyq 则主要优化了表单草稿的恢复流程和界面提示，提升了用户操作的可靠性。两人还一起为网站更换了托管平台并添加了站点图标，改善了访问体验。",
-      "summary_source": "llm"
+      "summary_source": "llm-cached"
     },
     {
       "iso_week": "2026-W30",
@@ -26453,7 +26453,6 @@
     }
   ],
   "weekly_digest_summary_sources": [
-    "llm",
     "llm-cached"
   ]
 }
