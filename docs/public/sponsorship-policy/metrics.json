@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-07-31T21:21:52.179318+00:00",
+  "generated_at": "2026-08-01T21:08:55.084854+00:00",
   "revision": "multi-repository",
   "repositories": [
     {
@@ -8,7 +8,7 @@
       "name": "NebulaLab",
       "path": ".",
       "weight": 1.0,
-      "revision": "bc0b93610090"
+      "revision": "c1932f811305"
     },
     {
       "id": "plugins",
@@ -22,7 +22,7 @@
       "name": "NebulaLab Docs",
       "path": "external/NebulaLab-Docs",
       "weight": 0.45,
-      "revision": "69e01755aa61"
+      "revision": "54dac4103b02"
     }
   ],
   "range": {
@@ -105,21 +105,21 @@
   },
   "totals": {
     "contributors": 5,
-    "raw_commits": 734,
-    "effective_commits": 720,
-    "weighted_churn": 357533.64,
-    "score": 2863.2154,
+    "raw_commits": 745,
+    "effective_commits": 731,
+    "weighted_churn": 359888.74,
+    "score": 2874.6845,
     "category_churn": {
-      "core_code": 252919.5,
-      "tests": 70590.8,
+      "core_code": 254554.0,
+      "tests": 71308.4,
       "documentation": 24876.4,
-      "configuration": 11173.8,
+      "configuration": 11176.8,
       "unknown": 0.0,
       "excluded": 0.0
     }
   },
   "excluded": {
-    "bot_commits": 36,
+    "bot_commits": 37,
     "zero_weight_files": 71,
     "unknown_classification_files": 231,
     "binary_files": 105
@@ -128,19 +128,19 @@
     {
       "id": "TshyGO",
       "display_name": "TshyGO",
-      "raw_commits": 639,
-      "effective_commits": 625,
-      "additions": 375472,
-      "deletions": 121132,
-      "raw_churn": 496605.0,
-      "weighted_churn": 306612.87,
-      "score": 2239.2686,
-      "files_touched": 3878,
+      "raw_commits": 650,
+      "effective_commits": 636,
+      "additions": 377662,
+      "deletions": 121828,
+      "raw_churn": 499489.0,
+      "weighted_churn": 308967.97,
+      "score": 2250.7377,
+      "files_touched": 4000,
       "category_churn": {
-        "core_code": 212599.0,
-        "tests": 60333.2,
+        "core_code": 214233.5,
+        "tests": 61050.8,
         "documentation": 24551.8,
-        "configuration": 10922.55,
+        "configuration": 10925.55,
         "unknown": 0.0,
         "excluded": 0.0
       },
@@ -149,10 +149,10 @@
           "id": "nebulalab",
           "name": "NebulaLab",
           "weight": 1.0,
-          "raw_commits": 567,
-          "effective_commits": 559,
-          "weighted_churn": 302834.35,
-          "score": 2085.6214
+          "raw_commits": 578,
+          "effective_commits": 570,
+          "weighted_churn": 305189.45,
+          "score": 2097.0905
         },
         {
           "id": "plugins",
@@ -174,8 +174,8 @@
         }
       ],
       "co_authored_commits": 2,
-      "share_pct": 78.21,
-      "weighted_churn_share_pct": 85.76
+      "share_pct": 78.3,
+      "weighted_churn_share_pct": 85.85
     },
     {
       "id": "wagtyq",
@@ -217,8 +217,8 @@
         }
       ],
       "co_authored_commits": 2,
-      "share_pct": 18.25,
-      "weighted_churn_share_pct": 13.07
+      "share_pct": 18.18,
+      "weighted_churn_share_pct": 12.98
     },
     {
       "id": "crema-lida",
@@ -251,7 +251,7 @@
         }
       ],
       "co_authored_commits": 1,
-      "share_pct": 3.25,
+      "share_pct": 3.24,
       "weighted_churn_share_pct": 1.14
     },
     {
@@ -325,6 +325,346 @@
   ],
   "commits": [
     {
+      "hash": "c1932f8113054d111a057298403757397ac68628",
+      "short_hash": "c1932f811305",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-01T23:06:25+08:00",
+      "date": "2026-08-01",
+      "iso_week": "2026-W31",
+      "subject": "ci: pause Claude reviews (#494)",
+      "effective": true,
+      "additions": 5,
+      "deletions": 0,
+      "raw_churn": 5,
+      "file_weighted_churn": 3.0,
+      "weighted_churn": 3.0,
+      "files_touched": 2,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 0.0,
+        "documentation": 0.0,
+        "configuration": 3.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "c8d41f6b915b3d6d08c0050f3d482ac388efd286",
+      "short_hash": "c8d41f6b915b",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-01T14:42:12+08:00",
+      "date": "2026-08-01",
+      "iso_week": "2026-W31",
+      "subject": "fix(workspace): address managed binding review",
+      "effective": true,
+      "additions": 158,
+      "deletions": 15,
+      "raw_churn": 173,
+      "file_weighted_churn": 144.2,
+      "weighted_churn": 144.2,
+      "files_touched": 4,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 59.0,
+        "tests": 85.2,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "0fd357c091f631c3b91c875a7f6aa90ccfd190b4",
+      "short_hash": "0fd357c091f6",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-01T13:04:55+08:00",
+      "date": "2026-08-01",
+      "iso_week": "2026-W31",
+      "subject": "refactor(workspace): align dataset terminology",
+      "effective": true,
+      "additions": 423,
+      "deletions": 357,
+      "raw_churn": 780,
+      "file_weighted_churn": 562.9,
+      "weighted_churn": 562.9,
+      "files_touched": 40,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 408.5,
+        "tests": 154.4,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "99ff4048e5ae44feb71286c1c46b1e6782a5bfde",
+      "short_hash": "99ff4048e5ae",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-01T11:49:59+08:00",
+      "date": "2026-08-01",
+      "iso_week": "2026-W31",
+      "subject": "fix(workspace): scope curve binding specimen search",
+      "effective": true,
+      "additions": 98,
+      "deletions": 27,
+      "raw_churn": 125,
+      "file_weighted_churn": 100.0,
+      "weighted_churn": 100.0,
+      "files_touched": 8,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 54.0,
+        "tests": 46.0,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "1fc4c9d19af86c0c9067b843ba2f3560ef047d74",
+      "short_hash": "1fc4c9d19af8",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-31T01:08:13+08:00",
+      "date": "2026-07-31",
+      "iso_week": "2026-W31",
+      "subject": "fix(workspace): clear stale curve binding records",
+      "effective": true,
+      "additions": 57,
+      "deletions": 0,
+      "raw_churn": 57,
+      "file_weighted_churn": 46.0,
+      "weighted_churn": 46.0,
+      "files_touched": 2,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 2.0,
+        "tests": 44.0,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "ac3d0d02a16c8aada0f5ecc1f048fe108427488d",
+      "short_hash": "ac3d0d02a16c",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-31T01:03:29+08:00",
+      "date": "2026-07-31",
+      "iso_week": "2026-W31",
+      "subject": "fix(workspace): refine curve binding edge cases",
+      "effective": true,
+      "additions": 32,
+      "deletions": 12,
+      "raw_churn": 44,
+      "file_weighted_churn": 36.5,
+      "weighted_churn": 36.5,
+      "files_touched": 9,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 30.5,
+        "tests": 6.0,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "ccd7b218cbdb079dc475056537799ca6b0cc5f09",
+      "short_hash": "ccd7b218cbdb",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-31T00:47:16+08:00",
+      "date": "2026-07-31",
+      "iso_week": "2026-W31",
+      "subject": "fix(workspace): finish curve binding review cleanup",
+      "effective": true,
+      "additions": 125,
+      "deletions": 48,
+      "raw_churn": 173,
+      "file_weighted_churn": 134.5,
+      "weighted_churn": 134.5,
+      "files_touched": 11,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 76.5,
+        "tests": 58.0,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "fc6f329a0e34fe2b3308774fd4f95f0e65625cd9",
+      "short_hash": "fc6f329a0e34",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-31T00:34:20+08:00",
+      "date": "2026-07-31",
+      "iso_week": "2026-W31",
+      "subject": "fix(workspace): preserve curve binding selections during search",
+      "effective": true,
+      "additions": 80,
+      "deletions": 7,
+      "raw_churn": 87,
+      "file_weighted_churn": 76.9,
+      "weighted_churn": 76.9,
+      "files_touched": 3,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 50.5,
+        "tests": 26.4,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "0d3af369da188cc57a371eaaef95b3c658124101",
+      "short_hash": "0d3af369da18",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-31T00:28:38+08:00",
+      "date": "2026-07-31",
+      "iso_week": "2026-W31",
+      "subject": "docs(workspace): clarify clone binding behavior",
+      "effective": true,
+      "additions": 2,
+      "deletions": 2,
+      "raw_churn": 4,
+      "file_weighted_churn": 3.0,
+      "weighted_churn": 3.0,
+      "files_touched": 1,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 3.0,
+        "tests": 0.0,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "a3cc64c87717091c2f72f4b00c80750c7274fc06",
+      "short_hash": "a3cc64c87717",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-31T00:24:01+08:00",
+      "date": "2026-07-31",
+      "iso_week": "2026-W31",
+      "subject": "fix(workspace): address curve binding review feedback",
+      "effective": true,
+      "additions": 162,
+      "deletions": 83,
+      "raw_churn": 245,
+      "file_weighted_churn": 193.9,
+      "weighted_churn": 193.9,
+      "files_touched": 9,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 155.5,
+        "tests": 38.4,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
       "hash": "8b2618cf00507872505cf6b50867439b75e8f1d8",
       "short_hash": "8b2618cf0050",
       "repo_id": "nebulalab",
@@ -352,6 +692,40 @@
       "category_churn": {
         "core_code": 48.0,
         "tests": 34.8,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "787059c3b58a91c8cab7f525abec1866c8cb9603",
+      "short_hash": "787059c3b58a",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-07-30T23:50:00+08:00",
+      "date": "2026-07-30",
+      "iso_week": "2026-W31",
+      "subject": "feat(workspace): add optional curve ownership binding",
+      "effective": true,
+      "additions": 1047,
+      "deletions": 144,
+      "raw_churn": 1191,
+      "file_weighted_churn": 1054.2,
+      "weighted_churn": 1054.2,
+      "files_touched": 33,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 795.0,
+        "tests": 259.2,
         "documentation": 0.0,
         "configuration": 0.0,
         "unknown": 0.0,
@@ -25294,20 +25668,20 @@
     {
       "iso_week": "2026-W31",
       "start": "2026-07-27",
-      "end": "2026-07-30",
+      "end": "2026-08-01",
       "contributors": [
         "TshyGO",
         "wagtyq"
       ],
-      "commit_count": 33,
-      "effective_count": 33,
+      "commit_count": 44,
+      "effective_count": 44,
       "categories": {
-        "fix": 17,
-        "refactor": 2,
+        "fix": 24,
+        "ci": 3,
+        "refactor": 3,
+        "docs": 2,
+        "feat": 4,
         "test": 6,
-        "feat": 3,
-        "ci": 2,
-        "docs": 1,
         "chore": 1,
         "other": 1
       },
@@ -25329,6 +25703,14 @@
           "repo_id": "nebulalab"
         },
         {
+          "hash": "787059c3b58a91c8cab7f525abec1866c8cb9603",
+          "short_hash": "787059c3b58a",
+          "subject": "feat(workspace): add optional curve ownership binding",
+          "contributor": "TshyGO",
+          "weighted_churn": 1054.2,
+          "repo_id": "nebulalab"
+        },
+        {
           "hash": "7a512aa49348c6c392b8eff811642bb94173b2f1",
           "short_hash": "7a512aa49348",
           "subject": "fix: address ready review findings",
@@ -25337,24 +25719,16 @@
           "repo_id": "nebulalab"
         },
         {
-          "hash": "43dc7bfb7c4dbf9ede552efbaa71bb1e71d6a311",
-          "short_hash": "43dc7bfb7c4d",
-          "subject": "fix(ui): replace test catalog prompts",
-          "contributor": "wagtyq",
-          "weighted_churn": 488.4,
-          "repo_id": "nebulalab"
-        },
-        {
-          "hash": "72da4b4c867c21af26f456bb2b057858eb0c734a",
-          "short_hash": "72da4b4c867c",
-          "subject": "refactor(community): stop printing every card's metadata twice",
+          "hash": "0fd357c091f631c3b91c875a7f6aa90ccfd190b4",
+          "short_hash": "0fd357c091f6",
+          "subject": "refactor(workspace): align dataset terminology",
           "contributor": "TshyGO",
-          "weighted_churn": 391.5,
+          "weighted_churn": 562.9,
           "repo_id": "nebulalab"
         }
       ],
-      "summary": "本周 TshyGO 完成了测试样本功能的核心迁移，并修复了多个数据处理和界面问题，让系统更稳定。wagtyq 则主要优化了表单草稿的恢复流程和界面提示，提升了用户操作的可靠性。两人还一起为网站更换了托管平台并添加了站点图标，改善了访问体验。",
-      "summary_source": "llm-cached"
+      "summary": "本周 TshyGO 完成了测试样本功能的数据迁移与后台流程搭建，并优化了曲线绑定功能，使其更稳定易用；同时修复了多个模块的问题，包括许可证激活和界面交互。wagtyq 则主要改进了表单草稿的恢复能力，并优化了测试目录等界面的提示与对话框体验。整体上，团队进一步夯实了核心功能的可靠性。",
+      "summary_source": "llm"
     },
     {
       "iso_week": "2026-W30",
@@ -26453,6 +26827,7 @@
     }
   ],
   "weekly_digest_summary_sources": [
+    "llm",
     "llm-cached"
   ]
 }
