@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-08-04T13:15:55.134874+00:00",
+  "generated_at": "2026-08-04T21:35:29.882743+00:00",
   "revision": "multi-repository",
   "repositories": [
     {
@@ -22,7 +22,7 @@
       "name": "NebulaLab Docs",
       "path": "external/NebulaLab-Docs",
       "weight": 0.45,
-      "revision": "ff2339724785"
+      "revision": "03f28d26ea9c"
     }
   ],
   "range": {
@@ -119,7 +119,7 @@
     }
   },
   "excluded": {
-    "bot_commits": 38,
+    "bot_commits": 39,
     "zero_weight_files": 73,
     "unknown_classification_files": 231,
     "binary_files": 105
@@ -26708,7 +26708,7 @@
         }
       ],
       "summary": "本周，TshyGO 修复了一个自动化流程中的问题，确保了项目赞助政策的检查机制能独立运行、不受其他代码变更的干扰。这项改进让相关合规检查更加稳定可靠，有助于维护项目的规范性。",
-      "summary_source": "llm"
+      "summary_source": "llm-cached"
     },
     {
       "iso_week": "2026-W31",
@@ -26773,7 +26773,7 @@
         }
       ],
       "summary": "本周 TshyGO 完成了测试记录流程的迁移与数据安全备份的改进，让系统能更可靠地保存用户资产；同时他与 wagtyq 一起修复了多处界面和流程问题，例如表单草稿恢复和目录提示更新，提升了整体使用体验。",
-      "summary_source": "llm"
+      "summary_source": "llm-cached"
     },
     {
       "iso_week": "2026-W30",
@@ -27872,7 +27872,6 @@
     }
   ],
   "weekly_digest_summary_sources": [
-    "llm",
     "llm-cached"
   ]
 }
