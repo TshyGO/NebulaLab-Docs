@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-08-05T21:31:44.922803+00:00",
+  "generated_at": "2026-08-07T00:55:03.781419+00:00",
   "revision": "multi-repository",
   "repositories": [
     {
@@ -22,7 +22,7 @@
       "name": "NebulaLab Docs",
       "path": "external/NebulaLab-Docs",
       "weight": 0.45,
-      "revision": "ef0858b7bb9f"
+      "revision": "2c0361bbe3a7"
     }
   ],
   "range": {
@@ -119,7 +119,7 @@
     }
   },
   "excluded": {
-    "bot_commits": 40,
+    "bot_commits": 41,
     "zero_weight_files": 74,
     "unknown_classification_files": 251,
     "binary_files": 105
@@ -27356,7 +27356,7 @@
         }
       ],
       "summary": "本周，wagtyq 主要优化了配方设计功能，让用户能更流畅地拖拽材料卡片，并提升了离线导入化学物质信息的稳定性。TshyGO 则完成了 M1.1 版本网络服务的部署，增强了其故障恢复和备份安全机制。两人的工作共同提升了产品的核心操作体验和后台服务的可靠性。",
-      "summary_source": "llm"
+      "summary_source": "llm-cached"
     },
     {
       "iso_week": "2026-W31",
@@ -28520,7 +28520,6 @@
     }
   ],
   "weekly_digest_summary_sources": [
-    "llm",
     "llm-cached"
   ]
 }
