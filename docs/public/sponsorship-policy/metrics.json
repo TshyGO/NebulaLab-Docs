@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-08-07T00:55:03.781419+00:00",
+  "generated_at": "2026-08-07T20:58:15.185573+00:00",
   "revision": "multi-repository",
   "repositories": [
     {
@@ -8,7 +8,7 @@
       "name": "NebulaLab",
       "path": ".",
       "weight": 1.0,
-      "revision": "c0bec2c11fa9"
+      "revision": "6d5570dacb8c"
     },
     {
       "id": "plugins",
@@ -22,7 +22,7 @@
       "name": "NebulaLab Docs",
       "path": "external/NebulaLab-Docs",
       "weight": 0.45,
-      "revision": "2c0361bbe3a7"
+      "revision": "ff6ac8f2df9a"
     }
   ],
   "range": {
@@ -105,23 +105,23 @@
   },
   "totals": {
     "contributors": 5,
-    "raw_commits": 793,
-    "effective_commits": 779,
-    "weighted_churn": 376412.84,
-    "score": 3007.2389,
+    "raw_commits": 809,
+    "effective_commits": 792,
+    "weighted_churn": 376680.04,
+    "score": 3008.8685,
     "category_churn": {
       "core_code": 262953.5,
-      "tests": 78624.0,
-      "documentation": 25676.4,
-      "configuration": 11185.8,
+      "tests": 78783.6,
+      "documentation": 25753.4,
+      "configuration": 11216.4,
       "unknown": 0.0,
       "excluded": 0.0
     }
   },
   "excluded": {
-    "bot_commits": 41,
+    "bot_commits": 42,
     "zero_weight_files": 74,
-    "unknown_classification_files": 251,
+    "unknown_classification_files": 343,
     "binary_files": 105
   },
   "contributors": [
@@ -174,25 +174,25 @@
         }
       ],
       "co_authored_commits": 2,
-      "share_pct": 76.53,
-      "weighted_churn_share_pct": 84.71
+      "share_pct": 76.49,
+      "weighted_churn_share_pct": 84.65
     },
     {
       "id": "wagtyq",
       "display_name": "wagtyq",
-      "raw_commits": 96,
-      "effective_commits": 96,
-      "additions": 46308,
-      "deletions": 20132,
-      "raw_churn": 66439.0,
-      "weighted_churn": 53369.93,
-      "score": 604.455,
-      "files_touched": 414,
+      "raw_commits": 112,
+      "effective_commits": 109,
+      "additions": 49848,
+      "deletions": 20274,
+      "raw_churn": 70122.0,
+      "weighted_churn": 53637.13,
+      "score": 606.0846,
+      "files_touched": 532,
       "category_churn": {
         "core_code": 43054.0,
-        "tests": 10116.8,
-        "documentation": 62.4,
-        "configuration": 248.25,
+        "tests": 10276.4,
+        "documentation": 139.4,
+        "configuration": 278.85,
         "unknown": 0.0,
         "excluded": 0.0
       },
@@ -201,10 +201,10 @@
           "id": "nebulalab",
           "name": "NebulaLab",
           "weight": 1.0,
-          "raw_commits": 93,
-          "effective_commits": 93,
-          "weighted_churn": 52366.25,
-          "score": 571.1793
+          "raw_commits": 109,
+          "effective_commits": 106,
+          "weighted_churn": 52633.45,
+          "score": 572.8089
         },
         {
           "id": "plugins",
@@ -217,8 +217,8 @@
         }
       ],
       "co_authored_commits": 2,
-      "share_pct": 20.1,
-      "weighted_churn_share_pct": 14.18
+      "share_pct": 20.14,
+      "weighted_churn_share_pct": 14.24
     },
     {
       "id": "crema-lida",
@@ -324,6 +324,550 @@
     }
   ],
   "commits": [
+    {
+      "hash": "60c945da735bc3d64119b27c9a1af719f8fcdd2a",
+      "short_hash": "60c945da735b",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-08T00:02:35+08:00",
+      "date": "2026-08-08",
+      "iso_week": "2026-W32",
+      "subject": "Harden M1.2 deployment review paths",
+      "effective": true,
+      "additions": 76,
+      "deletions": 11,
+      "raw_churn": 87,
+      "file_weighted_churn": 10.8,
+      "weighted_churn": 10.8,
+      "files_touched": 9,
+      "unknown_files": 7,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 10.8,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "10afca10a205c75f3c23594c6806d28c08da59c0",
+      "short_hash": "10afca10a205",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-07T21:00:30+08:00",
+      "date": "2026-08-07",
+      "iso_week": "2026-W32",
+      "subject": "Redact tsnet registration tokens",
+      "effective": false,
+      "additions": 16,
+      "deletions": 1,
+      "raw_churn": 17,
+      "file_weighted_churn": 0.0,
+      "weighted_churn": 0.0,
+      "files_touched": 2,
+      "unknown_files": 2,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 0.0,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "ed12584058603a8a1474e578beb8a20ef73b7afb",
+      "short_hash": "ed1258405860",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-07T20:50:13+08:00",
+      "date": "2026-08-07",
+      "iso_week": "2026-W32",
+      "subject": "Add tailnet ACL acceptance listener",
+      "effective": false,
+      "additions": 82,
+      "deletions": 0,
+      "raw_churn": 82,
+      "file_weighted_churn": 0.0,
+      "weighted_churn": 0.0,
+      "files_touched": 2,
+      "unknown_files": 2,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 0.0,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "2368c19f67a73b712ddc0b73a06417d864fda040",
+      "short_hash": "2368c19f67a7",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-07T20:25:29+08:00",
+      "date": "2026-08-07",
+      "iso_week": "2026-W32",
+      "subject": "Make tsnet acceptance checks conclusive",
+      "effective": false,
+      "additions": 136,
+      "deletions": 10,
+      "raw_churn": 146,
+      "file_weighted_churn": 0.0,
+      "weighted_churn": 0.0,
+      "files_touched": 2,
+      "unknown_files": 2,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 0.0,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "481eec5240a5cb58ec20fba3fa67e69a6166f4af",
+      "short_hash": "481eec5240a5",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-07T16:40:38+08:00",
+      "date": "2026-08-07",
+      "iso_week": "2026-W32",
+      "subject": "Preserve DNS during forced DERP test",
+      "effective": true,
+      "additions": 6,
+      "deletions": 2,
+      "raw_churn": 8,
+      "file_weighted_churn": 1.6,
+      "weighted_churn": 1.6,
+      "files_touched": 2,
+      "unknown_files": 1,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 1.6,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "36aca78b310901ac73253890769caaaf8e68c276",
+      "short_hash": "36aca78b3109",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-07T15:57:09+08:00",
+      "date": "2026-08-07",
+      "iso_week": "2026-W32",
+      "subject": "Fix health PoC deployment compatibility",
+      "effective": true,
+      "additions": 24,
+      "deletions": 2,
+      "raw_churn": 26,
+      "file_weighted_churn": 8.0,
+      "weighted_churn": 8.0,
+      "files_touched": 4,
+      "unknown_files": 3,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 8.0,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "7f1f112bc1fe176587a874b939ce401235b55b02",
+      "short_hash": "7f1f112bc1fe",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-06T20:37:03+08:00",
+      "date": "2026-08-06",
+      "iso_week": "2026-W32",
+      "subject": "Reload Caddy after M1.2 route update",
+      "effective": true,
+      "additions": 12,
+      "deletions": 3,
+      "raw_churn": 15,
+      "file_weighted_churn": 4.0,
+      "weighted_churn": 4.0,
+      "files_touched": 2,
+      "unknown_files": 1,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 4.0,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "e534a3731ba1dd1ccc65388c6e0f659dcd737f06",
+      "short_hash": "e534a3731ba1",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-06T20:20:58+08:00",
+      "date": "2026-08-06",
+      "iso_week": "2026-W32",
+      "subject": "Fix capability-free enrollment admin access",
+      "effective": true,
+      "additions": 20,
+      "deletions": 18,
+      "raw_churn": 38,
+      "file_weighted_churn": 4.8,
+      "weighted_churn": 4.8,
+      "files_touched": 6,
+      "unknown_files": 5,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 4.8,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "5b25053009e3c50fd3cf2922c2d41de136645160",
+      "short_hash": "5b25053009e3",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-06T19:58:40+08:00",
+      "date": "2026-08-06",
+      "iso_week": "2026-W32",
+      "subject": "Fix M1.2 enrollment secret isolation",
+      "effective": true,
+      "additions": 113,
+      "deletions": 32,
+      "raw_churn": 145,
+      "file_weighted_churn": 16.0,
+      "weighted_churn": 16.0,
+      "files_touched": 9,
+      "unknown_files": 7,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 15.2,
+        "documentation": 0.8,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "3dde2308c352987fc672b380f758153757a767da",
+      "short_hash": "3dde2308c352",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-06T17:19:45+08:00",
+      "date": "2026-08-06",
+      "iso_week": "2026-W32",
+      "subject": "fix(data-center): secure M1.2 staging",
+      "effective": true,
+      "additions": 11,
+      "deletions": 4,
+      "raw_churn": 15,
+      "file_weighted_churn": 3.8,
+      "weighted_churn": 3.8,
+      "files_touched": 7,
+      "unknown_files": 4,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 3.2,
+        "documentation": 0.6,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "9f93243710509ce453d4932d59b769b89b7a16dc",
+      "short_hash": "9f9324371050",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-06T17:13:51+08:00",
+      "date": "2026-08-06",
+      "iso_week": "2026-W32",
+      "subject": "fix(data-center): tighten M1.2 health diagnostics",
+      "effective": true,
+      "additions": 22,
+      "deletions": 10,
+      "raw_churn": 32,
+      "file_weighted_churn": 1.6,
+      "weighted_churn": 1.6,
+      "files_touched": 5,
+      "unknown_files": 4,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 1.6,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "eccac4057998a606ffce648faa8527b9d9544236",
+      "short_hash": "eccac4057998",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-06T17:07:48+08:00",
+      "date": "2026-08-06",
+      "iso_week": "2026-W32",
+      "subject": "fix(data-center): harden M1.2 operations",
+      "effective": true,
+      "additions": 73,
+      "deletions": 11,
+      "raw_churn": 84,
+      "file_weighted_churn": 8.2,
+      "weighted_churn": 8.2,
+      "files_touched": 10,
+      "unknown_files": 7,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 5.6,
+        "documentation": 2.0,
+        "configuration": 0.6,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "0b9eb51844baf5823a63113c947bb13d44b822b7",
+      "short_hash": "0b9eb51844ba",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-06T16:50:33+08:00",
+      "date": "2026-08-06",
+      "iso_week": "2026-W32",
+      "subject": "fix(data-center): wire integration admin key",
+      "effective": true,
+      "additions": 2,
+      "deletions": 0,
+      "raw_churn": 2,
+      "file_weighted_churn": 0.8,
+      "weighted_churn": 0.8,
+      "files_touched": 2,
+      "unknown_files": 1,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 0.8,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "082905b541a03e3a365378704011993984ceb56e",
+      "short_hash": "082905b541a0",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-06T16:40:15+08:00",
+      "date": "2026-08-06",
+      "iso_week": "2026-W32",
+      "subject": "fix(data-center): address M1.2 review feedback",
+      "effective": true,
+      "additions": 107,
+      "deletions": 11,
+      "raw_churn": 118,
+      "file_weighted_churn": 24.4,
+      "weighted_churn": 24.4,
+      "files_touched": 10,
+      "unknown_files": 7,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 23.2,
+        "documentation": 0.0,
+        "configuration": 1.2,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "22d4a2a913b7fc00534202cc37874df396c9d1d8",
+      "short_hash": "22d4a2a913b7",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-06T16:07:29+08:00",
+      "date": "2026-08-06",
+      "iso_week": "2026-W32",
+      "subject": "fix(data-center): preserve M1.1 upgrade backups",
+      "effective": true,
+      "additions": 12,
+      "deletions": 1,
+      "raw_churn": 13,
+      "file_weighted_churn": 5.6,
+      "weighted_churn": 5.6,
+      "files_touched": 2,
+      "unknown_files": 1,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 5.6,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "323b777efd231d654763b73672c38173187d725f",
+      "short_hash": "323b777efd23",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-06T15:59:12+08:00",
+      "date": "2026-08-06",
+      "iso_week": "2026-W32",
+      "subject": "feat(data-center): complete M1.2 network PoC",
+      "effective": true,
+      "additions": 2828,
+      "deletions": 27,
+      "raw_churn": 2855,
+      "file_weighted_churn": 177.6,
+      "weighted_churn": 177.6,
+      "files_touched": 45,
+      "unknown_files": 38,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 75.2,
+        "documentation": 73.6,
+        "configuration": 28.8,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
     {
       "hash": "1bd1e9b228c8fd58c43ffec01470f7e0ab11473a",
       "short_hash": "1bd1e9b228c8",
@@ -27300,18 +27844,18 @@
     {
       "iso_week": "2026-W32",
       "start": "2026-08-04",
-      "end": "2026-08-06",
+      "end": "2026-08-08",
       "contributors": [
         "TshyGO",
         "wagtyq"
       ],
-      "commit_count": 19,
-      "effective_count": 19,
+      "commit_count": 35,
+      "effective_count": 32,
       "categories": {
-        "fix": 11,
-        "refactor": 2,
-        "feat": 1,
-        "other": 5
+        "other": 14,
+        "fix": 17,
+        "feat": 2,
+        "refactor": 2
       },
       "highlights": [
         {
@@ -27355,8 +27899,8 @@
           "repo_id": "nebulalab"
         }
       ],
-      "summary": "本周，wagtyq 主要优化了配方设计功能，让用户能更流畅地拖拽材料卡片，并提升了离线导入化学物质信息的稳定性。TshyGO 则完成了 M1.1 版本网络服务的部署，增强了其故障恢复和备份安全机制。两人的工作共同提升了产品的核心操作体验和后台服务的可靠性。",
-      "summary_source": "llm-cached"
+      "summary": "本周，wagtyq 完成了配方模块中可拖拽材料抽屉的流程，提升了操作体验，并加固了材料离线导入功能；同时，他推进了数据中心 M1.2 网络概念验证的收尾与改进。TshyGO 则部署并加固了 M1.1 阶段的 Headscale 网络服务，增强了其备份与安全机制。两人共同处理了多项代码审查反馈，提升了系统的稳定性和部署可靠性。",
+      "summary_source": "llm"
     },
     {
       "iso_week": "2026-W31",
@@ -28520,6 +29064,7 @@
     }
   ],
   "weekly_digest_summary_sources": [
+    "llm",
     "llm-cached"
   ]
 }
