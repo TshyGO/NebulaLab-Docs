@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-08-07T20:58:15.185573+00:00",
+  "generated_at": "2026-08-08T20:47:21.118745+00:00",
   "revision": "multi-repository",
   "repositories": [
     {
@@ -8,7 +8,7 @@
       "name": "NebulaLab",
       "path": ".",
       "weight": 1.0,
-      "revision": "6d5570dacb8c"
+      "revision": "06a6ed30c6cd"
     },
     {
       "id": "plugins",
@@ -22,7 +22,7 @@
       "name": "NebulaLab Docs",
       "path": "external/NebulaLab-Docs",
       "weight": 0.45,
-      "revision": "ff6ac8f2df9a"
+      "revision": "bf3c23563fa0"
     }
   ],
   "range": {
@@ -105,13 +105,13 @@
   },
   "totals": {
     "contributors": 5,
-    "raw_commits": 809,
-    "effective_commits": 792,
-    "weighted_churn": 376680.04,
-    "score": 3008.8685,
+    "raw_commits": 812,
+    "effective_commits": 795,
+    "weighted_churn": 377695.64,
+    "score": 3016.0146,
     "category_churn": {
-      "core_code": 262953.5,
-      "tests": 78783.6,
+      "core_code": 263573.5,
+      "tests": 79179.2,
       "documentation": 25753.4,
       "configuration": 11216.4,
       "unknown": 0.0,
@@ -119,26 +119,26 @@
     }
   },
   "excluded": {
-    "bot_commits": 42,
+    "bot_commits": 43,
     "zero_weight_files": 74,
-    "unknown_classification_files": 343,
+    "unknown_classification_files": 344,
     "binary_files": 105
   },
   "contributors": [
     {
       "id": "TshyGO",
       "display_name": "TshyGO",
-      "raw_commits": 683,
-      "effective_commits": 669,
-      "additions": 390556,
-      "deletions": 125708,
-      "raw_churn": 516264.0,
-      "weighted_churn": 318850.47,
-      "score": 2301.3693,
-      "files_touched": 4166,
+      "raw_commits": 684,
+      "effective_commits": 670,
+      "additions": 390612,
+      "deletions": 125710,
+      "raw_churn": 516323.0,
+      "weighted_churn": 318888.47,
+      "score": 2302.8086,
+      "files_touched": 4168,
       "category_churn": {
         "core_code": 217795.5,
-        "tests": 66563.2,
+        "tests": 66601.2,
         "documentation": 25351.8,
         "configuration": 10933.65,
         "unknown": 0.0,
@@ -149,10 +149,10 @@
           "id": "nebulalab",
           "name": "NebulaLab",
           "weight": 1.0,
-          "raw_commits": 611,
-          "effective_commits": 603,
-          "weighted_churn": 315071.95,
-          "score": 2147.7221
+          "raw_commits": 612,
+          "effective_commits": 604,
+          "weighted_churn": 315109.95,
+          "score": 2149.1613
         },
         {
           "id": "plugins",
@@ -174,23 +174,23 @@
         }
       ],
       "co_authored_commits": 2,
-      "share_pct": 76.49,
-      "weighted_churn_share_pct": 84.65
+      "share_pct": 76.35,
+      "weighted_churn_share_pct": 84.43
     },
     {
       "id": "wagtyq",
       "display_name": "wagtyq",
-      "raw_commits": 112,
-      "effective_commits": 109,
-      "additions": 49848,
-      "deletions": 20274,
-      "raw_churn": 70122.0,
-      "weighted_churn": 53637.13,
-      "score": 606.0846,
-      "files_touched": 532,
+      "raw_commits": 114,
+      "effective_commits": 111,
+      "additions": 50808,
+      "deletions": 20488,
+      "raw_churn": 71296.0,
+      "weighted_churn": 54614.73,
+      "score": 611.7914,
+      "files_touched": 546,
       "category_churn": {
-        "core_code": 43054.0,
-        "tests": 10276.4,
+        "core_code": 43674.0,
+        "tests": 10634.0,
         "documentation": 139.4,
         "configuration": 278.85,
         "unknown": 0.0,
@@ -201,10 +201,10 @@
           "id": "nebulalab",
           "name": "NebulaLab",
           "weight": 1.0,
-          "raw_commits": 109,
-          "effective_commits": 106,
-          "weighted_churn": 52633.45,
-          "score": 572.8089
+          "raw_commits": 111,
+          "effective_commits": 108,
+          "weighted_churn": 53611.05,
+          "score": 578.5157
         },
         {
           "id": "plugins",
@@ -217,8 +217,8 @@
         }
       ],
       "co_authored_commits": 2,
-      "share_pct": 20.14,
-      "weighted_churn_share_pct": 14.24
+      "share_pct": 20.28,
+      "weighted_churn_share_pct": 14.46
     },
     {
       "id": "crema-lida",
@@ -252,7 +252,7 @@
       ],
       "co_authored_commits": 1,
       "share_pct": 3.09,
-      "weighted_churn_share_pct": 1.09
+      "weighted_churn_share_pct": 1.08
     },
     {
       "id": "delicious-icecream",
@@ -319,11 +319,113 @@
         }
       ],
       "co_authored_commits": 1,
-      "share_pct": 0.06,
+      "share_pct": 0.05,
       "weighted_churn_share_pct": 0.0
     }
   ],
   "commits": [
+    {
+      "hash": "06a6ed30c6cd7a77925c290fd7cebe2e4e752712",
+      "short_hash": "06a6ed30c6cd",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-08T21:26:46+08:00",
+      "date": "2026-08-08",
+      "iso_week": "2026-W32",
+      "subject": "fix(data-center): group restic retention by host and tags (#520)",
+      "effective": true,
+      "additions": 57,
+      "deletions": 2,
+      "raw_churn": 59,
+      "file_weighted_churn": 38.0,
+      "weighted_churn": 38.0,
+      "files_touched": 2,
+      "unknown_files": 1,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 38.0,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "0828187f1f7ad8dd81fdd52a57e522a116c80b69",
+      "short_hash": "0828187f1f7a",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-08T11:51:35+08:00",
+      "date": "2026-08-08",
+      "iso_week": "2026-W32",
+      "subject": "fix(specimens): address dossier review feedback",
+      "effective": true,
+      "additions": 92,
+      "deletions": 7,
+      "raw_churn": 99,
+      "file_weighted_churn": 86.0,
+      "weighted_churn": 86.0,
+      "files_touched": 6,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 48.0,
+        "tests": 38.0,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "ad0be5a31c1dcb78fe753bd2f858e58bb92576a6",
+      "short_hash": "ad0be5a31c1d",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-08T11:05:30+08:00",
+      "date": "2026-08-08",
+      "iso_week": "2026-W32",
+      "subject": "refactor(specimens): redesign management dossier",
+      "effective": true,
+      "additions": 868,
+      "deletions": 207,
+      "raw_churn": 1075,
+      "file_weighted_churn": 891.6,
+      "weighted_churn": 891.6,
+      "files_touched": 8,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 572.0,
+        "tests": 319.6,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
     {
       "hash": "60c945da735bc3d64119b27c9a1af719f8fcdd2a",
       "short_hash": "60c945da735b",
@@ -27849,13 +27951,13 @@
         "TshyGO",
         "wagtyq"
       ],
-      "commit_count": 35,
-      "effective_count": 32,
+      "commit_count": 38,
+      "effective_count": 35,
       "categories": {
+        "refactor": 3,
         "other": 14,
-        "fix": 17,
-        "feat": 2,
-        "refactor": 2
+        "fix": 19,
+        "feat": 2
       },
       "highlights": [
         {
@@ -27875,6 +27977,14 @@
           "repo_id": "nebulalab"
         },
         {
+          "hash": "ad0be5a31c1dcb78fe753bd2f858e58bb92576a6",
+          "short_hash": "ad0be5a31c1d",
+          "subject": "refactor(specimens): redesign management dossier",
+          "contributor": "wagtyq",
+          "weighted_churn": 891.6,
+          "repo_id": "nebulalab"
+        },
+        {
           "hash": "c02c0b66bba71c996a054ab234c26923f56846a4",
           "short_hash": "c02c0b66bba7",
           "subject": "fix(materials): support offline PubChem identity imports",
@@ -27889,17 +27999,9 @@
           "contributor": "wagtyq",
           "weighted_churn": 184.4,
           "repo_id": "nebulalab"
-        },
-        {
-          "hash": "be554232f1b56069c72a58d856f70eb86264b5fb",
-          "short_hash": "be554232f1b5",
-          "subject": "fix(formulation): address follow-up review",
-          "contributor": "wagtyq",
-          "weighted_churn": 179.4,
-          "repo_id": "nebulalab"
         }
       ],
-      "summary": "本周，wagtyq 完成了配方模块中可拖拽材料抽屉的流程，提升了操作体验，并加固了材料离线导入功能；同时，他推进了数据中心 M1.2 网络概念验证的收尾与改进。TshyGO 则部署并加固了 M1.1 阶段的 Headscale 网络服务，增强了其备份与安全机制。两人共同处理了多项代码审查反馈，提升了系统的稳定性和部署可靠性。",
+      "summary": "本周wagtyq主要推进了配方设计模块的优化，让材料抽屉支持拖拽操作，并改进了材料库在离线导入时的稳定性；TshyGO则完成了M1.1数据中心的部署加固与备份策略完善。两人共同协作，进一步提升了数据中心网络功能的可靠性与操作安全性。",
       "summary_source": "llm"
     },
     {
