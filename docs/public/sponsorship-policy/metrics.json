@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-08-15T19:15:57.574994+00:00",
+  "generated_at": "2026-08-15T20:37:30.053307+00:00",
   "revision": "multi-repository",
   "repositories": [
     {
@@ -22,7 +22,7 @@
       "name": "NebulaLab Docs",
       "path": "external/NebulaLab-Docs",
       "weight": 0.45,
-      "revision": "9a13529a36da"
+      "revision": "aa2bd285fc54"
     }
   ],
   "range": {
@@ -88,7 +88,7 @@
     }
   },
   "excluded": {
-    "bot_commits": 50,
+    "bot_commits": 51,
     "zero_weight_files": 75,
     "unknown_classification_files": 638,
     "binary_files": 105
@@ -31714,7 +31714,7 @@
         }
       ],
       "summary": "本周，wagtyq 主要推进了数据中心的搭建，完成了从客户端连接到数据上传、查看等核心流程，并重新设计了标本管理的界面和记录方式。TshyGO 则集中进行了一系列安全加固，覆盖了身份验证、插件隔离、数据隐私等关键环节，并同步优化了系统状态文档与自动化流程。整体上，项目在核心数据功能和系统安全性方面都取得了扎实进展。",
-      "summary_source": "llm"
+      "summary_source": "llm-cached"
     },
     {
       "iso_week": "2026-W32",
@@ -32941,7 +32941,6 @@
     }
   ],
   "weekly_digest_summary_sources": [
-    "llm",
     "llm-cached"
   ]
 }
