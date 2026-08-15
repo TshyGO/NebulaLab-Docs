@@ -2181,7 +2181,7 @@ bucket_score(author, week, repo) = sqrt(bucket_churn) × repo_weight
 
         const contribBox = document.getElementById("weekly-contributors");
         contribBox.innerHTML = week.contributors
-          .map((name) => `<span class="weekly-chip contributor">${name}</span>`)
+          .map((name) => `<span class="weekly-chip contributor">${escapeHtml(name)}</span>`)
           .join("");
 
         const highlights = document.getElementById("weekly-highlights");
@@ -2190,10 +2190,10 @@ bucket_score(author, week, repo) = sqrt(bucket_churn) × repo_weight
           .map(
             (h) => `
               <li class="weekly-highlight">
-                <span class="weekly-highlight-hash">${h.short_hash || (h.hash || "").slice(0, 12)}</span>
+                <span class="weekly-highlight-hash">${escapeHtml(h.short_hash || (h.hash || "").slice(0, 12))}</span>
                 <span>
-                  <span class="weekly-highlight-subject">${(h.subject || "").replace(/</g, "&lt;")}</span><br />
-                  <span class="weekly-highlight-author">${h.contributor || ""}</span>
+                  <span class="weekly-highlight-subject">${escapeHtml(h.subject || "")}</span><br />
+                  <span class="weekly-highlight-author">${escapeHtml(h.contributor || "")}</span>
                 </span>
               </li>
             `,
@@ -2201,11 +2201,15 @@ bucket_score(author, week, repo) = sqrt(bucket_churn) × repo_weight
           .join("");
 
         const tag = document.getElementById("weekly-source-tag");
-        tag.textContent = SUMMARY_SOURCE_LABEL[week.summary_source] || week.summary_source;
-        tag.className = `weekly-source-tag ${week.summary_source}`;
+        const source = Object.prototype.hasOwnProperty.call(SUMMARY_SOURCE_LABEL, week.summary_source)
+          ? week.summary_source
+          : "template";
+        tag.textContent = SUMMARY_SOURCE_LABEL[source];
+        tag.className = `weekly-source-tag ${source}`;
 
         const link = document.getElementById("weekly-history-link");
-        link.href = `history.html#${week.iso_week}`;
+        const isoWeek = String(week.iso_week || "");
+        link.href = /^[0-9]{4}-W[0-9]{2}$/.test(isoWeek) ? `history.html#${isoWeek}` : "history.html";
       }
 
       async function init() {

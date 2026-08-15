@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-08-14T20:44:49.888966+00:00",
+  "generated_at": "2026-08-15T19:15:57.574994+00:00",
   "revision": "multi-repository",
   "repositories": [
     {
@@ -8,21 +8,21 @@
       "name": "NebulaLab",
       "path": ".",
       "weight": 1.0,
-      "revision": "8c6f39369344"
+      "revision": "75b3464cb910"
     },
     {
       "id": "plugins",
       "name": "NebulaLab Plugins",
       "path": "external/NebulaLab-Plugins",
       "weight": 0.9,
-      "revision": "7e07fee25c47"
+      "revision": "6e0bf54869e1"
     },
     {
       "id": "docs",
       "name": "NebulaLab Docs",
       "path": "external/NebulaLab-Docs",
       "weight": 0.45,
-      "revision": "cd0956e75cfa"
+      "revision": "9a13529a36da"
     }
   ],
   "range": {
@@ -70,77 +70,46 @@
       ".min.css",
       ".map",
       ".lock"
-    ],
-    "identity_aliases": {
-      "peteryan233@gmail.com": "TshyGO",
-      "50545377+TshyGO@users.noreply.github.com": "TshyGO",
-      "Peter Yan": "TshyGO",
-      "peteryan@PeterdeMacBook-Air.local": "TshyGO",
-      "Nebula Graph Update Bot": "TshyGO",
-      "bot@nebula.graph": "TshyGO",
-      "q1791383159@gmail.com": "wagtyq",
-      "wagtyq@users.noreply.github.com": "wagtyq",
-      "261763330+wagtyq@users.noreply.github.com": "wagtyq",
-      "Mao": "wagtyq",
-      "lida.2002@foxmail.com": "crema-lida"
-    },
-    "bot_names": [
-      "Assistant",
-      "Claude",
-      "Claude Code",
-      "Claude Opus 4.6",
-      "Claude Sonnet 4.6",
-      "Claude Sonnet 4.6 (1M context)",
-      "Codex",
-      "Nebula Lab Bot",
-      "NebulaLab Developer",
-      "dependabot[bot]",
-      "developer@nebulalab.io",
-      "github-actions[bot]",
-      "nebula-sponsorship-bot",
-      "noreply@anthropic.com",
-      "noreply@nebula-lab.dev",
-      "noreply@nebulalab.dev"
     ]
   },
   "totals": {
     "contributors": 5,
-    "raw_commits": 902,
-    "effective_commits": 881,
-    "weighted_churn": 396891.85,
-    "score": 3229.1538,
+    "raw_commits": 922,
+    "effective_commits": 901,
+    "weighted_churn": 407560.88,
+    "score": 3283.8117,
     "category_churn": {
-      "core_code": 272911.0,
-      "tests": 86132.8,
-      "documentation": 26751.2,
-      "configuration": 13124.1,
+      "core_code": 279941.0,
+      "tests": 89329.2,
+      "documentation": 26914.2,
+      "configuration": 13408.8,
       "unknown": 0.0,
       "excluded": 0.0
     }
   },
   "excluded": {
-    "bot_commits": 49,
+    "bot_commits": 50,
     "zero_weight_files": 75,
-    "unknown_classification_files": 594,
+    "unknown_classification_files": 638,
     "binary_files": 105
   },
   "contributors": [
     {
       "id": "TshyGO",
       "display_name": "TshyGO",
-      "raw_commits": 724,
-      "effective_commits": 709,
-      "additions": 407202,
-      "deletions": 133872,
-      "raw_churn": 541073.0,
-      "weighted_churn": 330845.38,
-      "score": 2431.2559,
-      "files_touched": 4450,
+      "raw_commits": 739,
+      "effective_commits": 724,
+      "additions": 410316,
+      "deletions": 134820,
+      "raw_churn": 545135.0,
+      "weighted_churn": 332895.81,
+      "score": 2443.5438,
+      "files_touched": 4554,
       "category_churn": {
-        "core_code": 223952.5,
-        "tests": 69682.4,
-        "documentation": 26163.2,
-        "configuration": 12841.35,
+        "core_code": 224407.5,
+        "tests": 70923.6,
+        "documentation": 26301.4,
+        "configuration": 13062.45,
         "unknown": 0.0,
         "excluded": 0.0
       },
@@ -149,50 +118,50 @@
           "id": "nebulalab",
           "name": "NebulaLab",
           "weight": 1.0,
-          "raw_commits": 650,
-          "effective_commits": 641,
-          "weighted_churn": 327066.05,
-          "score": 2276.563
+          "raw_commits": 663,
+          "effective_commits": 654,
+          "weighted_churn": 329105.95,
+          "score": 2285.9839
         },
         {
           "id": "plugins",
           "name": "NebulaLab Plugins",
           "weight": 0.9,
-          "raw_commits": 46,
-          "effective_commits": 40,
-          "weighted_churn": 2542.59,
-          "score": 107.9134
+          "raw_commits": 47,
+          "effective_commits": 41,
+          "weighted_churn": 2549.61,
+          "score": 109.8247
         },
         {
           "id": "docs",
           "name": "NebulaLab Docs",
           "weight": 0.45,
-          "raw_commits": 28,
-          "effective_commits": 28,
-          "weighted_churn": 1236.74,
-          "score": 46.7795
+          "raw_commits": 29,
+          "effective_commits": 29,
+          "weighted_churn": 1240.25,
+          "score": 47.7352
         }
       ],
       "co_authored_commits": 2,
-      "share_pct": 75.29,
-      "weighted_churn_share_pct": 83.36
+      "share_pct": 74.41,
+      "weighted_churn_share_pct": 81.68
     },
     {
       "id": "wagtyq",
       "display_name": "wagtyq",
-      "raw_commits": 164,
-      "effective_commits": 158,
-      "additions": 69710,
-      "deletions": 22244,
-      "raw_churn": 91954.0,
-      "weighted_churn": 61854.03,
-      "score": 696.4833,
-      "files_touched": 914,
+      "raw_commits": 169,
+      "effective_commits": 163,
+      "additions": 79946,
+      "deletions": 22334,
+      "raw_churn": 102281.0,
+      "weighted_churn": 70472.63,
+      "score": 738.8533,
+      "files_touched": 992,
       "category_churn": {
-        "core_code": 46854.5,
-        "tests": 14506.4,
-        "documentation": 325.8,
-        "configuration": 278.85,
+        "core_code": 53429.5,
+        "tests": 16461.6,
+        "documentation": 350.6,
+        "configuration": 342.45,
         "unknown": 0.0,
         "excluded": 0.0
       },
@@ -201,10 +170,10 @@
           "id": "nebulalab",
           "name": "NebulaLab",
           "weight": 1.0,
-          "raw_commits": 161,
-          "effective_commits": 155,
-          "weighted_churn": 60850.35,
-          "score": 663.2076
+          "raw_commits": 166,
+          "effective_commits": 160,
+          "weighted_churn": 69468.95,
+          "score": 705.5776
         },
         {
           "id": "plugins",
@@ -217,8 +186,8 @@
         }
       ],
       "co_authored_commits": 2,
-      "share_pct": 21.57,
-      "weighted_churn_share_pct": 15.58
+      "share_pct": 22.5,
+      "weighted_churn_share_pct": 17.29
     },
     {
       "id": "crema-lida",
@@ -251,8 +220,8 @@
         }
       ],
       "co_authored_commits": 1,
-      "share_pct": 2.88,
-      "weighted_churn_share_pct": 1.03
+      "share_pct": 2.83,
+      "weighted_churn_share_pct": 1.0
     },
     {
       "id": "delicious-icecream",
@@ -285,8 +254,8 @@
         }
       ],
       "co_authored_commits": 0,
-      "share_pct": 0.21,
-      "weighted_churn_share_pct": 0.03
+      "share_pct": 0.2,
+      "weighted_churn_share_pct": 0.02
     },
     {
       "id": "Copilot Autofix powered by AI",
@@ -324,6 +293,618 @@
     }
   ],
   "commits": [
+    {
+      "hash": "75b3464cb9105271a78437136c92fa28b9e335cc",
+      "short_hash": "75b3464cb910",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-16T03:15:22+08:00",
+      "date": "2026-08-16",
+      "iso_week": "2026-W33",
+      "subject": "fix(security): S10 CI, release supply chain, and public VPS control plane (#598)",
+      "effective": true,
+      "additions": 283,
+      "deletions": 31,
+      "raw_churn": 314,
+      "file_weighted_churn": 206.6,
+      "weighted_churn": 206.6,
+      "files_touched": 16,
+      "unknown_files": 3,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 155.2,
+        "documentation": 11.2,
+        "configuration": 40.2,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "11d2dcbfe9e7b73c2961789d1ebf756d07e95012",
+      "short_hash": "11d2dcbfe9e7",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-16T02:15:25+08:00",
+      "date": "2026-08-16",
+      "iso_week": "2026-W33",
+      "subject": "fix(security): S9 comment, announcement, DEFINER, and auth hardening (#580)",
+      "effective": true,
+      "additions": 349,
+      "deletions": 8,
+      "raw_churn": 357,
+      "file_weighted_churn": 232.2,
+      "weighted_churn": 232.2,
+      "files_touched": 6,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 11.0,
+        "tests": 64.0,
+        "documentation": 0.0,
+        "configuration": 157.2,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "450bf1da5e2f2292f781ffb2d6f9a34d537d3f18",
+      "short_hash": "450bf1da5e2f",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-15T19:25:50+08:00",
+      "date": "2026-08-15",
+      "iso_week": "2026-W33",
+      "subject": "ci: migrate AI review caller to lane secrets (#604)",
+      "effective": true,
+      "additions": 8,
+      "deletions": 5,
+      "raw_churn": 13,
+      "file_weighted_churn": 5.4,
+      "weighted_churn": 5.4,
+      "files_touched": 2,
+      "unknown_files": 1,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 0.0,
+        "documentation": 0.0,
+        "configuration": 5.4,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "9871601f37849e4bf27a7bc057c232072b3380fa",
+      "short_hash": "9871601f3784",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-15T19:19:12+08:00",
+      "date": "2026-08-15",
+      "iso_week": "2026-W33",
+      "subject": "docs: record M2.6 production acceptance (#603)",
+      "effective": true,
+      "additions": 53,
+      "deletions": 28,
+      "raw_churn": 81,
+      "file_weighted_churn": 26.8,
+      "weighted_churn": 26.8,
+      "files_touched": 3,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 0.0,
+        "documentation": 26.8,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "18d29dab0bcbc1cf5f618c0ca5bd452297e6af96",
+      "short_hash": "18d29dab0bcb",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-15T18:32:39+08:00",
+      "date": "2026-08-15",
+      "iso_week": "2026-W33",
+      "subject": "Balance validation by change risk (#602)",
+      "effective": true,
+      "additions": 73,
+      "deletions": 61,
+      "raw_churn": 134,
+      "file_weighted_churn": 51.0,
+      "weighted_churn": 51.0,
+      "files_touched": 5,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 19.2,
+        "documentation": 31.8,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "7ce082b581e28761687635dbd06fa48fa0e65dc9",
+      "short_hash": "7ce082b581e2",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-15T18:11:07+08:00",
+      "date": "2026-08-15",
+      "iso_week": "2026-W33",
+      "subject": "Fix M2.6 restore acceptance edge cases (#601)",
+      "effective": true,
+      "additions": 41,
+      "deletions": 2,
+      "raw_churn": 43,
+      "file_weighted_churn": 26.4,
+      "weighted_churn": 26.4,
+      "files_touched": 3,
+      "unknown_files": 2,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 26.4,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "7b446d5ab901a5cc834e9ee28f25136ba457bbf6",
+      "short_hash": "7b446d5ab901",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-15T17:04:44+08:00",
+      "date": "2026-08-15",
+      "iso_week": "2026-W33",
+      "subject": "feat: add M3.5 data center read-only view",
+      "effective": true,
+      "additions": 1098,
+      "deletions": 2,
+      "raw_churn": 1100,
+      "file_weighted_churn": 1020.1,
+      "weighted_churn": 1020.1,
+      "files_touched": 8,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 709.5,
+        "tests": 309.6,
+        "documentation": 1.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "6ffa1eca690938d07af1f2215a5e14a5a6f13cd3",
+      "short_hash": "6ffa1eca6909",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-15T16:15:44+08:00",
+      "date": "2026-08-15",
+      "iso_week": "2026-W33",
+      "subject": "docs: run full suite at PR and release anchors, not every push",
+      "effective": true,
+      "additions": 109,
+      "deletions": 33,
+      "raw_churn": 142,
+      "file_weighted_churn": 66.2,
+      "weighted_churn": 66.2,
+      "files_touched": 7,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 32.0,
+        "documentation": 34.2,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "ab29483889f7c37d10c5cb80eecb0bdaad981c36",
+      "short_hash": "ab29483889f7",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-15T15:25:28+08:00",
+      "date": "2026-08-15",
+      "iso_week": "2026-W33",
+      "subject": "Fix M2.6 published port detection (#597)",
+      "effective": true,
+      "additions": 19,
+      "deletions": 4,
+      "raw_churn": 23,
+      "file_weighted_churn": 4.0,
+      "weighted_churn": 4.0,
+      "files_touched": 4,
+      "unknown_files": 3,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 4.0,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "80e65aa704be098238056732c06122f454531f3d",
+      "short_hash": "80e65aa704be",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-15T15:05:15+08:00",
+      "date": "2026-08-15",
+      "iso_week": "2026-W33",
+      "subject": "feat: add M3.4 data center upload worker",
+      "effective": true,
+      "additions": 1962,
+      "deletions": 36,
+      "raw_churn": 1998,
+      "file_weighted_churn": 1859.7,
+      "weighted_churn": 1859.7,
+      "files_touched": 14,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 1383.5,
+        "tests": 475.2,
+        "documentation": 1.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "95a9bbe8fa0f77cb9b7aa3f3a662de07b125daaf",
+      "short_hash": "95a9bbe8fa0f",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-15T14:49:21+08:00",
+      "date": "2026-08-15",
+      "iso_week": "2026-W33",
+      "subject": "Fix M2.6 runtime environment loading (#595)",
+      "effective": true,
+      "additions": 15,
+      "deletions": 0,
+      "raw_churn": 15,
+      "file_weighted_churn": 3.2,
+      "weighted_churn": 3.2,
+      "files_touched": 4,
+      "unknown_files": 3,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 3.2,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "9af0c267f28554781e97f9b5a47c6c3856cd366b",
+      "short_hash": "9af0c267f285",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-15T13:08:49+08:00",
+      "date": "2026-08-15",
+      "iso_week": "2026-W33",
+      "subject": "Fix legacy-schema migration preflight (#594)",
+      "effective": true,
+      "additions": 53,
+      "deletions": 30,
+      "raw_churn": 83,
+      "file_weighted_churn": 4.0,
+      "weighted_churn": 4.0,
+      "files_touched": 4,
+      "unknown_files": 3,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 4.0,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "59478236024faa6433d26795835f55489bb4eb3b",
+      "short_hash": "59478236024f",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-15T12:34:56+08:00",
+      "date": "2026-08-15",
+      "iso_week": "2026-W33",
+      "subject": "Fix pre-migration restore acceptance (#592)",
+      "effective": true,
+      "additions": 146,
+      "deletions": 33,
+      "raw_churn": 179,
+      "file_weighted_churn": 23.6,
+      "weighted_churn": 23.6,
+      "files_touched": 3,
+      "unknown_files": 2,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 23.6,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "fb3e29302ac1897d6963fe1473c1ec18287d27bc",
+      "short_hash": "fb3e29302ac1",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-15T12:10:15+08:00",
+      "date": "2026-08-15",
+      "iso_week": "2026-W33",
+      "subject": "feat: add M3.3 bundle outbox staging",
+      "effective": true,
+      "additions": 2674,
+      "deletions": 8,
+      "raw_churn": 2682,
+      "file_weighted_churn": 2507.6,
+      "weighted_churn": 2507.6,
+      "files_touched": 12,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 1848.0,
+        "tests": 655.2,
+        "documentation": 4.4,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "16ecf0b7b3d208af30e3414c3199a2e78021371b",
+      "short_hash": "16ecf0b7b3d2",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-15T11:51:11+08:00",
+      "date": "2026-08-15",
+      "iso_week": "2026-W33",
+      "subject": "fix: sync crash reporting with engine and require stable full-suite notes (#588)",
+      "effective": true,
+      "additions": 1164,
+      "deletions": 640,
+      "raw_churn": 1804,
+      "file_weighted_churn": 1247.6,
+      "weighted_churn": 1247.6,
+      "files_touched": 22,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 444.0,
+        "tests": 775.2,
+        "documentation": 28.4,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "19ac56ea97b7bb6a75b8d2eafb01dbaadb0140e9",
+      "short_hash": "19ac56ea97b7",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-15T10:53:37+08:00",
+      "date": "2026-08-15",
+      "iso_week": "2026-W33",
+      "subject": "Harden M2 production restore and acceptance (#589)",
+      "effective": true,
+      "additions": 773,
+      "deletions": 59,
+      "raw_churn": 832,
+      "file_weighted_churn": 142.9,
+      "weighted_churn": 142.9,
+      "files_touched": 18,
+      "unknown_files": 13,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 134.4,
+        "documentation": 5.8,
+        "configuration": 2.7,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "b9ad4df1467d1161b90354c099a004ee03b52f90",
+      "short_hash": "b9ad4df1467d",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-15T10:30:18+08:00",
+      "date": "2026-08-15",
+      "iso_week": "2026-W33",
+      "subject": "feat: add M3.2 data center auth client",
+      "effective": true,
+      "additions": 1649,
+      "deletions": 4,
+      "raw_churn": 1653,
+      "file_weighted_churn": 1543.7,
+      "weighted_churn": 1543.7,
+      "files_touched": 16,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 1122.5,
+        "tests": 419.2,
+        "documentation": 1.4,
+        "configuration": 0.6,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "47cd94109088f3fbf9e3c3d1e60831faa3159250",
+      "short_hash": "47cd94109088",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-15T09:35:30+08:00",
+      "date": "2026-08-15",
+      "iso_week": "2026-W33",
+      "subject": "feat: add M3.1 data center mesh client",
+      "effective": true,
+      "additions": 2853,
+      "deletions": 41,
+      "raw_churn": 2894,
+      "file_weighted_churn": 1687.5,
+      "weighted_churn": 1687.5,
+      "files_touched": 28,
+      "unknown_files": 12,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 1511.5,
+        "tests": 96.0,
+        "documentation": 17.0,
+        "configuration": 63.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
     {
       "hash": "8c6f393693449a1dcdc6c66f7d1c184264b9397f",
       "short_hash": "8c6f39369344",
@@ -28350,6 +28931,40 @@
       }
     },
     {
+      "hash": "6e0bf54869e1d8ffd8527d6d9b0f33a727d303ec",
+      "short_hash": "6e0bf54869e1",
+      "repo_id": "plugins",
+      "repo_name": "NebulaLab Plugins",
+      "repo_weight": 0.9,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-15T19:25:52+08:00",
+      "date": "2026-08-15",
+      "iso_week": "2026-W33",
+      "subject": "ci: migrate AI review caller to lane secrets (#30)",
+      "effective": true,
+      "additions": 12,
+      "deletions": 8,
+      "raw_churn": 20,
+      "file_weighted_churn": 7.8,
+      "weighted_churn": 7.02,
+      "files_touched": 3,
+      "unknown_files": 1,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 0.0,
+        "documentation": 0.0,
+        "configuration": 7.8,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
       "hash": "7e07fee25c47e25d77c502b5b91d6c3bc9216091",
       "short_hash": "7e07fee25c47",
       "repo_id": "plugins",
@@ -30016,6 +30631,40 @@
       }
     },
     {
+      "hash": "9a13529a36da641e4ddeb026643996d248ea52f0",
+      "short_hash": "9a13529a36da",
+      "repo_id": "docs",
+      "repo_name": "NebulaLab Docs",
+      "repo_weight": 0.45,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-15T19:25:49+08:00",
+      "date": "2026-08-15",
+      "iso_week": "2026-W33",
+      "subject": "ci: migrate AI review caller to lane secrets (#31)",
+      "effective": true,
+      "additions": 16,
+      "deletions": 6,
+      "raw_churn": 22,
+      "file_weighted_churn": 7.8,
+      "weighted_churn": 3.51,
+      "files_touched": 3,
+      "unknown_files": 1,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 0.0,
+        "documentation": 0.0,
+        "configuration": 7.8,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
       "hash": "670e4c169098cc57c76f6a17af15c7c139f892e8",
       "short_hash": "670e4c169098",
       "repo_id": "docs",
@@ -31006,21 +31655,21 @@
     {
       "iso_week": "2026-W33",
       "start": "2026-08-10",
-      "end": "2026-08-15",
+      "end": "2026-08-16",
       "contributors": [
         "wagtyq",
         "TshyGO"
       ],
-      "commit_count": 71,
-      "effective_count": 68,
+      "commit_count": 91,
+      "effective_count": 88,
       "categories": {
-        "docs": 4,
-        "fix": 44,
+        "fix": 47,
+        "feat": 13,
+        "other": 13,
+        "ci": 6,
+        "docs": 6,
         "test": 5,
-        "other": 6,
-        "refactor": 1,
-        "ci": 3,
-        "feat": 8
+        "refactor": 1
       },
       "highlights": [
         {
@@ -31040,31 +31689,31 @@
           "repo_id": "nebulalab"
         },
         {
-          "hash": "d5c1de8e67e402d828a45e9db889814c521bf127",
-          "short_hash": "d5c1de8e67e4",
-          "subject": "fix(security): S6 plugin/theme supply chain, outbound, and iframe isolation (#545)",
-          "contributor": "TshyGO",
-          "weighted_churn": 1656.2,
+          "hash": "fb3e29302ac1897d6963fe1473c1ec18287d27bc",
+          "short_hash": "fb3e29302ac1",
+          "subject": "feat: add M3.3 bundle outbox staging",
+          "contributor": "wagtyq",
+          "weighted_churn": 2507.6,
           "repo_id": "nebulalab"
         },
         {
-          "hash": "fdc2c17488bd90e16301f445c9c69a8150b56fc6",
-          "short_hash": "fdc2c17488bd",
-          "subject": "fix(security): S8 local privacy, telemetry, and data-lifecycle hardening (#578)",
-          "contributor": "TshyGO",
-          "weighted_churn": 1093.9,
+          "hash": "80e65aa704be098238056732c06122f454531f3d",
+          "short_hash": "80e65aa704be",
+          "subject": "feat: add M3.4 data center upload worker",
+          "contributor": "wagtyq",
+          "weighted_churn": 1859.7,
           "repo_id": "nebulalab"
         },
         {
-          "hash": "4e816c0274fe3528ea0c72baae2bb1aac27b3275",
-          "short_hash": "4e816c0274fe",
-          "subject": "fix(security): S1 storage read visibility + delete-upload path bind (#540) (#550)",
-          "contributor": "TshyGO",
-          "weighted_churn": 792.3,
+          "hash": "47cd94109088f3fbf9e3c3d1e60831faa3159250",
+          "short_hash": "47cd94109088",
+          "subject": "feat: add M3.1 data center mesh client",
+          "contributor": "wagtyq",
+          "weighted_churn": 1687.5,
           "repo_id": "nebulalab"
         }
       ],
-      "summary": "本周 TshyGO 集中修复了一系列安全加固问题，包括插件隔离、隐私保护和权限控制，让系统更安全可靠。同时 wagtyq 完成了数据中心的几个核心功能，比如词汇映射、提交暂存和生命周期管理，并重新设计了标本管理的界面，让操作更直观。两位同学还共同处理了一些历史数据迁移和导出稳定性问题。",
+      "summary": "本周，wagtyq 主要推进了数据中心的搭建，完成了从客户端连接到数据上传、查看等核心流程，并重新设计了标本管理的界面和记录方式。TshyGO 则集中进行了一系列安全加固，覆盖了身份验证、插件隔离、数据隐私等关键环节，并同步优化了系统状态文档与自动化流程。整体上，项目在核心数据功能和系统安全性方面都取得了扎实进展。",
       "summary_source": "llm"
     },
     {
