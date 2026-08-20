@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-08-19T20:44:38.890289+00:00",
+  "generated_at": "2026-08-20T20:46:38.930626+00:00",
   "revision": "multi-repository",
   "repositories": [
     {
@@ -8,7 +8,7 @@
       "name": "NebulaLab",
       "path": ".",
       "weight": 1.0,
-      "revision": "d8528d92012b"
+      "revision": "4434dfd901b0"
     },
     {
       "id": "plugins",
@@ -22,7 +22,7 @@
       "name": "NebulaLab Docs",
       "path": "external/NebulaLab-Docs",
       "weight": 0.45,
-      "revision": "123023608e24"
+      "revision": "c76666548f94"
     }
   ],
   "range": {
@@ -74,13 +74,13 @@
   },
   "totals": {
     "contributors": 5,
-    "raw_commits": 969,
-    "effective_commits": 947,
-    "weighted_churn": 421935.98,
-    "score": 3424.0312,
+    "raw_commits": 970,
+    "effective_commits": 948,
+    "weighted_churn": 421965.58,
+    "score": 3424.2355,
     "category_churn": {
       "core_code": 288635.5,
-      "tests": 93770.4,
+      "tests": 93800.0,
       "documentation": 27950.8,
       "configuration": 13611.6,
       "unknown": 0.0,
@@ -88,9 +88,9 @@
     }
   },
   "excluded": {
-    "bot_commits": 55,
+    "bot_commits": 56,
     "zero_weight_files": 76,
-    "unknown_classification_files": 685,
+    "unknown_classification_files": 686,
     "binary_files": 105
   },
   "contributors": [
@@ -149,17 +149,17 @@
     {
       "id": "wagtyq",
       "display_name": "wagtyq",
-      "raw_commits": 210,
-      "effective_commits": 203,
-      "additions": 93324,
-      "deletions": 23460,
-      "raw_churn": 116784.0,
-      "weighted_churn": 79038.13,
-      "score": 824.0613,
-      "files_touched": 1236,
+      "raw_commits": 211,
+      "effective_commits": 204,
+      "additions": 93368,
+      "deletions": 23462,
+      "raw_churn": 116831.0,
+      "weighted_churn": 79067.73,
+      "score": 824.2657,
+      "files_touched": 1238,
       "category_churn": {
         "core_code": 58727.0,
-        "tests": 19264.8,
+        "tests": 19294.4,
         "documentation": 612.6,
         "configuration": 545.25,
         "unknown": 0.0,
@@ -170,10 +170,10 @@
           "id": "nebulalab",
           "name": "NebulaLab",
           "weight": 1.0,
-          "raw_commits": 207,
-          "effective_commits": 200,
-          "weighted_churn": 78034.45,
-          "score": 790.7856
+          "raw_commits": 208,
+          "effective_commits": 201,
+          "weighted_churn": 78064.05,
+          "score": 790.99
         },
         {
           "id": "plugins",
@@ -187,7 +187,7 @@
       ],
       "co_authored_commits": 2,
       "share_pct": 24.07,
-      "weighted_churn_share_pct": 18.73
+      "weighted_churn_share_pct": 18.74
     },
     {
       "id": "crema-lida",
@@ -293,6 +293,40 @@
     }
   ],
   "commits": [
+    {
+      "hash": "edfcd84bcf38d3ba7c7ec8c96c1d006297827b20",
+      "short_hash": "edfcd84bcf38",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-20T16:14:25+08:00",
+      "date": "2026-08-20",
+      "iso_week": "2026-W34",
+      "subject": "fix(data-center): normalize migration checksums",
+      "effective": true,
+      "additions": 45,
+      "deletions": 2,
+      "raw_churn": 47,
+      "file_weighted_churn": 29.6,
+      "weighted_churn": 29.6,
+      "files_touched": 2,
+      "unknown_files": 1,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 29.6,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
     {
       "hash": "83b76657bb7f351805964bcc4fd0d4e032608c8a",
       "short_hash": "83b76657bb7f",
@@ -33253,16 +33287,16 @@
     {
       "iso_week": "2026-W34",
       "start": "2026-08-17",
-      "end": "2026-08-19",
+      "end": "2026-08-20",
       "contributors": [
         "wagtyq",
         "TshyGO"
       ],
-      "commit_count": 31,
-      "effective_count": 30,
+      "commit_count": 32,
+      "effective_count": 31,
       "categories": {
+        "fix": 23,
         "feat": 6,
-        "fix": 22,
         "docs": 1,
         "test": 2
       },
@@ -33308,7 +33342,7 @@
           "repo_id": "nebulalab"
         }
       ],
-      "summary": "本周主要由wagtyq推进了数据中心的治理流程完善，包括新增了已发布词表的管理界面，并修复了多项数据提交与审核环节的稳定性问题。同时，TshyGO将前端AI核心模块与社区评审中心进行了分离重构，使相关功能更清晰独立。整体上，团队进一步夯实了数据治理的完整工作流与用户体验。",
+      "summary": "本周由wagtyq和TshyGO共同推进。wagtyq主要完善了数据中心的管理流程，包括新增了已发布词汇表的管理界面，优化了治理审核环节，并修复了一系列数据展示和输入校验问题，提升了系统的稳定性和易用性。TshyGO则完成了前端AI核心模块的提取工作，并修正了关于数据边界的技术文档。",
       "summary_source": "llm"
     },
     {
