@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-08-20T20:46:38.930626+00:00",
+  "generated_at": "2026-08-21T20:40:47.246950+00:00",
   "revision": "multi-repository",
   "repositories": [
     {
@@ -8,7 +8,7 @@
       "name": "NebulaLab",
       "path": ".",
       "weight": 1.0,
-      "revision": "4434dfd901b0"
+      "revision": "57e43d705c94"
     },
     {
       "id": "plugins",
@@ -22,7 +22,7 @@
       "name": "NebulaLab Docs",
       "path": "external/NebulaLab-Docs",
       "weight": 0.45,
-      "revision": "c76666548f94"
+      "revision": "680f6d9d19e2"
     }
   ],
   "range": {
@@ -74,42 +74,42 @@
   },
   "totals": {
     "contributors": 5,
-    "raw_commits": 970,
-    "effective_commits": 948,
-    "weighted_churn": 421965.58,
-    "score": 3424.2355,
+    "raw_commits": 990,
+    "effective_commits": 965,
+    "weighted_churn": 427225.58,
+    "score": 3468.7891,
     "category_churn": {
-      "core_code": 288635.5,
-      "tests": 93800.0,
-      "documentation": 27950.8,
-      "configuration": 13611.6,
+      "core_code": 291480.0,
+      "tests": 95995.2,
+      "documentation": 28059.2,
+      "configuration": 13723.5,
       "unknown": 0.0,
       "excluded": 0.0
     }
   },
   "excluded": {
-    "bot_commits": 56,
-    "zero_weight_files": 76,
-    "unknown_classification_files": 686,
+    "bot_commits": 57,
+    "zero_weight_files": 77,
+    "unknown_classification_files": 750,
     "binary_files": 105
   },
   "contributors": [
     {
       "id": "TshyGO",
       "display_name": "TshyGO",
-      "raw_commits": 745,
-      "effective_commits": 730,
-      "additions": 416898,
-      "deletions": 136422,
-      "raw_churn": 553319.0,
-      "weighted_churn": 338705.41,
-      "score": 2498.5553,
-      "files_touched": 4610,
+      "raw_commits": 765,
+      "effective_commits": 747,
+      "additions": 429246,
+      "deletions": 136816,
+      "raw_churn": 566063.0,
+      "weighted_churn": 343965.41,
+      "score": 2543.1089,
+      "files_touched": 4770,
       "category_churn": {
-        "core_code": 227804.5,
-        "tests": 72561.6,
-        "documentation": 27076.0,
-        "configuration": 13062.45,
+        "core_code": 230649.0,
+        "tests": 74756.8,
+        "documentation": 27184.4,
+        "configuration": 13174.35,
         "unknown": 0.0,
         "excluded": 0.0
       },
@@ -118,10 +118,10 @@
           "id": "nebulalab",
           "name": "NebulaLab",
           "weight": 1.0,
-          "raw_commits": 669,
-          "effective_commits": 660,
-          "weighted_churn": 334915.55,
-          "score": 2340.9954
+          "raw_commits": 689,
+          "effective_commits": 677,
+          "weighted_churn": 340175.55,
+          "score": 2385.549
         },
         {
           "id": "plugins",
@@ -143,8 +143,8 @@
         }
       ],
       "co_authored_commits": 2,
-      "share_pct": 72.97,
-      "weighted_churn_share_pct": 80.27
+      "share_pct": 73.31,
+      "weighted_churn_share_pct": 80.51
     },
     {
       "id": "wagtyq",
@@ -186,8 +186,8 @@
         }
       ],
       "co_authored_commits": 2,
-      "share_pct": 24.07,
-      "weighted_churn_share_pct": 18.74
+      "share_pct": 23.76,
+      "weighted_churn_share_pct": 18.51
     },
     {
       "id": "crema-lida",
@@ -220,8 +220,8 @@
         }
       ],
       "co_authored_commits": 1,
-      "share_pct": 2.72,
-      "weighted_churn_share_pct": 0.97
+      "share_pct": 2.68,
+      "weighted_churn_share_pct": 0.96
     },
     {
       "id": "delicious-icecream",
@@ -254,7 +254,7 @@
         }
       ],
       "co_authored_commits": 0,
-      "share_pct": 0.2,
+      "share_pct": 0.19,
       "weighted_churn_share_pct": 0.02
     },
     {
@@ -293,6 +293,686 @@
     }
   ],
   "commits": [
+    {
+      "hash": "57e43d705c9480d0ea848c1a966d8534f1caa087",
+      "short_hash": "57e43d705c94",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-22T01:32:28+08:00",
+      "date": "2026-08-22",
+      "iso_week": "2026-W34",
+      "subject": "feat(data-center): pull GHCR digest pins instead of building on szlab (#664)",
+      "effective": true,
+      "additions": 714,
+      "deletions": 30,
+      "raw_churn": 744,
+      "file_weighted_churn": 316.8,
+      "weighted_churn": 316.8,
+      "files_touched": 16,
+      "unknown_files": 7,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 233.6,
+        "documentation": 8.8,
+        "configuration": 74.4,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "9aa8c37b485d77d92351361ea14b5a68e5636279",
+      "short_hash": "9aa8c37b485d",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-22T00:32:44+08:00",
+      "date": "2026-08-22",
+      "iso_week": "2026-W34",
+      "subject": "fix(data-center): keep current vocab when seed hash drifts (#662)",
+      "effective": true,
+      "additions": 160,
+      "deletions": 2,
+      "raw_churn": 162,
+      "file_weighted_churn": 103.0,
+      "weighted_churn": 103.0,
+      "files_touched": 3,
+      "unknown_files": 1,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 100.8,
+        "documentation": 2.2,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "73329b54919a8694574d6ccb5bc1519350a7f523",
+      "short_hash": "73329b54919a",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-21T23:45:36+08:00",
+      "date": "2026-08-21",
+      "iso_week": "2026-W34",
+      "subject": "fix(data-center): ship the szlab onboarding public keys to clients (#661)",
+      "effective": true,
+      "additions": 3,
+      "deletions": 3,
+      "raw_churn": 6,
+      "file_weighted_churn": 2.7,
+      "weighted_churn": 2.7,
+      "files_touched": 1,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 0.0,
+        "documentation": 0.0,
+        "configuration": 2.7,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "d36cc84a994010c640028f4d9aefd152c60fb4ca",
+      "short_hash": "d36cc84a9940",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-21T22:48:02+08:00",
+      "date": "2026-08-21",
+      "iso_week": "2026-W34",
+      "subject": "feat(data-center): complete native onboarding activation (#624 Phase C-4) (#658)",
+      "effective": true,
+      "additions": 1486,
+      "deletions": 113,
+      "raw_churn": 1599,
+      "file_weighted_churn": 930.4,
+      "weighted_churn": 930.4,
+      "files_touched": 26,
+      "unknown_files": 6,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 630.0,
+        "tests": 281.6,
+        "documentation": 17.6,
+        "configuration": 1.2,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "85f19283252a7aab7cfa85009dd59f0ca519ca08",
+      "short_hash": "85f19283252a",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-21T22:30:02+08:00",
+      "date": "2026-08-21",
+      "iso_week": "2026-W34",
+      "subject": "ci: run every Data Center test suite in CI (#657)",
+      "effective": true,
+      "additions": 81,
+      "deletions": 9,
+      "raw_churn": 90,
+      "file_weighted_churn": 61.1,
+      "weighted_churn": 61.1,
+      "files_touched": 3,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 39.2,
+        "documentation": 0.0,
+        "configuration": 21.9,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "0427ff70347ea10666b9b4a6fa120afb3b11e691",
+      "short_hash": "0427ff70347e",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-21T15:28:57+08:00",
+      "date": "2026-08-21",
+      "iso_week": "2026-W34",
+      "subject": "feat(data-center): add szlab onboarding orchestrator (#624 Phase C-3) (#656)",
+      "effective": true,
+      "additions": 2057,
+      "deletions": 48,
+      "raw_churn": 2105,
+      "file_weighted_churn": 274.8,
+      "weighted_churn": 274.8,
+      "files_touched": 19,
+      "unknown_files": 12,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 252.0,
+        "documentation": 22.8,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "db4be9d69d2a51084fc5ca299fbbd9c0231f9351",
+      "short_hash": "db4be9d69d2a",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-21T13:58:36+08:00",
+      "date": "2026-08-21",
+      "iso_week": "2026-W34",
+      "subject": "fix(data-center): accept non-required onboarding grants",
+      "effective": true,
+      "additions": 3,
+      "deletions": 2,
+      "raw_churn": 5,
+      "file_weighted_churn": 3.5,
+      "weighted_churn": 3.5,
+      "files_touched": 2,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 1.5,
+        "tests": 2.0,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "d3821de5a12208593c6451c565660582a3e9500e",
+      "short_hash": "d3821de5a122",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-21T13:11:02+08:00",
+      "date": "2026-08-21",
+      "iso_week": "2026-W34",
+      "subject": "feat(data-center): add verified onboarding broker client",
+      "effective": true,
+      "additions": 896,
+      "deletions": 51,
+      "raw_churn": 947,
+      "file_weighted_churn": 840.6,
+      "weighted_churn": 840.6,
+      "files_touched": 7,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 576.5,
+        "tests": 244.4,
+        "documentation": 8.0,
+        "configuration": 11.7,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "9b782d4bc228b758754ec40d424c41aaefb6c2cf",
+      "short_hash": "9b782d4bc228",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-21T13:22:56+08:00",
+      "date": "2026-08-21",
+      "iso_week": "2026-W34",
+      "subject": "fix(data-center): retry transient broker claim failures",
+      "effective": false,
+      "additions": 6,
+      "deletions": 1,
+      "raw_churn": 7,
+      "file_weighted_churn": 0.0,
+      "weighted_churn": 0.0,
+      "files_touched": 1,
+      "unknown_files": 1,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 0.0,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "50c186ce38215c8029cd17bb84b90b5e7daed830",
+      "short_hash": "50c186ce3821",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-21T13:06:36+08:00",
+      "date": "2026-08-21",
+      "iso_week": "2026-W34",
+      "subject": "fix(data-center): harden access request recovery",
+      "effective": true,
+      "additions": 56,
+      "deletions": 12,
+      "raw_churn": 68,
+      "file_weighted_churn": 57.2,
+      "weighted_churn": 57.2,
+      "files_touched": 5,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 38.0,
+        "tests": 19.2,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "b2d18ffcb1fc4311f1c0138273ef9221b35ae9ad",
+      "short_hash": "b2d18ffcb1fc",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-21T12:58:32+08:00",
+      "date": "2026-08-21",
+      "iso_week": "2026-W34",
+      "subject": "fix(data-center): clear stale onboarding decisions",
+      "effective": false,
+      "additions": 33,
+      "deletions": 3,
+      "raw_churn": 36,
+      "file_weighted_churn": 0.0,
+      "weighted_churn": 0.0,
+      "files_touched": 4,
+      "unknown_files": 4,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 0.0,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "873ea8d86fb41e054f5a76278d0d843d0f19727b",
+      "short_hash": "873ea8d86fb4",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-21T12:52:41+08:00",
+      "date": "2026-08-21",
+      "iso_week": "2026-W34",
+      "subject": "fix(data-center): persist verifiable onboarding decisions",
+      "effective": false,
+      "additions": 148,
+      "deletions": 34,
+      "raw_churn": 182,
+      "file_weighted_churn": 0.0,
+      "weighted_churn": 0.0,
+      "files_touched": 5,
+      "unknown_files": 5,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 0.0,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "8f1b373e03c6d3fbc0a80022a9c78dfba4a539f3",
+      "short_hash": "8f1b373e03c6",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-21T12:41:40+08:00",
+      "date": "2026-08-21",
+      "iso_week": "2026-W34",
+      "subject": "fix(data-center): validate onboarding payload explicitly",
+      "effective": true,
+      "additions": 13,
+      "deletions": 14,
+      "raw_churn": 27,
+      "file_weighted_churn": 20.0,
+      "weighted_churn": 20.0,
+      "files_touched": 2,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 20.0,
+        "tests": 0.0,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "91e2d1fe8f5687cf19bc3fb7db0433dfd9250cde",
+      "short_hash": "91e2d1fe8f56",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-21T12:36:19+08:00",
+      "date": "2026-08-21",
+      "iso_week": "2026-W34",
+      "subject": "feat(data-center): add encrypted onboarding broker",
+      "effective": true,
+      "additions": 1598,
+      "deletions": 29,
+      "raw_churn": 1627,
+      "file_weighted_churn": 20.0,
+      "weighted_churn": 20.0,
+      "files_touched": 15,
+      "unknown_files": 13,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 20.0,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "dfe4bfb41e8b908ec2115c70e12f263bb6e92c1c",
+      "short_hash": "dfe4bfb41e8b",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-21T11:41:46+08:00",
+      "date": "2026-08-21",
+      "iso_week": "2026-W34",
+      "subject": "fix(data-center): preserve onboarding retry contracts",
+      "effective": true,
+      "additions": 65,
+      "deletions": 7,
+      "raw_churn": 72,
+      "file_weighted_churn": 60.9,
+      "weighted_churn": 60.9,
+      "files_touched": 4,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 30.5,
+        "tests": 30.4,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "235682ff480cfa3545ff026f3f4029ae0120fe97",
+      "short_hash": "235682ff480c",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-21T10:46:09+08:00",
+      "date": "2026-08-21",
+      "iso_week": "2026-W34",
+      "subject": "feat(data-center): add secure access request UI",
+      "effective": true,
+      "additions": 1129,
+      "deletions": 11,
+      "raw_churn": 1140,
+      "file_weighted_churn": 1059.6,
+      "weighted_churn": 1059.6,
+      "files_touched": 16,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 796.0,
+        "tests": 256.4,
+        "documentation": 7.2,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "76503184d328717499bd79f71f13910d484a630f",
+      "short_hash": "76503184d328",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-21T12:14:58+08:00",
+      "date": "2026-08-21",
+      "iso_week": "2026-W34",
+      "subject": "feat(data-center): add access request state machine (#624 Phase B-1) (#652)",
+      "effective": true,
+      "additions": 1502,
+      "deletions": 1,
+      "raw_churn": 1503,
+      "file_weighted_churn": 241.6,
+      "weighted_churn": 241.6,
+      "files_touched": 10,
+      "unknown_files": 7,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 210.4,
+        "documentation": 31.2,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "7a7175bc1cbb12526fb69482b604b9be9bc71033",
+      "short_hash": "7a7175bc1cbb",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-21T11:11:56+08:00",
+      "date": "2026-08-21",
+      "iso_week": "2026-W34",
+      "subject": "feat(data-center): add read-only admin center (#624 Phase A-2) (#651)",
+      "effective": true,
+      "additions": 1083,
+      "deletions": 10,
+      "raw_churn": 1093,
+      "file_weighted_churn": 993.6,
+      "weighted_churn": 993.6,
+      "files_touched": 11,
+      "unknown_files": 3,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 752.0,
+        "tests": 241.6,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "e3b4184a18b3f81b15e777368d247fd40cd18dd6",
+      "short_hash": "e3b4184a18b3",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-21T08:14:47+08:00",
+      "date": "2026-08-21",
+      "iso_week": "2026-W34",
+      "subject": "fix(data-center): avoid reserved invite query alias",
+      "effective": true,
+      "additions": 7,
+      "deletions": 7,
+      "raw_churn": 14,
+      "file_weighted_churn": 1.2,
+      "weighted_churn": 1.2,
+      "files_touched": 2,
+      "unknown_files": 1,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 1.2,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "4ee724c02b7b5a60e9fcdca1e1c5cc8752d20678",
+      "short_hash": "4ee724c02b7b",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-21T07:54:47+08:00",
+      "date": "2026-08-21",
+      "iso_week": "2026-W34",
+      "subject": "feat(data-center): add read-only admin visibility APIs",
+      "effective": true,
+      "additions": 1309,
+      "deletions": 8,
+      "raw_churn": 1317,
+      "file_weighted_churn": 273.0,
+      "weighted_churn": 273.0,
+      "files_touched": 9,
+      "unknown_files": 4,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 262.4,
+        "documentation": 10.6,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
     {
       "hash": "edfcd84bcf38d3ba7c7ec8c96c1d006297827b20",
       "short_hash": "edfcd84bcf38",
@@ -33287,16 +33967,17 @@
     {
       "iso_week": "2026-W34",
       "start": "2026-08-17",
-      "end": "2026-08-20",
+      "end": "2026-08-22",
       "contributors": [
         "wagtyq",
         "TshyGO"
       ],
-      "commit_count": 32,
-      "effective_count": 31,
+      "commit_count": 52,
+      "effective_count": 48,
       "categories": {
-        "fix": 23,
-        "feat": 6,
+        "fix": 33,
+        "feat": 15,
+        "ci": 1,
         "docs": 1,
         "test": 2
       },
@@ -33310,6 +33991,14 @@
           "repo_id": "nebulalab"
         },
         {
+          "hash": "235682ff480cfa3545ff026f3f4029ae0120fe97",
+          "short_hash": "235682ff480c",
+          "subject": "feat(data-center): add secure access request UI",
+          "contributor": "TshyGO",
+          "weighted_churn": 1059.6,
+          "repo_id": "nebulalab"
+        },
+        {
           "hash": "f740ede504901cbac97d8cbfe5083a1823672b1c",
           "short_hash": "f740ede50490",
           "subject": "feat(data-center): upload governed submissions to quarantine",
@@ -33318,31 +34007,23 @@
           "repo_id": "nebulalab"
         },
         {
-          "hash": "d5c10c128eed321629c7d8cdb7c6af77d89efe48",
-          "short_hash": "d5c10c128eed",
-          "subject": "feat(data-center): add published vocabulary management UI",
-          "contributor": "wagtyq",
-          "weighted_churn": 870.0,
+          "hash": "7a7175bc1cbb12526fb69482b604b9be9bc71033",
+          "short_hash": "7a7175bc1cbb",
+          "subject": "feat(data-center): add read-only admin center (#624 Phase A-2) (#651)",
+          "contributor": "TshyGO",
+          "weighted_churn": 993.6,
           "repo_id": "nebulalab"
         },
         {
-          "hash": "448309ef06a61626eb939eaa6ac773befeb5ecc4",
-          "short_hash": "448309ef06a6",
-          "subject": "feat(data-center): complete governance curator workflow",
-          "contributor": "wagtyq",
-          "weighted_churn": 765.6,
-          "repo_id": "nebulalab"
-        },
-        {
-          "hash": "c28020c9c42544aa765ce755af5baae9cbbdcfb3",
-          "short_hash": "c28020c9c425",
-          "subject": "fix(data-center): render scientific details readably",
-          "contributor": "wagtyq",
-          "weighted_churn": 741.2,
+          "hash": "d36cc84a994010c640028f4d9aefd152c60fb4ca",
+          "short_hash": "d36cc84a9940",
+          "subject": "feat(data-center): complete native onboarding activation (#624 Phase C-4) (#658)",
+          "contributor": "TshyGO",
+          "weighted_churn": 930.4,
           "repo_id": "nebulalab"
         }
       ],
-      "summary": "本周由wagtyq和TshyGO共同推进。wagtyq主要完善了数据中心的管理流程，包括新增了已发布词汇表的管理界面，优化了治理审核环节，并修复了一系列数据展示和输入校验问题，提升了系统的稳定性和易用性。TshyGO则完成了前端AI核心模块的提取工作，并修正了关于数据边界的技术文档。",
+      "summary": "本周TshyGO将AI核心模块从前端独立出来，并完成了数据中心的几项关键功能：新增了安全访问申请界面、只读管理员中心和本地激活流程。wagtyq则主要推进了数据治理工作，包括完善了治理审核流程、增加了已发布词汇管理界面，并修复了多项数据展示与处理的问题。两人共同提升了数据中心的稳定性和用户体验。",
       "summary_source": "llm"
     },
     {
