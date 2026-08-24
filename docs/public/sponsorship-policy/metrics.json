@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-08-23T20:38:48.595463+00:00",
+  "generated_at": "2026-08-24T20:47:35.608748+00:00",
   "revision": "multi-repository",
   "repositories": [
     {
@@ -8,7 +8,7 @@
       "name": "NebulaLab",
       "path": ".",
       "weight": 1.0,
-      "revision": "24e1c99772af"
+      "revision": "1c0c95b2d273"
     },
     {
       "id": "plugins",
@@ -22,7 +22,7 @@
       "name": "NebulaLab Docs",
       "path": "external/NebulaLab-Docs",
       "weight": 0.45,
-      "revision": "19d46dd2f02e"
+      "revision": "550275724c77"
     }
   ],
   "range": {
@@ -74,41 +74,41 @@
   },
   "totals": {
     "contributors": 5,
-    "raw_commits": 1054,
-    "effective_commits": 1026,
-    "weighted_churn": 437014.58,
-    "score": 3523.7067,
+    "raw_commits": 1064,
+    "effective_commits": 1036,
+    "weighted_churn": 439059.68,
+    "score": 3577.8716,
     "category_churn": {
-      "core_code": 296052.0,
-      "tests": 101065.6,
-      "documentation": 28129.8,
-      "configuration": 13803.6,
+      "core_code": 297010.5,
+      "tests": 101959.6,
+      "documentation": 28319.4,
+      "configuration": 13806.6,
       "unknown": 0.0,
       "excluded": 0.0
     }
   },
   "excluded": {
-    "bot_commits": 59,
+    "bot_commits": 60,
     "zero_weight_files": 77,
-    "unknown_classification_files": 828,
+    "unknown_classification_files": 888,
     "binary_files": 105
   },
   "contributors": [
     {
       "id": "TshyGO",
       "display_name": "TshyGO",
-      "raw_commits": 780,
-      "effective_commits": 762,
-      "additions": 430802,
+      "raw_commits": 781,
+      "effective_commits": 763,
+      "additions": 431528,
       "deletions": 136852,
-      "raw_churn": 567654.0,
-      "weighted_churn": 344735.11,
-      "score": 2551.0509,
-      "files_touched": 4812,
+      "raw_churn": 568381.0,
+      "weighted_churn": 344836.71,
+      "score": 2561.1306,
+      "files_touched": 4822,
       "category_churn": {
         "core_code": 230735.0,
         "tests": 75357.2,
-        "documentation": 27195.6,
+        "documentation": 27297.2,
         "configuration": 13250.55,
         "unknown": 0.0,
         "excluded": 0.0
@@ -118,10 +118,10 @@
           "id": "nebulalab",
           "name": "NebulaLab",
           "weight": 1.0,
-          "raw_commits": 698,
-          "effective_commits": 686,
-          "weighted_churn": 340936.75,
-          "score": 2390.1025
+          "raw_commits": 699,
+          "effective_commits": 687,
+          "weighted_churn": 341038.35,
+          "score": 2400.1822
         },
         {
           "id": "plugins",
@@ -143,25 +143,25 @@
         }
       ],
       "co_authored_commits": 2,
-      "share_pct": 72.4,
-      "weighted_churn_share_pct": 78.88
+      "share_pct": 71.58,
+      "weighted_churn_share_pct": 78.54
     },
     {
       "id": "wagtyq",
       "display_name": "wagtyq",
-      "raw_commits": 260,
-      "effective_commits": 250,
-      "additions": 105542,
-      "deletions": 26288,
-      "raw_churn": 131831.0,
-      "weighted_churn": 88087.03,
-      "score": 871.2413,
-      "files_touched": 1498,
+      "raw_commits": 269,
+      "effective_commits": 259,
+      "additions": 109602,
+      "deletions": 26724,
+      "raw_churn": 136327.0,
+      "weighted_churn": 90030.53,
+      "score": 915.3264,
+      "files_touched": 1630,
       "category_churn": {
-        "core_code": 63213.0,
-        "tests": 23764.4,
-        "documentation": 672.0,
-        "configuration": 549.15,
+        "core_code": 64171.5,
+        "tests": 24658.4,
+        "documentation": 760.0,
+        "configuration": 552.15,
         "unknown": 0.0,
         "excluded": 0.0
       },
@@ -170,10 +170,10 @@
           "id": "nebulalab",
           "name": "NebulaLab",
           "weight": 1.0,
-          "raw_commits": 257,
-          "effective_commits": 247,
-          "weighted_churn": 87083.35,
-          "score": 837.9656
+          "raw_commits": 266,
+          "effective_commits": 256,
+          "weighted_churn": 89026.85,
+          "score": 882.0507
         },
         {
           "id": "plugins",
@@ -186,8 +186,8 @@
         }
       ],
       "co_authored_commits": 2,
-      "share_pct": 24.73,
-      "weighted_churn_share_pct": 20.16
+      "share_pct": 25.58,
+      "weighted_churn_share_pct": 20.51
     },
     {
       "id": "crema-lida",
@@ -220,8 +220,8 @@
         }
       ],
       "co_authored_commits": 1,
-      "share_pct": 2.64,
-      "weighted_churn_share_pct": 0.94
+      "share_pct": 2.6,
+      "weighted_churn_share_pct": 0.93
     },
     {
       "id": "delicious-icecream",
@@ -293,6 +293,346 @@
     }
   ],
   "commits": [
+    {
+      "hash": "1c0c95b2d273f25d8e70bf41d3b17cb00f45014e",
+      "short_hash": "1c0c95b2d273",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "TshyGO",
+      "display_name": "TshyGO",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "TshyGO"
+      ],
+      "authored_at": "2026-08-24T23:34:03+08:00",
+      "date": "2026-08-24",
+      "iso_week": "2026-W35",
+      "subject": "docs(data-center): record and reproduce the self-hosted CI runner setup (#704)",
+      "effective": true,
+      "additions": 726,
+      "deletions": 1,
+      "raw_churn": 727,
+      "file_weighted_churn": 101.6,
+      "weighted_churn": 101.6,
+      "files_touched": 10,
+      "unknown_files": 8,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 0.0,
+        "documentation": 101.6,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "433a849e6aaf372ffc5702eff86f04498fa0177d",
+      "short_hash": "433a849e6aaf",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-24T22:37:31+08:00",
+      "date": "2026-08-24",
+      "iso_week": "2026-W35",
+      "subject": "fix(data-center): guard pre-roster acceptance columns",
+      "effective": true,
+      "additions": 56,
+      "deletions": 5,
+      "raw_churn": 61,
+      "file_weighted_churn": 4.4,
+      "weighted_churn": 4.4,
+      "files_touched": 4,
+      "unknown_files": 2,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 4.4,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "a9295450760a82e520e6a96ae19f4c85baa444a9",
+      "short_hash": "a9295450760a",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-24T12:44:23+08:00",
+      "date": "2026-08-24",
+      "iso_week": "2026-W35",
+      "subject": "fix(data-center): avoid reserved Pro grant alias",
+      "effective": true,
+      "additions": 23,
+      "deletions": 11,
+      "raw_churn": 34,
+      "file_weighted_churn": 10.4,
+      "weighted_churn": 10.4,
+      "files_touched": 4,
+      "unknown_files": 2,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 10.4,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "d37240935d87599f038b72a37dffb360955dcaa8",
+      "short_hash": "d37240935d87",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-24T11:19:24+08:00",
+      "date": "2026-08-24",
+      "iso_week": "2026-W35",
+      "subject": "feat(data-center): add identity-driven laboratory Pro",
+      "effective": true,
+      "additions": 1785,
+      "deletions": 176,
+      "raw_churn": 1961,
+      "file_weighted_churn": 1007.6,
+      "weighted_churn": 1007.6,
+      "files_touched": 41,
+      "unknown_files": 13,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 600.0,
+        "tests": 386.8,
+        "documentation": 20.2,
+        "configuration": 0.6,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "f5783626be74ed972843329b91611286c0ef7393",
+      "short_hash": "f5783626be74",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-24T09:33:22+08:00",
+      "date": "2026-08-24",
+      "iso_week": "2026-W35",
+      "subject": "fix(data-center): close cutover policy gaps",
+      "effective": true,
+      "additions": 45,
+      "deletions": 6,
+      "raw_churn": 51,
+      "file_weighted_churn": 6.8,
+      "weighted_churn": 6.8,
+      "files_touched": 6,
+      "unknown_files": 5,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 6.8,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "21b95aeebbf1688e83f41fdc670bae1a2199480f",
+      "short_hash": "21b95aeebbf1",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-24T09:07:14+08:00",
+      "date": "2026-08-24",
+      "iso_week": "2026-W35",
+      "subject": "fix(data-center): stabilize cutover count snapshot",
+      "effective": true,
+      "additions": 9,
+      "deletions": 0,
+      "raw_churn": 9,
+      "file_weighted_churn": 2.4,
+      "weighted_churn": 2.4,
+      "files_touched": 2,
+      "unknown_files": 1,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 2.4,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "27dd6c8c210565cebfe2ebe20882cf852ce00fb7",
+      "short_hash": "27dd6c8c2105",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-24T08:36:13+08:00",
+      "date": "2026-08-24",
+      "iso_week": "2026-W35",
+      "subject": "fix(data-center): verify cutover ledger counts",
+      "effective": true,
+      "additions": 80,
+      "deletions": 0,
+      "raw_churn": 80,
+      "file_weighted_churn": 52.0,
+      "weighted_churn": 52.0,
+      "files_touched": 2,
+      "unknown_files": 1,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 52.0,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "859540616132cfc67536c2f8f3effa16393d1087",
+      "short_hash": "859540616132",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-24T01:51:49+08:00",
+      "date": "2026-08-24",
+      "iso_week": "2026-W35",
+      "subject": "fix(data-center): enforce immutable cutover ledger",
+      "effective": true,
+      "additions": 16,
+      "deletions": 8,
+      "raw_churn": 24,
+      "file_weighted_churn": 2.4,
+      "weighted_churn": 2.4,
+      "files_touched": 3,
+      "unknown_files": 2,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 2.4,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "6d36569f7e684d21c891bd4576ed6fdd8c76dc55",
+      "short_hash": "6d36569f7e68",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-24T01:40:16+08:00",
+      "date": "2026-08-24",
+      "iso_week": "2026-W35",
+      "subject": "fix(data-center): detect null attribution names in preflight",
+      "effective": true,
+      "additions": 2,
+      "deletions": 1,
+      "raw_churn": 3,
+      "file_weighted_churn": 0.8,
+      "weighted_churn": 0.8,
+      "files_touched": 2,
+      "unknown_files": 1,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 0.8,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "dd1c8d4028771d14ddc72ac943d7a1b8138b4c7a",
+      "short_hash": "dd1c8d402877",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-24T01:21:39+08:00",
+      "date": "2026-08-24",
+      "iso_week": "2026-W35",
+      "subject": "feat(data-center): complete roster v2 cutover and attribution",
+      "effective": true,
+      "additions": 2044,
+      "deletions": 229,
+      "raw_churn": 2273,
+      "file_weighted_churn": 856.7,
+      "weighted_churn": 856.7,
+      "files_touched": 68,
+      "unknown_files": 25,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 358.5,
+        "tests": 428.0,
+        "documentation": 67.8,
+        "configuration": 2.4,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
     {
       "hash": "24e1c99772af53420dfa9ee106b3d6bf4592d23a",
       "short_hash": "24e1c99772af",
@@ -36141,6 +36481,66 @@
   ],
   "weekly_digests": [
     {
+      "iso_week": "2026-W35",
+      "start": "2026-08-24",
+      "end": "2026-08-24",
+      "contributors": [
+        "TshyGO",
+        "wagtyq"
+      ],
+      "commit_count": 10,
+      "effective_count": 10,
+      "categories": {
+        "fix": 7,
+        "feat": 2,
+        "docs": 1
+      },
+      "highlights": [
+        {
+          "hash": "d37240935d87599f038b72a37dffb360955dcaa8",
+          "short_hash": "d37240935d87",
+          "subject": "feat(data-center): add identity-driven laboratory Pro",
+          "contributor": "wagtyq",
+          "weighted_churn": 1007.6,
+          "repo_id": "nebulalab"
+        },
+        {
+          "hash": "dd1c8d4028771d14ddc72ac943d7a1b8138b4c7a",
+          "short_hash": "dd1c8d402877",
+          "subject": "feat(data-center): complete roster v2 cutover and attribution",
+          "contributor": "wagtyq",
+          "weighted_churn": 856.7,
+          "repo_id": "nebulalab"
+        },
+        {
+          "hash": "1c0c95b2d273f25d8e70bf41d3b17cb00f45014e",
+          "short_hash": "1c0c95b2d273",
+          "subject": "docs(data-center): record and reproduce the self-hosted CI runner setup (#704)",
+          "contributor": "TshyGO",
+          "weighted_churn": 101.6,
+          "repo_id": "nebulalab"
+        },
+        {
+          "hash": "27dd6c8c210565cebfe2ebe20882cf852ce00fb7",
+          "short_hash": "27dd6c8c2105",
+          "subject": "fix(data-center): verify cutover ledger counts",
+          "contributor": "wagtyq",
+          "weighted_churn": 52.0,
+          "repo_id": "nebulalab"
+        },
+        {
+          "hash": "a9295450760a82e520e6a96ae19f4c85baa444a9",
+          "short_hash": "a9295450760a",
+          "subject": "fix(data-center): avoid reserved Pro grant alias",
+          "contributor": "wagtyq",
+          "weighted_churn": 10.4,
+          "repo_id": "nebulalab"
+        }
+      ],
+      "summary": "本周 TshyGO 记录了如何搭建自托管测试环境，方便后续团队参考。wagtyq 则完成了实验室人员管理系统的升级，新版本能更准确地根据身份分配权限，并修复了数据迁移过程中的多个问题，确保切换后数据一致无误。",
+      "summary_source": "llm"
+    },
+    {
       "iso_week": "2026-W34",
       "start": "2026-08-17",
       "end": "2026-08-23",
@@ -36201,7 +36601,7 @@
         }
       ],
       "summary": "本周由 wagtyq 和 TshyGO 共同推进。TshyGO 主要完成了数据中心的访问请求、只读管理界面等安全与管控功能，并优化了实验室 Pro 的激活流程。wagtyq 则重点完善了数据中心的用户花名册管理、词汇表发布等治理工具，并修复了多个界面显示与流程问题。",
-      "summary_source": "llm"
+      "summary_source": "llm-cached"
     },
     {
       "iso_week": "2026-W33",
