@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "generated_at": "2026-08-25T20:45:23.731322+00:00",
+  "generated_at": "2026-08-26T23:32:14.745722+00:00",
   "revision": "multi-repository",
   "repositories": [
     {
@@ -8,7 +8,7 @@
       "name": "NebulaLab",
       "path": ".",
       "weight": 1.0,
-      "revision": "d89c1ce55d19"
+      "revision": "c5a597912fea"
     },
     {
       "id": "plugins",
@@ -22,7 +22,7 @@
       "name": "NebulaLab Docs",
       "path": "external/NebulaLab-Docs",
       "weight": 0.45,
-      "revision": "f2fab15a9b6d"
+      "revision": "dfc56d72c63b"
     }
   ],
   "range": {
@@ -74,23 +74,23 @@
   },
   "totals": {
     "contributors": 5,
-    "raw_commits": 1092,
-    "effective_commits": 1059,
-    "weighted_churn": 440414.88,
-    "score": 3603.6803,
+    "raw_commits": 1109,
+    "effective_commits": 1076,
+    "weighted_churn": 450097.18,
+    "score": 3664.028,
     "category_churn": {
-      "core_code": 297296.5,
-      "tests": 102863.6,
-      "documentation": 28430.6,
-      "configuration": 13860.6,
+      "core_code": 304218.0,
+      "tests": 105539.6,
+      "documentation": 28514.8,
+      "configuration": 13861.2,
       "unknown": 0.0,
       "excluded": 0.0
     }
   },
   "excluded": {
-    "bot_commits": 61,
+    "bot_commits": 62,
     "zero_weight_files": 77,
-    "unknown_classification_files": 926,
+    "unknown_classification_files": 932,
     "binary_files": 105
   },
   "contributors": [
@@ -143,25 +143,25 @@
         }
       ],
       "co_authored_commits": 2,
-      "share_pct": 71.62,
-      "weighted_churn_share_pct": 78.48
+      "share_pct": 70.44,
+      "weighted_churn_share_pct": 76.79
     },
     {
       "id": "wagtyq",
       "display_name": "wagtyq",
-      "raw_commits": 276,
-      "effective_commits": 266,
-      "additions": 110248,
-      "deletions": 26816,
-      "raw_churn": 137065.0,
-      "weighted_churn": 90591.73,
-      "score": 921.2883,
-      "files_touched": 1654,
+      "raw_commits": 293,
+      "effective_commits": 283,
+      "additions": 120814,
+      "deletions": 27522,
+      "raw_churn": 148337.0,
+      "weighted_churn": 100274.03,
+      "score": 981.636,
+      "files_touched": 1752,
       "category_churn": {
-        "core_code": 64457.5,
-        "tests": 24933.6,
-        "documentation": 760.0,
-        "configuration": 552.15,
+        "core_code": 71379.0,
+        "tests": 27609.6,
+        "documentation": 844.2,
+        "configuration": 552.75,
         "unknown": 0.0,
         "excluded": 0.0
       },
@@ -170,10 +170,10 @@
           "id": "nebulalab",
           "name": "NebulaLab",
           "weight": 1.0,
-          "raw_commits": 273,
-          "effective_commits": 263,
-          "weighted_churn": 89588.05,
-          "score": 888.0125
+          "raw_commits": 290,
+          "effective_commits": 280,
+          "weighted_churn": 99270.35,
+          "score": 948.3603
         },
         {
           "id": "plugins",
@@ -186,8 +186,8 @@
         }
       ],
       "co_authored_commits": 2,
-      "share_pct": 25.57,
-      "weighted_churn_share_pct": 20.57
+      "share_pct": 26.79,
+      "weighted_churn_share_pct": 22.28
     },
     {
       "id": "crema-lida",
@@ -220,8 +220,8 @@
         }
       ],
       "co_authored_commits": 1,
-      "share_pct": 2.58,
-      "weighted_churn_share_pct": 0.93
+      "share_pct": 2.54,
+      "weighted_churn_share_pct": 0.91
     },
     {
       "id": "delicious-icecream",
@@ -254,7 +254,7 @@
         }
       ],
       "co_authored_commits": 0,
-      "share_pct": 0.19,
+      "share_pct": 0.18,
       "weighted_churn_share_pct": 0.02
     },
     {
@@ -293,6 +293,550 @@
     }
   ],
   "commits": [
+    {
+      "hash": "d3aff7df53336fbfcb11ac837ad2af66c9f2e9e3",
+      "short_hash": "d3aff7df5333",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-26T22:38:09+08:00",
+      "date": "2026-08-26",
+      "iso_week": "2026-W35",
+      "subject": "fix(data-center): canonicalize M4 contract identity",
+      "effective": true,
+      "additions": 238,
+      "deletions": 36,
+      "raw_churn": 274,
+      "file_weighted_churn": 185.6,
+      "weighted_churn": 185.6,
+      "files_touched": 5,
+      "unknown_files": 2,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 96.0,
+        "tests": 88.8,
+        "documentation": 0.8,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "5e7198f838097a11e5656bfaba6f041a593f7def",
+      "short_hash": "5e7198f83809",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-26T22:26:23+08:00",
+      "date": "2026-08-26",
+      "iso_week": "2026-W35",
+      "subject": "ci(data-center): run M4 contract tests",
+      "effective": true,
+      "additions": 1,
+      "deletions": 0,
+      "raw_churn": 1,
+      "file_weighted_churn": 0.6,
+      "weighted_churn": 0.6,
+      "files_touched": 1,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 0.0,
+        "tests": 0.0,
+        "documentation": 0.0,
+        "configuration": 0.6,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "b31ccc442c0617af1bf6b226a637cb2622c0db34",
+      "short_hash": "b31ccc442c06",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-26T22:21:08+08:00",
+      "date": "2026-08-26",
+      "iso_week": "2026-W35",
+      "subject": "feat(data-center): freeze M4 scientific contracts",
+      "effective": true,
+      "additions": 997,
+      "deletions": 7,
+      "raw_churn": 1004,
+      "file_weighted_churn": 494.0,
+      "weighted_churn": 494.0,
+      "files_touched": 10,
+      "unknown_files": 4,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 271.0,
+        "tests": 177.6,
+        "documentation": 45.4,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "06277b0ea610f4c845ddaffdfb67cb8dc3903138",
+      "short_hash": "06277b0ea610",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-26T21:43:49+08:00",
+      "date": "2026-08-26",
+      "iso_week": "2026-W35",
+      "subject": "fix(data-center): replace identity claim system prompt",
+      "effective": true,
+      "additions": 160,
+      "deletions": 10,
+      "raw_churn": 170,
+      "file_weighted_churn": 148.7,
+      "weighted_churn": 148.7,
+      "files_touched": 2,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 83.5,
+        "tests": 65.2,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "29aca8e437d6a3ea3fa51d83a6bb4828d34139c4",
+      "short_hash": "29aca8e437d6",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-26T20:02:31+08:00",
+      "date": "2026-08-26",
+      "iso_week": "2026-W35",
+      "subject": "fix(backup): dismiss stale cross-library restore tracking",
+      "effective": true,
+      "additions": 158,
+      "deletions": 1,
+      "raw_churn": 159,
+      "file_weighted_churn": 134.6,
+      "weighted_churn": 134.6,
+      "files_touched": 3,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 39.0,
+        "tests": 95.6,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "0bce5bc71ba5ab6b272e4ddd3cc831c1788681bc",
+      "short_hash": "0bce5bc71ba5",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-26T17:52:12+08:00",
+      "date": "2026-08-26",
+      "iso_week": "2026-W35",
+      "subject": "fix(data-library): harden restore recovery tracking",
+      "effective": true,
+      "additions": 411,
+      "deletions": 85,
+      "raw_churn": 496,
+      "file_weighted_churn": 411.3,
+      "weighted_churn": 411.3,
+      "files_touched": 10,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 242.5,
+        "tests": 168.8,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "4c753228a85df6dcdec348e0096bad9d81af579d",
+      "short_hash": "4c753228a85d",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-26T17:00:21+08:00",
+      "date": "2026-08-26",
+      "iso_week": "2026-W35",
+      "subject": "fix(data-library): close restore restart race",
+      "effective": true,
+      "additions": 82,
+      "deletions": 7,
+      "raw_churn": 89,
+      "file_weighted_churn": 77.9,
+      "weighted_churn": 77.9,
+      "files_touched": 5,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 47.5,
+        "tests": 30.4,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "38c42cadd63fa8475f9b5a79e4b0a9c58c49fb2a",
+      "short_hash": "38c42cadd63f",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-26T16:09:59+08:00",
+      "date": "2026-08-26",
+      "iso_week": "2026-W35",
+      "subject": "fix(data-library): make restore recovery tracking resumable",
+      "effective": true,
+      "additions": 331,
+      "deletions": 22,
+      "raw_churn": 353,
+      "file_weighted_churn": 322.7,
+      "weighted_churn": 322.7,
+      "files_touched": 9,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 245.5,
+        "tests": 77.2,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "15c2631c348942cf013c990ad8966c7998a78b6f",
+      "short_hash": "15c2631c3489",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-26T15:44:04+08:00",
+      "date": "2026-08-26",
+      "iso_week": "2026-W35",
+      "subject": "fix(data-library): harden restore recovery UX",
+      "effective": true,
+      "additions": 18,
+      "deletions": 3,
+      "raw_churn": 21,
+      "file_weighted_churn": 19.1,
+      "weighted_churn": 19.1,
+      "files_touched": 3,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 17.5,
+        "tests": 1.6,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "84961913b737501e5ef6e84ded4634d0036d0c04",
+      "short_hash": "84961913b737",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-26T14:33:30+08:00",
+      "date": "2026-08-26",
+      "iso_week": "2026-W35",
+      "subject": "feat(data-library): add safe desktop restore workflow",
+      "effective": true,
+      "additions": 2228,
+      "deletions": 77,
+      "raw_churn": 2305,
+      "file_weighted_churn": 2162.1,
+      "weighted_churn": 2162.1,
+      "files_touched": 18,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 1795.5,
+        "tests": 356.4,
+        "documentation": 10.2,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "004f77cea80b2e0c05a59e1065fbe85f5ac459fa",
+      "short_hash": "004f77cea80b",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-26T13:14:45+08:00",
+      "date": "2026-08-26",
+      "iso_week": "2026-W35",
+      "subject": "fix(storage): preserve fail-closed lease state",
+      "effective": true,
+      "additions": 25,
+      "deletions": 0,
+      "raw_churn": 25,
+      "file_weighted_churn": 20.8,
+      "weighted_churn": 20.8,
+      "files_touched": 2,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 4.0,
+        "tests": 16.8,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "c91df194e24541c9e290ffe0bab9fff8b79424e9",
+      "short_hash": "c91df194e245",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-26T12:55:47+08:00",
+      "date": "2026-08-26",
+      "iso_week": "2026-W35",
+      "subject": "fix(storage): reject unsafe workbook tree links",
+      "effective": true,
+      "additions": 66,
+      "deletions": 13,
+      "raw_churn": 79,
+      "file_weighted_churn": 68.1,
+      "weighted_churn": 68.1,
+      "files_touched": 3,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 50.5,
+        "tests": 17.6,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "d8d539699123c12bc4873997794708fdc8798646",
+      "short_hash": "d8d539699123",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-26T12:36:35+08:00",
+      "date": "2026-08-26",
+      "iso_week": "2026-W35",
+      "subject": "fix(storage): harden restore durability edges",
+      "effective": true,
+      "additions": 100,
+      "deletions": 3,
+      "raw_churn": 103,
+      "file_weighted_churn": 89.9,
+      "weighted_churn": 89.9,
+      "files_touched": 4,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 43.5,
+        "tests": 46.4,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "4bc083f1caa7ff106e85ac6b6a6a7bdb59373065",
+      "short_hash": "4bc083f1caa7",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-26T12:00:46+08:00",
+      "date": "2026-08-26",
+      "iso_week": "2026-W35",
+      "subject": "feat(data-library): add durable restore transactions",
+      "effective": true,
+      "additions": 3806,
+      "deletions": 283,
+      "raw_churn": 4089,
+      "file_weighted_churn": 3660.8,
+      "weighted_churn": 3660.8,
+      "files_touched": 12,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 2613.0,
+        "tests": 1028.0,
+        "documentation": 19.8,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "492262d42873cd8c2058b97ac28a4f1440024ce0",
+      "short_hash": "492262d42873",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-26T10:12:45+08:00",
+      "date": "2026-08-26",
+      "iso_week": "2026-W35",
+      "subject": "fix(storage): contain backup inspection failures",
+      "effective": true,
+      "additions": 99,
+      "deletions": 5,
+      "raw_churn": 104,
+      "file_weighted_churn": 86.9,
+      "weighted_churn": 86.9,
+      "files_touched": 2,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 28.5,
+        "tests": 58.4,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "f6d998c1158f5606c123a30b52878ecaa1d99bcb",
+      "short_hash": "f6d998c1158f",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-26T09:49:11+08:00",
+      "date": "2026-08-26",
+      "iso_week": "2026-W35",
+      "subject": "fix(storage): tighten backup compatibility checks",
+      "effective": true,
+      "additions": 146,
+      "deletions": 19,
+      "raw_churn": 165,
+      "file_weighted_churn": 136.4,
+      "weighted_churn": 136.4,
+      "files_touched": 2,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 60.0,
+        "tests": 76.4,
+        "documentation": 0.0,
+        "configuration": 0.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
     {
       "hash": "e9b6fb87bdc74f887a0c92911284d956aaf2a677",
       "short_hash": "e9b6fb87bdc7",
@@ -527,6 +1071,40 @@
         "tests": 53.6,
         "documentation": 0.0,
         "configuration": 42.0,
+        "unknown": 0.0,
+        "excluded": 0.0
+      }
+    },
+    {
+      "hash": "df6b264ab88ad54c411d11d3855851f51d3265ca",
+      "short_hash": "df6b264ab88a",
+      "repo_id": "nebulalab",
+      "repo_name": "NebulaLab",
+      "repo_weight": 1.0,
+      "contributor_id": "wagtyq",
+      "display_name": "wagtyq",
+      "co_authors": [],
+      "all_contributor_ids": [
+        "wagtyq"
+      ],
+      "authored_at": "2026-08-25T23:20:05+08:00",
+      "date": "2026-08-25",
+      "iso_week": "2026-W35",
+      "subject": "feat(storage): add verified backup catalog and preview",
+      "effective": true,
+      "additions": 1700,
+      "deletions": 135,
+      "raw_churn": 1835,
+      "file_weighted_churn": 1662.8,
+      "weighted_churn": 1662.8,
+      "files_touched": 8,
+      "unknown_files": 0,
+      "binary_files": 0,
+      "category_churn": {
+        "core_code": 1284.0,
+        "tests": 370.8,
+        "documentation": 8.0,
+        "configuration": 0.0,
         "unknown": 0.0,
         "excluded": 0.0
       }
@@ -37440,17 +38018,42 @@
         "TshyGO",
         "wagtyq"
       ],
-      "commit_count": 38,
-      "effective_count": 33,
+      "commit_count": 55,
+      "effective_count": 50,
       "categories": {
+        "fix": 33,
         "chore": 2,
         "test": 5,
-        "fix": 21,
-        "feat": 7,
+        "feat": 11,
+        "ci": 1,
         "perf": 2,
         "docs": 1
       },
       "highlights": [
+        {
+          "hash": "4bc083f1caa7ff106e85ac6b6a6a7bdb59373065",
+          "short_hash": "4bc083f1caa7",
+          "subject": "feat(data-library): add durable restore transactions",
+          "contributor": "wagtyq",
+          "weighted_churn": 3660.8,
+          "repo_id": "nebulalab"
+        },
+        {
+          "hash": "84961913b737501e5ef6e84ded4634d0036d0c04",
+          "short_hash": "84961913b737",
+          "subject": "feat(data-library): add safe desktop restore workflow",
+          "contributor": "wagtyq",
+          "weighted_churn": 2162.1,
+          "repo_id": "nebulalab"
+        },
+        {
+          "hash": "df6b264ab88ad54c411d11d3855851f51d3265ca",
+          "short_hash": "df6b264ab88a",
+          "subject": "feat(storage): add verified backup catalog and preview",
+          "contributor": "wagtyq",
+          "weighted_churn": 1662.8,
+          "repo_id": "nebulalab"
+        },
         {
           "hash": "d37240935d87599f038b72a37dffb360955dcaa8",
           "short_hash": "d37240935d87",
@@ -37466,33 +38069,9 @@
           "contributor": "wagtyq",
           "weighted_churn": 856.7,
           "repo_id": "nebulalab"
-        },
-        {
-          "hash": "eec94583bc42f992b74b79b95f30243a4ed3a400",
-          "short_hash": "eec94583bc42",
-          "subject": "fix(data-center): report live upload progress",
-          "contributor": "wagtyq",
-          "weighted_churn": 335.1,
-          "repo_id": "nebulalab"
-        },
-        {
-          "hash": "d39500247ae14b4f2aa92ba14d1574cdbe9d6aef",
-          "short_hash": "d39500247ae1",
-          "subject": "feat(data-center): carry everything a CI runner rebuild needs",
-          "contributor": "TshyGO",
-          "weighted_churn": 156.6,
-          "repo_id": "nebulalab"
-        },
-        {
-          "hash": "731ccbac79ff240e7e0a3cb09206ce8b766c6429",
-          "short_hash": "731ccbac79ff",
-          "subject": "feat(data-center): repeat alerts while a failure persists",
-          "contributor": "TshyGO",
-          "weighted_churn": 127.8,
-          "repo_id": "nebulalab"
         }
       ],
-      "summary": "本周，TshyGO 和 wagtyq 两位成员共同推进了数据中心的改进。TshyGO 主要增强了告警系统，使其更易操作和配置，并优化了CI流程，提升了构建效率和安全性。wagtyq 则完成了新版花名册的切换与归属工作，确保了数据迁移的准确与稳定，并修复了多个与用户注册和权限相关的关键问题。",
+      "summary": "本周由 wagtyq 和 TshyGO 共同推进了项目。wagtyq 主要增强了数据备份与恢复的可靠性，让恢复过程更安全、可追踪，并完成了实验室 Pro 版本的权限升级与名册系统的切换。TshyGO 则优化了告警系统，让飞书通知更清晰、可操作，并完善了自托管 CI 环境的搭建文档，提升了自动化测试的覆盖范围。",
       "summary_source": "llm"
     },
     {
